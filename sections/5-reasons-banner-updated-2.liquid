@@ -1,0 +1,225 @@
+{% style %}
+    .reasons-banner {
+        display: flex;
+        align-items: center;
+        background: #F8F6ED;
+    }
+
+    .reasons-banner__image-wrapper,
+    .reasons-banner__copy {
+        width: 50%;
+    }
+
+    .reasons-banner__image-wrapper {
+        height: 100%;
+    }
+
+    .reasons-banner__image-wrapper img {
+        height: calc(100% + 1px);
+        width: 100%;
+        object-fit: cover;
+        display: block;
+        margin-top: -1px;
+    }
+
+    .reasons-banner__copy {
+        max-width: 600px;
+        padding: 54px 50px 50px;
+        box-sizing: content-box;
+    }
+
+    .reasons-banner__copy h4 {
+        font-family: 'Futura';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 40px;
+        text-transform: uppercase;
+        color: #5D5D5D;
+    }
+
+    .reasons-banner__copy p {
+        font-family: 'FuturaMedium';
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 28px;
+        color: #5D5D5D;
+        margin: 30px 0;
+    }
+
+    .reasons-banner__copy a {
+        padding: 14px 50px;
+        background: #347848;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 25px;
+        text-transform: capitalize;
+        color: white;
+        display: block;
+        width: fit-content;
+    }
+
+    .reasons-banner__copy a:hover {
+        color: #DED9BC;
+    }}
+
+    .reasons-banner__copy .copy__cta {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 30px;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    img.mobile--only {
+        display: none;
+    }
+
+    @media(max-width: 1000px) {
+        .reasons-banner {
+            flex-direction: column;
+        }
+
+        .reasons-banner__image-wrapper,
+        .reasons-banner__copy {
+            width: 100%;
+        }
+
+        .reasons-banner__copy {
+            padding: 20px 15px;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .reasons-banner__image-wrapper {
+            height: 50vw;
+        }
+    }
+
+    @media(max-width: 550px) {
+        .reasons-banner__image-wrapper {
+            height: 77vw;
+        }
+
+         .reasons-banner__copy a {
+            width: 100%;
+            text-align: center;
+        }
+
+        .copy__cta {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .reasons-banner__copy .copy__cta {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+
+        img.desktop--only {
+            display: none;
+        }
+
+        img.mobile--only {
+            display: flex;
+        }
+
+    }
+{% endstyle %}
+
+<div class="reasons-banner">
+    <div class="reasons-banner__image-wrapper">
+        <img 
+            src="{{section.settings.banner_image.src | img_url: '768x'}}" 
+            loading="lazy"
+            alt=""
+            {%- if section.settings.banner_image_mobile != blank -%}
+                class="desktop--only"
+            {%- endif -%}   
+        />
+        {%- if section.settings.banner_image_mobile != blank -%}
+            <img 
+                src="{{section.settings.banner_image_mobile.src | img_url: '768x'}}" 
+                class="mobile--only"  
+                loading="lazy"
+                alt=""
+           />
+        {%- endif -%}    
+    </div>
+
+    <div class="reasons-banner__copy">
+        <h4>{{section.settings.heading}}</h4>
+        <p>{{section.settings.paragraph}}</p>
+
+        <div class="copy__cta">
+            <a href="{{section.settings.cta_url}}">{{section.settings.cta_title}}</a>
+            <div class="copy__label-images">
+                {% for block in section.blocks %}
+                    <img 
+                        src="{{block.settings.label_image.src | img_url: '136x'}}" 
+                        loading="lazy"
+                        alt="" 
+                        width="68"
+                        height="68"
+                    />
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "5 Reasons Hero",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "banner_image",
+                "label": "Banner Image"
+            },
+            {
+                "type": "image_picker",
+                "id": "banner_image_mobile",
+                "label": "Banner Image mobile"
+            },
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Banner Heading"
+            },
+            {
+                "type": "text",
+                "id": "paragraph",
+                "label": "Hero Paragraph"
+            },
+            {
+                "type": "text",
+                "id": "cta_title",
+                "label": "CTA Title"
+            },
+            {
+                "type": "url",
+                "id": "cta_url",
+                "label": "CTA URL"
+            }
+        ],
+        "blocks": [
+            {
+                "name": "Label Image",
+                "type": "image_picker",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "label_image",
+                        "label": "Hero Image"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

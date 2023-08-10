@@ -1,0 +1,83 @@
+{% comment %}
+  @param is_home {bool}
+    Set as true to show home page specific content
+
+  @param title_in_details {bool}
+    Set as true in order to render product_title
+
+  @param product_title {string}
+    Pass a `capture`'d string to render out a header
+{% endcomment %}
+{% unless section_onboarding %}
+  {% assign price = selected_variant.price %}
+  {% assign vendor = product.vendor %}
+{% else %}
+  {% assign price = 1999 %}
+  {% assign vendor = 'onboarding.featured_product.vendor' | t %}
+{% endunless %}
+
+<div class="product-details">
+  <h3>Soft Wood Cat Litter</h3>
+
+  {% if title_in_details and product_title %}
+    {{ product_title }}
+  {% endif %}
+
+{% comment %} /snippets/bv-summary.liquid Bazaarvoice Summary Container
+{% endcomment %}
+{% render 'bv-summary' %}
+{% comment %}
+End Bazaarvoice Summary Container
+{% endcomment %}
+  
+  {% comment %}
+  <div class="rating-reviews">
+  <!-- Yotpo Star Rating -->
+  <div class="yotpo bottomLine"
+  data-product-id="{{ product.id }}">
+    {%- assign yotpo_offload_content = shop.metafields.yotpo.yotpo_offload_content %}
+    {%- assign time_now = 'now' | date: '%s' %}
+    {%- assign yotpo_live_time = shop.metafields.yotpo.yotpo_live | date: '%s' %}
+    {%- assign diff_seconds_from_live = time_now | minus: yotpo_live_time %}
+    {%- assign yotpo_bottomline_last_updated = product.metafields.yotpo.bottomline_update_time | date: '%s' %}
+    {%- assign diff_seconds_from_last_bottomline_update = time_now | minus: yotpo_bottomline_last_updated %}
+    {%- if yotpo_live_time and diff_seconds_from_live < 86400 or yotpo_bottomline_last_updated and diff_seconds_from_last_bottomline_update < 86400 -%}
+      {%- assign yotpo_bottomline_obsolete = false %}
+    {%- else %}
+      {%- assign yotpo_bottomline_obsolete = true %}
+    {%- endif %}
+    {%- if yotpo_offload_content == 'yes' and yotpo_bottomline_obsolete != true -%}
+      {{ product.metafields.yotpo.bottomline }}
+    {%- endif %}
+  </div>
+  <!-- end Star Rating -->
+  </div>
+{% endcomment %}
+  
+  {% if section.settings.product_show_vendor and vendor != blank%}
+    <p class="meta vendor">
+      {{ vendor }}
+    </p>
+  {% endif %}
+
+  {% comment %}
+
+  <p class="product-price">
+
+    <span class="price">
+      <span class="money">{{ price | money }}</span>
+
+      {% unless section_onboarding or product.variants.size == 1 and product.compare_at_price_min <= price %}
+        <span class="original money {% if product.compare_at_price_min <= price %}hidden{% endif %}">
+          {% if selected_variant.compare_at_price > price %}
+            {{ selected_variant.compare_at_price | money }}
+          {% endif %}
+        </span>
+      {% endunless %}
+    </span>
+
+  </p>
+
+  {% endcomment %}
+
+</div>

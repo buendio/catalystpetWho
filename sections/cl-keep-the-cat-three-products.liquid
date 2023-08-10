@@ -1,0 +1,35 @@
+<div class="cl-keep-the-cat" style="background-image:url({{ section.settings.keepthecat_image | img_url: 'x730', scale: 2 }});">
+    <div class="inner">
+        <img src="{{ 'icon-clumping.png' | asset_url }}" alt="Great Clumping">
+        <img src="{{ 'icon-light.png' | asset_url }}" alt="Light Weight">
+        <div class="keep-the-cat">
+            <h3>{{ section.settings.keepthecat_title }}</h3>
+            {% include 'icon-odor-control-yellow' %}
+        </div>
+        <img src="{{ 'icon-permeability.png' | asset_url }}" alt="High Permeability">
+        <img src="{{ 'icon-acceptance.png' | asset_url }}" alt="Unrivaled Acceptance">
+
+        {% include 'icon-odor-control-yellow' %}
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Cat Litter Keep The Cat",
+  "class": "section-cl",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "keepthecat_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "keepthecat_title",
+      "label": "Title",
+      "default": "Keep the cat, Leave the smell."
+    }
+  ]
+}
+
+{% endschema %}

@@ -1,0 +1,55 @@
+{
+  "sections": {
+    "main": {
+      "type": "transition-to-catalyst-header",
+      "settings": {
+        "heading": "How to Transition Your Cat to Catalyst",
+        "body": "<p>Here’s how we (and our customers) recommend making the litter transition as smooth as possible.<\/p>",
+        "iframe": "<iframe width=\"2333\" height=\"1167\" src=\"https:\/\/www.youtube.com\/embed\/EANR0cF9HuI?autoplay=1amp;&amp;enablejsapi=1\" title=\"How to Successfully Make the Switch to Catalyst Pet Natural Litter featuring Nathan the Cat Lady\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen=\"\"><\/iframe>"
+      }
+    },
+    "insturctions": {
+      "type": "transition-to-catalyst-instructions",
+      "blocks": {
+        "32737ec0-3ede-45f3-ade0-622c0d7e3b40": {
+          "type": "Instruction",
+          "settings": {
+            "instruction_text": "To start, open the Catalyst bag and set it next to your cat's litter box to allow them to smell it."
+          }
+        },
+        "15911ae9-4221-4a73-8492-48a851b56efa": {
+          "type": "Instruction",
+          "settings": {
+            "instruction_text": "Pour 1-2 inches of Catalyst into a clean litter box and add 1-2 inches of your previous litter on top."
+          }
+        },
+        "8b7a1a6a-7047-43fe-9916-9929e4a4fc70": {
+          "type": "Instruction",
+          "settings": {
+            "instruction_text": "Over the next few days as you scoop out waste, replace with more Catalyst."
+          }
+        },
+        "2cbbcaf4-f7e0-4979-9531-7d48f2c7bdbd": {
+          "type": "Instruction",
+          "settings": {
+            "instruction_text": "Using this method will smoothly transition both the litter box and your cat to the highest performing natural cat litter on the planet!"
+          }
+        }
+      },
+      "block_order": [
+        "32737ec0-3ede-45f3-ade0-622c0d7e3b40",
+        "15911ae9-4221-4a73-8492-48a851b56efa",
+        "8b7a1a6a-7047-43fe-9916-9929e4a4fc70",
+        "2cbbcaf4-f7e0-4979-9531-7d48f2c7bdbd"
+      ],
+      "settings": {
+        "cta_label": "I’m Ready to Buy!",
+        "cta_url": "https:\/\/catalystpet.com\/collections\/frontpage"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "insturctions"
+  ]
+}

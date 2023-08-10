@@ -1,0 +1,189 @@
+<style>
+
+  .template-page-rebates .main-content {
+    max-width: 100%;
+    background: #037847;
+  }
+
+  .rebates-destini {
+    background: #FFFFFF;
+  }
+
+  .rebates-destini__title {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 51px;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 30px 0;
+    background: #037847;
+  }
+
+  .rebates_locations {
+    background: #FFFFFF;
+    padding: 50px 0;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 938px;
+    margin: 0 auto;
+  }
+
+  .rebates_locations__letter {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 51px;    
+    color: #037847;
+    width: 100%;
+  }
+
+  .rebates_locations__item-city {
+    font-family: 'Domine';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 25px;   
+    color: #037847;
+  }
+
+  .rebates_locations__item-address {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 23px;
+    color: #2E2E2E;
+    margin-top: 15px;
+  }
+
+  .rebates_locations__items {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 25px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+  }
+
+  .rebates_locations__item {
+    width: 213px;
+  }
+
+  .rebates_locations__items:empty {
+    display: none;
+  }
+
+  @media(max-width: 900px) {
+    .rebates-destini__title {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 32px;
+      text-align: left;
+      max-width: 100%;
+      padding: 15px 0 15px 15px;
+    }
+
+    .rebates_locations__item {
+      width: 165px;
+    }
+
+    .rebates_locations {
+      padding: 30px 15px 0;
+      width: 100%;
+    }
+    
+    .rebates_locations__items {
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+  }
+
+  @media(min-width: 750px) and  (max-width: 1000px)  {
+    .rebates_locations {
+      width: 700px;
+    }
+  }
+
+</style>  
+
+<div class="rebates-destini">
+
+  <div class="rebates-destini__title">
+    {{ section.settings.locator_title }}
+  </div>
+
+  {% assign alphabet_list = "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z" | split: ',' %}
+
+  <div class="rebates_locations">
+    {%- for letter in alphabet_list -%}
+      {%- for block in section.blocks -%}
+        {%- assign first_letter = block.settings.title | truncate: 1, "" -%}
+          {%- if first_letter == letter -%}<div class="rebates_locations__letter">{{ letter }}</div>
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}  
+      <div class="rebates_locations__items">
+        {%- for block in section.blocks -%}
+          {%- assign first_letter = block.settings.title | truncate: 1, "" -%}
+          {%- if first_letter == letter -%}
+    		   <div class="rebates_locations__item">
+              <div class="rebates_locations__item-city">{{ block.settings.title }}</div>
+              <div class="rebates_locations__item-address">{{ block.settings.address }}, {{ block.settings.state }} {{ block.settings.zip }}</div>
+           </div>
+		      {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endfor -%}
+  </div>
+
+</div> 
+
+{% schema %}
+    {
+        "name": "Rebates locator",
+        "class": "rebates-locator",
+        "settings": [
+            {
+              "type": "text",
+              "id": "locator_title",
+              "label": "Locator title",
+              "default": "FIND A PARTICIPATING COSTCO NEAR YOU"
+            }
+        ],
+        "blocks": [
+          {
+              "name": "Store",
+              "type": "store",
+              "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "City"
+                },
+                {
+                  "type": "text",
+                  "id": "state",
+                  "label": "State"
+                },
+                {
+                  "type": "text",
+                  "id": "address",
+                  "label": "Address"
+                },
+                {
+                  "type": "text",
+                  "id": "zip",
+                  "label": "Zip"
+                }
+              ]
+          }
+      ]
+    }
+{% endschema %}

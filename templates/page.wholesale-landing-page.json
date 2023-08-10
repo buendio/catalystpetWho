@@ -1,0 +1,66 @@
+{
+  "sections": {
+    "header": {
+      "type": "wholesale-header",
+      "settings": {
+        "heading": "Catalyst Pet Dealer Direct Portal",
+        "copy": "<p>Your gateway to order Catalyst products at dealer prices, sales information, valuable resources and more for Catalyst Pet Litter.<\/p>",
+        "cta_1_title": "Login",
+        "cta_1_url": "shopify:\/\/pages\/wholesale-login",
+        "cta_2_title": "Apply to be a dealer",
+        "cta_2_url": "shopify:\/\/pages\/wholesale-registration-1"
+      }
+    },
+    "main": {
+      "type": "wholesale-landing-page",
+      "blocks": {
+        "d784d4e1-1d45-46f8-996e-08903085e3b7": {
+          "type": "wholesale_dealer_info",
+          "settings": {
+            "heading": "Dealer program information",
+            "copy": "<p>Shipped right to your store!  Buy direct in quantities of 40 pounds, either 10-pound bags or two 20-pound bags.<\/p>",
+            "image": "shopify:\/\/shop_images\/cat-wholesale.jpg"
+          }
+        },
+        "aceb5864-8aa9-4acb-922c-06cce56dd16d": {
+          "type": "wholesale-apply-dealer",
+          "settings": {
+            "heading": "Dealer Benefits",
+            "copy": "<p>Featuring in-store dealer specific pricing, ordering Catalyst is quick and easy.  We'll begin processing your order immediately so you and your customers won't have to wait.<\/p>"
+          }
+        },
+        "8f88d3b1-b04b-45ea-9d6e-f2558655ffa5": {
+          "type": "wholesale-save-more",
+          "settings": {
+            "heading": "<p>4x more efficient = <strong>save more per use!<\/strong><\/p>",
+            "copy": "<p>Not only is Catalyst litter 4 times more absorbent than other leading litter brands, it's also 37% cheaper, controls odor better, is lighter to carry, and doesn't have the nasty clay airborne dust that is typical of other brands. Give it a try!<\/p>",
+            "image": "shopify:\/\/shop_images\/Frame_1086719.png",
+            "video": "shopify:\/\/files\/videos\/catalyst-product-video (1).mp4"
+          }
+        },
+        "ac31b685-302a-4f8a-be7e-de72940c2fd3": {
+          "type": "wholesale-video-section",
+          "settings": {
+            "heading": "Hear from Real Catalyst Users",
+            "copy": "<p>Don't just take our word for it! Check out @Catalystpet on Facebook, Instagram and TikTok for detailed testimonials and reviews from some cool cats. You might recognize a few 😸<\/p>",
+            "video_1": "shopify:\/\/files\/videos\/catalyst-product-video (1).mp4",
+            "video_2": "shopify:\/\/files\/videos\/catalyst-product-video (1).mp4",
+            "video_3": "shopify:\/\/files\/videos\/catalyst-product-video (1).mp4",
+            "video_4": "shopify:\/\/files\/videos\/catalyst-product-video (1).mp4"
+          }
+        }
+      },
+      "block_order": [
+        "d784d4e1-1d45-46f8-996e-08903085e3b7",
+        "aceb5864-8aa9-4acb-922c-06cce56dd16d",
+        "8f88d3b1-b04b-45ea-9d6e-f2558655ffa5",
+        "ac31b685-302a-4f8a-be7e-de72940c2fd3"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "header",
+    "main"
+  ]
+}

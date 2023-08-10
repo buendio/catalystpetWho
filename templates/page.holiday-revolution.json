@@ -1,0 +1,148 @@
+{
+  "sections": {
+    "main": {
+      "type": "5-reasons-hero",
+      "blocks": {
+        "8f1dffff-2f87-4cec-9215-44589ae56f29": {
+          "type": "image_picker",
+          "settings": {
+            "label_image": "shopify:\/\/shop_images\/EarthFriendly_1.png"
+          }
+        },
+        "dfb0560e-61d8-488e-aa3b-3a327752645b": {
+          "type": "image_picker",
+          "settings": {
+            "label_image": "shopify:\/\/shop_images\/4x_Healthy_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "8f1dffff-2f87-4cec-9215-44589ae56f29",
+        "dfb0560e-61d8-488e-aa3b-3a327752645b"
+      ],
+      "settings": {
+        "hero_image": "shopify:\/\/shop_images\/image_38.png",
+        "heading": "Why Cat Owners Are Ditching Their Clay Litter For This Wood Based Litter.",
+        "paragraph": "Thousands of cat owners everywhere are making the switch from clay to wood for cheaper, more sustainable, and better odor controlling odor. Here are the top 5 reasons why Catalyst outperforms your current clay litter.",
+        "cta_title": "Get Started",
+        "cta_url": "shopify:\/\/products\/cat-litter-healthy-cat-formula"
+      }
+    },
+    "main-reasons": {
+      "type": "5-reasons-details",
+      "blocks": {
+        "c68ebafd-fd9f-43bc-b367-1a41b2b3d923": {
+          "type": "reason",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC06943_1.png",
+            "title": "4x More Effective Than Clay Litter",
+            "description": "Catalyst Litter is 4x more absorbent than clay litter, while also outperforming in clumping. With Catalyst, you’ll have less wasted litter, better odor control, and better clumping than clay litter."
+          }
+        },
+        "1e378b89-a712-4bcb-a3f2-1a5eae70c690": {
+          "type": "reason",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2C4CF68B-2DB9-42F0-9194-6D3A4225C542_1.png",
+            "title": "Lower Monthly Cost Per Month",
+            "description": "With 4x the absorption, Catalyst will save you money each month! Use less litter per cat each month and see how much litter you’ll save. On average, Catalyst is 15% cheaper per use than other clumping litters. Switch today and start saving."
+          }
+        },
+        "d7dc3773-ad2c-43b1-94c1-992e28dfc948": {
+          "type": "reason",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_20200104_164000_3_1.png",
+            "title": "Hundreds Of 5 Star Reviews",
+            "description": "Thousands of cat lovers across the country have made the switch to Catalyst and are seeing for themselves how much better it is to the clay alternative. From better clumping and odor protection to unrivaled cat acceptance, see why we have a 4.8 star rating on thousands of customers."
+          }
+        },
+        "e14cb8a2-0947-4fe3-b794-bc1bd8b6ff11": {
+          "type": "reason",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC07170_1.png",
+            "title": "Never Worry About Smell Again",
+            "description": "Catalyst’s odor control means you’ll never have to worry about a smelly litterbox again. Choose from 3 formulas that best fit your needs. Healthy Cat with a soft pine scent, unscented for a smell free litter, and multi-cat great for households with more than one cat."
+          }
+        },
+        "47f1a8b6-afb4-4715-86d3-70816a73da10": {
+          "type": "reason",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Catalyst_UGC_photo_5_V0.jpg",
+            "title": "Better For The Environment",
+            "description": "Catalyst Litter is upcycled from wood waste creating a more sustainable litter than clay that has to be mined from the earth. By making the switch to Catalyst, cat owners are able to feel good about their litter for more reasons than one. Great for your cat, and great for the environment."
+          }
+        }
+      },
+      "block_order": [
+        "c68ebafd-fd9f-43bc-b367-1a41b2b3d923",
+        "1e378b89-a712-4bcb-a3f2-1a5eae70c690",
+        "d7dc3773-ad2c-43b1-94c1-992e28dfc948",
+        "e14cb8a2-0947-4fe3-b794-bc1bd8b6ff11",
+        "47f1a8b6-afb4-4715-86d3-70816a73da10"
+      ],
+      "settings": {}
+    },
+    "main-how-it-works": {
+      "type": "5-reasons-how-it-works",
+      "blocks": {
+        "cffe564c-bfe6-46da-a88a-56319fa56e7c": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1_17c71fba-0654-4972-a424-a77f26836307.png",
+            "title": "Subscribe & Activate",
+            "paragraph": "<p>When you first subscribe to Catalyst you’ll be prompted by email to activate your account. This will give you access to your account portal through our website where you can manage your subscription.<\/p>"
+          }
+        },
+        "a6fec678-6a8a-4a50-87de-13e8671dd4a1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2_9c249748-a592-4c61-8768-5b04efa4305b.png",
+            "title": "Manage your subscriptions",
+            "paragraph": "<p>Once you’ve activated your account, you can log in via our website to manage your subscription settings.After logging in, click on the “Manage Subscription” button from your account portal and you’ll be brought to this screen. Here you can manage all aspects of your plan including payment method, switching your formula or updating your billing\/shipping address.<\/p>"
+          }
+        },
+        "446a5f59-0b23-4931-92f8-9f693168e8a7": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3_8bc6d6ec-f223-4a31-8d91-445687b4fe54.png",
+            "title": "Pause or Skip Deliveries as Needed",
+            "paragraph": "<p>Inside your <a href=\"https:\/\/catalystpet.com\/account\" target=\"_blank\" title=\"https:\/\/catalystpet.com\/account\">account portal<\/a>, click on “Delivery Schedule” to see all your future deliveries. From here, you can decide to “skip” if you have litter still remaining from your first month or it’s taking a little longer for your furry friend to adapt.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "cffe564c-bfe6-46da-a88a-56319fa56e7c",
+        "a6fec678-6a8a-4a50-87de-13e8671dd4a1",
+        "446a5f59-0b23-4931-92f8-9f693168e8a7"
+      ],
+      "settings": {
+        "title": "How it works"
+      }
+    },
+    "main-banner": {
+      "type": "5-reasons-banner",
+      "settings": {
+        "banner_image": "shopify:\/\/shop_images\/product-pattern_x560_2x_1.png",
+        "heading": "Get 50% Off Your First Month",
+        "paragraph": "Join the revolution today, and get 50% off your first purchase when you use code GET50 on your first order.",
+        "cta_title": "Get Started",
+        "cta_url": "shopify:\/\/products\/cat-litter-healthy-cat-formula"
+      }
+    },
+    "main-footer": {
+      "type": "5-reasons-footer",
+      "settings": {
+        "heading": "This stuff works. It has gotten rid of all the odor better than anything else I have tried. Now my house doesn't smell like a litter box.",
+        "person_avatar": "shopify:\/\/shop_images\/Avatar.png",
+        "person_name": "Mitch",
+        "person_position": "Denver, CO"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "main-reasons",
+    "main-how-it-works",
+    "main-banner",
+    "main-footer"
+  ]
+}

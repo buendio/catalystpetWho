@@ -1,0 +1,56 @@
+{% style %}
+    .copy > p > strong:first-child {
+        color: #000;
+        display: block;
+    }
+
+    h2 {
+        text-align: center;
+        margin: 40px 0 -60px 0;
+    }
+
+    .grid-x.align-center {
+        display: none !important;
+    }
+
+    .page-content {
+        height: 740px;
+        overflow: hidden;
+    }
+{% endstyle %}
+
+<div class="refer-a-friend">
+    <h1 class="page-title">{{page.title}}</h1>
+
+    <div class="page-content">{{page.content}}</div>
+
+    <div class="copy">
+        {{ section.settings.page_copy }}
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+</div>
+
+<script>
+    var iframe = document.getElementById('refcandy-candyjar');
+
+    iframe.addEventListener("load", function() {
+        var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+        console.dir(innerDoc.children[0].children[1]);
+    }) 
+
+    
+</script>
+
+{% schema %}
+    {
+        "name": "Refer A Friend",
+        "settings": [
+            {
+                "type": "richtext",
+                "id": "page_copy",
+                "label": "Page Copy"
+            }
+        ]
+    }
+{% endschema %}

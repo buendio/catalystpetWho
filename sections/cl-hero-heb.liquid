@@ -1,0 +1,65 @@
+{% assign product1 = all_products[section.settings.product1] %}
+{% assign product2 = all_products[section.settings.product2] %}
+{% assign product3 = all_products[section.settings.product3] %}
+<div class="cl-hero give2">
+  <div class="hero-inner">
+      <div class="hero-left text-center">
+      {{ section.settings.main_hero_text }}
+      </div>
+      <div class="hero-center">
+          <img src="{{ product2.featured_image | img_url: '340x340x' ,scale: 2 }}" alt="" data-default-product="2" data-current-product="2">
+          <img src="{{ product1.featured_image | img_url: '340x340x' ,scale: 2 }}" alt="" data-default-product="1" data-current-product="1">
+          <img src="{{ product3.featured_image | img_url: '340x340x' ,scale: 2 }}" alt="" data-default-product="3" data-current-product="3">
+      </div>
+      <div class="hero-right heb-description">
+          <div class="checkbox">{% render 'icon-checkbox-mark' %}</div>
+          {{ section.settings.hero_description }}
+          <a href="{{ section.settings.heb_url }}" class="heb-url">{% render 'heb-logo' %}</a>
+      </div>
+  </div>
+</div>
+<div class="cl-sub-hero heb-sub-hero">
+  <a href="{{ section.settings.heb_url }}" class="heb-url" onclick="ga('send', 'event', 'heb-cta', 'click');"><img src="{{ 'cta-find-store.png' | asset_url }}" alt="Find an HEB Store" ></a>
+</div>
+
+{% schema %}
+{
+  "name": "Cat Litter Hero",
+  "class": "section-cl",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product1",
+      "label": "Product 1"
+    },
+    {
+      "type": "product",
+      "id": "product2",
+      "label": "Product 2"
+    },
+    {
+      "type": "product",
+      "id": "product3",
+      "label": "Product 3"
+    },
+    {
+      "type": "text",
+      "id": "main_hero_text",
+      "label": "Main hero text",
+      "default": "Join the revolution!"
+    },
+    {
+      "type": "richtext",
+      "id": "hero_description",
+      "label": "Hero description",
+      "default": "<p>Catalyst Soft Wood Litter <strong>NOW AVAILABLE</strong> at</p>"
+    },
+    {
+      "type": "url",
+      "id": "heb_url",
+      "label": "HEB link"
+    }
+  ]
+}
+
+{% endschema %}

@@ -1,0 +1,98 @@
+<div class="cat-copy-section template-new">
+  <h2>{{ section.settings.header }}</h2>
+
+  <div class="cat-copy-content-box">
+    {% for block in section.blocks %}
+      {% if block.settings.header != blank %}
+        <h3 class="cat-copy-content-box__header">{{ block.settings.header }}</h3>
+      {% endif %}
+
+      <div class="cat-copy-content">
+        <div class="content__media">
+          {% if block.settings.video %}
+            <img
+              class="media-video-play"
+              src="{{'play.png' | asset_url}}"
+              alt="">
+            <video id="media-video">
+              {% for source in block.settings.video.sources %}
+                {% if source.format != 'm3u8' %}
+                  <source src="{{ source.url }}" type="{{ source.mime_type }}">
+                {% endif %}
+              {% endfor %}
+            </video>
+          {% elsif block.settings.image %}
+            <img src="{{block.settings.image.src | img_url: 'large'}}" alt="">
+          {% endif %}
+        </div>
+        <div class="content__richtext">
+          <h3>{{ block.settings.title }}</h3>
+          <div class="copy">{{ block.settings.copy }}</div>
+          {% if block.settings.logos %}
+            <img src="{{block.settings.logos.src | img_url: 'large'}}" alt="">
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  const video = document.getElementById("media-video");
+  const videoPlay = document.querySelector(".media-video-play");
+
+  videoPlay.addEventListener("click", function() {
+    video.play();
+    video.setAttribute("controls", true);
+    videoPlay.style.display = "none";
+  })
+</script>
+
+{% schema %}
+  {
+    "name": "Product Content",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "header",
+        "label": "Header"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "content",
+        "name": "Content",
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "header",
+            "label": "Header"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "video",
+            "id": "video",
+            "label": "Video"
+          },
+          {
+            "type": "richtext",
+            "id": "title",
+            "label": "Title"
+          }, {
+            "type": "richtext",
+            "id": "copy",
+            "label": "Copy"
+          }, {
+            "type": "image_picker",
+            "id": "logos",
+            "label": "Logos"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,135 @@
+<!-- Subscriptions Powered by ReCharge Payments: Begin Liquid Code -->
+<!--
+	Subscription Theme Footer
+	http://rechargepayments.com: v2
+	Updated: 2017/09/12
+-->
+{% if template and template != 'cart' %}
+	<script>
+		// Subscriptions Powered by ReCharge Payments: JavaScript
+		(function() {
+			// Basic function to load script files, will be used to include jQuery
+			var loadScript = function(url, callback) {
+				var script = document.createElement("script");
+				script.type = "text/javascript";
+				// If the browser is Internet Explorer
+				if (script.readyState){
+					script.onreadystatechange = function() {
+						if (script.readyState == "loaded" || script.readyState == "complete") {
+							script.onreadystatechange = null;
+							callback();
+						}
+					};
+				// For any other browser
+				} else {
+					script.onload = function() {
+						callback();
+					};
+				}
+				script.src = url;
+				document.getElementsByTagName("head")[0].appendChild(script);
+			};
+			// This is our JavaScript that we'll run after jQuery is included
+			var reChargeThemeFooterJS = function($) {
+				function reChargeSaveCartNoteAndRedirectToCart() {
+					var has_cart_note_or_attribute = false;
+
+					try {
+						var data = {};
+						if ($('[name="note"]').val() != undefined) {
+							var note = $('[name="note"]').val();
+							data['note'] = note;
+							has_cart_note_or_attribute = true;
+						}
+						if (has_cart_note_or_attribute) {
+							$.ajax({
+								type: 'POST',
+								data: data,
+								url: '/cart/update.js',
+								dataType: 'json',
+								success: function() {
+									window.location.href = reChargeProcessCart2();
+								}
+							});
+						} else {
+							window.location.href = reChargeProcessCart2();
+						}
+					} catch (e) {
+						window.location.href = reChargeProcessCart2();
+					}
+				}
+				var checkout_button_selectors = '[href="/checkout"], form[action="/cart"] button[type="submit"], form[action="/cart"] input[type="submit"], form[action="/checkout"] input[type="submit"], form[action="/checkout"] button[type="submit"]';
+				$(document).on('click', checkout_button_selectors, function(e) {
+					if (!e.target.hasAttribute('data-disable-recharge')) {
+						e.preventDefault();
+						reChargeSaveCartNoteAndRedirectToCart();
+
+						window.location.href = reChargeProcessCart2();
+					} else {
+						console.info('ReCharge disabled');
+					}
+				});
+			}
+			// Check if jQuery is added, if not, then we'll loadScript, otherwise, run reChargeJS
+			if ((typeof(jQuery) == 'undefined') || (parseInt(jQuery.fn.jquery) == 1 && parseFloat(jQuery.fn.jquery.replace(/^1\./,"")) < 7.2)) {
+				// We'll get our jQuery from Google APIs
+				loadScript('//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js', function() {
+					jQuery172 = jQuery.noConflict(true);
+					reChargeThemeFooterJS(jQuery172);
+				});
+			} else {
+				reChargeThemeFooterJS(jQuery);
+			}
+		})();
+
+		function reChargeProcessCart2() {
+
+			var has_subscription_product = false;
+
+			$.ajax({
+				url: '/cart',
+				dataType: 'json',
+				async: false,
+				success: function(results) {
+					$.each(results.items, function (i, item) {
+						if( !has_subscription_product ){
+							if(item.properties!== null){
+							$.each(item.properties, function (j, property) {
+								if(j=='shipping_interval_frequency'){
+									has_subscription_product = true;
+								}          
+							});
+						}
+					}  
+					
+				});
+				}
+			});
+ 
+			
+			let additional_params = '';
+			if(Cookies.get('discount')) {
+				additional_params+='?discount='+ Cookies.get('discount') +''
+			}
+
+			function get_cookie(name){ return( document.cookie.match('(^|; )'+name+'=([^;]*)')||0 )[2] }
+			do {
+							token=get_cookie('cart');
+			}
+			while(token == undefined);
+			var myshopify_domain='catalystpet.myshopify.com';
+			console.log(myshopify_domain);
+		
+			try { var ga_linker = ga.getAll()[0].get('linkerParam') } catch(err) { var ga_linker ='' }
+			checkout_url= "https://checkout.rechargeapps.com/r/checkout?myshopify_domain="+myshopify_domain+"&cart_token="+token+"&"+ga_linker+additional_params;
+			
+			if(!has_subscription_product) {
+				checkout_url = '/checkout'
+			}
+		
+			return '/checkout';
+		}
+
+	</script>
+{% endif %}
+<!-- Subscriptions Powered by ReCharge Payments: End Liquid Code -->

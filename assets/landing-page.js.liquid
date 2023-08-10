@@ -1,0 +1,461 @@
+class LandingPage {
+    step = 1;
+    
+    selectedScent = {title: "Healthy cat", value: "healthy-cat", handle: "cat-litter-healthy-cat-formula"};
+    selectedCats = 1;
+    selectedWeigth = null;
+    selectedInterval = 1;
+    availableScents = [
+        {title: "Healthy cat", value: "healthy-cat", handle: "cat-litter-healthy-cat-formula"}, 
+        {title: "Multi cat", value: "multi-cat", handle: "cat-litter-multi-cat-formula"}, 
+        {title: "Unscented", value: "unscented", handle: "cat-litter-unscented-formula"}
+    ];
+
+    selectedSubscriptionOption = null;
+    subOptionsContainer = document.querySelector(".sub-options__container");
+    formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        maximumFractionDigits: 2
+    });
+    
+    constructor(subscriptionOptions) {
+        this.subscriptionOptions = subscriptionOptions;
+    }
+
+    showAvailableScents() {
+        let list = ""
+
+        this.availableScents.forEach((cat, index) => {
+            list += `
+                <input 
+                    type="radio" 
+                    id="${cat.value}-checkbox" 
+                    value="${index}"
+                    name="scents" 
+                    ${cat.value === this.selectedScent.value ? "checked" : ""} 
+                    onchange="landingPage.changeSelectedScent(this.value)"
+                />
+                <label class="sub-options__item" for="${cat.value}-checkbox">
+                    <img src="//cdn.shopify.com/s/files/1/0252/0806/2004/files/${cat.value}_new.png" alt="" />
+                    ${cat.title}
+                </label>
+            `
+        })
+
+        const template = `
+            <img class="sub-options__step-image" src="{{'popup-step1.png' | asset_url}}" alt="" />
+            <span class="sub-options__step-text">Step ${this.step} of 3</span>
+            <h4 class="sub-options__title">Choose your scent profile</h4>
+
+            <div class="sub-options__list">
+                ${list}
+            </div>
+            <div class="sub-options__btns">
+                <button class="sub-options__btn-prev"><img src="{{'icon-arrow-next.png' | asset_url}}" alt="" /></button>
+                <button class="sub-options__btn-next" onclick="landingPage.showNumberOfCatsSelector()">Next <img src="{{'icon-arrow-next.png' | asset_url}}" alt="" /></button>
+            </div>
+        `
+
+        this.subOptionsContainer.innerHTML = template;
+    }
+
+    showNumberOfCatsSelector() {
+        this.step = 2;
+        this.selectedWeigth = null;
+        
+        const data = [1, 2, 3];
+        
+        let list = "";
+
+        data.forEach(num => {
+            list += `
+                <input id="cat-selector-${num}" type="radio" value="${num}" name="cat-selector" ${this.selectedCats == num ? "checked" : ""} onchange="landingPage.changeSelectedCatCount(this.value)"/>
+                <label class="sub-options__item" for="cat-selector-${num}">${num}</label>
+            `
+        })
+
+        const catCounter = document.createElement('div');
+        catCounter.classList.add('sub-options__quantity-counter');
+        if (this.selectedCats > 3) catCounter.classList.add('active');
+        catCounter.innerHTML = `
+            <button class="quantity-counter__button" data-action="decrement" disabled onclick="landingPage.changeSelectCatQuantity(this)">-</button>
+            <span id="number-of-cats-manual-value" onclick="landingPage.selectCatQuantity()">${this.selectedCats > 3 ? this.selectedCats : 4}</span>
+            <button class="quantity-counter__button" data-action="increment" onclick="landingPage.changeSelectCatQuantity(this)">+</button>
+        `
+
+        const template = `
+            <img class="sub-options__step-image" style="margin-top: 114px" src="{{'popup-step2.png' | asset_url}}" alt="" />
+            <span class="sub-options__step-text">Step ${this.step} of 3</span>
+
+            <div class="sub-options__selected-scent">
+                <p class="selected-scent__heading">Scent profile</p>
+
+                <div class="selected-scent__box">
+                    <img class="selected-scent__image" src="//cdn.shopify.com/s/files/1/0252/0806/2004/files/${this.selectedScent.value}_new.png" alt="" />
+                    <p class="selected-scent__title">${this.selectedScent.title}</p>
+                </div>
+            </div>
+
+            <h4 class="sub-options__title sub-options__title--cat-selector" >How many cats do you have?</h4>
+
+            <div class="sub-options__cat-selector">
+                ${list}
+                ${catCounter.outerHTML}
+            </div>
+
+            <div class="sub-options__btns">
+                <button class="sub-options__btn-prev" onclick="landingPage.showAvailableScents()"><img src="{{'icon-arrow-next.png' | asset_url}}" alt="" /></button>
+                <button class="sub-options__btn-next" onclick="landingPage.showSubscriptionOptions()">Next <img src="{{'icon-arrow-next.png' | asset_url}}" alt="" /></button>
+            </div>
+
+        `
+        this.subOptionsContainer.innerHTML = template;
+    }
+
+    showSubscriptionOptions() {
+        this.step = 3
+
+        let list = ``;
+
+        const ecoBox = `
+            <div class="eco-box">
+                <div class="tooltip">
+                    <img src="{{ 'eco.svg' | asset_url }}" alt="" />
+                    <div class="text">
+                        More bags delivered at once cuts down on packing materials and transportation emissions. As an EcoHero, you can both save money <i>and</i> reduce environmental impact. Paw-some!
+                    </div>
+                    <div class="square"></div>
+                </div>
+                <span class="eco-label">Eco</span>
+            </div>
+        `
+
+        for (let index in this.subscriptionOptions[`cat_${this.selectedCats}`]) {
+            const option = this.subscriptionOptions[`cat_${this.selectedCats}`][index];
+
+            if (!this.selectedWeigth && index == 0) {
+                this.selectedWeigth = option.weight;
+                this.selectedInterval = option.interval;
+                this.selectedSubscriptionOption = {
+                    weight: option.weight,
+                    interval: option.interval,
+                    pricePerDelivery: option.pricePerDelivery,
+                    pricePerMonth: option.pricePerMonth
+                }
+            } 
+            
+            list += `
+                <input 
+                    type="radio" 
+                    name="sub-options" 
+                    hidden 
+                    id="sub-option-${option.weight}" 
+                    onchange="landingPage.changeSubAndSaveOption('${option.weight}', '${option.interval}', '${option.pricePerDelivery}', '${option.pricePerMonth}')" 
+                    ${option.weight == this.selectedWeigth ? 'checked' : ''}
+                />
+                <label class="product-selector__item" for="sub-option-${option.weight}">
+                    ${option.eco ? ecoBox : ''}
+
+                    <div class="weight">
+                        <span class="heading">${option.weight}lb</span>
+                        <span class="paragraph">Every ${option.interval === 1 ? "" : option.interval} Month${option.interval > 1 ? "s" : ""}</span>
+                    </div>
+                    <div class="price">
+                        <span class="heading">
+                            ${this.formatter.format(option.pricePerDelivery)}
+                        </span>
+                        <span class="paragraph">
+                            ${this.formatter.format(option.pricePerMonth)}/month
+                        </span>
+                    </div>
+                </label>
+            `
+        }
+
+        const template = `
+            <img class="sub-options__step-image" style="margin-top: 114px" src="{{'popup-step3.png' | asset_url}}" alt="" />
+            <span class="sub-options__step-text">Step ${this.step} of 3</span>
+
+            <div class="sub-options__selected-options-container">
+                <div class="sub-options__selected-scent">
+                    <p class="selected-scent__heading">Scent profile</p>
+
+                    <div class="selected-scent__box">
+                        <img class="selected-scent__image" src="//cdn.shopify.com/s/files/1/0252/0806/2004/files/${this.selectedScent.value}_new.png" alt="" />
+                        <p class="selected-scent__title">${this.selectedScent.title}</p>
+                    </div>
+                </div>
+
+                <div class="sub-options__selected-scent">
+                    <p class="selected-scent__heading">Number of cats</p>
+
+                    <div class="selected-scent__box">
+                        <p class="selected-scent__title">${this.selectedCats} ${this.selectedCats > 1 ? 'cats' : 'cat'}</p>
+                    </div>
+                </div>
+            </div>
+
+            <h4 class="sub-options__title sub-options__title--cat-selector" >How many cats do you have?</h4>
+
+            <div class="sub-options__product-selector">
+                ${list}
+            </div>
+
+            <div class="sub-options__btns">
+                <button class="sub-options__btn-prev" onclick="landingPage.showNumberOfCatsSelector()"><img src="{{'icon-arrow-next.png' | asset_url}}" alt="" /></button>
+                <button class="sub-options__btn-next" onclick="landingPage.showRecommendedProduct()">See Your Result <img src="{{'icon-arrow-next.png' | asset_url}}" alt="" /></button>
+            </div>
+
+        `
+        this.subOptionsContainer.innerHTML = template;
+    }
+
+    async showRecommendedProduct() {
+        const request = await fetch('/products/' + this.selectedScent.handle + '?view=product-metafields.json');
+        const response = await request.json();
+
+        const selectedVariantIndex = response.productVariants.findIndex(variant => variant.title == this.selectedWeigth + "lbs");
+        const selectedVariant = response.productVariants[selectedVariantIndex];
+        const rechargeVariantId = response.productVariantDiscountCodes[selectedVariant.id];
+
+        const template = `
+            <img class="sub-options__step-image" style="margin-top: 114px" src="{{'popup-step4.png' | asset_url}}" alt="" />
+
+            <h4 class="sub-options__title sub-options__title--cat-selector" >We Recommend</h4>
+
+            <div class="sub-options__recommended-product">
+                <img class="recommended-product__image" src="${response.productFeaturedImage}" alt="" />
+
+                <div class="recommended-product__details">
+                    <h4>${response.productTitle}</h4>
+                    <p>For ${this.selectedCats} ${this.selectedCats > 1 ? 'cats' : 'cat'}</p>
+
+                    <div class="recommended-product__delivery-details">
+                        <div class="delivery-details__row">
+                            <span>${this.selectedSubscriptionOption.weight}lbs</span>
+                            <span>Every ${this.selectedSubscriptionOption.interval} ${this.selectedSubscriptionOption.interval > 1 ? 'Months' : 'Month'}</span>
+                        </div>
+                        <div class="delivery-details__row">
+                            <span>${this.formatter.format(this.selectedSubscriptionOption.pricePerDelivery)}</span>
+                            <span>${this.formatter.format(this.selectedSubscriptionOption.pricePerMonth)}/Month</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-options__btns">
+                <button class="sub-options__btn-prev btn-next--subscribe" onclick="landingPage.showSubscriptionOptions()"><img src="{{'icon-arrow-next.png' | asset_url}}" alt="" /></button>
+                <button class="sub-options__btn-next btn-next--subscribe" onclick="landingPage.addSubscriptionProductToCart('${rechargeVariantId}')"><span>Subscribe</span> <span>${this.formatter.format(this.selectedSubscriptionOption.pricePerDelivery)} every ${this.selectedSubscriptionOption.interval} ${this.selectedSubscriptionOption.interval > 1 ? 'months' : 'month'} </span></button>
+            </div>
+        `
+        this.subOptionsContainer.innerHTML = template;
+    }
+
+    changeSelectedScent(index) {
+        this.selectedScent = this.availableScents[index]
+    }
+
+    changeSelectedCatCount(value) {
+        const quantityContainer = document.querySelector(".sub-options__quantity-counter");
+        quantityContainer.classList.remove('active');
+
+        this.selectedCats = value
+    }
+
+    selectCatQuantity() {
+        const catSelectorCheckboxes = document.querySelectorAll('input[name="cat-selector"]');
+        catSelectorCheckboxes.forEach(checkbox => checkbox.checked = false);
+
+        const quantityContainer = document.querySelector(".sub-options__quantity-counter");
+        quantityContainer.classList.add('active');
+
+        const quantityContainerValue = document.getElementById("number-of-cats-manual-value").textContent;
+        this.selectedCats = parseInt(quantityContainerValue);
+    }
+
+    changeSelectCatQuantity(element) {
+        const { action } = element.dataset;
+        const quantityContainerValue = document.getElementById("number-of-cats-manual-value");
+        const quantityCounterButton = document.querySelectorAll(".quantity-counter__button");
+
+        this.selectCatQuantity();
+
+        if (action === 'increment') {
+
+            if (this.selectedCats < 4) {
+                this.selectedCats = parseInt(quantityContainerValue.textContent);
+            }
+            
+            this.selectedCats += 1;
+            quantityContainerValue.textContent = this.selectedCats;
+
+            if (this.selectedCats > 4) {
+                quantityCounterButton[0].removeAttribute('disabled');
+            }
+
+            if (this.selectedCats + 1 === 9) {
+                quantityCounterButton[1].setAttribute('disabled', true);
+            }
+        }
+
+        if (action === 'decrement') {
+            if (this.selectedCats < 4) {
+                this.selectedCats = parseInt(quantityContainerValue.textContent);
+            }
+            
+            this.selectedCats -=  1;
+            quantityContainerValue.textContent = this.selectedCats;
+
+            if (this.selectedCats === 4) {
+                quantityCounterButton[0].setAttribute('disabled', true);
+            };
+
+            if (this.selectedCats < 8) {
+                quantityCounterButton[1].removeAttribute('disabled');
+            };
+        }
+
+    }
+
+    changeSubAndSaveOption(weight, interval, pricePerDelivery, pricePerMonth) {
+        this.selectedWeigth = weight;
+        this.selectedInterval = interval;
+        this.selectedSubscriptionOption = {
+            weight: weight,
+            interval: interval,
+            pricePerDelivery: pricePerDelivery,
+            pricePerMonth: pricePerMonth
+        }
+    }
+
+    async addSubscriptionProductToCart(variantId) {
+        let canAdd = true;
+        
+        const cartItems = await modalCart.getItems();
+        const filteredVariants = cartItems.items.filter((item) => item.id == variantId);
+        filteredVariants.forEach(item => {
+            if (item.properties.shipping_interval_frequency == this.selectedInterval) {
+                canAdd = false;
+            }
+        })
+        
+        if (!canAdd) {
+            modalCart.toggleCart();
+            return;
+        }
+
+        const formData = {
+            id: variantId,
+            quantity: 1,
+            properties: {
+                shipping_interval_frequency: this.selectedInterval,
+                shipping_interval_unit_type: "months"
+            }
+        }
+        
+        modalCart.addItem(formData).then((res) => modalCart.toggleCart())
+    }
+}
+
+const subscriptionOptions = {
+    cat_1: [
+        {
+            weight: 10,
+            pricePerDelivery: 19,
+            pricePerMonth: 19,
+            interval: 1
+        },
+        {
+            weight: 20,
+            pricePerDelivery: 28.50,
+            pricePerMonth: 14.25,
+            interval: 2
+        },
+        {
+            weight: 40,
+            pricePerDelivery: 49.40,
+            pricePerMonth: 12.25,
+            interval: 4,
+            eco: true
+        }
+    ],
+    cat_2: [
+        {
+            weight: 20,
+            pricePerDelivery: 28.50,
+            pricePerMonth: 28.50,
+            interval: 1
+        },
+        {
+            weight: 40,
+            pricePerDelivery: 49.40,
+            pricePerMonth: 24.70,
+            interval: 2,
+            eco: true
+        }
+    ],
+    cat_3: [
+        {
+            weight: 30,
+            pricePerDelivery: 39.90,
+            pricePerMonth: 39.90,
+            interval: 1
+        },
+        {
+            weight: 60,
+            pricePerDelivery: 74.10,
+            pricePerMonth: 37.05,
+            interval: 2,
+            eco: true
+        }
+    ],
+    cat_4: [
+        {
+            weight: 40,
+            pricePerDelivery: 49.90,
+            pricePerMonth: 49.90,
+            interval: 1,
+            eco: true
+        }
+    ],
+    cat_5: [
+        {
+            weight: 50,
+            pricePerDelivery: 61.75,
+            pricePerMonth: 61.75,
+            interval: 1,
+            eco: true
+        }
+    ],
+    cat_6: [
+        {
+            weight: 60,
+            pricePerDelivery: 74.10,
+            pricePerMonth: 74.10,
+            interval: 1,
+            eco: true
+        }
+    ],
+    cat_7: [
+        {
+            weight: 70,
+            pricePerDelivery: 86.45,
+            pricePerMonth: 86.45,
+            interval: 1,
+            eco: true
+        }
+    ],
+    cat_8: [
+        {
+            weight: 80,
+            pricePerDelivery: 98.80,
+            pricePerMonth: 98.80,
+            interval: 1,
+            eco: true
+        }
+    ],
+}
+
+
+const landingPage = new LandingPage(subscriptionOptions);

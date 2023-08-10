@@ -1,0 +1,456 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Catalyst",
+    "theme_author": "Sellry",
+    "theme_version": "1.2.11",
+    "theme_documentation_url": "http:\/\/www.sellry.com\/",
+    "theme_support_url": "http:\/\/www.sellry.com\/"
+  },
+  {
+    "name": "General",
+    "settings": [
+      {
+        "type": "select",
+        "id": "instagram_style",
+        "label": "Instagram Style",
+        "options": [
+          {
+            "value": "default-style",
+            "label": "Default"
+          },
+          {
+            "value": "accent-style",
+            "label": "Accent"
+          },
+          {
+            "value": "contrast-style",
+            "label": "Contrast"
+          }
+        ],
+        "default": "default-style"
+      },
+      {
+        "type": "text",
+        "id": "instagram_token",
+        "label": "Instagram Token",
+        "info": "Get your [access token](http:\/\/instagram.pixelunion.net)."
+      },
+      {
+        "type": "text",
+        "id": "instagram_user",
+        "label": "Instagram User"
+      }
+    ]
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background-color",
+        "label": "Background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "body-text-color",
+        "label": "Body text",
+        "default": "#24254e"
+      },
+      {
+        "type": "color",
+        "id": "accent-color",
+        "label": "Accent",
+        "default": "#e95200"
+      },
+      {
+        "type": "color",
+        "id": "heading-color",
+        "label": "Heading",
+        "default": "#24254e"
+      },
+      {
+        "type": "color",
+        "id": "border-color",
+        "label": "Border",
+        "default": "#f0eff2"
+      },
+      {
+        "type": "color",
+        "id": "primary-button-color",
+        "label": "Button text",
+        "default": "#fff6eb"
+      },
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "color",
+        "id": "header-link-color",
+        "label": "Link color",
+        "default": "#24254e"
+      },
+      {
+        "type": "color",
+        "id": "header-dropdown-color",
+        "label": "Dropdown color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Forms"
+      },
+      {
+        "type": "color",
+        "id": "form-select-background",
+        "label": "Dropdown background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "form-select-color",
+        "label": "Dropdown text",
+        "default": "#1d1b44"
+      },
+      {
+        "type": "color",
+        "id": "form-select-border-color",
+        "label": "Dropdown border",
+        "default": "#f0eff2"
+      },
+      {
+        "type": "header",
+        "content": "Footer"
+      },
+      {
+        "type": "color",
+        "id": "footer-background-color",
+        "label": "Background",
+        "default": "#1d1b44"
+      },
+      {
+        "type": "color",
+        "id": "footer-header-color",
+        "label": "Heading",
+        "default": "#e84d37"
+      },
+      {
+        "type": "color",
+        "id": "footer-accent-color",
+        "label": "Accent",
+        "default": "#fff6eb"
+      }
+    ]
+  },
+  {
+    "name": "Backgrounds",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Main background"
+      },
+      {
+        "type": "image_picker",
+        "id": "body_background_image",
+        "label": "Background image",
+        "info": "1920 x 1920px .jpg recommended"
+      },
+      {
+        "type": "header",
+        "content": "Contrast background"
+      },
+      {
+        "type": "image_picker",
+        "id": "contrast_background_image",
+        "label": "Background image",
+        "info": "1920 x 1920px .jpg recommended"
+      },
+      {
+        "type": "header",
+        "content": "Footer background"
+      },
+      {
+        "type": "image_picker",
+        "id": "footer_background_image",
+        "label": "Background image",
+        "info": "1920 x 400px .jpg recommended"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "font_body",
+        "label": "Base text",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "header",
+        "content": "Store title"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_logo",
+        "label": "Font",
+        "default": "helvetica_n7"
+      },
+      {
+        "type": "checkbox",
+        "id": "font_logo_capitalize",
+        "label": "Capitalize",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Headings"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_heading",
+        "label": "Font",
+        "default": "helvetica_n7"
+      },
+      {
+        "type": "checkbox",
+        "id": "font_heading_capitalize",
+        "label": "Capitalize",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Section Titles"
+      },
+      {
+        "type": "checkbox",
+        "id": "font_section_heading_bold",
+        "label": "Bold",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "font_section_heading_capitalize",
+        "label": "Capitalize",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Captions"
+      },
+      {
+        "type": "checkbox",
+        "id": "font_meta_bold",
+        "label": "Bold",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "font_meta_capitalize",
+        "label": "Capitalize",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Buttons"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_button",
+        "label": "Font",
+        "default": "helvetica_n7"
+      },
+      {
+        "type": "checkbox",
+        "id": "font_button_capitalize",
+        "label": "Capitalize",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Breadcrumbs",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "breadcrumbs_enable",
+        "label": "Show breadcrumbs",
+        "default": false
+      }
+    ]
+  },
+  {
+    "name": "Product grid",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "product_show_vendor",
+        "label": "Show names of vendors",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Stock level indicator"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_stock_overlay",
+        "label": "Show product stock overlay",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "product_stock_overlay_show",
+        "label": "Show when stock is lower than:",
+        "min": 2,
+        "max": 10,
+        "step": 1,
+        "default": 5
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "social_default_image",
+        "label": "Default social sharing image",
+        "info": "The image shown when sharing a link if a page-specific image isn't available"
+      },
+      {
+        "type": "header",
+        "content": "Accounts"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook_url",
+        "label": "Facebook",
+        "info": "http:\/\/facebook.com\/pixelunion"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_url",
+        "label": "Twitter",
+        "info": "http:\/\/twitter.com\/pixelunion"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest_url",
+        "label": "Pinterest",
+        "info": "https:\/\/www.pinterest.com\/pixelunion"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_url",
+        "label": "Instagram",
+        "info": "https:\/\/instagram.com\/pixelunion"
+      },
+      {
+        "type": "text",
+        "id": "social_vimeo_url",
+        "label": "Vimeo",
+        "info": "https:\/\/vimeo.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube_url",
+        "label": "YouTube",
+        "info": "https:\/\/www.youtube.com\/user\/PixelUnionThemes"
+      },
+      {
+        "type": "text",
+        "id": "social_rss_url",
+        "label": "RSS",
+        "info": "http:\/\/your-store.myshopify.com\/blogs\/news.atom (Your shop's blog's RSS is already available from the blog page)"
+      }
+    ]
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon image",
+        "info": "32px x 32px .png required"
+      }
+    ]
+  },
+  {
+    "name": "Currency",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_currency_converter",
+        "label": "Enable currency conversion",
+        "default": true,
+        "info": "Even though prices are displayed in different currencies, orders will still be processed in your store's currency."
+      },
+      {
+        "type": "select",
+        "id": "currency_display_format",
+        "label": "Format",
+        "options": [
+          {
+            "value": "money_format",
+            "label": "Without currency ($10.00)"
+          },
+          {
+            "value": "money_with_currency_format",
+            "label": "With currency ($10.00 CAD)"
+          }
+        ],
+        "default": "money_with_currency_format"
+      },
+      {
+        "type": "text",
+        "id": "currency_converter_currencies",
+        "label": "Supported currencies",
+        "default": "INR GBP CAD USD AUD EUR JPY",
+        "info": "Use the country's ISO [currency code](http:\/\/www.xe.com\/iso4217.php). Separate your currency codes with a space."
+      },
+      {
+        "type": "text",
+        "id": "currency_converter_default",
+        "label": "Default currency",
+        "default": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Sidecart upsell",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "side_cart_enable",
+        "label": "Enable sidecart upsell?",
+        "default": true
+      },
+      {
+        "type": "product",
+        "id": "side_cart_product",
+        "label": "Sidecart product"
+      },
+      {
+        "type": "image_picker",
+        "id": "side_cart_product_image",
+        "label": "Sidecart product image"
+      },
+      {
+        "type": "text",
+        "id": "side_cart_title",
+        "label": "Upsell title",
+        "default": "Add to your order"
+      },
+      {
+        "type": "richtext",
+        "id": "side_cart_description",
+        "label": "Upsell description",
+        "default": "<p>This premium scoop is a high quality, durable scoop with a wider frame to allow for easier sifting.<\/p>"
+      }
+    ]
+  }
+]

@@ -1,0 +1,2558 @@
+{
+  "current": {
+    "instagram_style": "accent-style",
+    "instagram_token": "16740447541.1677ed0.be7199c09856427495cc8fc1bc4fb554",
+    "instagram_user": "catalystpet",
+    "background-color": "#ffffff",
+    "body-text-color": "#006b42",
+    "accent-color": "#cc9900",
+    "heading-color": "#003000",
+    "border-color": "#003000",
+    "primary-button-color": "#fff6eb",
+    "header-link-color": "#ddad26",
+    "header-dropdown-color": "#ddad26",
+    "form-select-background": "#ffffff",
+    "form-select-color": "#1d1b44",
+    "form-select-border-color": "#f0eff2",
+    "footer-background-color": "#cc9a00",
+    "footer-header-color": "#ffffff",
+    "footer-accent-color": "#ffffff",
+    "body_background_image": "",
+    "contrast_background_image": "",
+    "footer_background_image": "",
+    "font_body": "domine_n7",
+    "font_logo": "futura_n5",
+    "font_logo_capitalize": true,
+    "font_heading": "futura_n7",
+    "font_heading_capitalize": true,
+    "font_section_heading_bold": false,
+    "font_section_heading_capitalize": true,
+    "font_meta_bold": true,
+    "font_meta_capitalize": true,
+    "font_button": "futura_n7",
+    "font_button_capitalize": true,
+    "breadcrumbs_enable": false,
+    "product_show_vendor": false,
+    "product_stock_overlay": false,
+    "product_stock_overlay_show": 5,
+    "social_default_image": "shopify:\/\/shop_images\/back_take_2_6.png",
+    "social_facebook_url": "https:\/\/facebook.com\/catalystpet",
+    "social_twitter_url": "https:\/\/twitter.com\/catalystpet.com",
+    "social_pinterest_url": "https:\/\/www.pinterest.com\/catalystpet",
+    "social_instagram_url": "https:\/\/instagram.com\/catalystpet",
+    "social_vimeo_url": "",
+    "social_youtube_url": "",
+    "social_rss_url": "",
+    "favicon": "shopify:\/\/shop_images\/armless_cat_ico.png",
+    "enable_currency_converter": false,
+    "currency_display_format": "money_format",
+    "currency_converter_currencies": "INR GBP CAD USD AUD EUR JPY",
+    "currency_converter_default": "USD",
+    "side_cart_product": "scoop",
+    "side_cart_product_image": "shopify:\/\/shop_images\/scoop_upsell.jpg",
+    "checkout_header_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/Catalyst_Logo-06_sm_300x90_ee321100-bdad-4acc-ad1e-54290f74f4f5.png",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#f8f6ed",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#027747",
+    "checkout_button_color": "#cc9a00",
+    "checkout_error_color": "#e32c2b",
+    "header-show-breadcrumbs": false,
+    "contrast-background-color": "#FAF7F6",
+    "error-color": "#B84949",
+    "meta-color": "#b7aba3",
+    "sections": {
+      "module-product": {
+        "type": "module-product",
+        "blocks": {
+          "4df707f5-7f40-4281-9a18-e2345b114543": {
+            "type": "additional_logo",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/cat-logo1.png"
+            }
+          },
+          "936194c7-1a95-4d46-9074-137642d3449d": {
+            "type": "additional_logo",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/cat-logo2.png"
+            }
+          },
+          "d90283fa-20c9-4d85-acf3-2659f25f5cc3": {
+            "type": "additional_logo",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/cat-logo3.png"
+            }
+          },
+          "06eb063d-7539-4bf9-a341-1f48fcba3f58": {
+            "type": "additional_logo",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/cat-logo4.png"
+            }
+          },
+          "90cca654-5dc3-42db-994a-ccbfa1ae6c66": {
+            "type": "additional_logo",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/cat-logo5.png"
+            }
+          },
+          "5f9307cc-caf3-4f8d-83b6-3cfc33ff11a9": {
+            "type": "feature",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Group.png",
+              "title": "<p>4x <br> absorption<\/p>"
+            }
+          },
+          "2da53795-d87c-40bf-b143-b27996530a4c": {
+            "type": "feature",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Vector.png",
+              "title": "<p>Low <br> dust<\/p>"
+            }
+          },
+          "7ff25ddf-b493-433d-93e1-eefec0df9d7f": {
+            "type": "feature",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Vector_1.png",
+              "title": "<p>unrivaled <br> cat acceptance<\/p>"
+            }
+          },
+          "15bfb5db-ab20-4d98-a683-a8a0fe8b83b8": {
+            "type": "feature",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Vector_2.png",
+              "title": "<p>Great <br> clumping<\/p>"
+            }
+          },
+          "7b757dd4-b93c-4173-a4de-176fce2a4d3e": {
+            "type": "feature",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Vector_3.png",
+              "title": "<p>Superior <br>  odor control<\/p>"
+            }
+          },
+          "f5cbbfb9-cdf2-4411-9c96-839e8d4b87db": {
+            "type": "feature",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Vector_4.png",
+              "title": "<p>Light <br> weight<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "4df707f5-7f40-4281-9a18-e2345b114543",
+          "936194c7-1a95-4d46-9074-137642d3449d",
+          "d90283fa-20c9-4d85-acf3-2659f25f5cc3",
+          "06eb063d-7539-4bf9-a341-1f48fcba3f58",
+          "90cca654-5dc3-42db-994a-ccbfa1ae6c66",
+          "5f9307cc-caf3-4f8d-83b6-3cfc33ff11a9",
+          "2da53795-d87c-40bf-b143-b27996530a4c",
+          "7ff25ddf-b493-433d-93e1-eefec0df9d7f",
+          "15bfb5db-ab20-4d98-a683-a8a0fe8b83b8",
+          "7b757dd4-b93c-4173-a4de-176fce2a4d3e",
+          "f5cbbfb9-cdf2-4411-9c96-839e8d4b87db"
+        ],
+        "settings": {
+          "show_spb": false,
+          "second_step_promo": true,
+          "second_step_promo_text": "Take 50% off your first subscription order with code 'REVOLUTION50'",
+          "product_cart_redirect": false,
+          "center_product_details": false,
+          "enable_zoom": false,
+          "product_show_vendor": false,
+          "linked_options": true,
+          "variants_style": "radio",
+          "single_column_product": false,
+          "show_share_buttons": false
+        }
+      },
+      "home-slideshow": {
+        "type": "home-slideshow",
+        "blocks": {
+          "1564419180255": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/catalystbackgroundwlogo2.jpg",
+              "alignment": "center",
+              "title": "Make the Right Choice",
+              "subtitle": "",
+              "caption": "<p>Catalyst makes the right choice the easy choice.<\/p><p><\/p><p><\/p>",
+              "button": "Buy Catalyst",
+              "link": "shopify:\/\/products\/cat-litter-healthy-cat-formula"
+            }
+          }
+        },
+        "block_order": [
+          "1564419180255"
+        ],
+        "settings": {
+          "enable": false,
+          "show_shadows": true,
+          "text_color": "#dcd6b1",
+          "slideshow_layout": "full-width",
+          "slideshow_transition": "transition-fade",
+          "autoplay": false,
+          "frequency": 6
+        }
+      },
+      "general-footer": {
+        "type": "general-footer",
+        "settings": {
+          "show_menu_heading": false,
+          "menu_1": "footer",
+          "show_locator_page": true,
+          "locator_page": "store-locator",
+          "menu_2": "",
+          "show_social_buttons": false,
+          "social_heading": "Social links",
+          "address": "<p>1075 E. South Boulder Rd, Ste #200<br\/>Louisville, CO 80027<br\/><strong>Call us <\/strong><span style=\"text-decoration:underline\"><strong>1-844-5-LITTER<\/strong><\/span><\/p>",
+          "show_share_buttons": true,
+          "sharing_heading": "Share the revolution",
+          "sharing_description": "",
+          "enable_twitter": true,
+          "enable_facebook": true,
+          "enable_instagram": true,
+          "show_payment_icons": false
+        }
+      },
+      "1532492491152": {
+        "type": "home-featured-product",
+        "disabled": true,
+        "blocks": {
+          "1534960350998": {
+            "type": "additional_info",
+            "settings": {
+              "info_text": "",
+              "info_url": "",
+              "info_icon": "info"
+            }
+          }
+        },
+        "block_order": [
+          "1534960350998"
+        ],
+        "settings": {
+          "style": "default-style",
+          "title": "Featured product",
+          "product": "",
+          "description": "<p>Tell customers about the look, feel, and style of your product. Add details on color, materials, sizing, and where it was made.<\/p>",
+          "show_spb": true,
+          "product_cart_redirect": true,
+          "enable_zoom": true,
+          "product_show_vendor": false,
+          "linked_options": false,
+          "variants_style": "select"
+        }
+      },
+      "1532447919778": {
+        "type": "home-logo-list",
+        "disabled": true,
+        "blocks": {
+          "1532447919778-3": {
+            "type": "logo",
+            "settings": {
+              "url": ""
+            }
+          },
+          "1532447919778-2": {
+            "type": "logo",
+            "settings": {
+              "url": ""
+            }
+          },
+          "1532447919778-1": {
+            "type": "logo",
+            "settings": {
+              "url": ""
+            }
+          },
+          "1532447919778-0": {
+            "type": "logo",
+            "settings": {
+              "url": ""
+            }
+          }
+        },
+        "block_order": [
+          "1532447919778-3",
+          "1532447919778-2",
+          "1532447919778-1",
+          "1532447919778-0"
+        ],
+        "settings": {
+          "style": "default-style",
+          "title": "",
+          "logos_in_rows": 4
+        }
+      },
+      "1532493094416": {
+        "type": "home-alternating-content",
+        "disabled": true,
+        "blocks": {
+          "1532493094416-0": {
+            "type": "image",
+            "settings": {
+              "media_alignment": "left",
+              "title": "The highest performing, sustainable cat litter available",
+              "caption": "Catalyst shines in all the ways a great litter should so you can give your cat the best while doing your best for the planet.",
+              "button_text": "Try It Now",
+              "button_link": "shopify:\/\/products\/cat-litter-healthy-cat-formula",
+              "image": "shopify:\/\/shop_images\/Catalyst_Healthy_Cat_Bag_FrontWeb.png"
+            }
+          },
+          "1532493212153": {
+            "type": "image",
+            "settings": {
+              "media_alignment": "right",
+              "title": "Better Living, Healthier Cat",
+              "caption": "Kiss the putrid odor of clay litter behind and provide a safer, healthier solution for your cat.",
+              "button_text": "Make the Change Now",
+              "button_link": "shopify:\/\/products\/cat-litter-healthy-cat-formula",
+              "image": "shopify:\/\/shop_images\/CatalystCatLitterCat750x610.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "1532493094416-0",
+          "1532493212153"
+        ],
+        "settings": {
+          "style": "default-style",
+          "title": "",
+          "show_borders": false
+        }
+      },
+      "1532492436211": {
+        "type": "pxs-newsletter",
+        "disabled": true,
+        "settings": {
+          "title": "Join the Revolution",
+          "text": "<p>Join us as we overthrow the clay litter aisle.<\/p>",
+          "image": "shopify:\/\/shop_images\/CatalystCatLitterEmailImageNarrow.jpg",
+          "desktop_alignment": "left",
+          "mobile_alignment": "top"
+        }
+      },
+      "1532448025563": {
+        "type": "home-text-columns-with-images",
+        "disabled": true,
+        "blocks": {
+          "1532448025563-0": {
+            "type": "text_column",
+            "settings": {
+              "title": "Cat Acceptance",
+              "caption": "<p>Unrivaled cat acceptance. Paw perfect feel.<\/p>",
+              "button_text": "",
+              "button_link": ""
+            }
+          },
+          "1532448025563-1": {
+            "type": "text_column",
+            "settings": {
+              "title": "Odor Control",
+              "caption": "<p>Outperforms clay and other naturals with patented formulation.<\/p>",
+              "button_text": "",
+              "button_link": ""
+            }
+          },
+          "1532448025563-2": {
+            "type": "text_column",
+            "settings": {
+              "title": "Great Clumping",
+              "caption": "<p>Solid clumps for easy removal and a cleaner and healthier litter box.<\/p>",
+              "button_text": "",
+              "button_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1532448025563-0",
+          "1532448025563-1",
+          "1532448025563-2"
+        ],
+        "settings": {
+          "style": "default-style",
+          "title": "Catalyst Performance",
+          "max_image_width": 44
+        }
+      },
+      "general-header": {
+        "type": "general-header",
+        "settings": {
+          "header_sticky": false,
+          "show_cart": true,
+          "show_search": false,
+          "header_logo": "shopify:\/\/shop_images\/Catalyst_Logo-06_sm_300x90.png",
+          "menu": "main-menu-updated",
+          "menu_style": "header",
+          "color_override": "default",
+          "header_logo_alternate": "shopify:\/\/shop_images\/Catalyst_Logo-06_sm_300x90.png",
+          "show_promotion": true,
+          "promotion_home_only": false,
+          "promotion_style": "standard-style",
+          "promotion_text": "A Cat Litter Revolution — take 50% off your first subscription order with code 'REVOLUTION50'",
+          "promotion_url": "shopify:\/\/pages\/subscribe"
+        }
+      },
+      "1534882811858": {
+        "type": "pxs-video",
+        "disabled": true,
+        "settings": {
+          "style": "default-style",
+          "title": "Video",
+          "text": "<p>Enhance your home page with a video that relates to your process, products, or story.<\/p>",
+          "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+          "aspect_ratio": "16-9",
+          "video_layout": "full-width",
+          "autoplay": false,
+          "overlay_show": true,
+          "overlay_heading": "Video",
+          "overlay_text": "<p>Enhance your home page with a video that relates to your process, products, or story.<\/p>",
+          "overlay_header_position": "above-button",
+          "overlay_header_color": "#ffffff",
+          "overlay_color": "#222222",
+          "overlay_color_opacity": 15,
+          "overlay_image_position": "center-center",
+          "overlay_button_style": "primary"
+        }
+      },
+      "1534894007180": {
+        "type": "home-instagram",
+        "disabled": true,
+        "settings": {
+          "style": "accent-style",
+          "title": "",
+          "access_token": "16740447541.1677ed0.be7199c09856427495cc8fc1bc4fb554",
+          "button_text": "Join us on Instagram @catalystpet",
+          "button_link": "https:\/\/www.instagram.com\/catalystpet\/"
+        }
+      },
+      "1563252071322": {
+        "type": "home-testimonials",
+        "disabled": true,
+        "blocks": {
+          "1563252071322-0": {
+            "type": "testimonial",
+            "settings": {
+              "quote": "I've tried over a dozen naturals and Catalyst is the first one that my cat Finn will use.",
+              "source": "Erin, Dallas, TX",
+              "avatar": "shopify:\/\/shop_images\/CatalystFinn120x120.jpg"
+            }
+          },
+          "1563252071322-1": {
+            "type": "testimonial",
+            "settings": {
+              "quote": "This stuff works. It has gotten rid of all that odor better than any I've used. Now my house doesn't smell like a litter box.",
+              "source": "Mitch, Denver, CO",
+              "avatar": "shopify:\/\/shop_images\/CatalystGreygory120x120.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "1563252071322-0",
+          "1563252071322-1"
+        ],
+        "settings": {
+          "style": "contrast-style",
+          "title": "Love Your Pet, Change Your Planet"
+        }
+      },
+      "static-product-recommendations": {
+        "type": "static-product-recommendations",
+        "settings": {
+          "show_product_recommendations": false,
+          "product_recommendations_heading": "You may also like",
+          "product_limit": 2
+        }
+      },
+      "template-cart": {
+        "type": "template-cart",
+        "settings": {
+          "enable_checkout_lock_icon": true,
+          "product_show_vendor": false,
+          "enable_order_notes": true,
+          "show_shipping_calculator": false,
+          "shipping_calculator_default_country": "United States"
+        }
+      },
+      "template-password": {
+        "type": "template-password",
+        "settings": {
+          "newsletter_text": "<p>Love Your Pet, Change Your Planet.<\/p>"
+        }
+      },
+      "template-collection": {
+        "type": "template-collection",
+        "settings": {
+          "show_featured_image": true,
+          "show_description": true,
+          "tag_filtering": false,
+          "products_in_rows": 3,
+          "bottom_image": "shopify:\/\/shop_images\/New_plp-bottom-min_2450x1523_cbe8ea8f-70be-4ff2-a015-f51767210233.jpg",
+          "numbers_of_rows": 1
+        }
+      },
+      "template-list-collections": {
+        "type": "template-list-collections",
+        "settings": {
+          "show_description": true
+        }
+      },
+      "cl-featured-product": {
+        "type": "cl-featured-product",
+        "blocks": {
+          "cl-featured-product-0": {
+            "type": "additional_info",
+            "settings": {
+              "info_text": "Additional info",
+              "info_url": "",
+              "info_icon": "info"
+            }
+          }
+        },
+        "block_order": [
+          "cl-featured-product-0"
+        ],
+        "settings": {
+          "product": "cat-litter-healthy-cat-formula",
+          "product_description": "<p>Catalyst Healthy Cat is the only cat litter engineered from upcycled soft wood fiber to offer performance and peace of mind. It leads in&nbsp; <strong>Superior Odor Control, Unrivaled Cat Acceptance, Great Clumping, Low Dust&nbsp; and Light Weight<\/strong><\/p>",
+          "product_graphic": "shopify:\/\/shop_images\/Catalyst_Healthy_Cat_Digital_Assets-04_x96_2x_7f3cb908-b024-4001-9be9-0b0767b0f898.png",
+          "show_spb": true,
+          "product_cart_redirect": false,
+          "center_product_details": false,
+          "enable_zoom": true,
+          "product_show_vendor": false,
+          "linked_options": true,
+          "variants_style": "radio",
+          "single_column_product": false,
+          "show_share_buttons": false
+        }
+      },
+      "home-instagram": {
+        "type": "home-instagram",
+        "settings": {
+          "style": "accent-style",
+          "title": "",
+          "access_token": "16740447541.1677ed0.be7199c09856427495cc8fc1bc4fb554",
+          "button_text": "Join us on instagram @catalystpet",
+          "button_link": "https:\/\/www.instagram.com\/catalystpet\/"
+        }
+      },
+      "cl-hero": {
+        "type": "cl-hero",
+        "settings": {
+          "product": "cat-litter-healthy-cat-formula",
+          "main_hero_text": "THE HIGHEST PERFORMING, SUSTAINABLE CAT LITTER AVAILABLE",
+          "hero_description": "<p>Join the revolution!<br\/>Make the right choice<\/p>",
+          "button_text": "TRY CATALYST",
+          "button_price": "$22.99",
+          "hero_image": ""
+        }
+      },
+      "cl-keep-the-cat": {
+        "type": "cl-keep-the-cat",
+        "settings": {
+          "product": "cat-litter-healthy-cat-formula",
+          "button_text": "TRY CATALYST",
+          "button_price": "$22.99",
+          "keepthecat_image": ""
+        }
+      },
+      "cl-love-your-pet": {
+        "type": "cl-love-your-pet",
+        "settings": {
+          "title": "Why You Should Join the Revolution",
+          "catalyst_title": "Catalyst Soft Wood Litter",
+          "catalyst_image": "",
+          "catalyst_features": "Unrivaled cat acceptance\nSuperior, natural odor-blocking\nGentle, positive scent\nStrong clumping\nLightweight\nSustainable and renewable",
+          "other_title": "Other Litters",
+          "other_image": "",
+          "others_features": "Strip mining: not sustainable\nStrong synthetic perfumes\nHeavy weight\nNasty airborne dust plumes"
+        }
+      },
+      "cl-features": {
+        "type": "cl-features",
+        "settings": {
+          "title": "Finally, a natural cat litter that works.",
+          "subtitle": "Love Your Pet, Change Your Planet.",
+          "feature1_image": "",
+          "feature1_title": "Sustainable. Renewable. Responsible.",
+          "feature1_content": "<p>Catalyst captures clean, unused pine tree fiber from sawmills and processes it into our top-performing, Catalyst litter. Our upcycled natural wood litter does 3x the work of clay litters per pound, reducing production and transportation pollution and the harmful effects of clay strip-mining.<\/p>",
+          "feature2_image": "",
+          "feature2_title": "Unrivaled Cat Acceptance",
+          "feature2_content": "<p>Cats love to use our litter. With a soft texture that's gentle on paws and mild scent for sensitive cat noses, we guarantee your cat will accept the litter or we'll give you your money back.<\/p>",
+          "feature3_image": "",
+          "feature3_title": "High Performing Absorption",
+          "feature3_content": "<p>Catalyst litter is three times more absorptive than clay and one half the weight. This innovative litter lets the waste soak in fast enough to NOT run off the top and NOT stick to the bottom. Catalyst litter controls waste making cats and their humans happy.<\/p>",
+          "feature4_image": "",
+          "feature4_title": "Great Clumping",
+          "feature4_content": "<p>Catalyst litter forms clumps by using natural clumping agents as a surface coating over our specialty sized wood fiber. Moisture will activate the clumping agents and allow waste to be scooped out keeping the box clean and kitties happy<\/p>",
+          "catalyst_logo": ""
+        }
+      },
+      "cl-newsletter": {
+        "type": "cl-newsletter",
+        "settings": {
+          "description": "Join us as we overthrow the clay litter aisle.",
+          "button": "Count me in"
+        }
+      },
+      "cl-testimonials": {
+        "type": "cl-testimonials",
+        "blocks": {
+          "cl-testimonials-0": {
+            "type": "testimonials",
+            "settings": {
+              "author": "Mitch’s Cat, Denver, CO",
+              "content": "This stuff works. It has gotten rid of all that odor better than any I've used. Now my house doesn't smell like a litter box."
+            }
+          },
+          "cl-testimonials-1": {
+            "type": "testimonials",
+            "settings": {
+              "author": "Doug H",
+              "content": "Awesome product, can't believe it took so long for someone to come up with such a planet friendly solution."
+            }
+          },
+          "1576691875695": {
+            "type": "testimonials",
+            "settings": {
+              "author": "Cieara, Reedsville, PA",
+              "content": "I absolutely love this kitty litter!! Best product EVER!! Thank you so much for letting us try it. I’m definitely using this from now on."
+            }
+          }
+        },
+        "block_order": [
+          "cl-testimonials-0",
+          "cl-testimonials-1",
+          "1576691875695"
+        ],
+        "settings": {
+          "product": "cat-litter-healthy-cat-formula",
+          "image": "",
+          "title": "HIGH FIVE\nPAW RATING\nAROUND THE LITTER WORLD",
+          "button_text": "TRY CATALYST",
+          "button_price": "$22.99",
+          "button": "Count me in"
+        }
+      },
+      "1578910206795": {
+        "type": "home-hero",
+        "settings": {
+          "main_hero_text": "KEEP THE CAT,  DITCH THE SMELL.",
+          "hero_description": "",
+          "button_text": "",
+          "button_price": "",
+          "hero_image": "shopify:\/\/shop_images\/cat_1.png"
+        }
+      },
+      "1578912320446": {
+        "type": "home-products",
+        "blocks": {
+          "1580246357091": {
+            "type": "featured_product",
+            "settings": {
+              "product": "cat-litter-healthy-cat-formula",
+              "product_title": "Healthy Cat",
+              "product_cover": "shopify:\/\/shop_images\/product-green.png"
+            }
+          },
+          "1580246395227": {
+            "type": "featured_product",
+            "settings": {
+              "product": "cat-litter-multi-cat-formula",
+              "product_title": "Multi Cat",
+              "product_cover": "shopify:\/\/shop_images\/product-orange.png"
+            }
+          },
+          "1580246425661": {
+            "type": "featured_product",
+            "settings": {
+              "product": "cat-litter-unscented-formula",
+              "product_title": "Unscented",
+              "product_cover": "shopify:\/\/shop_images\/product-blue.png"
+            }
+          }
+        },
+        "block_order": [
+          "1580246357091",
+          "1580246395227",
+          "1580246425661"
+        ],
+        "settings": {
+          "title": "Choose Your Catalyst Cat Litter Formula",
+          "button_text": "Add to bag",
+          "button_oos_text": "Out of Stock"
+        }
+      },
+      "1578916561480": {
+        "type": "home-inspired",
+        "settings": {
+          "inspired": "Inspired by Nature",
+          "title": "Catalyst shines (star) in all the ways a great litter should so you can give your cat (cat) the best while doing your best for the planet (planet)."
+        }
+      },
+      "1578917641746": {
+        "type": "home-compare-images",
+        "settings": {}
+      },
+      "1578923501776": {
+        "type": "home-text-left",
+        "settings": {
+          "image_left": "shopify:\/\/shop_images\/product-pattern.png",
+          "title": "The highest performing, sustainable cat litter available.",
+          "description": "<p>Catalyst is the only cat litter engineered from upcycled soft wood fiber to offer performance and peace of mind. It leads in  Superior Odor Control, Unrivaled Cat Acceptance, Great Clumping, Low Dust  and Light Weight<\/p>",
+          "button_text": "Know more",
+          "button_url": "shopify:\/\/pages\/about"
+        }
+      },
+      "1578924592138": {
+        "type": "home-newsletter",
+        "settings": {
+          "description": "Join us as we overthrow the clay litter aisle.",
+          "button": "Count me in"
+        }
+      },
+      "1578926278722": {
+        "type": "home-testimonials-slider",
+        "blocks": {
+          "1591372040952": {
+            "type": "testimonials",
+            "settings": {
+              "author": "Arden Moore, The Pet Health and Safety Coach",
+              "content": "\"All four of our cats, ranging in age from 1 to 15, gave Catalyst paws-up approval. We introduced Catalyst properly, slowly mixing it in with existing litter brand. I like that Catalyst is a clean, environmentally friendly litter that did not kick up dust and came in lightweight bags. Just like us, our cats deserve clean bathrooms. Catalyst is a good litter option.\" (Arden is not a paid spokesperson nor received monetary compensation for this testimonial.)"
+            }
+          },
+          "1582561043076": {
+            "type": "testimonials",
+            "settings": {
+              "author": "Sara S.",
+              "content": "\"I’ve tried every type of clay litter under the sun and have found NOTHING to help with the odor of having four cats. Catalyst is a dream come true. The pine smell is amazing and the odor control is unmatched. Not to mention it is super light weight and clumps better than any clay litter I ever used. It also doesn’t track like regular clay litter. 10\/10 would recommend. I’m not going back!\""
+            }
+          },
+          "1578926310841": {
+            "type": "testimonials",
+            "settings": {
+              "author": "Cortney K.",
+              "content": "\"Phenomenal quality! Great long lasting smell! Traps and drys urine and shields fresh poop from any sorta smell. So easy to scoop after duty and salute you guys.\""
+            }
+          },
+          "1578926337616": {
+            "type": "testimonials",
+            "settings": {
+              "author": "Loree S.",
+              "content": "\"I love the way Catalyst litter works and keeps my house not smelling like a litter box. I have 4 cats and this litter really works. It’s better for the environment and it’s much more pleasant to deal with.\""
+            }
+          },
+          "1582561201927": {
+            "type": "testimonials",
+            "settings": {
+              "author": "Karen G.",
+              "content": "\"No smell what so ever...no dust..no mess!!! Clumps like a dream and so east to scoop! Thank you again for everything and im shopping with you guys from now on!! Fast delivery!!! And my water bottle loves the new sticker!!!\""
+            }
+          },
+          "1583258066086": {
+            "type": "testimonials",
+            "settings": {
+              "author": "Kristan N.",
+              "content": "\"I’ve had cats for over 20 years. I’ve always used clay litter but have recently become allergic to dust. So I began to try different alternatives the pet store has to offer such as corn, wheat and wood. All have let me down in different ways from smell to lack of clumping. But this cat litter is top notch. Clumps beautifully. You use a lot less then clay and it lasts 2-3 weeks compared to adding the clay litter twice a week. My cats love it and used it immediately.\""
+            }
+          },
+          "1583258151644": {
+            "type": "testimonials",
+            "settings": {
+              "author": "Shanna P.",
+              "content": "\"This is the best cat litter ever conceived. All natural, no messy dust or tracks from paws and the packaging is very cool!\""
+            }
+          },
+          "1583258242656": {
+            "type": "testimonials",
+            "settings": {
+              "author": "Carla G.",
+              "content": "\"Like this much better than our clay based litter. Smells kind of like woodchips. Cats are happy.\""
+            }
+          },
+          "1583258260736": {
+            "type": "testimonials",
+            "settings": {
+              "author": "Doug H.",
+              "content": "\"Awesome product, can't believe it took so long for someone to come up with such a planet friendly solution. My cat loves it, its clean, no odor, easy to clean up. I love it.\""
+            }
+          }
+        },
+        "block_order": [
+          "1591372040952",
+          "1582561043076",
+          "1578926310841",
+          "1578926337616",
+          "1582561201927",
+          "1583258066086",
+          "1583258151644",
+          "1583258242656",
+          "1583258260736"
+        ],
+        "settings": {
+          "title": "HIGH FIVE\nPAW RATING\nAROUND THE LITTER WORLD",
+          "button_text": "TRY CATALYST",
+          "button_price": "",
+          "button": "Count me in"
+        }
+      },
+      "cl-hero-multi": {
+        "type": "cl-hero-multi",
+        "settings": {
+          "product": "cat-litter-multi-cat-formula",
+          "main_hero_text": "THE HIGHEST PERFORMING, SUSTAINABLE CAT LITTER AVAILABLE",
+          "hero_description": "<p>Join the revolution!<br\/>Make the right choice<\/p>",
+          "button_text": "TRY CATALYST",
+          "button_price": "$22.99",
+          "hero_image": "shopify:\/\/shop_images\/product-orange.png"
+        }
+      },
+      "cl-keep-the-cat-multi": {
+        "type": "cl-keep-the-cat-multi",
+        "settings": {
+          "product": "cat-litter-multi-cat-formula",
+          "button_text": "TRY CATALYST",
+          "button_price": "$22.99",
+          "keepthecat_image": ""
+        }
+      },
+      "cl-featured-product-multi": {
+        "type": "cl-featured-product-multi",
+        "blocks": {
+          "cl-featured-product-multi-0": {
+            "type": "additional_info",
+            "settings": {
+              "info_text": "Additional info",
+              "info_url": "",
+              "info_icon": "info"
+            }
+          }
+        },
+        "block_order": [
+          "cl-featured-product-multi-0"
+        ],
+        "settings": {
+          "product": "cat-litter-multi-cat-formula",
+          "product_description": "<p>Catalyst&nbsp;Multi-Cat Formula offers the outstanding&nbsp;performance and peace of mind you expect from Catalyst with an enhanced formulation for additional clumps and cat traffic.<\/p>",
+          "product_graphic": "shopify:\/\/shop_images\/Catalyst_Healthy_Cat_Digital_Assets-04_x96_2x_7f3cb908-b024-4001-9be9-0b0767b0f898.png",
+          "show_spb": true,
+          "product_cart_redirect": false,
+          "center_product_details": false,
+          "enable_zoom": true,
+          "product_show_vendor": false,
+          "linked_options": true,
+          "variants_style": "select",
+          "single_column_product": false,
+          "show_share_buttons": true
+        }
+      },
+      "cl-testimonials-multi": {
+        "type": "cl-testimonials-multi",
+        "blocks": {
+          "cl-testimonials-multi-0": {
+            "type": "testimonials",
+            "settings": {
+              "author": "Mitch’s Cat, Denver, CO",
+              "content": "This stuff works. It has gotten rid of all that odor better than any I've used. Now my house doesn't smell like a litter box."
+            }
+          },
+          "cl-testimonials-multi-1": {
+            "type": "testimonials",
+            "settings": {
+              "author": "Doug H",
+              "content": "Awesome product, can't believe it took so long for someone to come up with such a planet friendly solution."
+            }
+          }
+        },
+        "block_order": [
+          "cl-testimonials-multi-0",
+          "cl-testimonials-multi-1"
+        ],
+        "settings": {
+          "product": "cat-litter-multi-cat-formula",
+          "image": "",
+          "title": "HIGH FIVE\nPAW RATING\nAROUND THE LITTER WORLD",
+          "button_text": "TRY CATALYST",
+          "button_price": "$22.99",
+          "button": "Count me in"
+        }
+      },
+      "cl-hero-unscented": {
+        "type": "cl-hero-unscented",
+        "settings": {
+          "product": "cat-litter-unscented-formula",
+          "main_hero_text": "THE HIGHEST PERFORMING, SUSTAINABLE CAT LITTER AVAILABLE",
+          "hero_description": "<p>Join the revolution!<br\/>Make the right choice<\/p>",
+          "button_text": "TRY CATALYST",
+          "button_price": "$22.99",
+          "hero_image": "shopify:\/\/shop_images\/product-blue.png"
+        }
+      },
+      "cl-keep-the-cat-unscented": {
+        "type": "cl-keep-the-cat-unscented",
+        "settings": {
+          "product": "cat-litter-unscented-formula",
+          "button_text": "TRY CATALYST",
+          "button_price": "$22.99",
+          "keepthecat_image": ""
+        }
+      },
+      "cl-featured-product-unscented": {
+        "type": "cl-featured-product-unscented",
+        "blocks": {
+          "cl-featured-product-unscented-0": {
+            "type": "additional_info",
+            "settings": {
+              "info_text": "Additional info",
+              "info_url": "",
+              "info_icon": "info"
+            }
+          }
+        },
+        "block_order": [
+          "cl-featured-product-unscented-0"
+        ],
+        "settings": {
+          "product": "cat-litter-unscented-formula",
+          "product_description": "<p>Catalyst Unscented Formula offers the outstanding&nbsp;performance and peace of mind you expect from Catalyst but with no added gentle scent.<\/p>",
+          "product_graphic": "shopify:\/\/shop_images\/Catalyst_Healthy_Cat_Digital_Assets-04_x96_2x_7f3cb908-b024-4001-9be9-0b0767b0f898.png",
+          "show_spb": true,
+          "product_cart_redirect": false,
+          "center_product_details": false,
+          "enable_zoom": true,
+          "product_show_vendor": false,
+          "linked_options": true,
+          "variants_style": "select",
+          "single_column_product": false,
+          "show_share_buttons": true
+        }
+      },
+      "cl-testimonials-unscented": {
+        "type": "cl-testimonials-unscented",
+        "blocks": {
+          "cl-testimonials-unscented-0": {
+            "type": "testimonials",
+            "settings": {
+              "author": "Mitch’s Cat, Denver, CO",
+              "content": "This stuff works. It has gotten rid of all that odor better than any I've used. Now my house doesn't smell like a litter box."
+            }
+          },
+          "cl-testimonials-unscented-1": {
+            "type": "testimonials",
+            "settings": {
+              "author": "Doug H",
+              "content": "Awesome product, can't believe it took so long for someone to come up with such a planet friendly solution."
+            }
+          }
+        },
+        "block_order": [
+          "cl-testimonials-unscented-0",
+          "cl-testimonials-unscented-1"
+        ],
+        "settings": {
+          "product": "cat-litter-unscented-formula",
+          "image": "",
+          "title": "HIGH FIVE\nPAW RATING\nAROUND THE LITTER WORLD",
+          "button_text": "TRY CATALYST",
+          "button_price": "$22.99",
+          "button": "Count me in"
+        }
+      },
+      "cl-hero-three-products": {
+        "type": "cl-hero-three-products",
+        "settings": {
+          "main_hero_text": "THE HIGHEST PERFORMING SUSTAINABLE CAT LITTER AVAILABLE",
+          "hero_description": "<p>Join the revolution!<br\/>Make the right choice<\/p>",
+          "button_text": "TRY CATALYST",
+          "product1": "cat-litter-healthy-cat-formula",
+          "product1_title": "Healthy Cat",
+          "product1_subtitle": "Formula",
+          "product2": "cat-litter-multi-cat-formula",
+          "product2_title": "Multi Cat",
+          "product2_subtitle": "Formula",
+          "product3": "cat-litter-unscented-formula",
+          "product3_title": "Unscented",
+          "product3_subtitle": "Formula"
+        }
+      },
+      "cl-keep-the-cat-three-products": {
+        "type": "cl-keep-the-cat-three-products",
+        "settings": {
+          "keepthecat_image": "shopify:\/\/shop_images\/cat-litter.jpg",
+          "keepthecat_title": "Keep the cat, Leave the smell."
+        }
+      },
+      "cl-featured-product-three-products": {
+        "type": "cl-featured-product-three-products",
+        "blocks": {
+          "cl-featured-product-three-products-0": {
+            "type": "additional_info",
+            "settings": {
+              "info_text": "Additional info",
+              "info_url": "",
+              "info_icon": "info"
+            }
+          }
+        },
+        "block_order": [
+          "cl-featured-product-three-products-0"
+        ],
+        "settings": {
+          "pre_title": "Love Your Pet, Change Your Planet.",
+          "title": "Finally, a natural cat litter that works.",
+          "hide_singlebuy": true,
+          "product1": "cat-litter-healthy-cat-formula",
+          "product1_title": "Healthy cat",
+          "product1_description": "<p>Catalyst Healthy Cat is the only cat litter engineered from upcycled soft wood fiber to offer performance and peace of mind. It leads in <strong>Superior Odor Control, Unrivaled Cat Acceptance, Great Clumping, Low Dust and Light Weight<\/strong><\/p>",
+          "product1_graphic": "shopify:\/\/shop_images\/green_stamps_2x_4fca5788-b1ae-4aba-9ebc-c2373f52f7a9.png",
+          "product1_mobile_graphic1": "shopify:\/\/shop_images\/Catalyst_Healthy_Cat_Digital_Assets-03_2x_9db4dd3e-8c9c-4561-8e7c-e76a39e95bd8.png",
+          "product1_mobile_graphic2": "shopify:\/\/shop_images\/Catalyst_Healthy_Cat_Digital_Assets-02_2x_be0ee0b1-6c95-4e63-9d7c-755d13c42ffe.png",
+          "product2": "cat-litter-multi-cat-formula",
+          "product2_title": "Multi-cat",
+          "product2_description": "<p>Catalyst&nbsp;Multi-Cat Formula offers the outstanding&nbsp;performance and peace of mind you expect from Catalyst with an enhanced formulation for additional clumps and cat traffic. Like its brother and sister litters, it offers: <strong>Superior Odor Control, Unrivaled Cat Acceptance, Great Clumping, Low Dust, Light Weight<\/strong><\/p>",
+          "product2_graphic": "shopify:\/\/shop_images\/orange_stamps_2x_ba3ed693-45b5-48e1-acaf-9a21212f5d81.png",
+          "product2_mobile_graphic1": "shopify:\/\/shop_images\/Catalyst_Multi-Cat_Digital_Assets-03_2x_52515f20-da06-42df-a646-a788303c397f.png",
+          "product2_mobile_graphic2": "shopify:\/\/shop_images\/Catalyst_Multi-Cat_Digital_Assets-02_2x_84bb7030-5deb-4d69-ac01-2d7d5624f27b.png",
+          "product3": "cat-litter-unscented-formula",
+          "product3_title": "Unscented",
+          "product3_description": "<p>Catalyst Unscented Formula offers the outstanding&nbsp;performance and peace of mind you expect from Catalyst but with no added gentle scent. Like its brother and sister litters, it leads in:&nbsp;<strong>Superior Odor Control, Unrivaled Cat Acceptance, Great Clumping, Low Dust, Light Weight<\/strong><\/p>",
+          "product3_graphic": "shopify:\/\/shop_images\/blue_stamps_2x_4041a11f-ee34-4311-9e7e-70fadc4577f5.png",
+          "product3_mobile_graphic1": "shopify:\/\/shop_images\/Catalyst_Unscented_Digital_Assets-02_2x_98c6f5b5-b2ae-4801-8e2a-ce2de0f2534c.png",
+          "product3_mobile_graphic2": "shopify:\/\/shop_images\/Catalyst_Unscented_Digital_Assets-03_2x_e1ecd2be-054e-4f38-8da0-3a86d72921fb.png",
+          "show_spb": false,
+          "product_cart_redirect": false,
+          "center_product_details": false,
+          "enable_zoom": false,
+          "product_show_vendor": false,
+          "linked_options": true,
+          "variants_style": "select",
+          "single_column_product": false,
+          "show_share_buttons": false
+        }
+      },
+      "cl-terms": {
+        "type": "cl-terms",
+        "settings": {
+          "show_section": true,
+          "title": "Subscription promo Terms & Conditions",
+          "content": "<p>Offer may be discontinued&nbsp;at any time,&nbsp;at the discretion of Catalyst Pet. Limited to one promo bag per household. Buying a subscription product will automatically set up a recurring monthly subscription for Catalyst litter. Promo only applies to the first order in this ongoing sequence. Discount only applies to first-time subscribers. Cannot be combined with any other offer. Offer not redeemable for cash or credit. Customer must sign up for a monthly subscription&nbsp;to qualify for the promotional bag. Sales tax where applicable.<\/p>"
+        }
+      },
+      "cl-hero-give2": {
+        "type": "cl-hero-give2",
+        "settings": {
+          "product1": "cat-litter-healthy-cat-formula",
+          "product2": "cat-litter-multi-cat-formula",
+          "product3": "cat-litter-unscented-formula",
+          "main_hero_text": "THE HIGHEST PERFORMING, SUSTAINABLE CAT LITTER AVAILABLE",
+          "hero_description": "<p><strong>4X MORE EFFECTIVE<\/strong><br\/>on a per lb. basis than clumping clay<\/p>",
+          "button_text": "TRY CATALYST",
+          "button_price": "$22.99",
+          "hero_image": "",
+          "hero_sub_hero": "<p><strong>Donate $1.99<\/strong> when you first subscribe and <strong>get a free bag<\/strong>! Use <strong>promo code GIVE2<\/strong> at checkout.<\/p>"
+        }
+      },
+      "cl-donate": {
+        "type": "cl-donate",
+        "settings": {
+          "title": "How to donate",
+          "subtitle": "to the cat shelter of your choice",
+          "box1": "<p><b>After placing your first subscription order<\/b>, you'll be redirected to the order confirmation page where the donation widget will be visible.<br\/><b>Select the cat shelter of your choosing<\/b> and proceed to the next step.<\/p>",
+          "box1_image": "shopify:\/\/shop_images\/Catalyst_Donate_Step1.png",
+          "box2": "<p><strong>Confirm your donation amount and hit the \"donate\" button<\/strong>.<br>This payment will be your donation.<br>Payment will be donated to the shelter you chose by Catalyst Pet on your behalf.<br><strong>Without additional cost Catalyst will ship you your first subscription bag<\/strong>.<\/p>",
+          "box2_image": "shopify:\/\/shop_images\/Catalyst_Donate_Step2.png",
+          "box3": "<p><strong>Spread the love by sharing the donation link<\/strong>&nbsp;on your social media and lookout for an email with&nbsp;<strong>a fun image you can post on your own social media<\/strong>&nbsp;and help us give back to cat shelters in need.<\/p>",
+          "box3_image": "shopify:\/\/shop_images\/Catalyst_Donate_Step3.png"
+        }
+      },
+      "cl-hero-heb": {
+        "type": "cl-hero-heb",
+        "settings": {
+          "product1": "cat-litter-healthy-cat-formula",
+          "product2": "cat-litter-multi-cat-formula",
+          "product3": "cat-litter-unscented-formula",
+          "main_hero_text": "Join the revolution!",
+          "hero_description": "<p>Catalyst Soft Wood Litter <strong>NOW AVAILABLE<\/strong> at<\/p>",
+          "heb_url": "https:\/\/www.heb.com\/store-locations"
+        }
+      },
+      "cl-featured-three-products-light": {
+        "type": "cl-featured-three-products-light",
+        "blocks": {
+          "cl-featured-three-products-light-0": {
+            "type": "additional_info",
+            "settings": {
+              "info_text": "Additional info",
+              "info_icon": "info"
+            }
+          }
+        },
+        "block_order": [
+          "cl-featured-three-products-light-0"
+        ],
+        "settings": {
+          "product1": "cat-litter-healthy-cat-formula",
+          "product1_title": "Healthy cat",
+          "product1_description": "<p>Available in 10lb or 20lb<\/p>",
+          "product1_graphic": "shopify:\/\/shop_images\/green_stamps_2x_4fca5788-b1ae-4aba-9ebc-c2373f52f7a9.png",
+          "product2": "cat-litter-multi-cat-formula",
+          "product2_title": "MULTI-CAT",
+          "product2_description": "<p>Available in 10lb or 20lb<\/p>",
+          "product2_graphic": "shopify:\/\/shop_images\/orange_stamps_2x_ba3ed693-45b5-48e1-acaf-9a21212f5d81.png",
+          "product3": "cat-litter-unscented-formula",
+          "product3_title": "UNSCENTED",
+          "product3_description": "<p>Available in 10lb or 20lb<\/p>",
+          "cta_url": "https:\/\/www.heb.com\/store-locations",
+          "show_spb": false,
+          "product_cart_redirect": false,
+          "center_product_details": false,
+          "enable_zoom": false,
+          "product_show_vendor": false,
+          "linked_options": false,
+          "variants_style": "select",
+          "single_column_product": false,
+          "show_share_buttons": false
+        }
+      },
+      "home-newsletter": {
+        "type": "home-newsletter",
+        "settings": {
+          "description": "Join us as we overthrow the clay litter aisle.",
+          "button": "Count me in"
+        }
+      },
+      "template-blog": {
+        "type": "template-blog",
+        "settings": {
+          "layout": "list",
+          "show_rss_icon": false,
+          "show_tags": true,
+          "show_share_buttons": true,
+          "show_featured_image": true,
+          "show_author": false,
+          "show_comment_count": false
+        }
+      },
+      "landing-page": {
+        "type": "landing-page",
+        "blocks": {
+          "a6d002fc-f08a-43db-accc-75890326d5b3": {
+            "type": "Slider",
+            "settings": {
+              "slider_item": "shopify:\/\/shop_images\/Group_151_4x_15a107ca-c791-472f-9003-62ef903d298f.png"
+            }
+          },
+          "211e7918-5783-4cce-a03f-d5ce58d81ec6": {
+            "type": "testimonials",
+            "settings": {
+              "author": "- Thomas G.",
+              "content": "“Took a chance on Catalyst and we could not be happier. It’s is soft and easy on her paws. Clumps nicely, is super light, and there are no bad odors whatsoever.”",
+              "star_count": 5
+            }
+          },
+          "0fe8169a-88b2-4563-93af-1f7c13b9d52b": {
+            "type": "testimonials",
+            "settings": {
+              "author": "- Jasmine P.",
+              "content": "“Better clumping, no smell! 1000x better than clay litter!! I will never go back!!”",
+              "star_count": 5
+            }
+          },
+          "70a8dfe8-7047-463d-8b51-9625c5b6b2ff": {
+            "type": "testimonials",
+            "settings": {
+              "author": "- Rachel L.",
+              "content": "\"The wood product stayed fresh smelling and soft the whole month. It didn't turn into giant rocks or smell at all. My cats used it just the same but for me, it's a game changer!\"",
+              "star_count": 5
+            }
+          },
+          "dbcfaa01-2cdb-4af4-9a5b-6852500718bd": {
+            "type": "testimonials",
+            "settings": {
+              "author": "- Lori C.",
+              "content": "\"I have 3 fur babies and they absolutely love! Their new litter. I never smell the cat pan anymore and cleaning out the litter pan is so simple now.\"",
+              "star_count": 5
+            }
+          }
+        },
+        "block_order": [
+          "a6d002fc-f08a-43db-accc-75890326d5b3",
+          "211e7918-5783-4cce-a03f-d5ce58d81ec6",
+          "0fe8169a-88b2-4563-93af-1f7c13b9d52b",
+          "70a8dfe8-7047-463d-8b51-9625c5b6b2ff",
+          "dbcfaa01-2cdb-4af4-9a5b-6852500718bd"
+        ],
+        "settings": {
+          "desktop_header_image": "shopify:\/\/shop_images\/Group_2x_dbe1bf88-d771-4ae0-a504-31fe395b871f.png",
+          "mobile_header_image": "shopify:\/\/shop_images\/header-img-mobile.jpg",
+          "desktop_main_banner_image": "shopify:\/\/shop_images\/catLPdesktop.png",
+          "mobile_main_banner_image": "shopify:\/\/shop_images\/catLPmobile_1_-min.png",
+          "slider_block_bg": "shopify:\/\/shop_images\/Group_8_4x_51bb4bbe-96f1-407f-8b73-b423ccfdc888.png",
+          "slider_block_title": "<p>WHY IT <\/p><p>WORKS<\/p>",
+          "slider_block_text": "<p>Our advanced formula will absorb 4x more than typical clay litter. Cats love our light-weight and super absorbent litter, and the excellent clumping capabilities will make you love it too!<\/p>",
+          "cta_first_image": "shopify:\/\/shop_images\/cat-column1.png",
+          "cta_first_title": "<p>TELL US HOW <\/p><p>MANY CATS.<\/p>",
+          "cta_first_text": "<p>For best results, we recommend using 1 bag per cat per month.<\/p>",
+          "cta_second_image": "shopify:\/\/shop_images\/cat-column2.png",
+          "cta_second_title": "<p>CHOOSE YOUR <\/p><p>FORMULA.<\/p>",
+          "cta_second_text": "<p>Our sustainable litter comes in both a light refreshing pine scent and unscented.<\/p>",
+          "cta_third_image": "shopify:\/\/shop_images\/cat-column3.png",
+          "cta_third_title": "<p>DELIVERED TO<\/p><p> YOUR DOOR MONTHLY.<\/p>",
+          "cta_third_text": "<p>Get the right amount of litter delivered directly to you without lifting a finger.<\/p>",
+          "cta_block_button_text": "SUBSCRIBE",
+          "desktop_after_slider_image": "shopify:\/\/shop_images\/after-slider-full-width.png",
+          "mobile_after_slider_image": "shopify:\/\/shop_images\/mobile_after_slider_image.jpg",
+          "account_step1_title": "<p>SUBSCRIBE<\/p>",
+          "account_step1_text": "<p>When you first subscribe to Catalyst you’ll be prompted by email to activate your account. This will give you access to your account portal through our website where you can manage your subscription. 🐈<\/p>",
+          "account_step1_image": "shopify:\/\/shop_images\/step1.jpg",
+          "account_step2_title": "<p>MANAGE<\/p><p> YOUR<\/p><p>SUBSCRIPTION<\/p>",
+          "account_step2_text": "<p>When you click on the “Manage Subscription” button from your account portal you’ll be brought to this screen where you can manage all aspects of your plan from payment method to switching your formula and any address information. ✅<\/p>",
+          "account_step2_image": "shopify:\/\/shop_images\/step2.jpg",
+          "account_step3_title": "<p>PAUSE<\/p><p>OR SKIP <\/p><p>ANYTIME<\/p>",
+          "account_step3_text": "<p>By clicking on “Delivery Schedule” you will be able to see future deliveries and decide to “skip” if you have litter still remaining from your first month or it’s taking a little longer for your furry friend to adapt. 😻<\/p>",
+          "account_step3_image": "shopify:\/\/shop_images\/step3.jpg",
+          "account_step4_title": "<p>YOU CAN<\/p><p>RELY ON US<\/p>",
+          "account_step4_text": "<p>Still have questions? Contact our award winning customer service team the following ways: <\/p><p>- Live Chat<\/p><p>- Email careteam@catalystpet.com <\/p><p>- Call 1-844-554-8837<\/p>",
+          "account_step4_image": "shopify:\/\/shop_images\/step4.jpg",
+          "desktop_after_steps_image": "shopify:\/\/shop_images\/full-width-after-steps.jpg",
+          "mobile_after_steps_image": "shopify:\/\/shop_images\/mobile_after_steps_image.jpg",
+          "first_product": "cat-litter-healthy-cat-formula",
+          "first_product_image": "shopify:\/\/shop_images\/product1-bg.jpg",
+          "first_product_subtitle": "<p>ORIGINAL FORMULA<\/p>",
+          "first_product_title": "<p>Healthy Cat<\/p>",
+          "first_product_weight": "10lbs",
+          "second_product": "cat-litter-multi-cat-formula",
+          "second_product_image": "shopify:\/\/shop_images\/product2-bg.jpg",
+          "second_product_subtitle": "<p>Strongest clump with a mild forest scent<\/p>",
+          "second_product_title": "<p>Multi-Cat<\/p>",
+          "second_product_weight": "10lbs",
+          "third_product": "cat-litter-unscented-formula",
+          "third_product_image": "shopify:\/\/shop_images\/product3-bg.jpg",
+          "third_product_subtitle": "<p>neutral scent and the easiest transition<\/p>",
+          "third_product_title": "<p>Unscented<\/p>",
+          "third_product_weight": "10lbs",
+          "insta_section_desktop": "shopify:\/\/shop_images\/insta-follow.jpg",
+          "insta_section_mobile": "shopify:\/\/shop_images\/insta-mobile.jpg",
+          "policy_title": "POLICY STUFF",
+          "policy_text": "<p>Offer may be discontinued at any time, at the discretion of Catalyst Pet. Limited to one promo bag per household. Buying a subscription product will automatically set up a recurring monthly subscription for Catalyst litter. Promo only applies to the first order in this ongoing sequence. Discount only applies to first-time subscribers. Cannot be combined with any other offer. Offer not redeemable for cash or credit. Customer must sign up for a monthly subscription to qualify for the promotional bag. Sales tax where applicable.<\/p>",
+          "footer_link1_text": "INSTGRAM",
+          "footer_link1_url": "https:\/\/www.instagram.com\/catalystpet",
+          "footer_link2_text": "FACEBOOK",
+          "footer_link2_url": "https:\/\/www.facebook.com\/sharer.php?u=https:\/\/catalystpet.com",
+          "footer_link3_text": "TWITTER",
+          "footer_link3_url": "https:\/\/twitter.com\/share?url=https:\/\/catalystpet.com",
+          "footer_link4_text": "PINTEREST",
+          "footer_link4_url": "https:\/\/www.pinterest.com\/",
+          "footer_logo": "shopify:\/\/shop_images\/cat_1.png"
+        }
+      },
+      "modal-cart": {
+        "type": "modal-cart",
+        "settings": {}
+      },
+      "how-to-use": {
+        "type": "how-to-use",
+        "blocks": {
+          "d277a1f4-1196-47bd-a63e-2b0edefa90da": {
+            "type": "card",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/01.png",
+              "richtext": "<p><strong>SUBSCRIBE & ACTIVATE<br\/><\/strong><br\/>When you first subscribe to Catalyst you’ll be prompted by email to activate your account. This will give you access to your account portal through our website where you can manage your subscription.<br\/><br\/>Don’t see the email? Check your spam folder or reach out to <a href=\"mailto:careteam@catalystpet.com\" target=\"_blank\" title=\"mailto:careteam@catalystpet.com\">careteam@catalystpet.com<\/a> if you need support. 🐈<\/p>",
+              "reversed": false
+            }
+          },
+          "af958a58-66fc-412e-b99b-c9764f606f5b": {
+            "type": "card",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/02.png",
+              "richtext": "<p><strong>MANAGE YOUR SUBSCRIPTION<\/strong><br\/><br\/>Once you’ve activated your account, you can <a href=\"https:\/\/catalystpet.com\/account\/login\" target=\"_blank\" title=\"https:\/\/catalystpet.com\/account\/login\">log in<\/a> via our website to manage your subscription settings.<br\/><br\/>After logging in, click on the “Manage Subscription” button from your account portal and you’ll be brought to this screen. Here you can manage all aspects of your plan including payment method, switching your formula or updating your billing\/shipping address. ✅<\/p>",
+              "reversed": true
+            }
+          },
+          "2d6191a8-7e80-4686-b51a-ee49d11db73c": {
+            "type": "card",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/03.png",
+              "richtext": "<p><strong>PAUSE OR SKIP DELIVERIES AS NEEDED<\/strong><br\/><br\/>Inside your <a href=\"https:\/\/catalystpet.com\/account\" target=\"_blank\" title=\"https:\/\/catalystpet.com\/account\">account portal<\/a>, click on “Delivery Schedule” to see all your future deliveries. From here, you can decide to “skip” if you have litter still remaining from your first month or it’s taking a little longer for your furry friend to adapt. 😻<\/p>",
+              "reversed": false
+            }
+          },
+          "878195ab-b2a1-4eaf-b05e-28711ca224f8": {
+            "type": "card",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/04.png",
+              "richtext": "<p><strong>NEED SUPPORT? REACH OUT ANYTIME<\/strong><br\/><br\/>Still have questions? Contact our award winning customer service team the following ways:<br\/>- <a href=\"https:\/\/catalystpet.com\/pages\/contact-us\" target=\"_blank\" title=\"https:\/\/catalystpet.com\/pages\/contact-us\">Contact us<\/a><br\/>- Email <a href=\"mailto:careteam@catalystpet.com\" target=\"_blank\" title=\"mailto:careteam@catalystpet.com\">careteam@catalystpet.com<\/a><br\/>- Call 1-844-554-8837<\/p>",
+              "reversed": true
+            }
+          }
+        },
+        "block_order": [
+          "d277a1f4-1196-47bd-a63e-2b0edefa90da",
+          "af958a58-66fc-412e-b99b-c9764f606f5b",
+          "2d6191a8-7e80-4686-b51a-ee49d11db73c",
+          "878195ab-b2a1-4eaf-b05e-28711ca224f8"
+        ],
+        "settings": {}
+      },
+      "landing-page-benefits": {
+        "type": "landing-page-benefits",
+        "settings": {}
+      },
+      "landing-page-how-to-use": {
+        "type": "landing-page-how-to-use",
+        "blocks": {
+          "fa3fcc36-f936-41e8-86ec-5ae42340faf8": {
+            "type": "card",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/image_2.png",
+              "title": "TELL US HOW MANY CATS.",
+              "paragraph": "For best results, we recommend using 1 bag per cat per month."
+            }
+          },
+          "472aff33-6a92-46ce-b585-c52a2cb8cb0a": {
+            "type": "card",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/image_5.png",
+              "title": "CHOOSE YOUR FORMULA.",
+              "paragraph": "Our sustainable litter comes in both a light refreshing pine scent and unscented."
+            }
+          },
+          "6df91e55-4288-4ee2-855f-81a95555e49c": {
+            "type": "card",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/image_6.png",
+              "title": "DELIVERED DIRECTLY TO YOUR DOOR.",
+              "paragraph": "Get the right amount of litter delivered directly to you without lifting a finger."
+            }
+          }
+        },
+        "block_order": [
+          "fa3fcc36-f936-41e8-86ec-5ae42340faf8",
+          "472aff33-6a92-46ce-b585-c52a2cb8cb0a",
+          "6df91e55-4288-4ee2-855f-81a95555e49c"
+        ],
+        "settings": {}
+      },
+      "landing-page-reviews": {
+        "type": "landing-page-reviews",
+        "blocks": {
+          "887df214-2ca2-44bd-80d3-4812c844c2d3": {
+            "type": "card",
+            "settings": {
+              "title": "Best I’ve used",
+              "paragraph": "It controls odor much better than others, and is easy to clean.",
+              "author": "Susan M."
+            }
+          },
+          "0a9b3fa5-2086-40d2-9e6a-7d87aa408554": {
+            "type": "card",
+            "settings": {
+              "title": "No odors",
+              "paragraph": "my 3 cats still getting used to it..but seems to be working..no odor is so great..love the texture and no dust",
+              "author": "Lana A."
+            }
+          },
+          "19f859f0-122b-449c-819e-ebfaad0a95fe": {
+            "type": "card",
+            "settings": {
+              "title": "Jasmine Loves Catalyst",
+              "paragraph": "Fresh smelling, dust free and light wood product is perfect litter for my girl. She uses it and then artistically moves it till it looks like a Read more",
+              "author": "Susan M."
+            }
+          },
+          "598a04f2-5a37-423e-ae99-cc77c4749e41": {
+            "type": "card",
+            "settings": {
+              "title": "Best I’ve used",
+              "paragraph": "It controls odor much better than others, and is easy to clean.",
+              "author": "Susan M."
+            }
+          }
+        },
+        "block_order": [
+          "887df214-2ca2-44bd-80d3-4812c844c2d3",
+          "0a9b3fa5-2086-40d2-9e6a-7d87aa408554",
+          "19f859f0-122b-449c-819e-ebfaad0a95fe",
+          "598a04f2-5a37-423e-ae99-cc77c4749e41"
+        ],
+        "settings": {}
+      },
+      "home-instagram-follow": {
+        "type": "home-instagram-follow",
+        "settings": {
+          "instagram_url": "https:\/\/www.instagram.com\/catalystpet"
+        }
+      },
+      "module-faq": {
+        "type": "module-faq",
+        "blocks": {
+          "module-faq-2": {
+            "type": "faq",
+            "settings": {
+              "title": "How much Catalyst litter do I need?",
+              "content": "<p>One bag per cat per month is the general rule of thumb. Our litter was scientifically engineered so that one pound of Catalyst does the work of four pounds of clumping clay litter. We love that efficiency reducing both production and transportation pollution.<\/p>"
+            }
+          },
+          "module-faq-0": {
+            "type": "faq",
+            "settings": {
+              "title": "Why did my subscription costs change?",
+              "content": "<p>We’ve lowered the price on ALL Catalyst subscriptions. One of the ways we’ve made that possible is by combining multiple shipments into one shipment on subscriptions with smaller monthly amounts.<\/p><p>For example, if you regularly had been receiving one 10lb bag per month for $20, you will now receive 20lbs every two months for $28.50 total. 20lbs of the highest performing natural cat litter on the planet will pounce onto your doorstep with that fresh saving-the-planet swagger while saving you $11.50 with each delivery.<\/p><p>More bags delivered at once cuts down on packing materials and transportation emissions. This improved model saves you money AND reduces environmental impact!<\/p><p><strong>New order sizes and savings:<\/strong><\/p><p># of cats: 1 cat<\/p><p>Old price: $40 every 2 months ($20\/month)<\/p><p>New price: $28.50 every 2 months<\/p><p>Savings: $11.50 every 2 months<\/p><p># of cats: 2 cats<\/p><p>Old price: $40 every month<\/p><p>New price: $28.50 every month<\/p><p>Savings: $23 every 2 months<\/p><p># of cats: 3 cats<\/p><p>Old price: $60 every month<\/p><p>New price: $39.30 every month<\/p><p>Savings: $63.40 every 2 months<\/p><p># of cats: 4 or more cats<\/p><p>Old price: $80+ every month<\/p><p>New price: Calculate on site<\/p><p>Savings: $63.40+ every 2 months<\/p><p><a href=\"https:\/\/catalystpet.com\/pages\/join-the-revolution\">Learn more about how our subscriptions work<\/a><\/p>"
+            }
+          },
+          "module-faq-1": {
+            "type": "faq",
+            "settings": {
+              "title": "Why do we package in a #4 LDPE (plastic) bag?",
+              "content": "<ul><li>We know our customers are concerned about care of the environment, and so are we. We carefully considered different materials for our bags and settled on the #4 LDPE bag. We want our customers to have the best possible experience using our products, and this type of bag is durable and protects from weather damages during delivery.<\/li><li>We also chose this bag because LDPE #4 plastic bags are 100% recyclable. There are numerous recycling facilities nationwide that take our bags. You can recycle our bags anywhere that takes grocery bags for recycling. Location can be looked up online here: <a href=\"https:\/\/www.plasticfilmrecycling.org\/recycling-bags-and-wraps\/find-drop-off-location\/\">https:\/\/www.plasticfilmrecycling.org\/recycling-bags-and-wraps\/find-drop-off-location\/<\/a><\/li><li>We are constantly working on innovations to reduce our environmental impact this even further. Currently, we are working with a plastic neutral NGO and formulating a way to add a bio-based polymer into our production line so stay tuned for more on that very soon!<\/li><li>Every Catalyst Pet purchase online is now certified Plastic Neutral. By partnering with rePurpose Global, Catalyst Pet is donating a percentage of every product purchase to collect and reuse one ocean-bound plastic pouch for every one it sells online. By funding cutting-edge recycling technologies and supporting ethical wages for marginalized waste workers in India, the company is enabling rePurpose Global to tackle harmful plastic waste streams otherwise destined for landfills and waterways worldwide. By taking this bold commitment, every Catalyst Pet purchase online will now carry a net zero plastic footprint.<\/li><\/ul>"
+            }
+          },
+          "d9a239f9-bc1a-404a-b6f6-e0d4fd5e8879": {
+            "type": "faq",
+            "settings": {
+              "title": "How is my Catalyst litter delivered?",
+              "content": "<p>Domestic orders are shipped via USPS. The shipping boxes are 100% post-consumer recyclable cardboard products. We also love that the USPS is already driving to our homes so adding Catalyst does not add trucks to the road.<\/p>"
+            }
+          },
+          "b7b08133-527a-43ec-aafa-9044537af9e6": {
+            "type": "faq",
+            "settings": {
+              "title": "Does Catalyst Litter work with the litter robot or sifting litter boxes?",
+              "content": "<p>Due to Catalyst's lightweight litter, Litter Robot and sifting litter boxes can occasionally encounter issues sifting the litter. Our users have found that using somewhere between a 50%\/50% mix of Catalyst and Clay and a 80%\/20% mix (more Catalyst) can solve this problem. <\/p>"
+            }
+          },
+          "8db1ba69-cd92-47a9-8429-2b63c56b9abb": {
+            "type": "faq",
+            "settings": {
+              "title": "How quickly will I receive my litter?",
+              "content": "<p>Every order is processed to ship out within one business day after it is placed. It is shipped with the USPS three-business-day service and includes tracking and insurance. For your peace of mind, orders are tracked through the email or mobile number you provide to us.<\/p>"
+            }
+          },
+          "deb4218b-8577-44c1-a7d9-dca3f08cbf55": {
+            "type": "faq",
+            "settings": {
+              "title": "Why should I subscribe to Catalyst litter?",
+              "content": "<p>Subscribe to Catalyst and receive 13% off your bag each month. Your subscription will ship approximately every 30 days. If you need to pause, cancel, or swap your subscription product to a different formula, you can do so at any time.<\/p>"
+            }
+          },
+          "1477d3c4-8d64-480d-b0f7-d6083d680917": {
+            "type": "faq",
+            "settings": {
+              "title": "What sizes are available?",
+              "content": "<p>Our litter is available in 10-pound bags online. Typically, one bag per cat per month is sufficient!<\/p>"
+            }
+          },
+          "6354661e-f853-4fd9-9f07-5803fc574463": {
+            "type": "faq",
+            "settings": {
+              "title": "What is Catalyst made of?",
+              "content": "<p>Our primary ingredient in all three varieties is clean, upcycled pine softwood. This material is sourced from our parent company Lignetics, regional sawmills converting what would have been waste into upcycled litter. No contamination is allowed in the wood: no paint, no stain, or any previously used wood. <\/p><p>The wood is captured straight off of a mill making Catalyst litter super clean and the litter and sawmill very efficient. Healthy Cat and Multi-Cat, in addition to the pine wood, include a biobased oil, a natural clumping agent, zeolite and a mild natural scent. <\/p><p>Unscented, in addition to the pine wood, includes only a biobased oil and a natural clumping agent.<\/p>"
+            }
+          },
+          "f18e8aeb-bb4a-4ded-9a87-9a536f9ed354": {
+            "type": "faq",
+            "settings": {
+              "title": "What makes Catalyst sustainable?",
+              "content": "<p>Most cat lovers are not aware that traditional clay litters are usually made of sodium bentonite, a mineral that is strip-mined and not biodegradable. A 2017 report reveals that more than five billion pounds of sodium bentonite is mined each year just for cat litter with the vast majority ending up in landfills—more than 125,000 truckloads each year. Catalyst solves this problem because it is biodegradable and does not require precious resources for its manufacture. In fact, the upcycled soft wood fiber used to make the litter is collected from wood processing facilities that would otherwise send it to a landfill. Because one pound of Catalyst does the work of three pounds of clumping clay litter, it also reduces pollution and carbon emissions that result from production and transportation. <\/p><p>The wood fiber starts out as a by-product from a sawmill on the industrial plant level. We then take these materials and upcycle them to create the litter. Because it is a by- product, we are not sacrificing additional materials from our beautiful planet. <\/p><p>Our motto around here is right on every package: Love your pet, Change your planet.<\/p>"
+            }
+          },
+          "5260365a-f78e-44d0-be94-4c0d8ea90ecf": {
+            "type": "faq",
+            "settings": {
+              "title": "Is Catalyst more expensive than the average clumping clay litter?",
+              "content": "<p>Catalyst litter is the same cost or less per use as the average clumping clay litter (Catalyst is six cents per use, while clumping clay is seven cents). This is because it’s four times more effective, four times more absorbent and lasts twice as long as clumping clay.<\/p>"
+            }
+          },
+          "f2037a2f-16cc-4790-a2dd-ed6bd48aa906": {
+            "type": "faq",
+            "settings": {
+              "title": "Which formula is right for me?",
+              "content": "<p>We've put together a chart to help you decide which of our three formulas are right for you and your pets.<a href=\"https:\/\/catalystpet.com\/pages\/catalyst-litter#findthelittertable\">See more here!<\/a><\/p>"
+            }
+          },
+          "712fc443-ce97-4470-9430-ad1ab977f21d": {
+            "type": "faq",
+            "settings": {
+              "title": "Is this litter safe for my cats to use?",
+              "content": "<p>Yes. Your cat’s health is of primary importance to us, and we only offer products that we know will keep your cat healthy and well. <\/p><p>Some customers have asked us about the safety of pine as a litter because pine contains phenol, which is typically found in the bark and needles of pine trees. Natural and synthetic phenol in liquid form can be found in some cleaning fluids, but not in Catalyst. <\/p><p>Catalyst does not use any bark or needles; Catalyst does not add any liquid phenol into our product.<\/p>"
+            }
+          },
+          "1b77494b-4c25-4707-b40f-a2d0b99c9da0": {
+            "type": "faq",
+            "settings": {
+              "title": "Is Catalyst biodegradable and compostable?",
+              "content": "<p>Yes. Catalyst Litter is biodegradable and can be composted. However, we don’t recommend using it as a compost in your garden or in any soil that will be used to grow food. All cat waste has a risk of carrying toxoplasmosis. When disposing of the litter, please follow all local regulations in your region. Our litter is technically flushable, many regulations and BMPs advise not to flush any litter. Please follow your local regulations and BMPs.<\/p>"
+            }
+          },
+          "066b1a1f-1d0d-4d06-81a2-8b2e920b18c0": {
+            "type": "faq",
+            "settings": {
+              "title": "What size of litter box is Catalyst designed for?",
+              "content": "<p>One 10lb. bag of Catalyst is 1\/3 of a cubic foot. <\/p><p>If using a large box (15x18 inch) 1 bag will fill the pan to 2.5-inch depth leaving 4lb. of litter remaining in the bag after filling. The remaining litter should allow the user to scoop and replace the litter over the next 30 days.<\/p>"
+            }
+          },
+          "7e4029c2-6384-4401-8c45-c1e0e9f194e9": {
+            "type": "faq",
+            "settings": {
+              "title": "Can Catalyst be used for multi-cat households?",
+              "content": "<p>All Catalyst products can be used in multi-cat households. Our specific Multi-Cat formula has high clumping strength for more Cat traffic.<\/p>"
+            }
+          },
+          "f3fc9ab5-2aa3-4eda-9bb6-03da35f3b989": {
+            "type": "faq",
+            "settings": {
+              "title": "Is Catalyst litter low tracking? Does it stay in the box?",
+              "content": "<p>Catalyst is dust free; the challenges associated with airborne dust will no longer be an issue. For highly active and jumping and digging cats using a higher sided box and a tracking pad can help to reduce tracking. Catalyst should track less than comparable litters.<\/p>"
+            }
+          },
+          "e6f8b387-d3f9-4564-a7fc-bcaae1041fa2": {
+            "type": "faq",
+            "settings": {
+              "title": "Do you have international shipping?",
+              "content": "<p>At this time Catalyst only ships to households in the USA.<\/p>"
+            }
+          },
+          "e3fd6c5a-a2e1-4eee-a874-c46bf0540db7": {
+            "type": "faq",
+            "settings": {
+              "title": "What is Prop 65?",
+              "content": "<p>By California law, companies that sell any number of common household products—including anything made from wood and\/or wood dust—to residents who live in the state of California must include the Prop 65 warning label on packaging. This label is showing up more frequently because e-commerce business continues to grow and increased inventory is traveling across state lines. For Catalyst Pet, we need to make sure that any litter sold has the label, should it be heading to a California kitty.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "module-faq-2",
+          "module-faq-0",
+          "module-faq-1",
+          "d9a239f9-bc1a-404a-b6f6-e0d4fd5e8879",
+          "b7b08133-527a-43ec-aafa-9044537af9e6",
+          "8db1ba69-cd92-47a9-8429-2b63c56b9abb",
+          "deb4218b-8577-44c1-a7d9-dca3f08cbf55",
+          "1477d3c4-8d64-480d-b0f7-d6083d680917",
+          "6354661e-f853-4fd9-9f07-5803fc574463",
+          "f18e8aeb-bb4a-4ded-9a87-9a536f9ed354",
+          "5260365a-f78e-44d0-be94-4c0d8ea90ecf",
+          "f2037a2f-16cc-4790-a2dd-ed6bd48aa906",
+          "712fc443-ce97-4470-9430-ad1ab977f21d",
+          "1b77494b-4c25-4707-b40f-a2d0b99c9da0",
+          "066b1a1f-1d0d-4d06-81a2-8b2e920b18c0",
+          "7e4029c2-6384-4401-8c45-c1e0e9f194e9",
+          "f3fc9ab5-2aa3-4eda-9bb6-03da35f3b989",
+          "e6f8b387-d3f9-4564-a7fc-bcaae1041fa2",
+          "e3fd6c5a-a2e1-4eee-a874-c46bf0540db7"
+        ],
+        "settings": {}
+      },
+      "new-pdp-cat-copy": {
+        "type": "new-pdp-cat-copy",
+        "blocks": {
+          "75019834-eb24-46fc-89db-b69a3b877a25": {
+            "type": "content",
+            "settings": {
+              "header": "",
+              "image": "shopify:\/\/shop_images\/Rectangle_74.png",
+              "video": "shopify:\/\/files\/videos\/catalyst-product-video (1).mp4",
+              "title": "<p>4x more efficient = <strong>save more per use!<\/strong><\/p>",
+              "copy": "<p>Not only is Catalyst litter 4 times more absorbent than other leading litter brands, it's also 37% cheaper, controls odor better, is lighter to carry, and doesn't have the nasty clay airborne dust that is typical of other brands, and could cause potential respiratory and GI issues in cats. Give it a try!<\/p>",
+              "logos": "shopify:\/\/shop_images\/Frame_1086719.png"
+            }
+          },
+          "7b957770-f173-4550-aa24-d9789303b878": {
+            "type": "content",
+            "settings": {
+              "header": "<p>Thanks to its <strong>superior performance<\/strong>, just one pound of Catalyst does the job of four pounds of clay litter.<\/p>",
+              "image": "shopify:\/\/shop_images\/Rectangle_74.png",
+              "title": "<p>Love your pet. <strong>Change the planet.<\/strong><\/p>",
+              "copy": "<p>We’re on a mission to overthrow the litter aisle. We’re tired of environmentally damaging products that also don’t live up to the standards we should expect. Say goodbye to environmentally devastating strip-mined clay litter that ends up in landfills for thousands of years. <strong>Say hello to a natural cat litter that actually works.<\/strong><\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "75019834-eb24-46fc-89db-b69a3b877a25",
+          "7b957770-f173-4550-aa24-d9789303b878"
+        ],
+        "settings": {
+          "header": "<p>Catalyst Pet is made from clean, unused pine tree fiber from sawmills and transformed into the <strong>highest performing<\/strong> natural cat litter on the planet.<\/p>"
+        }
+      },
+      "new-pdp-what-people-say": {
+        "type": "new-pdp-what-people-say",
+        "blocks": {
+          "83b4f8b4-2c7d-4965-9680-4e7d27caba6a": {
+            "type": "review",
+            "settings": {
+              "review": "<p>With four cats in the house, keeping up with the litter box and controlling the smell became difficult. Then I found catalyst. The cats love it and I love it.<\/p>",
+              "image": "shopify:\/\/shop_images\/Rectangle_77.png",
+              "name": "Lisa M."
+            }
+          },
+          "22d8e034-4830-43eb-b3cd-9192e42a99bb": {
+            "type": "review",
+            "settings": {
+              "review": "<p>It actually saves me money. This stuff works so well I have to set a reminder to clean the boxes because I can no longer smell cat box in my house.<\/p>",
+              "image": "shopify:\/\/shop_images\/Rectangle_77_1.png",
+              "name": "John T."
+            }
+          },
+          "a3d48f37-6126-41b9-b294-3c3646048836": {
+            "type": "review",
+            "settings": {
+              "review": "<p>This litter is so pleasant! It traps odors, clumps, and doesn’t scatter everywhere. BONUS, my cats smell like they’ve been in the woods all day.<\/p>",
+              "image": "shopify:\/\/shop_images\/Rectangle_79.png",
+              "name": "Noel P."
+            }
+          },
+          "2547f57c-c520-4c55-b922-27d95835a7fb": {
+            "type": "review",
+            "settings": {
+              "review": "<p>I bought this because regular clay litter is so bad for the environment. I'm so glad I switched - it's lightweight, smells so good and the cats love it too.<\/p>",
+              "image": "shopify:\/\/shop_images\/Rectangle_80.png",
+              "name": "Karen L."
+            }
+          },
+          "05e9aa07-581d-48cb-b8ab-2ffb048547e1": {
+            "type": "review",
+            "settings": {
+              "review": "<p>This litter is the best litter I've ever used. My cat seems to like this litter way better than clay. No more smelly litter. Plus it lasts sooo much longer than clay.<\/p>",
+              "image": "shopify:\/\/shop_images\/Rectangle_81.png",
+              "name": "Evi R."
+            }
+          }
+        },
+        "block_order": [
+          "83b4f8b4-2c7d-4965-9680-4e7d27caba6a",
+          "22d8e034-4830-43eb-b3cd-9192e42a99bb",
+          "a3d48f37-6126-41b9-b294-3c3646048836",
+          "2547f57c-c520-4c55-b922-27d95835a7fb",
+          "05e9aa07-581d-48cb-b8ab-2ffb048547e1"
+        ],
+        "settings": {
+          "header": "<p>What people have to say about<\/p>"
+        }
+      }
+    },
+    "content_for_index": [
+      "1578910206795",
+      "1578912320446",
+      "1578916561480",
+      "1578917641746",
+      "1578923501776",
+      "1578924592138",
+      "1532493094416",
+      "1563252071322",
+      "1534882811858",
+      "1532448025563",
+      "1532492491152",
+      "1532492436211",
+      "1578926278722",
+      "1534894007180",
+      "1532447919778"
+    ],
+    "blocks": {
+      "17151115064775110295": {
+        "type": "shopify:\/\/apps\/recharge-subscriptions\/blocks\/recharge-theme\/371eed76-0b44-4869-9813-730372ea378e",
+        "disabled": false,
+        "settings": {
+          "color_brand": "#006b42",
+          "contrast_color": "#FFFFFF",
+          "color_brand_secondary": "#006b42",
+          "corners": "8px",
+          "app_background": "#f8f8f8",
+          "app_container": 1250,
+          "app_vertical_padding": 32,
+          "images_aspect_ratio": "1",
+          "cards_background": "#FFFFFF",
+          "cards_border_color": "rgba(0,0,0,0)"
+        }
+      },
+      "9776720720251544092": {
+        "type": "shopify:\/\/apps\/helium-customer-fields\/blocks\/app-embed\/bab58598-3e6a-4377-aaaa-97189b15f131",
+        "disabled": false,
+        "settings": {
+          "registration_form_id": "",
+          "edit_account_form_id": "",
+          "edit_account_link_text": "Edit account",
+          "edit_account_heading": "Edit account",
+          "edit_account_back_link_text": "Back to account",
+          "enable_js_api": false,
+          "js_api_version": ""
+        }
+      }
+    }
+  },
+  "presets": {
+    "Home": {
+      "background-color": "#ffffff",
+      "body-text-color": "#24254e",
+      "accent-color": "#e95200",
+      "heading-color": "#24254e",
+      "border-color": "#f0eff2",
+      "primary-button-color": "#fff6eb",
+      "header-link-color": "#24254e",
+      "header-dropdown-color": "#ffffff",
+      "form-select-background": "#ffffff",
+      "form-select-color": "#1d1b44",
+      "form-select-border-color": "#f0eff2",
+      "footer-background-color": "#1d1b44",
+      "footer-header-color": "#e84d37",
+      "footer-accent-color": "#fff6eb",
+      "body_background_image": "",
+      "contrast_background_image": "",
+      "footer_background_image": "",
+      "font_body": "futura_n4",
+      "font_logo": "futura_n5",
+      "font_logo_capitalize": true,
+      "font_heading": "futura_n6",
+      "font_heading_capitalize": true,
+      "font_section_heading_bold": false,
+      "font_section_heading_capitalize": true,
+      "font_meta_bold": true,
+      "font_meta_capitalize": true,
+      "font_button": "futura_n6",
+      "font_button_capitalize": true,
+      "breadcrumbs_enable": false,
+      "product_show_vendor": false,
+      "product_stock_overlay": false,
+      "product_stock_overlay_show": 5,
+      "social_default_image": "",
+      "social_vimeo_url": "",
+      "social_youtube_url": "",
+      "social_rss_url": "",
+      "enable_currency_converter": false,
+      "currency_display_format": "money_format",
+      "currency_converter_currencies": "INR GBP CAD USD AUD EUR JPY",
+      "currency_converter_default": "USD",
+      "header-show-breadcrumbs": false,
+      "contrast-background-color": "#FAF7F6",
+      "error-color": "#B84949",
+      "meta-color": "#b7aba3",
+      "sections": {
+        "module-product": {
+          "type": "module-product",
+          "blocks": {
+            "module-product-0": {
+              "type": "additional_info",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "module-product-0"
+          ],
+          "settings": {
+            "show_spb": true,
+            "product_cart_redirect": true,
+            "center_product_details": true,
+            "enable_zoom": true,
+            "product_show_vendor": false,
+            "linked_options": false,
+            "variants_style": "select",
+            "single_column_product": false,
+            "show_share_buttons": false
+          }
+        },
+        "home-slideshow": {
+          "type": "home-slideshow",
+          "blocks": {
+            "slide-1": {
+              "type": "slide",
+              "settings": {
+                "alignment": "center"
+              }
+            }
+          },
+          "block_order": [
+            "slide-1"
+          ],
+          "settings": {
+            "enable": true,
+            "show_shadows": true,
+            "text_color": "#24254e",
+            "slideshow_layout": "full-bleed",
+            "slideshow_transition": "transition-fade",
+            "autoplay": false,
+            "frequency": 6
+          }
+        },
+        "general-footer": {
+          "type": "general-footer",
+          "settings": {
+            "menu_1": "footer",
+            "menu_2": "information-2",
+            "show_share_buttons": true,
+            "show_payment_icons": false
+          }
+        },
+        "1532492491152": {
+          "type": "home-featured-product",
+          "blocks": {
+            "1534960350998": {
+              "type": "additional_info",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "1534960350998"
+          ],
+          "settings": {
+            "style": "default-style",
+            "show_spb": true,
+            "product_cart_redirect": true,
+            "enable_zoom": true,
+            "product_show_vendor": false,
+            "linked_options": false,
+            "variants_style": "select"
+          }
+        },
+        "1532447919778": {
+          "type": "home-logo-list",
+          "blocks": {
+            "1532447919778-3": {
+              "type": "logo",
+              "settings": {}
+            },
+            "1532447919778-2": {
+              "type": "logo",
+              "settings": {}
+            },
+            "1532447919778-1": {
+              "type": "logo",
+              "settings": {}
+            },
+            "1532447919778-0": {
+              "type": "logo",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "1532447919778-3",
+            "1532447919778-2",
+            "1532447919778-1",
+            "1532447919778-0"
+          ],
+          "settings": {
+            "style": "default-style",
+            "title": "",
+            "logos_in_rows": 4
+          }
+        },
+        "1532493094416": {
+          "type": "home-alternating-content",
+          "blocks": {
+            "1532493094416-0": {
+              "type": "image",
+              "settings": {
+                "media_alignment": "left"
+              }
+            },
+            "1532493212153": {
+              "type": "image",
+              "settings": {
+                "media_alignment": "right"
+              }
+            }
+          },
+          "block_order": [
+            "1532493094416-0",
+            "1532493212153"
+          ],
+          "settings": {
+            "style": "default-style",
+            "show_borders": false
+          }
+        },
+        "1532492436211": {
+          "type": "pxs-newsletter",
+          "settings": {
+            "desktop_alignment": "right",
+            "mobile_alignment": "top"
+          }
+        },
+        "1532448025563": {
+          "type": "home-text-columns-with-images",
+          "blocks": {
+            "1532448025563-0": {
+              "type": "text_column",
+              "settings": {}
+            },
+            "1532448025563-1": {
+              "type": "text_column",
+              "settings": {}
+            },
+            "1532448025563-2": {
+              "type": "text_column",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "1532448025563-0",
+            "1532448025563-1",
+            "1532448025563-2"
+          ],
+          "settings": {
+            "style": "default-style",
+            "max_image_width": 30
+          }
+        },
+        "general-header": {
+          "type": "general-header",
+          "settings": {
+            "header_sticky": true,
+            "show_cart": true,
+            "show_search": true,
+            "show_promotion": false,
+            "promotion_home_only": true,
+            "promotion_style": "standard-style"
+          }
+        },
+        "1534882811858": {
+          "type": "pxs-video",
+          "settings": {
+            "aspect_ratio": "16-9",
+            "autoplay": false,
+            "overlay_show": true,
+            "overlay_header_position": "above-button",
+            "overlay_header_color": "#ffffff",
+            "overlay_color": "#222222",
+            "overlay_color_opacity": 15,
+            "overlay_image_position": "center-center",
+            "overlay_button_style": "primary"
+          }
+        },
+        "1534894007180": {
+          "type": "home-instagram",
+          "settings": {
+            "style": "default-style"
+          }
+        }
+      },
+      "content_for_index": [
+        "1532447919778",
+        "1532493094416",
+        "1534882811858",
+        "1532448025563",
+        "1532492491152",
+        "1534894007180",
+        "1532492436211"
+      ]
+    },
+    "Tech": {
+      "background-color": "#ffffff",
+      "body-text-color": "#51595d",
+      "accent-color": "#126e7a",
+      "heading-color": "#444951",
+      "border-color": "#d7dcde",
+      "primary-button-color": "#ffffff",
+      "header-link-color": "#51595d",
+      "header-dropdown-color": "#d7dcde",
+      "form-select-background": "#ffffff",
+      "form-select-color": "#51595d",
+      "form-select-border-color": "#d7dcde",
+      "footer-background-color": "#19252b",
+      "footer-header-color": "#ffffff",
+      "footer-accent-color": "#ffffff",
+      "body_background_image": "",
+      "contrast_background_image": "",
+      "footer_background_image": "",
+      "font_body": "avenir_next_n4",
+      "font_logo": "avenir_next_n7",
+      "font_logo_capitalize": true,
+      "font_heading": "avenir_next_n5",
+      "font_heading_capitalize": false,
+      "font_section_heading_bold": false,
+      "font_section_heading_capitalize": true,
+      "font_meta_bold": true,
+      "font_meta_capitalize": false,
+      "font_button": "avenir_next_n7",
+      "font_button_capitalize": true,
+      "breadcrumbs_enable": false,
+      "product_show_vendor": false,
+      "product_stock_overlay": false,
+      "product_stock_overlay_show": 5,
+      "enable_currency_converter": false,
+      "currency_display_format": "money_with_currency_format",
+      "currency_converter_currencies": "INR GBP CAD USD AUD EUR JPY",
+      "currency_converter_default": "USD",
+      "heading_font": "Google_Montserrat_400,700",
+      "header-show-breadcrumbs": false,
+      "meta_font_weight": "400",
+      "button_font": "Google_Montserrat_400,700",
+      "button_font_capitalize": true,
+      "heading_font_weight": "400",
+      "section_heading_font_capitalize": true,
+      "button_font_weight": "700",
+      "meta_font_capitalize": true,
+      "contrast-background-color": "#FAF7F6",
+      "error-color": "#B84949",
+      "logo_font": "Google_Poppins_400,700",
+      "logo_font_capitalize": true,
+      "body_font": "Google_Roboto_400,700",
+      "meta-color": "#b7aba3",
+      "heading_font_capitalize": false,
+      "logo_font_weight": "700",
+      "section_heading_font_weight": "700",
+      "sections": {
+        "1522191048122": {
+          "type": "pxs-newsletter",
+          "settings": {
+            "desktop_alignment": "left",
+            "mobile_alignment": "top"
+          }
+        },
+        "template-article": {
+          "type": "template-article",
+          "settings": {
+            "show_tags": true,
+            "show_author": false,
+            "show_share_buttons": true,
+            "show_full_width_image": true
+          }
+        },
+        "module-product": {
+          "type": "module-product",
+          "settings": {
+            "show_spb": true,
+            "product_cart_redirect": true,
+            "center_product_details": false,
+            "enable_zoom": true,
+            "product_show_vendor": false,
+            "linked_options": true,
+            "variants_style": "select",
+            "single_column_product": false,
+            "show_share_buttons": true
+          }
+        },
+        "template-blog": {
+          "type": "template-blog",
+          "settings": {
+            "layout": "grid",
+            "show_rss_icon": false,
+            "show_tags": true,
+            "show_share_buttons": false,
+            "show_featured_image": true,
+            "show_author": false,
+            "show_comment_count": false
+          }
+        },
+        "1522191830168": {
+          "type": "home-twitter",
+          "settings": {
+            "style": "accent-style"
+          }
+        },
+        "general-header": {
+          "type": "general-header",
+          "settings": {
+            "header_sticky": true,
+            "show_cart": true,
+            "show_search": true,
+            "menu_style": "header"
+          }
+        },
+        "general-footer": {
+          "type": "general-footer",
+          "settings": {
+            "show_share_buttons": true,
+            "show_payment_icons": false
+          }
+        },
+        "1484623673945": {
+          "type": "home-alternating-content",
+          "blocks": {
+            "1484626483494": {
+              "type": "image",
+              "settings": {}
+            },
+            "1484623673945-0": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "1484626483494",
+            "1484623673945-0"
+          ],
+          "settings": {
+            "style": "default-style",
+            "show_borders": false
+          }
+        },
+        "home-slideshow": {
+          "type": "home-slideshow",
+          "blocks": {
+            "1522190951291": {
+              "type": "slide",
+              "settings": {
+                "alignment": "center"
+              }
+            }
+          },
+          "block_order": [
+            "1522190951291"
+          ],
+          "settings": {
+            "enable": false,
+            "show_shadows": true,
+            "text_color": "#51595d",
+            "slideshow_layout": "full-width",
+            "slideshow_transition": "transition-slide",
+            "autoplay": false,
+            "frequency": 5
+          }
+        },
+        "home-testimonials": {
+          "type": "home-testimonials",
+          "blocks": {
+            "testimonial-1": {
+              "type": "testimonial",
+              "settings": {}
+            },
+            "1484628761944": {
+              "type": "testimonial",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "testimonial-1",
+            "1484628761944"
+          ],
+          "settings": {
+            "style": "contrast-style"
+          }
+        },
+        "1484621547894": {
+          "type": "home-image-with-text-overlay",
+          "settings": {
+            "style": "accent-style",
+            "overlay_opacity_strength": 20
+          }
+        },
+        "home-instagram": {
+          "type": "home-instagram",
+          "settings": {
+            "style": "contrast-style"
+          }
+        },
+        "home-featured-product": {
+          "type": "home-featured-product",
+          "settings": {
+            "style": "default-style",
+            "show_spb": true,
+            "enable_zoom": true,
+            "product_show_vendor": false,
+            "linked_options": true,
+            "variants_style": "select"
+          }
+        },
+        "module-product-slideshow": {
+          "type": "module-product-slideshow",
+          "settings": {
+            "slideshow_layout": "full-bleed",
+            "slideshow_transition": "transition-slide",
+            "autoplay": true,
+            "frequency": 5,
+            "thumbnail_pagination": true
+          }
+        },
+        "1534285282377": {
+          "type": "home-text-columns-with-images",
+          "blocks": {
+            "1534285282377-1": {
+              "type": "text_column",
+              "settings": {}
+            },
+            "1534285282377-2": {
+              "type": "text_column",
+              "settings": {}
+            },
+            "1534285282377-0": {
+              "type": "text_column",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "1534285282377-1",
+            "1534285282377-2",
+            "1534285282377-0"
+          ],
+          "settings": {
+            "style": "contrast-style",
+            "max_image_width": 25
+          }
+        }
+      },
+      "content_for_index": [
+        "1484621547894",
+        "1534285282377",
+        "1484623673945",
+        "home-testimonials",
+        "home-featured-product",
+        "1522191830168",
+        "home-instagram",
+        "1522191048122"
+      ]
+    },
+    "Cloth": {
+      "background-color": "#ffffff",
+      "contrast-background-color": "#2E3438",
+      "body-text-color": "#838B8F",
+      "accent-color": "#4E7B99",
+      "heading-color": "#2E3438",
+      "meta-color": "#838b8f",
+      "error-color": "#b8474f",
+      "border-color": "#EDF0F2",
+      "primary-button-color": "#ffffff",
+      "header-link-color": "#838B8F",
+      "header-dropdown-color": "#D7DCDE",
+      "form-select-background": "#F4F5F5",
+      "form-select-color": "#838B8F",
+      "form-select-border-color": "#D7DCDE",
+      "footer-background-color": "#4E7B99",
+      "footer-header-color": "#ffffff",
+      "footer-accent-color": "#ffffff",
+      "font_body": "open_sans_n4",
+      "font_logo": "open_sans_n7",
+      "font_heading": "volkhov_n7",
+      "font_button": "volkhov_n7",
+      "font_logo_capitalize": true,
+      "font_heading_capitalize": false,
+      "font_section_heading_capitalize": true,
+      "font_meta_capitalize": true,
+      "font_button_capitalize": true,
+      "header-show-breadcrumbs": false,
+      "favicon": "",
+      "sections": {
+        "general-header": {
+          "type": "general-header",
+          "settings": {
+            "menu_style": "below-header"
+          }
+        },
+        "module-product-slideshow": {
+          "type": "module-product-slideshow",
+          "settings": {
+            "slideshow_color": "#989ea0",
+            "slideshow_layout": "content-width",
+            "autoplay": false
+          }
+        },
+        "home-slideshow": {
+          "type": "home-slideshow",
+          "blocks": {
+            "slide-1": {
+              "type": "slide",
+              "settings": {
+                "alignment": "center"
+              }
+            },
+            "slide-2": {
+              "type": "slide",
+              "settings": {
+                "alignment": "center"
+              }
+            }
+          },
+          "block_order": [
+            "slide-1",
+            "slide-2"
+          ],
+          "settings": {
+            "enable": true,
+            "show_shadows": true,
+            "text_color": "#989ea0",
+            "slideshow_layout": "full-width",
+            "autoplay": false
+          }
+        },
+        "home-image-with-text": {
+          "type": "home-image-with-text",
+          "settings": {
+            "style": "default-style",
+            "media_layout": "regular"
+          }
+        },
+        "home-text-columns-with-images": {
+          "type": "home-text-columns-with-images",
+          "blocks": {
+            "column-1": {
+              "type": "text_column",
+              "settings": {}
+            },
+            "column-2": {
+              "type": "text_column",
+              "settings": {}
+            },
+            "column-3": {
+              "type": "text_column",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "column-1",
+            "column-2",
+            "column-3"
+          ],
+          "settings": {
+            "style": "contrast-style"
+          }
+        },
+        "home-testimonials": {
+          "type": "home-testimonials",
+          "blocks": {
+            "testimonial-1": {
+              "type": "testimonial",
+              "settings": {}
+            },
+            "testimonial-2": {
+              "type": "testimonial",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "testimonial-1",
+            "testimonial-2"
+          ],
+          "settings": {
+            "style": "default-style"
+          }
+        },
+        "home-featured-product": {
+          "type": "home-featured-product",
+          "settings": {
+            "style": "default-style",
+            "title": "Featured product"
+          }
+        },
+        "home-instagram": {
+          "type": "home-instagram",
+          "settings": {
+            "style": "default-style"
+          }
+        },
+        "home-alternating-content": {
+          "type": "home-alternating-content",
+          "blocks": {
+            "home-alternating-content-1": {
+              "type": "image",
+              "settings": {
+                "media_alignment": "left"
+              }
+            },
+            "home-alternating-content-2": {
+              "type": "image",
+              "settings": {
+                "media_alignment": "right"
+              }
+            },
+            "home-alternating-content-3": {
+              "type": "image",
+              "settings": {
+                "media_alignment": "left"
+              }
+            }
+          },
+          "block_order": [
+            "home-alternating-content-1",
+            "home-alternating-content-2",
+            "home-alternating-content-3"
+          ],
+          "settings": {
+            "style": "default-style",
+            "title": "Alternating content",
+            "show_borders": true
+          }
+        },
+        "home-featured-collection": {
+          "type": "home-featured-collection",
+          "settings": {
+            "style": "default-style",
+            "title": "Featured collection"
+          }
+        },
+        "home-logo-list": {
+          "type": "home-logo-list",
+          "blocks": {
+            "logo-1": {
+              "type": "logo",
+              "settings": {}
+            },
+            "logo-2": {
+              "type": "logo",
+              "settings": {}
+            },
+            "logo-3": {
+              "type": "logo",
+              "settings": {}
+            },
+            "logo-4": {
+              "type": "logo",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "logo-1",
+            "logo-2",
+            "logo-3",
+            "logo-4"
+          ],
+          "settings": {
+            "style": "default-style",
+            "logos_in_rows": 4
+          }
+        }
+      },
+      "content_for_index": [
+        "home-image-with-text",
+        "home-alternating-content",
+        "home-text-columns-with-images",
+        "home-testimonials",
+        "home-featured-product",
+        "home-featured-collection",
+        "home-logo-list",
+        "home-instagram"
+      ]
+    },
+    "Art": {
+      "background-color": "#ffffff",
+      "contrast-background-color": "#6FC3C4",
+      "body-text-color": "#060C0C",
+      "accent-color": "#0B8484",
+      "heading-color": "#060C0C",
+      "meta-color": "#a0a2a3",
+      "error-color": "#b84949",
+      "border-color": "#e8eced",
+      "primary-button-color": "#ffffff",
+      "header-link-color": "#0B8484",
+      "header-dropdown-color": "#b8c8c8",
+      "form-select-background": "#ffffff",
+      "form-select-color": "#6a9898",
+      "form-select-border-color": "#b8c8c8",
+      "footer-background-color": "#050D0E",
+      "footer-header-color": "#ffffff",
+      "footer-accent-color": "#5FB8B7",
+      "font_body": "montserrat_n4",
+      "font_logo": "montserrat_n7",
+      "font_heading": "montserrat_n7",
+      "font_button": "montserrat_n7",
+      "font_logo_capitalize": true,
+      "font_heading_capitalize": false,
+      "font_section_heading_capitalize": true,
+      "font_meta_capitalize": true,
+      "font_button_capitalize": true,
+      "header-show-breadcrumbs": false,
+      "favicon": "",
+      "sections": {
+        "general-header": {
+          "type": "general-header",
+          "settings": {
+            "header_sticky": true,
+            "menu_style": "header"
+          }
+        },
+        "module-product-slideshow": {
+          "type": "module-product-slideshow",
+          "settings": {
+            "slideshow_color": "#060c0c",
+            "slideshow_layout": "content-width",
+            "autoplay": false
+          }
+        },
+        "home-slideshow": {
+          "type": "home-slideshow",
+          "blocks": {
+            "slide-1": {
+              "type": "slide",
+              "settings": {
+                "alignment": "center"
+              }
+            },
+            "slide-2": {
+              "type": "slide",
+              "settings": {
+                "alignment": "center"
+              }
+            }
+          },
+          "block_order": [
+            "slide-1",
+            "slide-2"
+          ],
+          "settings": {
+            "enable": false,
+            "text_color": "#060c0c",
+            "slideshow_layout": "full-width",
+            "autoplay": false
+          }
+        },
+        "home-promotion": {
+          "type": "home-promotion",
+          "settings": {
+            "style": "default-style"
+          }
+        },
+        "home-image-with-text": {
+          "type": "home-image-with-text",
+          "settings": {
+            "style": "contrast-style",
+            "media_layout": "regular"
+          }
+        },
+        "home-featured-product": {
+          "type": "home-featured-product",
+          "settings": {
+            "style": "default-style",
+            "title": "Featured product"
+          }
+        },
+        "home-featured-collection": {
+          "type": "home-featured-collection",
+          "settings": {
+            "style": "contrast-style",
+            "title": "Featured collection"
+          }
+        },
+        "home-testimonials": {
+          "type": "home-testimonials",
+          "blocks": {
+            "testimonial-1": {
+              "type": "testimonial",
+              "settings": {}
+            },
+            "testimonial-2": {
+              "type": "testimonial",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "testimonial-1",
+            "testimonial-2"
+          ],
+          "settings": {
+            "style": "default-style"
+          }
+        },
+        "home-instagram": {
+          "type": "home-instagram",
+          "settings": {
+            "style": "contrast-style"
+          }
+        }
+      },
+      "content_for_index": [
+        "home-promotion",
+        "home-image-with-text",
+        "home-featured-product",
+        "home-featured-collection",
+        "home-testimonials",
+        "home-instagram"
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "main": {
+      "type": "wholesale-signin",
+      "settings": {
+        "heading": "LOGIN",
+        "copy": "Thousands of cat owners everywhere are making the switch from clay to wood for a cheaper, more sustainable, and better odor controlling litter.",
+        "article_image": "shopify:\/\/shop_images\/cat-wholesale.jpg",
+        "article_heading": "Catalyst Pet Dealer Direct Portal",
+        "article_copy": "Your gateway to order Catalyst products at dealer prices, sales information, valuable resources and more for Catalyst Pet Litter."
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

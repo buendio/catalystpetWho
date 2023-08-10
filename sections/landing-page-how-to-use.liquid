@@ -1,0 +1,171 @@
+<style>
+    .section-how-it-works {
+        background: #F8F6ED;
+        padding: 60px 40px;
+        position: relative; 
+        overflow: hidden;   
+
+    }
+
+    .section-how-it-works__title {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 46px;
+        line-height: 47px;
+
+        text-align: center;
+        letter-spacing: 1.46154px;
+        color: #5D5D5D;
+        margin: 0;
+    }
+
+    .section-how-it-works__list {
+        width: 100%;
+        display: flex;
+        gap: 60px;
+        padding-top: 25px;
+
+        position: relative;
+        overflow: hidden;
+    }
+
+    .slider-how-it-works .owl-stage {
+        display: flex;
+    }
+
+    .block__image {
+        display: block;
+        margin: auto;
+    }
+
+    .block__title {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 30px;
+        line-height: 37px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 1.88288px;
+        color: #5D5D5D;
+    }
+
+    .block__paragraph {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 27px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #5D5D5D;
+
+    }
+
+    .section-how-it-works__cta {
+        width: 355px;
+        height: 54px;
+        margin: 80px auto 0;
+
+        background: #D7AC40;
+        border: 1px solid #000000;
+        border-radius: 4px;
+        color: #000000;
+
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 27px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .how-it-works-customNextBtn,
+    .how-it-works-customPrevBtn {
+        width: 30px;
+        height: 30px;
+        display: none;
+        position: absolute;
+        top: 50%;
+        z-index: 200;
+    }
+
+    .how-it-works-customNextBtn {
+        left: 20px;
+    }
+
+    .how-it-works-customPrevBtn {
+        right: 20px;
+        transform: rotate(180deg);
+    }
+
+    @media(max-width: 1024px) {
+        .how-it-works-customNextBtn,
+        .how-it-works-customPrevBtn {
+            display: inline-block;
+        }
+
+        .section-how-it-works__cta {
+            width: 260px;
+        }
+
+        .section-how-it-works__title {
+            font-size: 30px;
+            line-height: 27px;
+        }
+    }
+</style>
+
+
+<div class="section-how-it-works">
+    <h3 class="section-how-it-works__title">HOW IT WORKS</h3>
+    
+    <img class="how-it-works-customNextBtn" src="{{'arrowSlider.svg' | asset_url}}" alt="" />
+    <img class="how-it-works-customPrevBtn" src="{{'arrowSlider.svg' | asset_url}}" alt="" />
+    
+    <div class="section-how-it-works__list slider-how-it-works">
+        {% for block in section.blocks %}
+            <div class="list__block">
+                <img class="block__image" src="{{block.settings.image.src | img_url: '250x'}}" alt="" />
+                <p class="block__title">{{block.settings.title}}</p>
+                <p class="block__paragraph">{{block.settings.paragraph}}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <a href="https://catalystpet.com/collections/frontpage" class="section-how-it-works__cta">SUBSCRIBE</a>
+</div>
+
+
+
+{% schema %}
+    {
+        "name": "How It Works Section",
+        "settings": [],
+        "blocks": [
+            {
+                "name": "How It Works Block",
+                "type": "card",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Title"
+                    },
+                    {
+                        "type": "text",
+                        "id": "paragraph",
+                        "label": "paragraph"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

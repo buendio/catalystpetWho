@@ -1,0 +1,18 @@
+<div class="ws-video-wrapper">
+    <img src="{{ 'play.png' | asset_url }}" alt="" class="ws-video-play-icon" onclick="playVideo(this)" />
+    <video width="{{ video.width }}" height="{{ video.height }}">
+        {% for source in video.sources %}
+            <source src="{{ source.url }}" type="{{ source.mime_type }}">
+        {% endfor %}
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<script>
+    function playVideo(el) {
+        const video = el.parentElement.querySelector("video");
+        video.play();
+        video.setAttribute("controls", "true");
+        el.style.display = "none";
+    }
+</script>

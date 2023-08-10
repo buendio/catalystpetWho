@@ -1,0 +1,109 @@
+.ws-signin {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 25px;
+    padding: 35px;
+}
+
+.ws-signin__article {
+    flex: 1;
+    border-radius: 11px;
+    background: linear-gradient(180deg, #488267 48.03%, #366153 100%);
+    padding: var(--blockPadding);
+}
+
+.signin-article__heading {
+    margin: 0;
+    color: #FFF;
+    font-size: 58px;
+    font-family: "Route-66-NF";
+    line-height: 107%;
+    font-weight: 400;
+    letter-spacing: normal;
+    letter-spacing: 2.32px;
+}
+
+.signin-article__copy {
+    color: #FFF;
+    margin: 10px 0 70px;
+}
+
+.signin-article__media img {
+    width: 100%;
+    border-radius: 11px;
+}
+
+.ws-signin__form {
+    width: 570px;
+}
+
+.signin-form__heading {
+    color: #037847;
+    font-size: 42px;
+    letter-spacing: normal;
+    font-weight: 400;
+    font-family: "Route-66-NF";
+    line-height: 120%;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.signin-form__copy {
+    color: #2E2E2E;
+    margin: 10px 0 0;
+}
+
+.signin-form__footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-footer__msg {
+    color: #2E2E2E;
+}
+
+.signin-form__footer a {
+    color: #027747;
+    text-decoration: underline;
+}
+
+.form-footer__forgot-pass {
+    display: block;
+}
+
+@media (max-width: 1100px) {
+    .ws-signin__form {
+        width: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ws-signin {
+        gap: 0;
+        padding: 0px;
+    }
+    
+    .ws-signin__article {
+        flex: auto;
+        width: 100%;
+        border-radius: 0px;
+    }
+
+    .signin-article__media {
+        display: none;
+    }
+
+    .signin-article__copy {
+        margin: 10px 0 0 0;
+    }
+
+    .ws-signin__form {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .signin-article__heading {
+        font-size: 45px;
+    }
+}

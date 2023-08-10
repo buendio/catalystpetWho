@@ -1,0 +1,141 @@
+{% style %}
+    .reasons-banner {
+        display: flex;
+        align-items: center;
+        background: #F8F6ED;
+    }
+
+    .reasons-banner__image-wrapper,
+    .reasons-banner__copy {
+        width: 50%;
+    }
+
+    .reasons-banner__image-wrapper {
+        height: 100%;
+    }
+
+    .reasons-banner__image-wrapper img {
+        height: calc(100% + 1px);
+        width: 100%;
+        object-fit: cover;
+        display: block;
+        margin-top: -1px;
+    }
+
+    .reasons-banner__copy {
+        max-width: 468px;
+        padding: 54px 50px 50px;
+        box-sizing: content-box;
+    }
+
+    .reasons-banner__copy h4 {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 40px;
+        text-transform: uppercase;
+        color: #037847;
+        margin: 0;
+        letter-spacing: normal;
+    }
+
+    .reasons-banner__copy p {
+        font-family: 'FuturaMedium';
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 28px;
+        color: #5D5D5D;
+        margin: 30px 0;
+    }
+
+    .reasons-banner__copy a {
+        padding: 14px 50px;
+        background: #DDAD26;
+        border-radius: 8px;
+
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 25px;
+        text-transform: capitalize;
+        color: #1C1C1C;
+        display: block;
+        width: fit-content;
+    }
+
+    @media(max-width: 1000px) {
+        .reasons-banner {
+            flex-direction: column;
+        }
+
+        .reasons-banner__image-wrapper,
+        .reasons-banner__copy {
+            width: 100%;
+        }
+
+        .reasons-banner__copy {
+            padding: 20px 15px;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .reasons-banner__image-wrapper {
+            height: 50vw;
+        }
+    }
+
+    @media(max-width: 550px) {
+        .reasons-banner__image-wrapper {
+            height: 77vw;
+        }
+
+         .reasons-banner__copy a {
+            width: auto;
+            text-align: center;
+        }
+
+    }
+{% endstyle %}
+
+<div class="reasons-banner">
+    <div class="reasons-banner__image-wrapper">
+        <img src="{{section.settings.banner_image.src | img_url: '768x'}}" alt="" />
+    </div>
+
+    <div class="reasons-banner__copy">
+        <h4>{{section.settings.heading}}</h4>
+        <p>{{section.settings.paragraph}}</p>
+        <a href="{{section.settings.cta_url}}">{{section.settings.cta_title}}</a>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "5 Reasons Hero",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "banner_image",
+                "label": "Banner Image"
+            },
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Banner Heading"
+            },
+            {
+                "type": "text",
+                "id": "paragraph",
+                "label": "Hero Paragraph"
+            },
+            {
+                "type": "text",
+                "id": "cta_title",
+                "label": "CTA Title"
+            },
+            {
+                "type": "url",
+                "id": "cta_url",
+                "label": "CTA URL"
+            }
+        ]
+    }
+{% endschema %}

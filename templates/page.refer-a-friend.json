@@ -1,0 +1,54 @@
+{
+  "sections": {
+    "main": {
+      "type": "refer-a-friend",
+      "settings": {
+        "page_copy": "<p><strong>Here's how it works:<\/strong><br\/>1. When your friend clicks on your link, the page will reveal a 55% discount code. Your friend <strong>MUST<\/strong> use this discount code for you to receive the benefit (if they purchase something but do not use your discount code, it will not count).<\/p><p>2. You will receive a code in your email after a successful referral is confirmed. You can apply that code to your subscription from your portal (<a href=\"https:\/\/catalystpet.com\/account\" target=\"_blank\" title=\"null\">https:\/\/catalystpet.com\/account<\/a>). You can find \"add discount\" on the first screen you get to when you click \"Manage Subscription\". You can see the picture <a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0252\/0806\/2004\/files\/Image_1.png?v=1686835081\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0252\/0806\/2004\/files\/Image_1.png?v=1686835081\">here<\/a> for reference. Unfortunately, this discount is not available to non-subscribers at this time (that includes both referrers and recipients).<\/p>"
+      }
+    },
+    "faq": {
+      "type": "module-faq",
+      "blocks": {
+        "6c587fc6-09d0-44cd-a453-5ee756ab5878": {
+          "type": "faq",
+          "settings": {
+            "title": "Does the program apply to one-time purchases?",
+            "content": "<p>No, the person you refer must sign up for a subscription, and you can only apply your discount code to a subscription purchase. If you don’t have a current subscription, you will receive the discount code automatically applied if you sign up for one.<\/p>"
+          }
+        },
+        "3f6a275b-4935-466f-8380-e7771915083d": {
+          "type": "faq",
+          "settings": {
+            "title": "Will more than one discount code be applied to my next order if I refer more than one friend?",
+            "content": "<p>No, only one discount code of $20 may be applied to each order. If you refer two friends, your next two orders will be $20 off each, instead of your next order receiving $40 off.<\/p>"
+          }
+        },
+        "9736a47c-3c8e-4d27-a99a-7f4a2064b5f5": {
+          "type": "faq",
+          "settings": {
+            "title": "Is there a delay between when I refer someone and when I see the benefit?",
+            "content": "<p>There is a 2 day purchase review to make sure the referral is not fraudulent - therefore, only subscription charges more than 2 days after the referral purchase will be eligible for the $20 discount. Note that the anti-fraud protections are stringent, and any person found abusing the program will have any rewards voided, as it takes away money from our rule-following cat parents!<\/p>"
+          }
+        },
+        "c98402b9-51c5-4682-aec2-d960125a8462": {
+          "type": "faq",
+          "settings": {
+            "title": "How can I view the status of my referrals?",
+            "content": "<p>You can access your referrals by going to the same place where you got your invite link (on this page), inputting your email address and name and clicking on \"Get invite link\". After you do this, there will be two tabs - one will say Invite Friends and one will say Your Rewards. If you click on the one saying Your Rewards, you will be invited to create an account. Afterwards, you will be able to log in and view the status of your rewards.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "6c587fc6-09d0-44cd-a453-5ee756ab5878",
+        "3f6a275b-4935-466f-8380-e7771915083d",
+        "9736a47c-3c8e-4d27-a99a-7f4a2064b5f5",
+        "c98402b9-51c5-4682-aec2-d960125a8462"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "faq"
+  ]
+}

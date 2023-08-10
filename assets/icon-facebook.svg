@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>facebook</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon/40_facebook" transform="translate(1.000000, 1.000000)">
+            <g id="facebook">
+                <rect id="Rectangle" stroke="#FFFFFF" stroke-width="2" x="0" y="0" width="40" height="40" rx="20"></rect>
+                <path d="M21.3147057,33 L16.4372418,33 L16.4372418,21.4985483 L14,21.4985483 L14,17.535534 L16.4372418,17.535534 L16.4372418,15.1562737 C16.4372418,11.9234411 17.8127074,10 21.7230238,10 L24.9776468,10 L24.9776468,13.964466 L22.9435074,13.964466 C21.4212558,13.964466 21.3206665,14.5182719 21.3206665,15.5518493 L21.3139606,17.535534 L25,17.535534 L24.5685836,21.4985483 L21.3139606,21.4985483 L21.3139606,33 L21.3147057,33 Z" id="colour" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

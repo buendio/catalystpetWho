@@ -1,0 +1,143 @@
+<div class="cl-features">
+    <div class="inner">
+        <h4>{{ section.settings.title }}<br/> <span>{{ section.settings.subtitle }}</span></h4>
+        <div class="feature">
+            {% assign feature1Image = 'cat1.jpg' | asset_url %}
+            {% if section.settings.feature1_image %}
+                {% assign feature1Image = section.settings.feature1_image | img_url: '360x', scale: 2 %}
+            {% endif %}
+            <img src="{{ feature1Image }}" alt="">
+            <h5>{{ section.settings.feature1_title }}</h5>
+            {{ section.settings.feature1_content }}
+        </div>
+        <div class="feature">
+            {% assign feature2Image = 'acceptance.jpg' | asset_url %}
+            {% if section.settings.feature2_image %}
+                {% assign feature2Image = section.settings.feature2_image | img_url: '360x', scale: 2 %}
+            {% endif %}
+            <img src="{{ feature2Image }}" alt="">
+            <h5>{{ section.settings.feature2_title }}</h5>
+            {{ section.settings.feature2_content }}            
+        </div>
+        <div class="feature logo-container">
+            {% assign catalystLogo = 'catalyst-logo.png' | asset_url %}
+            {% if section.settings.catalyst_logo %}
+                {% assign catalystLogo = section.settings.catalyst_logo | img_url: '265x', scale: 2 %}
+            {% endif %}
+            <img src="{{ catalystLogo }}" alt="">
+        </div>
+        <div class="feature">
+            {% assign feature3Image = 'absorption.png' | asset_url %}
+            {% if section.settings.feature3_image %}
+                {% assign feature3Image = section.settings.feature3_image | img_url: '360x', scale: 2 %}
+            {% endif %}
+            <img src="{{ feature3Image }}" alt="">
+            <h5>{{ section.settings.feature3_title }}</h5>
+            {{ section.settings.feature3_content }}            
+        </div>
+        <div class="feature">
+            {% assign feature4Image = 'clumping.jpg' | asset_url %}
+            {% if section.settings.feature4_image %}
+                {% assign feature4Image = section.settings.feature4_image | img_url: '360x', scale: 2 %}
+            {% endif %}
+            <img src="{{ feature4Image }}" alt="">
+            <h5>{{ section.settings.feature4_title }}</h5>
+            {{ section.settings.feature4_content }}   
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Cat Litter Features",
+  "class": "section-cl",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Finally, a natural cat litter that works."
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Love Your Pet, Change Your Planet."
+    },
+    {
+      "type": "image_picker",
+      "id": "feature1_image",
+      "label": "Feature 1 image"
+    },
+    {
+      "type": "text",
+      "id": "feature1_title",
+      "label": "Feature 1 Title",
+      "default": "Sustainable. Renewable. Responsible."
+    },
+    {
+      "type": "text",
+      "id": "feature1_content",
+      "label": "Feature 1 Content",
+      "default": "<p>Catalyst captures clean, unused pine tree fiber from sawmills and processes it into our top-performing, Catalyst litter. Our upcycled natural wood litter does 3x the work of clay litters per pound, reducing production and transportation pollution and the harmful effects of clay strip-mining.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "feature2_image",
+      "label": "Feature 2 image"
+    },
+    {
+      "type": "text",
+      "id": "feature2_title",
+      "label": "Feature 2 Title",
+      "default": "Unrivaled Cat Acceptance"
+    },
+    {
+      "type": "text",
+      "id": "feature2_content",
+      "label": "Feature 2 Content",
+      "default": "<p>Cats love to use our litter. With a soft texture that's gentle on paws and mild scent for sensitive cat noses, we guarantee your cat will accept the litter or we'll give you your money back.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "feature3_image",
+      "label": "Feature 3 image"
+    },
+    {
+      "type": "text",
+      "id": "feature3_title",
+      "label": "Feature 3 Title",
+      "default": "High Performing Absorption"
+    },
+    {
+      "type": "text",
+      "id": "feature3_content",
+      "label": "Feature 3 Content",
+      "default": "<p>Catalyst litter is three times more absoptive than clay and one half the weight. This innovative litter lets the waste soak in fast enough to NOT run off the top and NOT stick to the bottom. Catalyst litter controls waste making cats and their humans happy.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "feature4_image",
+      "label": "Feature 4 image"
+    },
+    {
+      "type": "text",
+      "id": "feature4_title",
+      "label": "Feature 4 Title",
+      "default": "Great Clumping"
+    },
+    {
+      "type": "text",
+      "id": "feature4_content",
+      "label": "Feature 4 Content",
+      "default": "<p>Catalyst litter forms clumps by using natural clumping agents as a surface coating over our specialty sized wood fiber. Moisture will activate the clumping agents and allow waste to be scooped out keeping the box clean and kitties happy</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "catalyst_logo",
+      "label": "Catalyst logo"
+    }
+  ]
+}
+
+{% endschema %}

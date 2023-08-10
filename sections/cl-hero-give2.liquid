@@ -1,0 +1,83 @@
+{% assign product1 = all_products[section.settings.product1] %}
+{% assign product2 = all_products[section.settings.product2] %}
+{% assign product3 = all_products[section.settings.product3] %}
+<div class="cl-hero give2">
+    <div class="hero-inner">
+        <div class="hero-left">
+        {{ section.settings.main_hero_text }}
+        </div>
+        <div class="hero-center">
+            <img src="{{ product2.featured_image | img_url: '340x340x' ,scale: 2 }}" alt="" data-default-product="2" data-current-product="2">
+            <img src="{{ product1.featured_image | img_url: '340x340x' ,scale: 2 }}" alt="" data-default-product="1" data-current-product="1">
+            <img src="{{ product3.featured_image | img_url: '340x340x' ,scale: 2 }}" alt="" data-default-product="3" data-current-product="3">
+        </div>
+        <div class="hero-right">
+            <div class="checkbox">{% render 'icon-checkbox-mark' %}</div>
+            {{ section.settings.hero_description }}
+            <a href="{{ product1.url }}" class="try-catalyst go-to-element" data-element="go-to-{{ product1.handle }}">{{ section.settings.button_text }}</a>
+        </div>
+    </div>
+</div>
+<div class="cl-sub-hero">
+    {{ section.settings.hero_sub_hero }}
+</div>
+
+{% schema %}
+{
+  "name": "Cat Litter Hero",
+  "class": "section-cl",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product1",
+      "label": "Product 1"
+    },
+    {
+      "type": "product",
+      "id": "product2",
+      "label": "Product 2"
+    },
+    {
+      "type": "product",
+      "id": "product3",
+      "label": "Product 3"
+    },
+    {
+      "type": "text",
+      "id": "main_hero_text",
+      "label": "Main hero text",
+      "default": "THE HIGHEST PERFORMING, SUSTAINABLE CAT LITTER AVAILABLE"
+    },
+    {
+      "type": "richtext",
+      "id": "hero_description",
+      "label": "Hero description",
+      "default": "<p><strong>4X MORE EFFECTIVE</strong><br/>on a per lb. basis than clumping clay</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "TRY CATALYST"
+    },
+    {
+      "type": "text",
+      "id": "button_price",
+      "label": "Button price",
+      "default": "$22.99"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image"
+    },
+    {
+        "type": "richtext",
+        "id": "hero_sub_hero",
+        "label": "Sub Hero Text",
+        "default": "<p><strong>Donate $1.99</strong> when you first subscribe and <strong>get a free bag</strong>! Use <strong>promo code GIVE2</strong> at checkout.</p>"
+    }
+  ]
+}
+
+{% endschema %}

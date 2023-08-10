@@ -1,0 +1,63 @@
+<div class="cl-compare">
+    <div id="imagesCompare">
+        <div style="display: none;">
+        <img src="{{ 'comparator-catalyst-HD.jpg' | asset_url }}" alt="" >
+            <ul>                    
+                <li>Unrivaled cat acceptance</li>            
+                <li>Superior, natural odor-blocking</li>            
+                <li>Gentle, positive scent</li>            
+                <li>Strong clumping</li>            
+                <li>Lightweight</li>            
+                <li>Sustainable and renewable</li>            
+            </ul>
+        </div>
+        <div>
+            <img src="{{ 'comparator-otherLitter-HD.jpg' | asset_url }}" alt="" >
+            <ul>                    
+                <li>Strip mining: not sustainable</li>            
+                <li>Strong synthetic perfumes</li>            
+                <li>Heavy weight</li>            
+                <li>Nasty airborne dust plumes</li>                
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="compare-list">
+  <ul>                    
+      <li>Unrivaled cat acceptance</li>            
+      <li>Superior, natural odor-blocking</li>            
+      <li>Gentle, positive scent</li>            
+      <li>Strong clumping</li>            
+      <li>Lightweight</li>            
+      <li>Sustainable and renewable</li>            
+  </ul>
+</div>
+<div class="switch-to">
+    <a href="https://catalystpet.com/collections/frontpage" class="try-catalyst">SWITCH TO CATALYST</a>
+</div>
+
+{% schema %}
+{
+  "name": "Compare images",
+  "class": "section-cl",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_left",
+      "label": "Image left"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_right",
+      "label": "Image right"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Image",
+      "name": "Compare images"
+    }
+  ]
+}
+
+{% endschema %}

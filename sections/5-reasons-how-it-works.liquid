@@ -1,0 +1,133 @@
+{% style %}
+    .reasons-how-it-works {
+        background: #027747;
+        padding: 50px;
+    }
+
+    .reasons-how-it-works h4 {
+        font-family: 'Domine';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 42px;
+        line-height: 66px;
+        text-transform: capitalize;
+        color: #FFFFFF;
+        text-align: center;
+        margin: 0 0 40px 0;
+        letter-spacing: normal;
+    }
+
+    .reasons-how-it-works__elements {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+    }
+
+    .reasons-how-it-works__item {
+        width: calc(100% / 3 - 35px);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .reasons-how-it-works__item img {
+        width: 150px;
+    }
+
+    .reasons-how-it-works__item h5 {
+        font-family: 'Domine';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 27px;
+        text-align: center;
+        letter-spacing: 0.03em;
+        color: #FFFFFF;
+        text-transform: none;
+    }
+
+    .reasons-how-it-works__item p {
+        font-family: 'FuturaMedium';
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 28px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+    .reasons-how-it-works__item p a {
+        color: white;
+        text-decoration: underline;
+    }
+
+    @media(max-width: 900px) {
+        .reasons-how-it-works__elements {
+            flex-direction: column;
+        }
+
+        .reasons-how-it-works__item {
+            width: 100%;
+        }
+    }
+
+    @media(max-width: 600px) {
+        .reasons-how-it-works {
+            padding: 50px 15px;
+        }
+
+        .reasons-how-it-works__item img {
+            width: 90px;
+        }
+    }
+{% endstyle %}
+
+<div class="reasons-how-it-works">
+    <h4>how it works</h4>
+    
+    <div class="reasons-how-it-works__elements">
+        {% for block in section.blocks %}
+            <div class="reasons-how-it-works__item">
+                <img src="{{block.settings.image.src | img_url: '160x'}}" alt="" loading="lazy" />
+                <h5>{{block.settings.title}}</h5>
+                {{block.settings.paragraph}}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% schema %}
+    {
+        "name": "5 Reasons How",
+        "settings": [
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Title"                
+            }
+        ],
+        "blocks": [
+            {
+                "name": "Item",
+                "type": "item",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Title"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "paragraph",
+                        "label": "Paragraph"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

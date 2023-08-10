@@ -1,0 +1,192 @@
+{{ "style.wholesale-global.css" | asset_url | stylesheet_tag }}
+{{ "style.wholesale-landing-page.css" | asset_url | stylesheet_tag }}
+
+<div class="ws-landing-page">
+    {% for block in section.blocks %}
+        {% case block.type %}
+            {% when "wholesale_dealer_info" %}
+                <div class="ws-dealer-info container">
+                    <div class="ws-dealer-info__article">
+                        <h3 class="info-article__header">
+                            {{ block.settings.heading }}
+                        </h3>
+                        <div class="info-article__copy ws-paragraph">
+                            {{ block.settings.copy }}
+                        </div>
+
+                        {% if customer.name != blank %}
+                            <a href="/pages/wholesale-registration-1" class="dealer-cta dealer-cta--apply dealer-cta--small">Apply to be a Dealer {% render "icon-arrow-right" %}</a>
+                        {% endif %}
+                    </div>
+                    <div class="ws-dealer-info__media">
+                        <img src="{{block.settings.image.src | img_url: '800x400'}}" alt="{{block.settings.image.alt}}" />
+                    </div>
+                </div>
+
+            {% when "wholesale-apply-dealer" %}
+                {% if customer.name == blank %}
+                    <div class="ws-apply-dealer container">
+                        <div class="ws-apply-dealer__article">
+                            <h3 class="dealer-article__header">{{ block.settings.heading }}</h3>
+                            <div class='dealer-article__copy ws-paragraph'>{{ block.settings.copy }}</div>
+                        </div>
+                        <div class="ws-apply-dealer__ctas">
+                            <a href="/pages/wholesale-login" class="dealer-cta dealer-cta--login">Login {% render "icon-arrow-right" %}</a>
+                            <a href="/pages/wholesale-registration-1" class="dealer-cta dealer-cta--apply">Apply to be a Dealer {% render "icon-arrow-right" %}</a>
+                        </div>
+                    </div>
+                {% endif %}
+
+            {% when "wholesale-save-more" %}
+                <div class="ws-save-more container">
+                    <div class="ws-save-more__media">
+                        {% render "wholesale-video", class: "save-more-video", video: block.settings.video %}
+                    </div>
+                    <div class="ws-save-more__article">
+                        <h3 class="save-more-article__heading">
+                            {{ block.settings.heading }}
+                        </h3>
+                        <div class="save-more-article__copy ws-paragraph">
+                            {{ block.settings.copy }}
+                        </div>
+                        <img class="save-more-article__image" src="{{ block.settings.image | img_url: '630x' }}" alt="" />
+                    </div>
+                </div>
+            
+            {% when "wholesale-video-section" %}
+                <div class="ws-video-section container">
+                    <h2 class="ws-video-section__heading">
+                        {{ block.settings.heading }}
+                    </h2>
+                    <div class="ws-video-section__copy ws-paragraph">
+                        {{ block.settings.copy }}
+                    </div>
+
+                    <div class="ws-video-section__list">
+                        <div class="ws-video-section__item">
+                            {% render "wholesale-video", class: "save-more-video", video: block.settings.video_1 %}
+                        </div>
+                        <div class="ws-video-section__item">
+                            {% render "wholesale-video", class: "save-more-video", video: block.settings.video_2 %}
+                        </div>
+                        <div class="ws-video-section__item">
+                            {% render "wholesale-video", class: "save-more-video", video: block.settings.video_3 %}
+                        </div>
+                        <div class="ws-video-section__item">
+                            {% render "wholesale-video", class: "save-more-video", video: block.settings.video_4 %}
+                        </div>
+                    </div>
+                </div>
+
+        {% endcase %}
+    {% endfor %}
+</div>
+
+{% schema %}
+    {
+        "name": "Wholesale Landing",
+        "settings": [
+        ],
+        "blocks": [
+            {
+                "type": "wholesale_dealer_info",
+                "name": "Wholesale Dealer Info",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "heading",
+                        "label": "Heading"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "copy",
+                        "label": "Copy"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image"
+                    }
+                ]
+            },
+            {
+                "type": "wholesale-apply-dealer",
+                "name": "Wholesale Apply Dealer",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "heading",
+                        "label": "Heading"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "copy",
+                        "label": "Copy"
+                    }
+                ]
+            },
+            {
+                "type": "wholesale-save-more",
+                "name": "Wholesale Save More",
+                "settings": [
+                    {
+                        "type": "richtext",
+                        "id": "heading",
+                        "label": "Heading"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "copy",
+                        "label": "Copy"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "video",
+                        "id": "video",
+                        "label": "A Shopify-hosted video"
+                    }
+                ]
+            },
+            {
+                "type": "wholesale-video-section",
+                "name": "Wholesale Video Section",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "heading",
+                        "label": "Heading"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "copy",
+                        "label": "Copy"
+                    },
+                    {
+                        "type": "video",
+                        "id": "video_1",
+                        "label": "A Shopify-hosted video"
+                    },
+                    {
+                        "type": "video",
+                        "id": "video_2",
+                        "label": "A Shopify-hosted video"
+                    },
+                    {
+                        "type": "video",
+                        "id": "video_3",
+                        "label": "A Shopify-hosted video"
+                    },
+                    {
+                        "type": "video",
+                        "id": "video_4",
+                        "label": "A Shopify-hosted video"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

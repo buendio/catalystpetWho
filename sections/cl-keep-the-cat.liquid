@@ -1,0 +1,54 @@
+{% assign product = all_products[section.settings.product] %}
+<div class="cl-keep-the-cat">
+    <div class="inner">
+        <img src="{{ 'icon-clumping.png' | asset_url }}" alt="Great Clumping">
+        <img src="{{ 'icon-light.png' | asset_url }}" alt="Light Weight">
+        <div class="keep-the-cat">
+            {% include 'icon-keep-the-cat' %}
+
+            {% assign keepthecatImage = 'keep-the-cat.png' | asset_url %}
+            {% if section.settings.keepthecat_image %}
+                {% assign keepthecatImage = section.settings.keepthecat_image | img_url: '325x', scale: 2 %}
+            {% endif %}
+            <img src="{{ keepthecatImage }}" alt="Cat litter">
+            {% include 'icon-odor-control' %}
+            {% include 'icon-arrow-circle-down' %}
+            <p><a href="{{ product.url }}" class="try-catalyst">{{ section.settings.button_text }} | <span>{{ section.settings.button_price }}</span></a></p>
+        </div>
+        <img src="{{ 'icon-permeability.png' | asset_url }}" alt="High Permeability">
+        <img src="{{ 'icon-acceptance.png' | asset_url }}" alt="Unrivaled Acceptance">
+        <p><a href="{{ product.url }}" class="try-catalyst">{{ section.settings.button_text }} | <span>{{ section.settings.button_price }}</span></a></p>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Cat Litter Keep The Cat",
+  "class": "section-cl",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "TRY CATALYST"
+    },
+    {
+      "type": "text",
+      "id": "button_price",
+      "label": "Button price",
+      "default": "$22.99"
+    },
+    {
+      "type": "image_picker",
+      "id": "keepthecat_image",
+      "label": "Image"
+    }
+  ]
+}
+
+{% endschema %}

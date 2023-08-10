@@ -1,0 +1,72 @@
+{% unless customer.tags contains 'wholesale-approved' %}
+    <script type="text/javascript">
+      window.location.href = '/';
+    </script>
+{% endunless %}
+
+{{ "style.wholesale-global.css" | asset_url | stylesheet_tag }}
+{{ "style.wholesale-profile.css" | asset_url | stylesheet_tag }}
+
+<div class="ws-profile container">
+    <div class="ws-profile__article">
+        <h1 class="profile-article__heading">{{ section.settings.article_heading }}</h1>
+        <p class="profile-article__copy ws-paragraph">{{ section.settings.article_copy }}</p>
+        <div class="profile-article__media">
+            <img src="{{ section.settings.article_image.src | img_url: '726x378' }}" alt="" />
+        </div>
+    </div>
+
+    <div class="ws-profile__actions">
+        <h2 class="profile-actions__heading">Welcome john</h2> 
+        <p class="profile-actions__copy ws-paragraph">
+            {{ section.settings.copy }}
+        </p>
+        
+        <a href="/pages/wholesale-plp" class="prodile-actions__menu-item" href="#">
+            <span>Shop Wholesale Products</span>
+            {% render "icon-wholesale-arrow" %}
+        </a>
+        <a href="/pages/wholesale-files" class="prodile-actions__menu-item" href="#">
+            <span>Download Dealer Assets</span>
+            {% render "icon-wholesale-arrow" %}
+        </a>
+        <a href="/pages/wholesale-landing-page" class="prodile-actions__menu-item" href="#">
+            <span>Wholesale Program Information</span>
+            {% render "icon-wholesale-arrow" %}
+        </a>
+
+        <div class="profile-actions__footer ws-paragraph">
+            <span>Need help or have more questions?</span>
+            <a href="/pages/contact-us">Contact Us</a>
+        </div>
+
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Wholesale Profile",
+        "settings": [
+            {
+                "type": "text",
+                "id": "copy",
+                "label": "Copy"
+            },
+            {
+                "type": "image_picker",
+                "id": "article_image",
+                "label": "Article Image"
+            },
+            {
+                "type": "text",
+                "id": "article_heading",
+                "label": "Article Heading"
+            },
+            {
+                "type": "text",
+                "id": "article_copy",
+                "label": "Article Copy"
+            }
+        ]
+    }
+{% endschema %}

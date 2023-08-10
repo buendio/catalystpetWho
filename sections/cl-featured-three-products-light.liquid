@@ -1,0 +1,352 @@
+{% assign product1 = all_products[section.settings.product1] %}
+{% assign product2 = all_products[section.settings.product2] %}
+{% assign product3 = all_products[section.settings.product3] %}
+{% assign selected_variant1 = product1.selected_or_first_available_variant | default: product1 %}
+{% assign selected_variant2 = product2.selected_or_first_available_variant | default: product2 %}
+{% assign selected_variant3 = product3.selected_or_first_available_variant | default: product3 %}
+
+{% assign single_column_product = false %}
+{% if section.settings.single_column_product and product.variants.size == 1 %}
+  {% assign single_column_product = true %}
+{% endif %}
+
+{% assign is_slideshow = false %}
+{% if template contains 'slideshow' %}
+  {% assign is_slideshow = true %}
+{% endif %}
+
+{%- capture product_classes -%}
+  clearfix
+
+  {% if section.settings.center_product_details %}product-title-centered{% endif %}
+  {%- if single_column_product -%}
+    product-details-centered
+  {%- else -%}
+    product-details-inline
+  {%- endif -%}
+{%- endcapture -%}
+
+<div class="cl-product">
+    <div class="inner">
+        <div
+        class="cl-product-details-list"
+        data-section-id="{{ section.id }}"
+        data-section-type="dynamic-product"
+        >
+            <div class="cl-featured-product-item" id="go-to-{{product1.handle}}">
+                <img src="{{ product1.featured_image | img_url: '520x', scale: 2 }}" alt="{{ product1.title }}" class="cl-featured-product-image">
+                {% if section.settings.product1_graphic %}
+                    <img src="{{ section.settings.product1_graphic | img_url: 'x96', scale: 2 }}" alt="" class="cl-featured-product-badge" />
+                {% endif %}
+
+                <div class="mobile-badges">
+                  {% if section.settings.product1_mobile_graphic1 %}
+                      <img src="{{ section.settings.product1_mobile_graphic1 | img_url: 'x96', scale: 2 }}" alt="" class="cl-featured-product-mobile-badge" />
+                  {% endif %}
+                  {% if section.settings.product1_mobile_graphic2 %}
+                      <img src="{{ section.settings.product1_mobile_graphic2 | img_url: 'x96', scale: 2 }}" alt="" class="cl-featured-product-mobile-badge" />
+                  {% endif %}
+                </div>
+                
+                <p class="pre-title">Formula</p>
+                <h2 class="page-title cl-product-title">{{ section.settings.product1_title }}</h2>
+
+                {% if section.settings.product1_description.size > 0 %}
+                <div class="product-excerpt rte">
+                    {{ section.settings.product1_description }}
+                </div>
+                {% endif %} 
+            </div>
+
+            <div class="cl-featured-product-item" id="go-to-{{product2.handle}}">
+                <img src="{{ product2.featured_image | img_url: '520x', scale: 2 }}" alt="{{ product2.title }}" class="cl-featured-product-image">
+                {% if section.settings.product2_graphic %}
+                    <img src="{{ section.settings.product2_graphic | img_url: 'x96', scale: 2 }}" alt="" class="cl-featured-product-badge" />
+                {% endif %}
+
+                <div class="mobile-badges">
+                  {% if section.settings.product2_mobile_graphic1 %}
+                      <img src="{{ section.settings.product2_mobile_graphic1 | img_url: 'x96', scale: 2 }}" alt="" class="cl-featured-product-mobile-badge" />
+                  {% endif %}
+                  {% if section.settings.product2_mobile_graphic2 %}
+                      <img src="{{ section.settings.product2_mobile_graphic2 | img_url: 'x96', scale: 2 }}" alt="" class="cl-featured-product-mobile-badge" />
+                  {% endif %}
+                </div>
+                <p class="pre-title">Formula</p>
+                <h2 class="page-title cl-product-title">{{ section.settings.product2_title }}</h2>
+
+                {% if section.settings.product2_description.size > 0 %}
+                <div class="product-excerpt rte">
+                    {{ section.settings.product2_description }}
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="cl-featured-product-item" id="go-to-{{product3.handle}}">
+                <img src="{{ product3.featured_image | img_url: '520x', scale: 2 }}" alt="{{ product3.title }}" class="cl-featured-product-image">
+                {% if section.settings.product3_graphic %}
+                    <img src="{{ section.settings.product3_graphic | img_url: 'x96', scale: 2 }}" alt="" class="cl-featured-product-badge" />
+                {% endif %}
+                <div class="mobile-badges">
+                  {% if section.settings.product3_mobile_graphic1 %}
+                      <img src="{{ section.settings.product3_mobile_graphic1 | img_url: 'x96', scale: 2 }}" alt="" class="cl-featured-product-mobile-badge" />
+                  {% endif %}
+                  {% if section.settings.product3_mobile_graphic2 %}
+                      <img src="{{ section.settings.product3_mobile_graphic2 | img_url: 'x96', scale: 2 }}" alt="" class="cl-featured-product-mobile-badge" />
+                  {% endif %}
+                </div>
+
+                <p class="pre-title">Formula</p>
+                <h2 class="page-title cl-product-title">{{ section.settings.product3_title }}</h2>
+
+                {% if section.settings.product3_description.size > 0 %}
+                <div class="product-excerpt rte">
+                    {{ section.settings.product3_description }}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="cta-url text-center">
+            <a href="{{ section.settings.cta_url }}" class="find-heb"  onclick="ga('send', 'event', 'heb-cta', 'click');"><img src="{{ 'cta-find-store.png' | asset_url }}" alt="Find an HEB Store" ></a>
+        </div>
+
+    </div><!-- inner -->
+</div><!-- cl_product -->
+
+{% schema %}
+{
+  "name": "Product pages",
+  "class": "section-product",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "product",
+      "id": "product1",
+      "label": "Choose featured product 1"
+    },
+    {
+      "type": "text",
+      "id": "product1_title",
+      "label": "Product 1 title"
+    },
+    {
+      "type": "richtext",
+      "id": "product1_description",
+      "label": "Product 1 description"
+    },
+    {
+      "type": "image_picker",
+      "id": "product1_graphic",
+      "label": "Product 1 Graphic"
+    },
+    {
+      "type": "image_picker",
+      "id": "product1_mobile_graphic1",
+      "label": "Product 1 Mobile icon 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "product1_mobile_graphic2",
+      "label": "Product 1 Mobile icon 2"
+    },
+    {
+      "type": "product",
+      "id": "product2",
+      "label": "Choose featured product 2"
+    },
+    {
+      "type": "text",
+      "id": "product2_title",
+      "label": "Product 2 title"
+    },
+    {
+      "type": "richtext",
+      "id": "product2_description",
+      "label": "Product 2 description"
+    },
+    {
+      "type": "image_picker",
+      "id": "product2_graphic",
+      "label": "Product 2 Graphic"
+    },
+    {
+      "type": "image_picker",
+      "id": "product2_mobile_graphic1",
+      "label": "Product 2 Mobile icon 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "product2_mobile_graphic2",
+      "label": "Product 2 Mobile icon 2"
+    },
+    {
+      "type": "product",
+      "id": "product3",
+      "label": "Choose featured product 3"
+    },
+    {
+      "type": "text",
+      "id": "product3_title",
+      "label": "Product 3 title"
+    },
+    {
+      "type": "richtext",
+      "id": "product3_description",
+      "label": "Product 3 description"
+    },
+    {
+      "type": "image_picker",
+      "id": "product3_graphic",
+      "label": "Product 3 Graphic"
+    },
+    {
+      "type": "image_picker",
+      "id": "product3_mobile_graphic1",
+      "label": "Product 3 Mobile icon 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "product3_mobile_graphic2",
+      "label": "Product 3 Mobile icon 2"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA link"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_spb",
+      "label": "Show dynamic checkout button",
+      "info": "Each customer will see their preferred payment method from those available on your store, such as PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "product_cart_redirect",
+      "label": "Enable cart redirection",
+      "info": "Automatically sends users to the Cart page after adding a product.",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "center_product_details",
+      "label": "Center product title and price over content",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_zoom",
+      "label": "Enable image zoom",
+      "info": "The image zoom does not apply to the Product slideshow template",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "product_show_vendor",
+      "label": "Show names of vendors",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "linked_options",
+      "label": "Disable sold out variants",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "variants_style",
+      "label": "Variants style",
+      "options": [
+        {
+          "value": "select",
+          "label": "Dropdowns"
+        },
+        {
+          "value": "radio",
+          "label": "Buttons"
+        }
+      ],
+      "default": "select"
+    },
+    {
+      "type": "checkbox",
+      "id": "single_column_product",
+      "label": "Use single column layout if no variants",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_share_buttons",
+      "label": "Show share buttons",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "additional_info",
+      "name": "Additional info",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "[Additional info](https://s3.amazonaws.com/cdn.pixelunion.net/startup/additional-info-screenshot.png) appear wherever a customer can view product information. They’re perfect for linking to size charts, refund policies, or ordering details. Pick from six unique icons."
+        },
+        {
+          "type": "text",
+          "id": "info_text",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "info_url",
+          "label": "Link URL"
+        },
+        {
+          "type": "select",
+          "id": "info_icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "info",
+              "label": "Information (i)"
+            },
+            {
+              "value": "question-mark",
+              "label": "Question mark"
+            },
+            {
+              "value": "ruler",
+              "label": "Ruler"
+            },
+            {
+              "value": "envelope",
+              "label": "Envelope"
+            },
+            {
+              "value": "pencil",
+              "label": "Pencil"
+            },
+            {
+              "value": "shirt",
+              "label": "Shirt"
+            }
+          ],
+          "default": "info"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "additional_info",
+        "settings": {
+          "info_text": "Additional info"
+        }
+      }
+    ]
+  }
+}
+
+{% endschema %}

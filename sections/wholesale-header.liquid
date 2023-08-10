@@ -1,0 +1,53 @@
+{{ "style.wholesale-global.css" | asset_url | stylesheet_tag }}
+{{ "style.wholesale-header.css" | asset_url | stylesheet_tag }}
+
+<div class="ws-header">
+    <h2 class="ws-header__title">{{ section.settings.heading }}</h2>
+    <div class="ws-header__copy ws-paragraph">{{ section.settings.copy }}</div>
+    <div class="ws-header__ctas">
+        {% if section.settings.cta_1_title != blank and customer.name == blank %}
+            <a href="{{ section.settings.cta_1_url }}" class="ws-btn ws-btn--dark">{{ section.settings.cta_1_title }}</a>
+        {% endif %}
+        {% if section.settings.cta_2_title != blank %}
+            <a href="{{ section.settings.cta_2_url }}" class="ws-btn ws-btn--orange">{{ section.settings.cta_2_title }}</a>
+        {% endif %}
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Wholesale Header",
+        "settings": [
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading"
+            },
+            {
+                "type": "richtext",
+                "id": "copy",
+                "label": "Copy"
+            },
+            {
+                "type": "text",                     
+                "id": "cta_1_title",
+                "label": "CTA 1 Title"
+            },
+            {
+                "type": "url",
+                "id": "cta_1_url",
+                "label": "CTA 1 URL"
+            },
+            {
+                "type": "text",
+                "id": "cta_2_title",
+                "label": "CTA 2 Title"
+            },
+            {
+                "type": "url",
+                "id": "cta_2_url",
+                "label": "CTA 2 URL"
+            }
+        ]
+    }
+{% endschema %}

@@ -1,0 +1,113 @@
+{% assign product = all_products[section.settings.product] %}
+<div class="cl-testimonials">
+    <div class="featured">
+        <div class="img-container">
+            {% assign featuredImage = 'highfive.png' | asset_url %}
+            {% if section.settings.image %}
+                {% assign featuredImage = section.settings.image | img_url: '260x', scale: 2 %}
+            {% endif %}
+            <img src="{{ featuredImage }}" alt="">
+        </div>
+        <div class="description">
+            <div class="paws">
+                <img src="{{ 'paw.svg' | asset_url }}" alt="">
+                <img src="{{ 'paw.svg' | asset_url }}" alt="">
+                <img src="{{ 'paw.svg' | asset_url }}" alt="">
+                <img src="{{ 'paw.svg' | asset_url }}" alt="">
+                <img src="{{ 'paw.svg' | asset_url }}" alt="">
+            </div>
+            <h3>{{ section.settings.title | newline_to_br | strip_newlines }}</h3>
+            <a href="{{product.url}}" class="try-catalyst">{{ section.settings.button_text }} | <span>{{ section.settings.button_price }}</span></a>
+        </div>
+    </div>
+    <div class="testimonials">
+        <div class="testimonial-carousel owl-carousel">
+            {% for block in section.blocks %}
+                <div>
+                    <p class="content">{{ block.settings.content | newline_to_br | strip_newlines }}</p>
+                    <p class="author">{{ block.settings.author }}</p>
+                </div>
+            {% endfor %}     
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Cat Litter Testimonials",
+  "class": "section-cl",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Featured image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "HIGH FIVE\nPAW RATING\nAROUND THE LITTER WORLD"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "TRY CATALYST"
+    },
+    {
+      "type": "text",
+      "id": "button_price",
+      "label": "Button price",
+      "default": "$22.99"
+    },
+    {
+      "type": "text",
+      "id": "button",
+      "label": "Button text",
+      "default": "Count me in"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonials",
+      "name": "Testimonials",
+      "settings": [
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "testimonials",
+        "settings": {
+          "author": "Mitch’s Cat, Denver, CO",
+          "content": "This stuff works. It has gotten rid of all that odor better than any I've used. Now my house doesn't smell like a litter box."
+        }
+      },
+      {
+        "type": "testimonials",
+        "settings": {
+          "author": "Doug H",
+          "content": "Awesome product, can't believe it took so long for someone to come up with such a planet friendly solution."
+        }
+      }
+    ]
+  }
+}
+
+{% endschema %}

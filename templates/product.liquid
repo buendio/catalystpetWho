@@ -1,0 +1,14 @@
+<script>
+    const productTags = "{{ product.tags }}";
+    
+    if (productTags.includes("redirect_to_home")) {
+        window.location.href = '/'
+    }
+</script>
+
+{% include 'breadcrumbs' %}
+{% section 'module-product' %}
+{% section 'new-pdp-cat-copy' %}
+{% section 'new-pdp-what-people-say' %}
+{% section 'old-pdp-template-sections' %}
+{% section 'static-product-recommendations' %}

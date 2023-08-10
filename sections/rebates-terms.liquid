@@ -1,0 +1,142 @@
+<style>
+
+  .rebates-terms {
+    max-width: 100%;
+    background: #FFFFFF;
+  }
+
+  .rebates-terms .terms {
+    max-width: 950px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 20px 0 80px
+  }
+
+  .rebates-terms__title {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 51px;    
+    color: #037847;
+  }
+
+  .rebates-terms__subtitle {
+    font-family: 'Domine';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 19px;
+    color: #037847;
+    margin-top: 10px;
+  }
+
+  .rebates-terms__text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 27px;    
+    color: #2E2E2E;
+  }
+
+  .rebates-terms__cta {
+    background: #DDAD26;
+    border-radius: 8px;
+    font-family: 'Domine';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 25px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #1C1C1C;
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+    height: 53px;
+    justify-content: center;
+  }
+
+  @media(max-width: 900px) {
+    .rebates-terms__cta {
+      width: 100%;
+    }
+
+    .rebates-terms__title {
+      font-size: 27px;
+      line-height: 36px;
+    }
+
+    .rebates-terms .terms {
+      padding: 30px 15px;
+    }
+
+    .rebates-terms__subtitle {
+      font-size: 17px;
+      line-height: 19px;
+    }
+  }
+
+</style>  
+
+<div class="terms">
+
+  <div class="rebates-terms__title">
+    {{ section.settings.terms_title }}
+  </div>
+
+  <div class="rebates-terms__subtitle">
+    {{ section.settings.terms_subtitle }}
+  </div>
+
+  <div class="rebates-terms__text">
+    {{ section.settings.terms }}
+  </div>
+
+  <a href="{{section.settings.cta_url}}" target="_blank" class="rebates-terms__cta">
+    {{ section.settings.cta_title }} <img src="{{'rebates-next.png' | asset_img_url: '15x' }}" />
+  </a>
+
+</div> 
+
+{% schema %}
+    {
+        "name": "Rebates Terms",
+        "class": "rebates-terms",
+        "settings": [
+            {
+              "type": "text",
+              "id": "terms_title",
+              "label": "Terms title",
+              "default": "Terms and Conditions"
+            },
+            {
+                "type": "text",
+                "id": "terms_subtitle",
+                "label": "Terms subtitle"
+            },
+            {
+                "type": "richtext",
+                "id": "terms",
+                "label": "Terms text"
+            },
+            {
+                "type": "text",
+                "id": "cta_title",
+                "label": "CTA Title",
+                "default": "Get Started"
+            },
+            {
+                "type": "url",
+                "id": "cta_url",
+                "label": "CTA URL"
+            }
+        ]
+            
+    }
+{% endschema %}

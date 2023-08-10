@@ -1,0 +1,108 @@
+<link rel="stylesheet" href="{{ '5-reasons-footer-updated.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="{{ '5-reasons-footer-updated.css' | asset_url }}"></noscript>
+
+<link rel="stylesheet" href="{{ 'swiper-bundle.min.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="{{ 'swiper-bundle.min.css' | asset_url }}"></noscript>
+
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}" async></script>
+
+{% style %}
+  @media (max-width: 700px) {
+    .reasons-footer {
+      padding: 34px 0;
+      background-image: url({{'5-reasons-bg-updated.png'|asset_url}});
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom;
+    }
+  }
+{% endstyle %}
+
+<div class="reasons-footer">
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      {%- for block in section.blocks -%}
+        <div class="swiper-slide">
+          <h4>{{ block.settings.heading }}</h4>
+          {%- if block.settings.person_avatar != blank -%}
+            <img src="{{ block.settings.person_avatar | img_url: '65x' }}">
+          {%- endif -%}
+          <div class="reasons-footer__person__wrapper">
+            <div class="swiper-button-prev swiper-button-prev--mobile">
+              <img src="{{ 'swiper-prev.png' | asset_img_url: '20x' }}">
+            </div>
+            <div class="reasons-footer__person">
+              <p class="person__name">{{ block.settings.person_name }}</p>
+              <p class="person__position">{{ block.settings.person_position }}</p>
+            </div>
+            <div class="swiper-button-next swiper-button-next--mobile">
+              <img src="{{ 'swiper-next.png' | asset_img_url: '20x' }}">
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"><img src="{{ 'swiper-prev.png' | asset_img_url: '20x' }}"></div>
+    <div class="swiper-button-next"><img src="{{ 'swiper-next.png' | asset_img_url: '20x' }}"></div>
+  </div>
+</div>
+
+<script>
+  function initializeSwiper() {
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  }
+
+  if (typeof Swiper === 'function') {
+    initializeSwiper();
+  } else {
+    window.addEventListener('load', initializeSwiper);
+  }
+</script>
+
+
+{% schema %}
+{
+  "name": "5 Reasons Hero",
+  "settings": [],
+  "blocks": [
+    {
+      "name": "Reviews",
+      "type": "reviews",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Banner Heading"
+        },
+        {
+          "type": "image_picker",
+          "id": "person_avatar",
+          "label": "Avatar"
+        },
+        {
+          "type": "text",
+          "id": "person_name",
+          "label": "Person Name"
+        },
+        {
+          "type": "text",
+          "id": "person_position",
+          "label": "Person Position"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

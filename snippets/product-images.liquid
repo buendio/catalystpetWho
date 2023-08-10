@@ -1,0 +1,256 @@
+{% comment %}
+@param product {object}
+Product object drop is required
+
+@param selected_variant {object}
+selected_variant object is required
+{% endcomment %}
+
+<script src="{{ 'carousel.js' | asset_url }}" defer></script>
+
+{% style %}
+  .product-carousel-wrapper {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+    background: #EDF4F1;
+    border-radius: 11px;
+  }
+
+  @media(max-width: 900px) {
+    .product-carousel-wrapper {
+      width: 100%;
+    }
+  }
+  @media(max-width: 768px) {
+    .product-carousel-wrapper {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+  @media(max-width: 550px) {
+    .product-carousel-wrapper {
+      border-radius: 0;
+    }
+  }
+
+  .product-carousel-stage {
+    width: 100%;
+    height: 100%;
+    max-height: 544px;
+    position: relative;
+    display: flex;
+  }
+
+  .product-carousel-stage .item {
+    width: 100%;
+    padding: 25px 0;
+    color: #FFFFFF;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product-carousel-stage .item .item-media-wrapper {
+    width: 480px;
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product-carousel-stage .item .item-media-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+
+  .product-carousel-stage .item .item-media-wrapper video {
+    width: 100%;
+  }
+
+  .product-carousel-stage .owl-stage {
+    display: flex;
+  }
+
+  #thumbs .owl-stage-outer,
+  #thumbs .owl-stage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+
+  #thumbs .owl-stage {
+    padding-left: 20px;
+  }
+
+  #thumbs .owl-stage {
+    width: 100% !important;
+  }
+
+  #thumbs .owl-stage .owl-item {
+    width: 40px !important;
+  }
+
+  #thumbs .item {
+    background: #FFFFFF;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 2.01px cursor: pointer;
+  }
+
+  #thumbs .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2.01px
+  }
+
+  #thumbs .item .play-button {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #thumbs .current .item {
+    border: 3px solid #037847;
+  }
+
+  @media(max-width: 768px) {
+    #thumbs {
+      left: 40px;
+      top: 8px;
+    }
+
+    #thumbs .owl-stage {
+      flex-direction: column;
+    }
+  }
+
+  @media(max-width: 900px) {
+    #thumbs {
+      padding-bottom: 12px;
+    }
+  }
+
+  @media(max-width: 600px) {
+    .product-carousel-stage .item .item-media-wrapper {
+      width: 330px;
+      height: 280px;
+      padding: 10px 0;
+    }
+
+    #thumbs .item img {
+      width: 30px;
+    }
+    #thumbs .current .item {
+      border: 1px solid #037847;
+    }
+    .product-carousel-stage .item {
+      padding: 0;
+    }
+    #thumbs .owl-stage {
+      gap: 5px;
+    }
+    #thumbs .item,
+    #thumbs .owl-stage .owl-item {
+      width: 30px !important;
+      height: 30px !important;
+    }
+  }
+
+  .owl-theme .owl-nav [class*='owl-'] {
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .owl-theme .owl-nav [class*='owl-'].disabled:hover {
+    background-color: #D6D6D6;
+  }
+  .big.owl-theme {
+    position: relative;
+  }
+  .big.owl-theme .owl-next,
+  .big.owl-theme .owl-prev {
+    background: #333;
+    width: 22px;
+    line-height: 40px;
+    height: 40px;
+    margin-top: -20px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+  }
+  .big.owl-theme .owl-prev {
+    left: 10px;
+  }
+  .big.owl-theme .owl-next {
+    right: 10px;
+  }
+  #thumbs.owl-theme .owl-next,
+  #thumbs.owl-theme .owl-prev {
+    background: #333;
+  }
+{% endstyle %}
+
+<div class="product-carousel-wrapper">
+  <div id="product-carousel-images" class="product-carousel-stage">
+    {% for media in product.media %}
+      {% if media.media_type == "image" %}
+        <div class="item">
+          <div class="item-media-wrapper">
+            <img
+              src="{{ media.preview_image | img_url: 'large' }}"
+              alt="{{ media.alt }}"
+              loading="lazy">
+          </div>
+        </div>
+      {% elsif media.media_type == "external_video" or media.media_type == "video" %}
+        <div class="item">
+          <div class="item-media-wrapper">
+            <video
+              width="100%"
+              height="auto"
+              controls
+              class="carousel-video">
+              {% for source in media.sources %}
+                <source
+                  src="{{ source.url }}"
+                  type="{{ source.mime_type }}"
+                  media="(max-width: {{ source.width }}px)">
+              {% endfor %}
+            </video>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div id="thumbs" class="owl-carousel owl-theme">
+    {% for media in product.media %}
+      {% if media.media_type == "image" %}
+        <div class="item">
+          <img
+            src="{{ media.preview_image | img_url: '160x' }}"
+            alt="{{ media.alt }}"
+            loading="lazy">
+        </div>
+      {% elsif media.media_type == "external_video" or media.media_type == "video" %}
+        <div class="item">
+          <img
+            src="{{ media.preview_image | img_url: '160x' }}"
+            alt="{{ media.alt }}"
+            loading="lazy">
+          <img
+            src="{{ 'play-button-overlay.png' | asset_url }}"
+            alt=""
+            class="play-button" />
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

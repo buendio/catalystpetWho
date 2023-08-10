@@ -1,0 +1,145 @@
+{% if customer.tags contains 'wholesale-approved' %}
+    <script type="text/javascript">
+      window.location.href = '/pages/wholesale-plp';
+    </script>
+{% endif %}
+
+{{ "style.wholesale-global.css" | asset_url | stylesheet_tag }}
+{{ "style.wholesale-signup.css" | asset_url | stylesheet_tag }}
+{{ "style.wholesale-modal.css" | asset_url | stylesheet_tag }}
+
+<div class="ws-signup">
+    {% for block in section.blocks %}
+        {% case block.type %}
+            {% when 'wholesale_form' %}
+                <div class="ws-signup-form container">
+                    <div class="ws-signup-form__media">
+                        <img src="{{ block.settings.image.src | img_url: '800x400' }}" alt="" />
+                    </div>
+                    <div class="ws-signup-form__form">
+                        <h3 class="signup-form__title">Sign up</h3>
+
+                        <form class="wholesale-registration-form" data-cf-form="xPtDYb"></form>
+                    </div>
+                </div>
+
+            {% when 'wholesale_steps' %}
+                <div class="ws-steps container">
+                    <div class="ws-steps__article">
+                        <div class="steps-artice__item">
+                            <h3>Step 1</h3>
+                            {{block.settings.step_1}}
+                        </div>
+                        {% render "down-arrow" %}
+                        <div class="steps-artice__item">
+                            <h3>Step 2</h3>
+                            {{block.settings.step_2}}
+                        </div>
+                        {% render "down-arrow" %}
+                        <div class="steps-artice__item">
+                            <h3>Step 3</h3>
+                            {{block.settings.step_3}}
+                        </div>
+                    </div>
+
+                    <div class="ws-steps__media">
+                        <img src="{{ block.settings.image.src | img_url: '800x400' }}" alt="" />
+                    </div>
+                </div>
+            {% when 'wholesale-terms' %}
+                {% render "wholesale-modal", article: block.settings.article_crpp, class: "crpp" %}
+                {% render "wholesale-modal", article: block.settings.article_cmp, class: "cmp" %}
+        {% endcase %}
+    {% endfor %}
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+        const article_crpp = document.querySelector('input[name="confirm_crpp"] + span');
+        const article_cmp = document.querySelector('input[name="confirm_cmp"] + span');
+    
+        article_crpp.innerHTML = `
+            I confirm that I have read and will comply with the <span class="underline" data-modal="crpp" onclick="showModal(event, this)">Catalyst Retailer Program Policies</span>
+        `
+    
+        article_cmp.innerHTML = `
+            I confirm that I have read and will comply with the <span class="underline" data-modal="cmp" onclick="showModal(event, this)">Catalyst MAP Policy</span>
+        `
+        }, 2000)
+    });
+
+    function hideModal(element) {
+        const modalContainer = element.closest(".ws-modal");
+        modalContainer.classList.remove("show");
+    }
+
+    function showModal(event, element) {
+        event.preventDefault();
+        const targetModal = document.querySelector(`.ws-modal.${element.dataset.modal}`) ;
+        targetModal.classList.add("show");
+    }
+</script>
+
+{% schema %}
+    {
+        "name": "Wholesale Signup",
+        "settings": [
+        ],
+        "blocks": [
+            {
+                "type": "wholesale_form",
+                "name": "Wholesale Form",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image"
+                    }
+                ]
+            },
+            {
+                "type": "wholesale_steps",
+                "name": "Wholesale Steps",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "step_1",
+                        "label": "Step 1"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "step_2",
+                        "label": "Step 2"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "step_3",
+                        "label": "Step 3"
+                    }
+                ]
+            },
+            {
+                "type": "wholesale-terms",
+                "name": "Wholesale Terms",
+                "settings": [
+                    {
+                        "type": "article",
+                        "id": "article_crpp",
+                        "label": "Article CRPP"
+                    },
+                    {
+                        "type": "article",
+                        "id": "article_cmp",
+                        "label": "Article CMP"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

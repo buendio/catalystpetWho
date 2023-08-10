@@ -1,0 +1,7 @@
+<script type="text/javascript">
+  Theme = {};
+  Theme.version = "9.1.0";
+  Theme.moneyFormat = {{ shop.money_format | strip_html | json }};
+  Theme.moneyFormatCurrency = {{ shop.money_with_currency_format | strip_html | json }};
+  Theme.enableCurrencyConverter = {{ settings.enable_currency_converter | default: false }};
+</script>

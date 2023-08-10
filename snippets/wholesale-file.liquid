@@ -1,0 +1,17 @@
+<div class="ws-file">
+    <div class="ws-file__icon-folder">
+        {% render "icon-wholesale-file" %}
+    </div>
+    <div class="ws-file__details">
+        <div class="ws-file__name">{{ file.title | truncate: 15, "..." }}</div>
+        <div class="ws-file__metadata">
+            <div class="ws-file__type">{{ file.type }}</div>
+            <div class="ws-file__size">{{ file.size }}</div>
+        </div>
+    </div>
+    <div class="ws-file__icon-download">
+        <a href="{{ file.url }}" download>
+            {% render "icon-wholesale-download" %}
+        </a>
+    </div>
+</div>

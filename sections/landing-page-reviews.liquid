@@ -1,0 +1,149 @@
+<script src="{{ 'slider.js' | asset_url }}" defer></script>
+
+<style>
+    .section-reviews {
+        padding: 80px 0;
+        background: #EDF4F1;
+        position: relative; 
+        overflow: hidden;   
+
+        display: flex;
+        justify-content: center;
+    }
+    
+    .block__paws {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .block__content {
+        text-align: center;
+    }
+
+    .content__header {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 32px;
+        color: #5D5D5D;
+    }
+
+    .content__paragraph {
+        font-weight: 400;
+        font-style: italic;
+        font-size: 17px;
+        line-height: 21px;
+        color: #5D5D5D;
+        padding: 0 20px;
+    }
+
+    .content__author {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        color: #281C00;
+    }
+
+    .slider-reviews {
+        width: 80%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        overflow: hidden;
+    }
+
+    .slider-reviews .owl-stage {
+        display: flex;
+    }
+
+    .reviews__block {
+        width: 100%;
+    }
+
+    .reviews-customNextBtn,
+    .reviews-customPrevBtn {
+        position: absolute;
+        top: 50%;
+    }
+
+    .reviews-customNextBtn {
+        left: 50px;
+    }
+
+    .reviews-customPrevBtn {
+        right: 50px;
+        transform: rotate(180deg);
+    }
+
+    @media(max-width: 1024px) {
+        .reviews-customNextBtn,
+        .reviews-customPrevBtn {
+            width: 30px;
+            height: 30px;
+        }
+
+        .reviews-customNextBtn {
+            left: 20px;
+        }
+
+        .reviews-customPrevBtn {
+            right: 20px;
+        }
+    }
+</style>
+
+<div class="section-reviews">
+    <img class="reviews-customNextBtn" src="{{'arrowSlider.svg' | asset_url}}" alt="" />
+    <img class="reviews-customPrevBtn" src="{{'arrowSlider.svg' | asset_url}}" alt="" />
+
+    <div class="slider-reviews">
+        {% for block in section.blocks %}
+            <div class="reviews__block">
+                <div class="block__paws">
+                    {% for i in (1..5) %}
+                        <img src="{{'ratingPaws.svg' | asset_url}}" alt="" />
+                    {% endfor %}
+                </div>
+
+                <div class="block__content">
+                    <h4 class="content__header">{{block.settings.title}}</h4>
+                    <p class="content__paragraph">{{block.settings.paragraph}}</p>
+                    <p class="content__author">{{block.settings.author}}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+
+{% schema %}
+    {
+        "name": "Reviews Section",
+        "settings": [],
+        "blocks": [
+            {
+                "name": "Review",
+                "type": "card",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Title"
+                    },
+                    {
+                        "type": "text",
+                        "id": "paragraph",
+                        "label": "paragraph"
+                    },
+                    {
+                        "type": "text",
+                        "id": "author",
+                        "label": "Author"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

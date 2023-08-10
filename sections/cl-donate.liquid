@@ -1,0 +1,93 @@
+<div class="cl-donate">
+    <h2>{{ section.settings.title }}</h2>
+    <h3>{{ section.settings.subtitle }}</h3>
+
+    <div class="cl-donate-mobile"><img src="{{ 'cl-donate-mobile.png' | asset_url }}" alt=""></div>
+
+    <div class="cl-donate-steps">
+        <div class="box">
+            <div class="box-header">Step 1</div>
+            <div class="box-content">
+                {{ section.settings.box1 }}
+            </div>
+            {% if section.settings.box1_image %}
+            <img src="{{ section.settings.box1_image | img_url: '500x', scale: 2 }}" alt="">
+            {% endif %}
+        </div>
+
+        <div class="box">
+            <div class="box-header">Step 2</div>
+            <div class="box-content">
+                {{ section.settings.box2 }}
+            </div>
+            {% if section.settings.box2_image %}
+            <img src="{{ section.settings.box2_image | img_url: '500x', scale: 2 }}" alt="">
+            {% endif %}
+        </div>
+
+        <div class="box">
+            <div class="box-header">Step 3</div>
+            <div class="box-content">
+                {{ section.settings.box3 }}
+            </div>
+            {% if section.settings.box3_image %}
+            <img src="{{ section.settings.box3_image | img_url: '500x', scale: 2 }}" alt="">
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Donate",
+  "class": "section-cl",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "How to donate"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "to the cat shelter of your choice"
+    },
+    {
+      "type": "richtext",
+      "id": "box1",
+      "label": "Box 1 content",
+      "default": "<p><b>After placing your first subscription order</b>, you'll be redirected to the order confirmation page where the donation widget will be visible.<br/><b>Select the cat shelter of your choosing</b> and proceed to the next step.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "box1_image",
+      "label": "Box 1 image"
+    },
+    {
+      "type": "richtext",
+      "id": "box2",
+      "label": "Box 2 content",
+      "default": "<p><b>After placing your first subscription order</b>, you'll be redirected to the order confirmation page where the donation widget will be visible.<br/><b>Select the cat shelter of your choosing</b> and proceed to the next step.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "box2_image",
+      "label": "Box 2 image"
+    },
+    {
+      "type": "richtext",
+      "id": "box3",
+      "label": "Box 3 content",
+      "default": "<p><b>After placing your first subscription order</b>, you'll be redirected to the order confirmation page where the donation widget will be visible.<br/><b>Select the cat shelter of your choosing</b> and proceed to the next step.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "box3_image",
+      "label": "Box 3 image"
+    }
+  ]
+}
+
+{% endschema %}

@@ -1,0 +1,97 @@
+<div
+  class="cart-shipping-calculator-wrapper"
+  data-shipping-calculator
+>
+  <script type="application/json" data-shipping-calculator-data>
+    {
+      "settings": {
+        "customer_country": {{ customer.default_address | default: false | json }}
+      },
+      "language": {
+        "submit_button": {{ 'cart.shipping_calculator.submit' | t | json }},
+        "submit_button_processing": {{ 'cart.shipping_calculator.working' | t | json }},
+        "error_message": {{ 'cart.shipping_calculator.error' | t: error_message: '** error_message **' | json }},
+        "generic_error_message": {{ 'cart.shipping_calculator.error' | t: error_message: '** error_message **' | json }},
+        "multi_rates": {{ 'cart.shipping_calculator.rates_html' | t: address: '** address **', number_of_rates: '** number_of_rates **', rate: '** rate **' | json }},
+        "one_rate": {{ 'cart.shipping_calculator.rate' | t: address: '** address **' | json }},
+        "no_rates": {{ 'cart.shipping_calculator.no_rates' | t | json }},
+        "rate_values": {{ 'cart.shipping_calculator.rate_values_html' | t: rate_title: '** rate_title **', rate: '** rate **' | json }}
+      }
+    }
+  </script>
+
+  <div id="shipping-calculator" class="cart-shipping-calculator">
+    <p>{{ 'cart.shipping_calculator.header' | t }}</p>
+    {% assign default_country = '' %}
+    {% assign default_province = '' %}
+    {% assign default_zip = '' %}
+
+    {% if section.settings.shipping_calculator_default_country != '' %}
+      {% assign default_country = section.settings.shipping_calculator_default_country | escape %}
+    {% endif %}
+
+    {% if customer %}
+      {% if customer.default_address.country != '' %}
+        {% assign default_country = customer.default_address.country %}
+      {% endif %}
+
+      {% if customer.default_address.province != '' %}
+        {% assign default_province = customer.default_address.province %}
+      {% endif %}
+
+      {% if customer.default_address.zip != '' %}
+        {% assign default_zip = customer.default_address.zip %}
+      {% endif %}
+    {% endif %}
+
+    <div class="shipping-country-wrapper hide-labels">
+      <div class="country-select select-wrapper">
+        <div class="selected-text" data-default="{{ 'cart.shipping_calculator.country' | t }}">{{ 'cart.shipping_calculator.country' | t }}</div>
+        <select
+          class="styled-select address-country"
+          id="address_country"
+          name="address[country]"
+          data-default="{{ default_country }}"
+          aria-label="{{ 'cart.shipping_calculator.country_select' | t }}"
+        >
+          {{ country_option_tags }}
+        </select>
+      </div>
+    </div>
+
+    <div id="address_province_container" class="shipping-province-wrapper">
+      <div class="province-select select-wrapper">
+        <div class="selected-text" data-default="{{ 'cart.shipping_calculator.province' | t }}">{{ 'cart.shipping_calculator.province' | t }}</div>
+        <select
+          class="styled-select address-province"
+          id="address_province"
+          name="address[province]"
+          data-default="{{ default_province }}"
+          aria-label="{{ 'cart.shipping_calculator.province_select' | t }}"
+        >
+        </select>
+      </div>
+    </div>
+
+    <div class="cart-shipping-zip-code input-wrapper">
+      <input
+        class="address-zip input-field"
+        id="address_zip"
+        name="address[zip]"
+        type="text"
+        size="12"
+        placeholder="{{ 'customer.addresses.zip' | t }}"
+        {% if default_zip != blank %}value="{{ default_zip }}"{% endif %}
+        aria-label="{{ 'cart.shipping_calculator.zip_input' | t }}"
+      >
+      <input
+        type="button"
+        class="cart-shipping-calculate get-rates button"
+        value="{{ 'cart.shipping_calculator.submit' | t }}"
+        aria-label="{{ 'cart.shipping_calculator.submit' | t }}"
+      >
+    </div>
+  </div>
+
+  <div class="cart-shipping-calculator-response"></div>
+</div>

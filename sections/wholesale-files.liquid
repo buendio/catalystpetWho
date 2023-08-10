@@ -1,0 +1,134 @@
+{% unless customer.tags contains 'wholesale-approved' %}
+    <script type="text/javascript">
+      window.location.href = '/';
+    </script>
+{% endunless %}
+
+{{ "style.wholesale-global.css" | asset_url | stylesheet_tag }}
+{{ "style.wholesale-files.css" | asset_url | stylesheet_tag }}
+
+{% assign hasLogosBlock = false %}
+{% assign hasStillsBlock = false %}
+{% assign hasVideosBlock = false %}
+
+{% for block in section.blocks %}
+    {% if block.settings.section == 'logos' %}
+        {% assign hasLogosBlock = true %}
+    {% endif %}
+
+    {% if block.settings.section == 'stills' %}
+        {% assign hasStillsBlock = true %}
+    {% endif %}
+
+    {% if block.settings.section == 'videos' %}
+        {% assign hasVideosBlock = true %}
+    {% endif %}
+
+    {% if hasLogosBlock and hasStillsBlock and hasVideosBlock %}
+        {% break %}
+    {% endif %}
+{% endfor %}
+
+
+<div class="ws-section-files">
+    {% if hasLogosBlock %}
+        <div class="ws-files-wrapper">
+            <h3 class="ws-files__title">Logos</h3>
+            <div class="ws-files">
+                {% for block in section.blocks %}
+                    {% if block.settings.section == "logos" %}
+                        {% render "wholesale-file", file: block.settings %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if hasStillsBlock %}
+        <div class="ws-files-wrapper">
+            <h3 class="ws-files__title">Stills</h3>
+            <div class="ws-files">
+                {% for block in section.blocks %}
+                    {% if block.settings.section == "stills" %}
+                        {% render "wholesale-file", file: block.settings %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    {% else %}
+        <div class="ws-files-wrapper">
+            <h3 class="ws-files__title">Stills</h3>
+            <div class="ws-files">
+                <div class="ws_files__message">Coming Soon</div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if hasVideosBlock %}
+        <div class="ws-files-wrapper">
+            <h3 class="ws-files__title">Videos</h3>
+            <div class="ws-files">
+                {% for block in section.blocks %}
+                    {% if block.settings.section == "videos" %}
+                        {% render "wholesale-file", file: block.settings %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+</div>
+
+
+{% schema %}
+    {
+        "name": "Wholesale Files",
+        "blocks": [
+            {
+                "type": "file",
+                "name": "File",
+                "settings": [
+                    {
+                        "type": "select",
+                        "id": "section",
+                        "label": "Which section do you want file to be displayed in?",
+                        "options": [
+                            {
+                                "value": "logos",
+                                "label": "Logos"
+                            },
+                            {
+                                "value": "stills",
+                                "label": "Stills"
+                            },
+                            {
+                                "value": "videos",
+                                "label": "Videos"
+                            }
+                        ],
+                        "default": "logos"
+                    },
+                    {
+                        "type": "url",
+                        "id": "url",
+                        "label": "File URL"
+                    },
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "File Name"
+                    },
+                    {
+                        "type": "text",
+                        "id": "type",
+                        "label": "File Type"
+                    },
+                    {
+                        "type": "text",
+                        "id": "size",
+                        "label": "File Size"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

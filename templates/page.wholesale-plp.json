@@ -1,0 +1,148 @@
+{
+  "sections": {
+    "header": {
+      "type": "wholesale-header",
+      "settings": {
+        "heading": "Shop Dealer Offers",
+        "copy": "<p>Better for the environment, better for cats and better for your customers' wallets.  Shop in-store dealer-only pricing here.<\/p>",
+        "cta_1_title": "",
+        "cta_1_url": "",
+        "cta_2_title": "",
+        "cta_2_url": ""
+      }
+    },
+    "main": {
+      "type": "wholesale-plp",
+      "blocks": {
+        "7023083d-f4fc-4f3a-9b7e-714e6449e4e3": {
+          "type": "product_feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group.png",
+            "title": "<p><strong>4x<\/strong> absorption<\/p>"
+          }
+        },
+        "f3c5e56d-2d3c-4cfa-ac7f-7cef402e76cf": {
+          "type": "product_feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector.png",
+            "title": "<p><strong>Low<\/strong> dust<\/p>"
+          }
+        },
+        "a24ee1c8-1aee-4b6c-8624-f402a62097b9": {
+          "type": "product_feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector_1.png",
+            "title": "<p><strong>unrivaled<\/strong> cat acceptance<\/p>"
+          }
+        },
+        "44b26f11-ee35-4141-8468-5f52d02910e0": {
+          "type": "product_feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector_2.png",
+            "title": "<p><strong>Great<\/strong> clumping<\/p>"
+          }
+        },
+        "9f563a61-4dc2-4d01-8891-5721759824f3": {
+          "type": "product_feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector_3.png",
+            "title": "<p><strong>Superior<\/strong> odor control<\/p>"
+          }
+        },
+        "9f96a737-31da-4f6e-b7ab-84975beb4e1a": {
+          "type": "product_feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector_4.png",
+            "title": "<p><strong>Light<\/strong> weight<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "7023083d-f4fc-4f3a-9b7e-714e6449e4e3",
+        "f3c5e56d-2d3c-4cfa-ac7f-7cef402e76cf",
+        "a24ee1c8-1aee-4b6c-8624-f402a62097b9",
+        "44b26f11-ee35-4141-8468-5f52d02910e0",
+        "9f563a61-4dc2-4d01-8891-5721759824f3",
+        "9f96a737-31da-4f6e-b7ab-84975beb4e1a"
+      ],
+      "settings": {
+        "heading": "<p>Catalyst Pet is made from clean, unused pine tree fiber from sawmills and transformed into the <strong>highest performing<\/strong> natural cat litter on the planet.<\/p>",
+        "healthy_cat_heading": "healthy cat formula",
+        "healthy_cat_copy": "<p>Healthy Cat formula has a soft texture that is gentle on your pet's paws, and has a mild natural wood scent that is ideal for sensitive cat noses. Best for people with one cat.<\/p>",
+        "healthy_cat_product_1": "2x-20lb-healthy-cat-dealer",
+        "healthy_cat_product_2": "4x-10-healthy-cat-dealer",
+        "multi_cat_heading": "Multi-cat formula",
+        "multi_cat_copy": "<p>Engineered with extra clumping power, the Multi-Cat formula is strong enough to handle additional cat traffic in busy litter boxes. Best for people with multiple cats.<\/p>",
+        "multi_cat_product_1": "2x-20lb-multi-cat-dealer",
+        "multi_cat_product_2": "4x-10lb-multi-cat-dealer",
+        "unscented_cat_heading": "Unscented cat formula",
+        "unscented_cat_copy": "<p>Popular with picky kitties and cats with medical sensitivities, the Unscented formula offers the same high-quality performance without the light pine scent. Best for kitties and humans with sensitive noses.<\/p>",
+        "unscented_cat_product_1": "2x-20lb-unscented-dealer",
+        "unscented_cat_product_2": "4x-10lb-unscented-dealer",
+        "banner_heading": "4x More Effective Than Clay Litter",
+        "banner_copy": "<p>Catalyst Litter is 4x more absorbent than clay, and also outperforms clay when it comes to our superior clumping.  With Catalyst, you’ll have less wasted litter, better odor control, and better clumping than clay litter.<\/p>",
+        "banner_image": "shopify:\/\/shop_images\/Rectangle_74.png"
+      }
+    },
+    "footer": {
+      "type": "new-pdp-what-people-say",
+      "blocks": {
+        "83b4f8b4-2c7d-4965-9680-4e7d27caba6a": {
+          "type": "review",
+          "settings": {
+            "review": "<p>With four cats in the house, keeping up with the litter box and controlling the smell became difficult. Then I found catalyst. The cats love it and I love it.<\/p>",
+            "image": "shopify:\/\/shop_images\/Rectangle_77.png",
+            "name": "Lisa M."
+          }
+        },
+        "22d8e034-4830-43eb-b3cd-9192e42a99bb": {
+          "type": "review",
+          "settings": {
+            "review": "<p>It actually saves me money. This stuff works so well I have to set a reminder to clean the boxes because I can no longer smell cat box in my house.<\/p>",
+            "image": "shopify:\/\/shop_images\/Rectangle_77_1.png",
+            "name": "John T."
+          }
+        },
+        "a3d48f37-6126-41b9-b294-3c3646048836": {
+          "type": "review",
+          "settings": {
+            "review": "<p>This litter is so pleasant! It traps odors, clumps, and doesn’t scatter everywhere. BONUS, my cats smell like they’ve been in the woods all day.<\/p>",
+            "image": "shopify:\/\/shop_images\/Rectangle_79.png",
+            "name": "Noel P."
+          }
+        },
+        "2547f57c-c520-4c55-b922-27d95835a7fb": {
+          "type": "review",
+          "settings": {
+            "review": "<p>I bought this because regular clay litter is so bad for the environment. I'm so glad I switched - it's lightweight, smells so good and the cats love it too.<\/p>",
+            "image": "shopify:\/\/shop_images\/Rectangle_80.png",
+            "name": "Karen L."
+          }
+        },
+        "05e9aa07-581d-48cb-b8ab-2ffb048547e1": {
+          "type": "review",
+          "settings": {
+            "review": "<p>This litter is the best litter I've ever used. My cat seems to like this litter way better than clay. No more smelly litter. Plus it lasts sooo much longer than clay.<\/p>",
+            "image": "shopify:\/\/shop_images\/Rectangle_81.png",
+            "name": "Evi R."
+          }
+        }
+      },
+      "block_order": [
+        "83b4f8b4-2c7d-4965-9680-4e7d27caba6a",
+        "22d8e034-4830-43eb-b3cd-9192e42a99bb",
+        "a3d48f37-6126-41b9-b294-3c3646048836",
+        "2547f57c-c520-4c55-b922-27d95835a7fb",
+        "05e9aa07-581d-48cb-b8ab-2ffb048547e1"
+      ],
+      "settings": {
+        "header": "<p>What people have to say about<\/p>"
+      }
+    }
+  },
+  "order": [
+    "header",
+    "main",
+    "footer"
+  ]
+}

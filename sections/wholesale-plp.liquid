@@ -1,0 +1,194 @@
+{% unless customer.tags contains 'wholesale-approved' %}
+    <script type="text/javascript">
+      window.location.href = '/';
+    </script>
+{% endunless %}
+
+{{ "style.wholesale-plp.css" | asset_url | stylesheet_tag }}
+{{ "style.wholesale-global.css" | asset_url | stylesheet_tag }}
+{{ "script.wholesale.js" | asset_url | script_tag }}
+
+<div class="ws-plp__header container">
+    <h2 class="plp-header__title">{{ section.settings.heading }}</h2>
+    <div class="product-features">
+        {% for block in section.blocks %}
+            <div class="product-feature">
+                <img src="{{ block.settings.image | img_url }}" alt="" />
+                {{ block.settings.title }}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="ws-plp__wrapper container">
+    <div class="ws-plp__row">
+        <div class="product-article healthy-cat">
+            <h2>{{ section.settings.healthy_cat_heading }}</h2>
+            <div class="ws-paragraph">{{ section.settings.healthy_cat_copy }}</div>
+        </div>
+
+        <div class="ws-plp-products">
+            {% render "wholesale-product-card", product: section.settings.healthy_cat_product_1 %}
+            {% render "wholesale-product-card", product: section.settings.healthy_cat_product_2 %}
+        </div>
+    </div>
+
+    <div class="ws-plp__row">
+        <div class="product-article multi-cat">
+            <h2>{{ section.settings.multi_cat_heading }}</h2>
+            <div class="ws-paragraph">{{ section.settings.multi_cat_copy }}</div>
+        </div>
+
+        <div class="ws-plp-products">
+            {% render "wholesale-product-card", product: section.settings.multi_cat_product_1 %}
+            {% render "wholesale-product-card", product: section.settings.multi_cat_product_2 %}
+        </div>
+    </div>
+
+    <div class="ws-plp__row">
+        <div class="product-article unscented-cat">
+            <h2>{{ section.settings.unscented_cat_heading }}</h2>
+            <div class="ws-paragraph">{{ section.settings.unscented_cat_copy }}</div>
+        </div>
+
+        <div class="ws-plp-products">
+            {% render "wholesale-product-card", product: section.settings.unscented_cat_product_1 %}
+            {% render "wholesale-product-card", product: section.settings.unscented_cat_product_2 %}
+        </div>
+    </div>
+</div>
+
+<div class="ws-plp__banner container">
+    <div class="banner__media">
+        <img src="{{ section.settings.banner_image | img_url: '680x680'}}" alt="" />
+    </div>
+
+    <div class="banner__article">
+        <div class="banner__article--content">
+            <h3>{{ section.settings.banner_heading }}</h3>
+            <div class="ws-paragraph">{{ section.settings.banner_copy }}</div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Wholesale PLP",
+        "settings": [
+            {
+                "type": "richtext",
+                "id": "heading",
+                "label": "Heading"
+            },
+            {
+                "type": "header",
+                "content": "Healthy Cat"
+            },
+            {
+                "type": "text",
+                "id": "healthy_cat_heading",
+                "label": "Heading"
+            },
+            {
+                "type": "richtext",
+                "id": "healthy_cat_copy",
+                "label": "Copy"
+            },
+            {
+                "type": "product",
+                "id": "healthy_cat_product_1",
+                "label": "Product 1"
+            },
+            {
+                "type": "product",
+                "id": "healthy_cat_product_2",
+                "label": "Product 2"
+            },
+            {
+                "type": "header",
+                "content": "Multi Cat"
+            },
+            {
+                "type": "text",
+                "id": "multi_cat_heading",
+                "label": "Heading"
+            },
+            {
+                "type": "richtext",
+                "id": "multi_cat_copy",
+                "label": "Copy"
+            },
+            {
+                "type": "product",
+                "id": "multi_cat_product_1",
+                "label": "Product 1"
+            },
+            {
+                "type": "product",
+                "id": "multi_cat_product_2",
+                "label": "Product 2"
+            },
+            {
+                "type": "header",
+                "content": "Unscented Cat"
+            },
+            {
+                "type": "text",
+                "id": "unscented_cat_heading",
+                "label": "Heading"
+            },
+            {
+                "type": "richtext",
+                "id": "unscented_cat_copy",
+                "label": "Copy"
+            },
+            {
+                "type": "product",
+                "id": "unscented_cat_product_1",
+                "label": "Product 1"
+            },
+            {
+                "type": "product",
+                "id": "unscented_cat_product_2",
+                "label": "Product 2"
+            },
+            {
+                "type": "header",
+                "content": "Banner"
+            },
+            {
+                "type": "text",
+                "id": "banner_heading",
+                "label": "Heading"
+            },
+            {
+                "type": "richtext",
+                "id": "banner_copy",
+                "label": "Copy"
+            },
+            {
+                "type": "image_picker",
+                "id": "banner_image",
+                "label": "Image"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "product_feature",
+                "name": "Product Feature",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "title",
+                        "label": "title"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

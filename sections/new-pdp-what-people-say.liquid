@@ -1,0 +1,86 @@
+<style>
+    .what-people-say__reviews .owl-stage-outer,
+    .what-people-say__reviews .owl-stage {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .owl-nav button {
+      all: unset;
+    }
+</style>
+
+<div class="what-people-say {%if template.name == 'product'%}template-new{%endif%}">
+  <h3>{{ section.settings.header }} <img src="{{'logo-catalyst.png' | asset_url}}" alt=""></h3>
+
+  <div class="what-people-say__reviews-wrapper">
+    <div class="what-people-say__reviews">
+      {% for block in section.blocks %}
+        <div class="what-people-say__review">
+          <img
+            class="img-quotes"
+            src="{{'quotes.png' | asset_url}}"
+            alt="">
+          {{ block.settings.review }}
+          <div class="what-people-say__person">
+            <img src="{{block.settings.image | img_url: 'large'}}" alt="">
+            <div class="person-name">{{ block.settings.name }}</div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+    window.addEventListener("DOMContentLoaded", function() {
+      var carousel = $(".what-people-say__reviews");
+
+      carousel.owlCarousel({
+        items: 2,
+        slideSpeed: 2000,
+        nav: true,
+        navText: ["<img class='arrow arrow-next' src={{'ri_arrow-up-line.png' | asset_url}} alt />", "<img class='arrow arrow-prev' src={{'ri_arrow-up-line.png' | asset_url}} alt />"],
+        autoplay: false,
+        dots: false,
+        loop: true,
+        stagePadding: 0,
+        responsiveRefreshRate: 200,
+      })
+    })
+</script>
+
+{% schema %}
+  {
+    "name": "What People Say",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "header",
+        "label": "Header"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "review",
+        "name": "Review",
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "review",
+            "label": "Review"
+          }, {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Avatar"
+          }, {
+            "type": "text",
+            "id": "name",
+            "label": "Name"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

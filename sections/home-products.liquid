@@ -1,0 +1,109 @@
+{%- assign default_item = false -%}
+{%- if section.blocks.size > 0 -%}
+  {%- assign product_settings = section.blocks[0].settings -%}
+  {%- if product_settings.product != blank -%}
+    {%- assign default_item = all_products[product_settings.product] -%}
+  {%- endif -%}
+{%- endif -%}
+
+
+<div class="cl-litter-products home">
+    <span class="arrow-down"></span>
+    <div class="image-left" style="background-image: url('{{ 'cat-playing.png' | asset_url }}');"></div>
+    <div class="products-right">
+        <div class="wrapper">
+            <h3>{{ section.settings.title }}</h3>
+            {%- if section.blocks.size > 0 -%}
+              <ul>
+                {%- for featured_product in section.blocks -%} 
+                  {%- assign product_settings = featured_product.settings -%}
+                  {%- if product_settings.product != blank -%}
+                  <li><a href="#" {% if forloop.first == true %}class="selected"{% endif %} data-handle="{{all_products[product_settings.product].handle}}" data-product="{{ all_products[product_settings.product].id }}" data-variant-id="{{ all_products[product_settings.product].selected_or_first_available_variant.id }}" data-subscription-id="{{ all_products[product_settings.product].selected_or_first_available_variant.metafields.subscriptions.discount_variant_id }}"><span></span> <p>{{ product_settings.product_title | default:all_products[product_settings.product].title }}</p></a></li>
+                  {%- endif -%}
+                {%- endfor -%}
+              </ul>
+              {%- if default_item -%}
+                {%- assign product_settings = section.blocks[0].settings -%}
+                <p class="selection" data-product="{{ default_item.id }}">{{ product_settings.product_title | default:all_products[product_settings.product].title }}</p>
+                {%- if default_item.available -%}
+                {% comment %} <div class="atc_toggle">
+                  <a href="#" class="isSubscription selected" data-price="{{ default_item.selected_or_first_available_variant.metafields.subscriptions.discount_variant_price | replace: '.','' | money }}">Subscribe & Save<br/><span>{{ default_item.selected_or_first_available_variant.metafields.subscriptions.discount_variant_price | replace: '.','' | money }} <small>SAVE 13%</small></span></a>
+                  <a href="#" class="isOneTime" data-price="{{ default_item.price  | money }}">One Time Purchase<br/><span>{{ default_item.price  | money }}</span></a>
+                </div> {% endcomment %}
+
+                <a href="/products/{{default_item.handle}}" data-subscription-id="{{ default_item.selected_or_first_available_variant.metafields.subscriptions.discount_variant_id }}" data-variant-id="{{ default_item.selected_or_first_available_variant.id }}" class="try-catalyst ajaxAddToCart isSubscription"><span class="try-catalyst-label">SHOP NOW</span></a>
+                {%- else -%}
+                <a href="#" data-variant-id="{{ default_item.selected_or_first_available_variant.id }}" class="try-catalyst">{{ section.settings.button_oos_text }}</span></a>
+                {%- endif -%}
+              {%- endif -%}
+            {%- endif -%}
+            <a href="#" class="open-cat-litter-popup">Which formula is right for you?</a>
+        </div>
+    </div>
+    {%- if section.blocks.size > 0 -%}
+      {%- for featured_product in section.blocks -%} 
+        {%- assign product_settings = featured_product.settings -%}
+        {%- if product_settings.product != blank -%}
+        <img src="{{ product_settings.product_cover | default:all_products[product_settings.product].featured_image | img_url:'master' }}" alt="{{ product_settings.product_cover.alt | default:all_products[product_settings.product].featured_image.alt }}" data-product="{{ all_products[product_settings.product].id }}" class="center-image {% if forloop.first == true %}selected{% endif %}">
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Cat Litter Products",
+  "class": "section-cl",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title",
+      "default": "Choose Your Catalyst Cat Litter Formula"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Section button text",
+      "default": "Add to bag"
+    },
+    {
+      "type": "text",
+      "id": "button_oos_text",
+      "label": "Section button OOS text",
+      "default": "Out of Stock"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Product",
+      "name": "Home Cat Litter Products"
+    }
+  ],
+  "blocks" : [
+    {
+      "type": "featured_product",
+      "name": "Featured product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "product_title",
+          "label": "Product label"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_cover",
+          "label": "Product image",
+          "info": "390px x 390px .png recommended"
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}

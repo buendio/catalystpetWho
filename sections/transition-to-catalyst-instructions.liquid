@@ -1,0 +1,111 @@
+{% style %}
+  .t-t-cat__instructions {
+    padding: 80px 15px;
+    background: #fff6eb;
+  }
+  .t-t-cat__instructions img {
+    margin: 0 auto 40px;
+    display: block;
+  }
+  .t-t-cat__instructions a {
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 24px;
+    text-align: center;
+    color: #ffffff;
+
+    padding: 16px 40px;
+    background: #027747;
+    border: 1.5px solid #027747;
+    border-radius: 4px;
+
+    margin: auto;
+    display: block;
+    width: fit-content;
+  }
+  .t-t-cat__list {
+    max-width: 620px;
+    margin: auto;
+  }
+  .t-t-cat__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    margin-bottom: 30px;
+  }
+  .t-t-cat__item svg {
+    min-width: 28px;
+    max-width: 28px;
+  }
+  .t-t-cat__item svg path {
+    fill: #cc9900;
+  }
+  .t-t-cat__item p {
+    font-family: 'FuturaMedium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 130%;
+    color: #5d5d5d;
+    margin: 0;
+  }
+
+  @media (max-width: 770px) {
+    .t-t-cat__instructions a {
+      font-size: 22px;
+      margin-top: 50px;
+    }
+    .t-t-cat__instructions {
+      padding: 50px 15px;
+    }
+  }
+{% endstyle %}
+
+<div class="t-t-cat__instructions">
+  <img src="{{'the-mix-label.png' | asset_url}}" alt>
+
+  <div class="t-t-cat__list">
+    {% for instruction in section.blocks %}
+      <div class="t-t-cat__item">
+        {% include 'icon-paw-2' %}
+        <p>{{ instruction.settings.instruction_text }}</p>
+      </div>
+    {% endfor %}
+  </div>
+
+  <a href="{{section.settings.cta_url}}">
+    {{ section.settings.cta_label }}
+  </a>
+</div>
+
+{% schema %}
+{
+  "name": "Transition Instructions",
+  "settings": [
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA Label",
+      "default": "I’m Ready to Buy!"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Instruction",
+      "name": "Instruction",
+      "settings": [
+        {
+          "type": "text",
+          "id": "instruction_text",
+          "label": "Instruction Text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

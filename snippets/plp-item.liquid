@@ -1,0 +1,142 @@
+{% assign item = product %}
+{% if template contains 'search' %}
+  {% assign item = item %}
+{% elsif template contains 'product' %}
+  {% assign item = prod %}
+{% endif %}
+
+{% if settings.product_stock_overlay and item.available %}
+  {% assign show_stock_indicator = false %}
+  {% assign total = 0 %}
+  {% assign threshold = settings.product_stock_overlay_show | times: 1 %}
+  {% for variant in item.variants %}
+    {% if variant.inventory_management == "shopify" and variant.inventory_quantity > 0 and varient.inventory_policy != 'continue'%}
+      {% assign total = total | plus: variant.inventory_quantity %}
+      {% assign show_stock_indicator = true %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+<article class="product-list-item updatedPLP" id="product-list-item-{{ item.id }}">
+
+  <figure class="product-list-item-thumbnail">
+
+      <a href="{{ item.url }}">
+        {% assign lazy = false %}
+        {% if item.featured_image %}
+          {% assign lazy = true %}
+        {% endif %}
+
+        {%
+          include 'rimg',
+          img: item.featured_image,
+          class: 'product-list-item-image',
+          size: '900x900',
+          lazy: lazy
+        %}
+        {% if  product.metafields.global.plp-image.value != blank %}
+
+            <img src={{ product.metafields.global.plp-image.value }} class="subIMG" />
+
+        {% endif %}
+
+         <div class="extra-info">
+            <span class="firstLine">{{ product.title | remove: "Cat Litter" | remove: "Formula" }}</span>
+            <span class="secondLine">FORMULA</span>
+
+            {% render 'bv-inline-ratings', product: product %} 
+
+
+            {% if  product.metafields.global.plp-subtitle.value != blank %}
+
+                <p class="subTitle"> {{ product.metafields.global.plp-subtitle.value }}</p> 
+
+            {% endif %}
+
+            {% if  product.metafields.global.bag-value.value != blank %}
+
+                <p class="bagInfo"> {{ product.metafields.global.bag-value.value }}</p> 
+
+            {% endif %}
+
+             <div class="cta">
+                <a href="{{product.url}}" data-variant-id="{{ product.first_available_variant.id }}" class="try-catalyst ajaxAddToCart">SHOP NOW</span></a>
+              </div>
+
+              {% comment %} <div class="bnb-button">
+
+                <p class="bagInfo"> ALSO AVAILABLE AT </p> 
+
+                {% if product.metafields.global.petsmart_link.value != blank %}
+                    <a onclick="gtag('event', 'Petsmart Outbound')" href="{{  product.metafields.global.petsmart_link.value }}"> <img src="{{ 'petsmart.png' | asset_img_url: '175x' }}" class="petsMart" /></a>
+                {% endif %}
+
+                {% if product.metafields.global.petco_link.value != blank %}
+                    <a onclick="gtag('event', 'Petsco Outbound')" href="{{  product.metafields.global.petco_link.value }}"> <img src="{{ 'Petco.png' | asset_img_url: '125x' }}" class="petsMart" /></a>
+                {% endif %}
+
+                {% if product.metafields.global.chewy_link.value != blank %}
+                    <a onclick="gtag('event', 'Chewy Outbound')" href="{{  product.metafields.global.chewy_link.value }}"> <img src="{{ 'chewy.png' | asset_img_url: '125x' }}" /></a>
+                {% endif %}
+
+                {% if product.metafields.global.amazon_link.value != blank %}
+                    <a class="amazon" onclick="gtag('event', 'Amazon Outbound')" href="{{  product.metafields.global.amazon_link.value }}"> <img src="{{ 'amazon.png' | asset_img_url: '125x' }}" /></a>
+                {% endif %}
+                
+
+                </div> {% endcomment %}
+         </div>   
+
+      </a>
+  </figure>
+
+  {% comment %}
+  <div class="product-list-item-details">
+    {% if settings.product_show_vendor %}
+      <p class="product-list-item-vendor vendor meta">
+        {% unless onboarding %}
+          {{ item.vendor }}
+        {% else %}
+          {{ onboarding_vendor }}
+        {% endunless %}
+      </p>
+    {% endif %}
+
+    <h1 class="product-list-item-title">
+      <a href="{% unless onboarding %}{{ item.url | within: collection }}{% endunless %}">
+        {% unless onboarding %}
+          {{ item.title }}
+        {% else %}
+          {{ onboarding_title }}
+        {% endunless %}
+      </a>
+    </h1>
+
+      <p class="product-list-item-price">
+        {% if onboarding %}
+          {{ onboarding_price | money }}
+        {% elsif item.available %}
+          {% if item.price_varies %}
+            <span class="price">
+              {% if item.price_varies %}{{ 'products.product.from' | t }}{% endif %}
+              <span class="money">{{ item.price_min | money }}</span></span>
+          {% else %}
+            <span class="price">
+              <span class="money">{{ item.price_min | money }}</span>
+              {% unless item.compare_at_price_min <= item.price_min %}
+                <span class="original money">
+                  {% if item.compare_at_price_min > item.price_min %}
+                    {{ item.compare_at_price_min | money }}
+                  {% endif %}
+                </span>
+              {% endunless %}
+            </span>
+          {% endif %}
+        {% else %}
+          {{ 'products.product.sold_out' | t }}
+        {% endif %}
+      </p>
+  </div>
+  {% endcomment %}
+
+</article>

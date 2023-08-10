@@ -1,0 +1,99 @@
+{% assign product1 = all_products[section.settings.product1] %}
+{% assign product2 = all_products[section.settings.product2] %}
+{% assign product3 = all_products[section.settings.product3] %}
+<div class="cl-hero">
+    <div class="hero-inner">
+        <div class="hero-left">
+        {{ section.settings.main_hero_text }}
+        </div>
+        <div class="hero-center">
+            <img src="{{ product2.featured_image | img_url: '340x340x' ,scale: 2 }}" data-default-src="{{ product2.featured_image | img_url: '340x340x' ,scale: 2 }}" alt="" data-default-product="2" data-current-product="2" data-product-title="{{section.settings.product2_title}}" data-product-subtitle="{{section.settings.product2_subtitle}}">
+            <img src="{{ product1.featured_image | img_url: '340x340x' ,scale: 2 }}" data-default-src="{{ product2.featured_image | img_url: '340x340x' ,scale: 2 }}" alt="" data-default-product="1" data-current-product="1" data-product-title="{{section.settings.product1_title}}" data-product-subtitle="{{section.settings.product1_subtitle}}">
+            <img src="{{ product3.featured_image | img_url: '340x340x' ,scale: 2 }}" data-default-src="{{ product2.featured_image | img_url: '340x340x' ,scale: 2 }}" alt="" data-default-product="3" data-current-product="3" data-product-title="{{section.settings.product3_title}}" data-product-subtitle="{{section.settings.product3_subtitle}}">
+        </div>
+        <div class="hero-right">
+            <h3>{{ section.settings.product1_title}}</h3>
+            <p>{{ section.settings.product1_subtitle}}</p>
+            <a href="#" class="arrow-left"></a>
+            <a href="#" class="arrow-right"></a>
+        </div>
+    </div>
+</div>
+<div class="cl-hero-button-container">            
+    <a href="{{ product1.url }}" class="try-catalyst go-to-element" data-element="go-to-{{ product1.handle }}" data-variant-id="{{ product1.selected_or_first_available_variant.id }}" data-product="1">{{ section.settings.button_text }} | <span>{{ product1.price | money }}</span></a>
+    <a href="{{ product2.url }}" class="try-catalyst hide go-to-element" data-element="go-to-{{ product2.handle }}" data-variant-id="{{ product2.selected_or_first_available_variant.id }}" data-product="2">{{ section.settings.button_text }} | <span>{{ product2.price | money }}</span></a>
+    <a href="{{ product3.url }}" class="try-catalyst hide go-to-element" data-element="go-to-{{ product3.handle }}" data-variant-id="{{ product3.selected_or_first_available_variant.id }}" data-product="3">{{ section.settings.button_text }} | <span>{{ product3.price | money }}</span></a>
+</div>
+
+{% schema %}
+{
+  "name": "Cat Litter Hero",
+  "class": "section-cl",
+  "settings": [
+    {
+      "type": "text",
+      "id": "main_hero_text",
+      "label": "Main hero text",
+      "default": "THE HIGHEST PERFORMING, SUSTAINABLE CAT LITTER AVAILABLE"
+    },
+    {
+      "type": "richtext",
+      "id": "hero_description",
+      "label": "Hero description",
+      "default": "<p>Join the revolution!<br/>Make the right choice</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "TRY CATALYST"
+    },
+    {
+      "type": "product",
+      "id": "product1",
+      "label": "Product 1"
+    },
+    {
+      "type": "text",
+      "id": "product1_title",
+      "label": "Product 1 Title"
+    },
+    {
+      "type": "text",
+      "id": "product1_subtitle",
+      "label": "Product 1 Subtitle"
+    },
+    {
+      "type": "product",
+      "id": "product2",
+      "label": "Product 2"
+    },
+    {
+      "type": "text",
+      "id": "product2_title",
+      "label": "Product 2 Title"
+    },
+    {
+      "type": "text",
+      "id": "product2_subtitle",
+      "label": "Product 2 Subtitle"
+    },
+    {
+      "type": "product",
+      "id": "product3",
+      "label": "Product 3"
+    },
+    {
+      "type": "text",
+      "id": "product3_title",
+      "label": "Product 3 Title"
+    },
+    {
+      "type": "text",
+      "id": "product3_subtitle",
+      "label": "Product 3 Subtitle"
+    }
+  ]
+}
+
+{% endschema %}

@@ -1,0 +1,80 @@
+<script src="{{ 'slider.js' | asset_url }}" defer></script>
+
+<style>
+    .section-benefits {
+        min-height: 421px;
+        background: #F8F6ED;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        text-align: center;
+
+        padding: 0 40px;
+    }
+
+    .section-benefits__cat-image {
+        position: absolute;
+        top: 50px;
+        right: 0;
+    }
+
+    .section-benefits__subtitle {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+        letter-spacing: 1px;
+        color: #027747;
+    }
+
+    .section-benefits__title {
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 49px;
+        color: #5D5D5D;
+        margin: 9px 0 18px;
+    }
+
+    .section-benefits__list {
+        display: flex;
+        gap: 50px;
+    }
+
+    .section-benefits__list img {
+        width: 124px;
+        height: 124px;
+    }
+
+    @media(max-width: 1000px) {
+        .section-benefits__title {
+            font-size: 24px;
+            line-height: 27px;
+        }
+        
+        .section-benefits__list {
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .section-benefits__subtitle {
+            margin: 50px 0 10px;
+        }
+        
+    }
+</style>
+
+<div class="section-benefits">
+    <img class="section-benefits__cat-image" src="{{'cat-right.png' | asset_url}}" alt="" />
+
+    <p class="section-benefits__subtitle">Miawed by cats over the world</p>
+    <p class="section-benefits__title">The highest performing, sustainable cat litter available.</p>
+    
+    <div class="section-benefits__list">
+        <img src="{{'icon-clumping.png' | asset_url}}" alt="" />
+        <img src="{{'icon-light.png' | asset_url}}" alt="" />
+        <img src="{{'icon-absorption.png' | asset_url}}" alt="" />
+        <img src="{{'icon-acceptance.png' | asset_url}}" alt="" />
+    </div>
+</div>

@@ -1,0 +1,205 @@
+{% style %}
+    .resons-hero {
+        display: flex;
+        gap: 50px;
+        padding: 70px 50px;
+        background: #DED9BC;
+    }
+
+    .reasons-hero__image-wrapper {
+        width: 480px;
+    }
+
+    .reasons-hero__copy {
+        width: calc(100% - 480px);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .copy__label-images {
+        display: flex;
+        gap: 10px;
+    }
+
+    .copy__label-images img {
+        width: 68px;
+    }
+
+    .reasons-hero__copy h3 {
+        font-family: 'Domine';
+        font-style: normal;
+        background: #DDAD26;
+        padding: 10px;
+        font-weight: bold;
+        font-size: 42px;
+        line-height: 48px;
+        color: #000000;
+        text-transform: capitalize;
+        margin-top: 0;
+        letter-spacing: normal;
+    }
+
+    .reasons-hero__copy h1 {
+        margin: 20px 0;
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 56px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: #027747;
+        letter-spacing: normal;
+    }
+
+    .reasons-hero__copy p {
+        font-family: 'FuturaMedium';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+        color: #1C1C1C;
+        margin: 0 0 20px;
+    }
+
+    .copy__cta {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .copy__cta a {
+        padding: 14px 50px;
+        background: #DDAD26;
+        border-radius: 8px;
+
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 25px;
+        text-transform: capitalize;
+        color: #1C1C1C;
+        display: block;
+        width: fit-content;
+    }
+
+    @media(max-width: 900px) {
+        .resons-hero {
+            flex-direction: column;
+            padding: 35px 25px;
+        }
+
+        .reasons-hero__copy {
+            width: 100%;
+        }
+
+        .reasons-hero__image-wrapper {
+            width: 100%;
+        }
+
+        .reasons-hero__image {
+            display: block;
+            margin: auto;
+        }
+
+        .reasons-hero__copy {
+            align-items: center;
+        }
+
+        .reasons-hero__copy h3,
+        .reasons-hero__copy h1,
+        .reasons-hero__copy p {
+            text-align: center;
+            letter-spacing: normal;
+        } 
+    }
+
+    @media(max-width: 580px) {
+        .resons-hero {
+            padding: 30px 15px;
+            gap: 30px;
+        }
+
+        .reasons-hero__image {
+            width: 100%;
+        }
+
+        .reasons-hero__copy h1 {
+            font-size: 35px;
+            line-height: 47px;
+        }
+
+         .copy__cta {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+    }
+{% endstyle %}
+
+<div class="resons-hero">
+    <div class="reasons-hero__image-wrapper">
+        <img class="reasons-hero__image" src="{{section.settings.hero_image.src | img_url: '500x'}}" alt="" />
+    </div>    
+    
+    <div class="reasons-hero__copy">
+        <h3>5 reasons</h3>
+        <h1>{{section.settings.heading}}</h1>
+        <p>{{section.settings.paragraph}}</p>
+        <div class="copy__cta">
+            <a href="{{section.settings.cta_url}}">{{section.settings.cta_title}}</a>
+            <div class="copy__label-images">
+                {% for block in section.blocks %}
+                    <img src="{{block.settings.label_image.src | img_url: '136x'}}" alt="" />
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "5 Reasons Hero",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "hero_image",
+                "label": "Hero Image"
+            },
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Hero Heading"
+            },
+            {
+                "type": "text",
+                "id": "paragraph",
+                "label": "Hero Paragraph"
+            },
+            {
+                "type": "text",
+                "id": "cta_title",
+                "label": "CTA Title",
+                "default": "Get Started"
+            },
+            {
+                "type": "url",
+                "id": "cta_url",
+                "label": "CTA URL"
+            }
+        ],
+        "blocks": [
+            {
+                "name": "Label Image",
+                "type": "image_picker",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "label_image",
+                        "label": "Hero Image"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

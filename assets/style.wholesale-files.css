@@ -1,0 +1,120 @@
+.ws-section-files {
+    display: flex;
+    max-width: 1370px;
+    margin: 35px auto;
+    padding: var(--sectionPadding);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 35px;
+
+    border-radius: 11px;
+    background: #EDF4F1;
+}
+
+.ws-files-wrapper {
+    width: 100%;
+}
+
+.ws-files__title {
+    color: #037847;
+    font-size: 42px;
+    font-family: "Route-66-NF";
+    line-height: 120%;
+    font-weight: 400;
+    letter-spacing: normal;
+    text-transform: uppercase;
+    margin: 0 0 35px 0;
+}
+
+.ws-files {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-self: stretch;
+}
+
+.ws_files__message {
+    color: #000;
+    font-size: 22px;
+    font-family: Futura;
+    font-weight: 500;
+}
+
+.ws-file {
+    width: calc((100% - 30px) / 3);
+    min-width: 300px;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    gap: 20px;
+
+    border-radius: 5px;
+    background: #FFF;
+}
+
+.ws-file__icon-folder {
+    border-radius: 5px;
+    background: #EDF4F1;
+    padding: 15px;
+}
+
+.ws-file__icon-folder svg {
+    display: block;
+}
+
+.ws-file__name {
+    color: #000;
+    font-size: 20px;
+    font-family: Futura;
+    font-weight: 500;
+}
+
+.ws-file__metadata {
+    display: flex;
+
+    color: rgba(0, 0, 0, 0.50);
+    font-size: 16px;
+    font-family: Futura;
+    font-weight: 500;
+}
+
+.ws-file__size {
+    text-transform: uppercase;
+    border-left: 1px solid rgba(0, 0, 0, 0.50);
+    margin-left: 8px;
+    padding-left: 8px;
+}
+
+.ws-file__type {
+    text-transform: uppercase;
+}
+
+.ws-file__icon-download {
+    padding: 10px 0 10px 10px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+@media(max-width: 1420px) {
+    .ws-section-files {
+        margin: 35px 25px;
+    }
+}
+
+@media(max-width: 768px) {
+    .ws-section-files {
+        margin: 0;
+    }
+
+    .ws-files__title {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+}
+
+@media(max-width: 550px) {
+    .ws-file {
+        width: 100%;
+    }
+}

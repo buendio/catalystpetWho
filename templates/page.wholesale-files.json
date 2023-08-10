@@ -1,0 +1,115 @@
+{
+  "sections": {
+    "header": {
+      "type": "wholesale-header",
+      "settings": {
+        "heading": "Marketing Resources",
+        "copy": "<p>Please use the links below to find text, images, video, and user-generated content (UGC) resources provided by Catalyst Pet to assist in marketing efforts. Questions? Please contact our Care Team at careteam@catalystpet.com or 1-844-5-LITTER<\/p>",
+        "cta_1_title": "",
+        "cta_1_url": "",
+        "cta_2_title": "",
+        "cta_2_url": ""
+      }
+    },
+    "main": {
+      "type": "wholesale-files",
+      "blocks": {
+        "1c61b3c8-2e77-4652-b268-b6bdee4c4de5": {
+          "type": "file",
+          "settings": {
+            "section": "logos",
+            "url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0252\/0806\/2004\/files\/Bag_Logo.png?v=1691083695",
+            "title": "Bag Logo",
+            "type": "AI",
+            "size": "222KB"
+          }
+        },
+        "7d457e82-a081-4dc5-88d4-c6981102c742": {
+          "type": "file",
+          "settings": {
+            "section": "logos",
+            "url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0252\/0806\/2004\/files\/CatalystLogo.ai?v=1691083697",
+            "title": "Catalyst Logo",
+            "type": "AI",
+            "size": "68KB"
+          }
+        },
+        "03f28d63-cfeb-487e-8d79-689518867538": {
+          "type": "file",
+          "settings": {
+            "section": "logos",
+            "url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0252\/0806\/2004\/files\/Logo_Flag.png?v=1691083697",
+            "title": "Flag Logo",
+            "type": "PNG",
+            "size": "39KB"
+          }
+        },
+        "a3a0e6a5-3722-4647-ad4d-9f01a59f7748": {
+          "type": "file",
+          "settings": {
+            "section": "logos",
+            "url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0252\/0806\/2004\/files\/HorizontalLogo.png?v=1691083695",
+            "title": "Horizontal Logo",
+            "type": "PNG",
+            "size": "105KB"
+          }
+        },
+        "72bbdb24-41e6-48f2-bd11-02265838190e": {
+          "type": "file",
+          "settings": {
+            "section": "logos",
+            "url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0252\/0806\/2004\/files\/flag.png?v=1691083697",
+            "title": "Flag Logo 2",
+            "type": "PNG",
+            "size": "922KB"
+          }
+        },
+        "20737ef5-bcc7-4e22-93d9-0618c9c187b2": {
+          "type": "file",
+          "settings": {
+            "section": "logos",
+            "url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0252\/0806\/2004\/files\/SoftWoodLogo.ai?v=1691080679",
+            "title": "Soft Wood Logo",
+            "type": "AI",
+            "size": "1.1MB"
+          }
+        },
+        "faaf984a-aa98-487a-aece-99e56851b256": {
+          "type": "file",
+          "settings": {
+            "section": "logos",
+            "url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0252\/0806\/2004\/files\/WordLogo.ai?v=1691083683",
+            "title": "Word Logo",
+            "type": "PNG",
+            "size": "1.8MB"
+          }
+        },
+        "7adb5ba5-d801-4a00-918f-43396195caba": {
+          "type": "file",
+          "settings": {
+            "section": "videos",
+            "url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/3380e8e12aa74fdd8a12ae8ae4a3d951.mp4",
+            "title": "Catalyst Product Video",
+            "type": "MP4",
+            "size": "5.6MB"
+          }
+        }
+      },
+      "block_order": [
+        "1c61b3c8-2e77-4652-b268-b6bdee4c4de5",
+        "7d457e82-a081-4dc5-88d4-c6981102c742",
+        "03f28d63-cfeb-487e-8d79-689518867538",
+        "a3a0e6a5-3722-4647-ad4d-9f01a59f7748",
+        "72bbdb24-41e6-48f2-bd11-02265838190e",
+        "20737ef5-bcc7-4e22-93d9-0618c9c187b2",
+        "faaf984a-aa98-487a-aece-99e56851b256",
+        "7adb5ba5-d801-4a00-918f-43396195caba"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "header",
+    "main"
+  ]
+}

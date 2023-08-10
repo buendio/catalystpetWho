@@ -1,0 +1,26 @@
+<style>
+    img {
+        display: block;
+    }
+</style>
+
+<div class="general-instagram">
+    <a href="{{section.settings.instagram_url}}" class="">
+        <img src="{{'follow-instagram.png' | asset_url}}" alt="" />
+    </a>
+</div>
+
+
+{% schema %}
+    {
+        "name": "Instagram",
+        "settings": [
+            {
+                "type": "url",
+                "id": "instagram_url",
+                "label": "Instagram URL"
+            }
+        ],
+        "blocks": []
+    }
+{% endschema %}

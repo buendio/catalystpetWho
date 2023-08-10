@@ -1,0 +1,18 @@
+<div class="ws-modal {{class}}">
+    <div class="ws-modal__inner">
+        <div class="ws-modal__header">
+            <h3>{{ article.title }}</h3>
+            <div class="close-icon" onclick="hideModal(this)">
+                {% render "icon-wholesale-close" %}
+            </div>
+        </div>
+
+        <div class="ws-modal__content">
+            {{ article.content }}
+        </div>
+
+        <div class="ws-modal__footer">
+            <button onclick="hideModal(this)">Close</button>
+        </div>
+    </div>
+</div>

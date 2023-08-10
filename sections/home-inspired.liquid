@@ -1,0 +1,36 @@
+<div class="cl-inspired home">
+    <h4>{{ section.settings.inspired }}</h4>
+
+    {% assign cat = 'cat-emoji.png' | asset_url | prepend: '<img src="' | append: '" alt="cat">' %}
+    {% assign sun = 'sun-emoji.png' | asset_url | prepend: '<img src="' | append: '" alt="sun">' %}
+    {% assign earth = 'earth-emoji.png' | asset_url | prepend: '<img src="' | append: '" alt="earth">' %}
+    <h3>{{ section.settings.title | replace: "(cat)", cat | replace: "(star)", sun | replace: "(planet)", earth }}</h3>
+</div>
+
+{% schema %}
+{
+  "name": "Inspired",
+  "class": "section-cl",
+  "settings": [
+    {
+      "type": "text",
+      "id": "inspired",
+      "label": "Section small title",
+      "default": "Inspired by Nature"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title",
+      "default": "Catalyst shines (star) in all the ways a great litter should so you can give your cat (cat) the best while doing your best for the planet (planet)."
+    }
+  ],
+  "presets": [
+    {
+      "category": "Text",
+      "name": "Home Inspired"
+    }
+  ]
+}
+
+{% endschema %}

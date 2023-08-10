@@ -1,0 +1,1402 @@
+//************************************************************************//
+// Prefixer
+//************************************************************************//
+
+// Variable settings for /addons/prefixer.scss
+$prefix-for-webkit: true;
+$prefix-for-mozilla: true;
+$prefix-for-microsoft: true;
+$prefix-for-opera: true;
+$prefix-for-spec: true; // required for keyframe mixin
+
+@mixin prefixer($property, $value, $prefixes) {
+  @each $prefix in $prefixes {
+    @if $prefix == webkit {
+      @if $prefix-for-webkit {
+        -webkit-#{$property}: $value;
+      }
+    } @else if $prefix == moz {
+      @if $prefix-for-mozilla {
+        -moz-#{$property}: $value;
+      }
+    } @else if $prefix == ms {
+      @if $prefix-for-microsoft {
+        -ms-#{$property}: $value;
+      }
+    } @else if $prefix == o {
+      @if $prefix-for-opera {
+        -o-#{$property}: $value;
+      }
+    } @else if $prefix == spec {
+      @if $prefix-for-spec {
+        #{$property}: $value;
+      }
+    } @else {
+      @warn "Unrecognized prefix: #{$prefix}";
+    }
+  }
+}
+
+//************************************************************************//
+// Transitions
+//************************************************************************//
+
+// Shorthand mixin. Supports multiple parentheses-deliminated values for each variable.
+// Example: @include transition (all 2s ease-in-out);
+//          @include transition (opacity 1s ease-in 2s, width 2s ease-out);
+//          @include transition-property (transform, opacity);
+
+@mixin transition($properties...) {
+  // Fix for vendor-prefix transform property
+  $needs-prefixes: false;
+  $webkit: ();
+  $moz: ();
+  $spec: ();
+
+  // Create lists for vendor-prefixed transform
+  @each $list in $properties {
+    @if nth($list, 1) == "transform" {
+      $needs-prefixes: true;
+      $list1: -webkit-transform;
+      $list2: -moz-transform;
+      $list3: ();
+
+      @each $var in $list {
+        $list3: join($list3, $var);
+
+        @if $var != "transform" {
+          $list1: join($list1, $var);
+          $list2: join($list2, $var);
+        }
+      }
+
+      $webkit: append($webkit, $list1);
+      $moz: append($moz, $list2);
+      $spec: append($spec, $list3);
+    } @else {
+      // Create lists for non-prefixed transition properties
+      $webkit: append($webkit, $list, comma);
+      $moz: append($moz, $list, comma);
+      $spec: append($spec, $list, comma);
+    }
+  }
+
+  @if $needs-prefixes {
+    //scss-lint:disable VendorPrefix
+    transition: $spec;
+  } @else {
+    @if length($properties) >= 1 {
+      @include prefixer(transition, $properties, ms o spec);
+    } @else {
+      $properties: all 0.15s ease-out 0s;
+      @include prefixer(transition, $properties, ms o spec);
+    }
+  }
+}
+
+@mixin transition-duration($times...) {
+  @include prefixer(transition-duration, $times, ms spec);
+}
+
+@mixin transition-timing-function($motions...) {
+  // ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier()
+  @include prefixer(transition-timing-function, $motions, ms o spec);
+}
+
+@mixin transition-delay($times...) {
+  @include prefixer(transition-delay, $times, ms o spec);
+}
+
+//************************************************************************//
+// Transform
+//************************************************************************//
+
+@mixin transform($property: none) {
+  //  none | <transform-function>
+  @include prefixer(transform, $property, webkit ms o spec);
+}
+
+@mixin transform-origin($axes: 50%) {
+  // x-axis - left | center | right  | length | %
+  // y-axis - top  | center | bottom | length | %
+  // z-axis -                          length
+  @include prefixer(transform-origin, $axes, webkit ms spec);
+}
+
+@mixin transform-style($style: flat) {
+  @include prefixer(transform-style, $style, webkit ms o spec);
+}
+
+@mixin animation($animate...) {
+  $max: length($animate);
+  $animations: "";
+
+  @for $i from 1 through $max {
+    $animations: #{$animations + nth($animate, $i)};
+
+    @if $i < $max {
+      $animations: #{$animations + ", "};
+    }
+  }
+
+  @include prefixer(animation, $animations, webkit ms o spec);
+}
+
+@mixin keyframes($animation-name) {
+  //scss-lint:disable VendorPrefix
+  @keyframes #{$animation-name} { @content; }
+}
+//scss-lint:disable VendorPrefix
+
+@mixin breakpoint($point) {
+  @if $point == xl {
+    @media (min-width: 1281px) { @content; }
+  }
+
+  @if $point == l {
+    @media (max-width: 1280px) { @content; }
+  }
+
+  @if $point == m {
+    @media (max-width: 1020px) { @content; }
+  }
+
+  @if $point == s {
+    @media (max-width: 719px) { @content; }
+  }
+
+  @if $point == s-up {
+    @media (min-width: 720px) { @content; }
+  }
+}
+
+@mixin flexbox() {
+  display: flex;
+}
+
+@mixin flex($values) {
+  flex: $values;
+}
+
+@mixin order($val) {
+  order: $val;
+}
+
+//TODO: Rename this to kebab-case (many file refactor)
+//TODO: Drop this, use svgs
+@mixin iconFont($font-size: 16px, $line-height: 1) {
+  font-family: "Single Product Webicons Regular";
+  font-size: $font-size;
+  font-weight: 400;
+  line-height: $line-height;
+  -webkit-font-smoothing: antialiased;
+}
+
+@mixin placeholder {
+  //scss-lint:disable VendorPrefix
+  &::-webkit-input-placeholder { @content; }
+  &::-moz-input-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+}
+
+@mixin lt-ie9 {
+
+  .lt-ie9 & {
+    @content;
+  }
+}
+
+@mixin lt-ie10 {
+
+  .lt-ie10 & {
+    @content;
+  }
+}
+
+@mixin all-elems {
+  p, ul, ol, dl, blockquote, table, pre, form, div, h1, h2, h3, h4, h5, h6 {
+    @content;
+  }
+}
+
+@mixin video-button($color, $color-bg, $color-bg-hover) {
+  .video-loading-icon {
+    display: none;
+  }
+
+  .video-play-button::after {
+    content: "";
+    @extend %loader;
+    right: 10px;
+    border-color: rgba($color, 0.15);
+    border-top-color: rgba($color, 0.8);
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+  }
+
+  .video-loading & .video-play-button::after {
+    opacity: 1;
+  }
+
+  .video-play-icon {
+    color: $color;
+    background: $color-bg;
+  }
+
+  .video-play-button {
+    background: $color-bg;
+
+    &:hover,
+    &:hover .video-play-icon {
+      color: $color;
+      background: $color-bg-hover;
+    }
+  }
+}
+
+{% assign font_settings = 'font_body:bolder' %}
+{% assign font_settings = font_settings | append: '|font_heading:bolder' %}
+{% assign font_settings = font_settings | append: '|font_button' %}
+{% assign font_settings = font_settings | append: '|font_logo'%}
+{% assign font_settings = font_settings | split: '|' %}
+{% assign font_scss_variables = '' %}
+{% for font_setting in font_settings %}
+  {% assign font_info = font_setting | split: ':' %}
+
+  {% comment %}Get setting name{% endcomment %}
+  {% assign font_setting_name = font_info[0] %}
+
+  {% comment %}Get additional weights{% endcomment %}
+  {% assign font_additional_weights = font_info[1] | split: ',' | uniq %}
+
+  {% comment %}Create variables for use in SCSS{% endcomment %}
+  {% assign font_scss_base = font_setting_name | replace: '_', '-' | prepend: '$' %}
+  {% assign font_scss_reference = font_scss_base %}
+  {% assign font_scss_family = font_scss_base | append: '-family' %}
+  {% assign font_scss_weights = font_scss_base | append: '-weights' %}
+  {% assign font_scss_named_weights = font_scss_base | append: '-named-weights' %}
+  {% assign font_scss_styles = font_scss_base | append: '-styles' %}
+  {% assign font_scss_named_styles = font_scss_base | append: '-named-styles' %}
+
+  {% comment %}Add the current setting to a list of reference variables{% endcomment %}
+  {% assign font_scss_variables = font_scss_variables | append: '|' | append: font_scss_reference %}
+
+  {% comment %}Get the initial FontDrop, and an italic style FontDrop{% endcomment %}
+  {% assign font_initial = settings[font_setting_name] %}
+  {% assign font_initial_weight = font_initial.weight | times: 1 %}
+  {% assign font_italic = font_initial | font_modify: 'style', 'italic' %}
+  {% assign font_styles = '(' | append: font_initial.style %}
+  {% assign font_named_styles = '(initial' %}
+  {% assign font_weights = font_initial_weight %}
+  {% assign font_named_weights = 'initial' %}
+
+  {{ font_initial | font_face }}
+  {{ font_italic | font_face }}
+
+  {% comment %}Use the font face italic style if possible, otherwise use something browser friendly{% endcomment %}
+  {% assign font_initial_italic_style = font_italic.style | default: 'italic' %}
+  {% assign font_styles = font_styles | append: ', ' | append: font_initial_italic_style %}
+  {% assign font_named_styles = font_named_styles | append: ', italic' %}
+
+  {% assign font_styles = font_styles | append: ')' %}
+  {% assign font_named_styles = font_named_styles | append: ')' %}
+
+  {% comment %}Iterate over each additional weight to load font face, and weights{% endcomment %}
+  {% for font_adjustment in font_additional_weights %}
+    {% assign font_weighted = font_initial | font_modify: 'weight', font_adjustment %}
+    {% assign font_styled = font_weighted | font_modify: 'style', 'italic' %}
+    {% assign font_weighted_styles = blank %}
+    {% assign font_weighted_named_styles = blank %}
+
+    {% comment %}If additional weight exists, generate font face{% endcomment %}
+    {{ font_weighted | font_face }}
+
+    {% comment %}Create a default value of the weight adjustment is not possible{% endcomment %}
+    {% assign font_adjustment_default = '' %}
+    {% case font_adjustment %}
+      {% when 'lighter' %}
+        {% comment %}Shopify requirement: If lighter variant is not found, use default value of 300{% endcomment %}
+        {% assign font_adjustment_default = 300 %}
+        {% if font_initial_weight < 300 %}
+          {% assign font_adjustment_default = font_initial_weight %}
+        {% endif %}
+      {% when 'bolder' %}
+        {% comment %}Shopify requirement: If bolder variant is not found, use default value of 700{% endcomment %}
+        {% assign font_adjustment_default = 700 %}
+        {% if font_initial_weight > 700 %}
+          {% assign font_adjustment_default = font_initial_weight %}
+        {% endif %}
+      {% else %}
+        {% assign font_adjustment_default = font_adjustment %}
+    {% endcase %}
+    {% assign font_weighted_value = font_weighted.weight | default: font_adjustment_default %}
+    {% assign font_weighted_style = font_weighted.style | default: 'normal' %}
+
+    {% assign font_weights = font_weights | append: '|' | append: font_weighted_value %}
+    {% assign font_named_weights = font_named_weights | append: '|' | append: font_adjustment %}
+    {% assign font_weighted_styles = font_weighted_styles | append: font_weighted_style %}
+    {% assign font_weighted_named_styles = font_weighted_named_styles | append: 'initial' %}
+
+    {% comment %}If italic exists for weight, generate font face{% endcomment %}
+    {{ font_styled | font_face }}
+    {% assign font_weighted_italic_style = font_styled.style | default: 'italic' %}
+    {% assign font_weighted_styles = font_weighted_styles | append: '|' | append: font_weighted_italic_style %}
+    {% assign font_weighted_named_styles = font_weighted_named_styles | append: '|italic' %}
+
+    {% if font_weighted_styles != blank %}
+      {% assign font_weighted_styles = font_weighted_styles | split: '|' | join: ', ' %}
+      {% assign font_weighted_named_styles = font_weighted_named_styles | split: '|' | join: ', ' %}
+
+      {% assign font_styles = font_styles | append: '|(' | append: font_weighted_styles | append: ')'%}
+      {% assign font_named_styles = font_named_styles | append: '|(' | append: font_weighted_named_styles | append: ')'%}
+    {% endif %}
+
+    {% assign font_weighted = blank %}
+    {% assign font_styled = blank %}
+    {% assign font_weighted_styles = blank %}
+
+    {% assign font_adjustment_default = blank %}
+    {% assign font_weighted_value = blank %}
+    {% assign font_weighted_style = blank %}
+    {% assign font_weighted_italic_style = blank %}
+  {% endfor %}
+
+  {% comment %}If only one weight, add an empty list to styles{% endcomment %}
+  {% comment %}`length()` reports length of nested list if list only has 1 index{% endcomment %}
+  {% assign font_weights_size = font_weights | split: '|' %}
+  {% if font_weights_size.size == 1 %}
+    {% assign font_styles = font_styles | append: '|()' %}
+    {% assign font_named_styles = font_named_styles | append: '|()' %}
+  {% endif %}
+
+  {% comment %}Output variables for setting to SCSS{% endcomment %}
+  {{ font_scss_reference }}: {{ font_setting_name }};
+  {{ font_scss_family }}: {{ font_initial.family }}, {{ font_initial.fallback_families }};
+  {{ font_scss_styles }}: ({{ font_styles | split: '|' | join: ', ' }});
+  {{ font_scss_named_styles }}: ({{ font_named_styles | split: '|' | join: ', ' }});
+  {{ font_scss_weights }}: ({{ font_weights | split: '|' | join: ', ' }});
+  {{ font_scss_named_weights }}: ({{ font_named_weights | split: '|' | join: ', ' }});
+
+  {% comment %}Blank used variables to prevent bleeding{% endcomment %}
+  {% assign font_info = blank %}
+  {% assign font_setting_name = blank %}
+  {% assign font_additional_weights = blank %}
+  {% assign font_scss_base = blank %}
+  {% assign font_scss_reference = blank %}
+  {% assign font_scss_family = blank %}
+  {% assign font_scss_styles = blank %}
+  {% assign font_scss_named_styles = blank %}
+  {% assign font_scss_weights = blank %}
+  {% assign font_scss_named_weights = blank %}
+  {% assign font_initial = blank %}
+  {% assign font_italic = blank %}
+  {% assign font_weights = blank %}
+  {% assign font_named_weights = blank %}
+  {% assign font_initial_italic_style = blank %}
+  {% assign font_styles = blank %}
+  {% assign font_named_styles = blank %}
+{% endfor %}
+
+{% assign font_scss_variables = font_scss_variables | remove_first: '|' | split: '|' %}
+
+{% comment %}Build SCSS friendly lists of weights{% endcomment %}
+{% assign font_variable_families = '' %}
+{% assign font_variable_weights = '' %}
+{% assign font_variable_named_weights = '' %}
+{% assign font_variable_styles = '' %}
+{% assign font_variable_named_styles = '' %}
+
+{% for variable in font_scss_variables %}
+  {% assign font_variable_families = font_variable_families | append: ' ' | append: variable | append: '-family' %}
+  {% assign font_variable_weights = font_variable_weights | append: ' ' | append: variable | append: '-weights' %}
+  {% assign font_variable_named_weights = font_variable_named_weights | append: ' ' | append: variable | append: '-named-weights' %}
+  {% assign font_variable_styles = font_variable_styles | append: ' ' | append: variable | append: '-styles' %}
+  {% assign font_variable_named_styles = font_variable_named_styles | append: ' ' | append: variable | append: '-named-styles' %}
+{% endfor %}
+
+{% comment %}Create SCSS lists of variables, which are used as references in functions{% endcomment %}
+$font-variables: ({{ font_scss_variables | join: ' ' }});
+$font-variables-families: ({{ font_variable_families | strip }});
+$font-variables-weights: ({{ font_variable_weights | strip }});
+$font-variables-named-weights: ({{ font_variable_named_weights | strip }});
+$font-variables-styles: ({{ font_variable_styles | strip }});
+$font-variables-named-styles: ({{ font_variable_named_styles | strip }});
+
+// Find the index of the font setting for cross referencing
+@function font-setting-index($font-type) {
+  @return index($font-variables, $font-type);
+}
+
+// Font
+// --------
+// Find the index of a font weight from its relative name
+// - [$font-type]: Variable of font to look up
+// - [$font-weight]: lighter/initial/bolder
+@function font-weight-index($font-type, $font-weight: initial) {
+  $font-setting-index: font-setting-index($font-type);
+
+  // Look up available weights based on index of font setting
+  $named-weights: nth($font-variables-named-weights, $font-setting-index);
+
+  // Try to find index of desired font weight by cross referencing
+  $weight-index: index($named-weights, $font-weight);
+
+  // Return index of named weight, or return initial weight
+  @return if($weight-index, $weight-index, 1);
+}
+
+// Font
+// --------
+// Find the font family for a font setting
+// - [$font-type]: Variable of font to look up
+@function font-family($font-type) {
+  @return nth($font-variables-families, font-setting-index($font-type));
+}
+
+// Font
+// --------
+// Find a font style relative to a font weight
+// - [$font-type]: Variable of font to look up
+// - [$font-style]: initial/italic
+// - [$font-weight]: lighter/initial/bolder
+@function font-style($font-type, $font-style: initial, $font-weight: initial) {
+  $style: null;
+  $styles: null;
+
+  // Find index of font setting
+  $font-setting-index: font-setting-index($font-type);
+
+  // Get styles based on index of font setting
+  $font-styles: nth($font-variables-styles, $font-setting-index);
+  $font-named-styles: nth($font-variables-named-styles, $font-setting-index);
+
+  // Try to find index of desired font weight by cross referencing
+  $weight-named-index: font-weight-index($font-type, $font-weight);
+
+  // Get styles available for $font-weight
+  $named-weight-style: nth($font-styles, $weight-named-index);
+  $named-weight-named-style: nth($font-named-styles, $weight-named-index);
+
+  // Find position of $font-style
+  $style-named-index: index($named-weight-named-style, $font-style);
+
+  @if $style-named-index {
+    @return nth($named-weight-style, $style-named-index);
+  } @else {
+    // Return initial font style
+    @return nth($named-weight-style, 1);
+  }
+}
+
+// Font weight
+// --------
+// Find a font sensitive relative weight
+// - [$font-type]: Variable of font to look up
+// - [$font-weight]: lighter/initial/bolder
+@function font-weight($font-type, $font-weight: initial) {
+  $weight: null;
+
+  // Find index of font setting
+  $font-setting-index: font-setting-index($font-type);
+
+  // Look up available weights based on index of font setting
+  $weights: nth($font-variables-weights, $font-setting-index);
+
+  // Try to find index of desired font weight by cross referencing
+  $weight-index: font-weight-index($font-type, $font-weight);
+
+  // Return numerical weight of font
+  @return nth($weights, $weight-index);
+}
+
+// Font
+// --------
+// Generate complete font styles for a font setting
+// - [$font-type]: Variable of font to look up
+// - [$font-family]: true/false
+// - [$font-size]: unit/false
+// - [$font-style]: initial/italic/false
+// - [$font-weight]: lighter/initial/bolder/false
+@mixin font(
+  $font-type,
+  $font-family: true,
+  $font-size: false,
+  $font-style: initial,
+  $font-weight: initial
+) {
+  @if $font-family { font-family: font-family($font-type); }
+  @if $font-size { font-size: $font-size; }
+  @if $font-style { font-style: font-style($font-type, $font-style: $font-style, $font-weight: $font-weight ); }
+  @if $font-weight { font-weight: font-weight($font-type, $font-weight: $font-weight); }
+}
+
+{% assign font_scss_variables = blank %}
+{% assign font_variable_families = blank %}
+{% assign font_variable_weights = blank %}
+{% assign font_variable_named_weights = blank %}
+{% assign font_variable_styles = blank %}
+{% assign font_variable_named_styles = blank %}
+
+
+// Static Variables
+// ------------------------- */
+
+// Layout
+$max-width: 1020px;
+$max-width-small: 640px;
+$max-width-large: 1200px;
+$gutter: 30px;
+$gutter-double: $gutter * 2;
+$gutter-triple: $gutter * 3;
+$gutter-half: $gutter / 2;
+$gutter-third: $gutter / 3;
+$gutter-vertical-large: 50px;
+$gutter-vertical-medium: 40px;
+$gutter-vertical-small: 20px;
+$form-padding: 15px;
+$ease-out-quad: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+
+// Colors
+$color-white: #fff;
+$color-black: #000;
+$color-error: #ff0000;
+
+// Font sizes
+$body-font-size: 16px;
+
+// User Settings
+// ------------------------- */
+
+// General
+$logo-width: 300px;
+
+$image-body-background: #{"{% if settings.body_background_image %}{{ settings.body_background_image | img_url: '1920x1920' }}{% else %}false{% endif %}"};
+
+$color-body-background: {{ settings.background-color }};
+$color-body: {{ settings.body-text-color }};
+$color-accent: {{ settings.accent-color }};
+$color-accent-hover: morph($color-accent);
+$color-heading: {{ settings.heading-color }};
+$color-meta: mix($color-body-background, $color-body, 30%);
+$color-border: {{ settings.border-color }};
+$color-logo: $color-heading;
+
+$color-button-primary: {{ settings.primary-button-color }};
+
+$color-button-secondary: $color-button-primary;
+$color-button-secondary-background: mix($color-body-background, $color-body, 40%);
+$color-button-secondary-background-hover: morph($color-button-secondary-background);
+
+$color-button-disabled: darken(desaturate(mix($color-accent, #808080, 20%), 90%), 13%);
+$color-button-disabled-background: desaturate(mix($color-accent, #808080, 20%), 90%);
+
+$color-form-select: {{ settings.form-select-color }};
+$color-form-select-border: {{ settings.form-select-border-color }};
+$color-form-select-background: {{ settings.form-select-background }};
+
+// Footer
+$image-footer-background: #{"{% if settings.footer_background_image %}{{ settings.footer_background_image | img_url: '1920x1920' }}{% else %}false{% endif %}"};
+$color-footer-background: {{ settings.footer-background-color }};
+$color-footer-header: {{ settings.footer-header-color }};
+$color-footer-accent: {{ settings.footer-accent-color }};
+$color-footer-accent-hover: morph($color-footer-accent);
+$color-footer-share: $color-footer-background;
+
+$color-table-header: $color-heading;
+$color-table-header-background: mix($color-form-select-background, $color-body-background);
+$color-table-alt-background: mix($color-form-select-background, $color-body-background, 20%);
+
+// Fonts
+$font-body: $font-body !default;
+
+$font-logo: $font-logo !default;
+$font-logo-capitalize: {{ settings.font_logo_capitalize }};
+
+$font-heading: $font-heading !default;
+$font-heading-capitalize: {{ settings.font_heading_capitalize }};
+
+$font-section-heading: $font-heading;
+$font-section-heading-capitalize: {{ settings.font_section_heading_capitalize }};
+$font-section-heading-weight: if({{ settings.font_section_heading_bold }}, bolder, initial);
+
+$font-meta: $font-body;
+$font-meta-capitalize: {{ settings.font_meta_capitalize }};
+$font-meta-weight: if({{ settings.font_meta_bold }}, bolder, initial);
+
+$font-button: $font-button !default;
+$font-button-capitalize: {{ settings.font_button_capitalize }};
+
+// Background Styles
+// ------------------------- */
+
+// Contrast style
+$image-contrast-background: #{"{% if settings.contrast_background_image %}{{ settings.contrast_background_image | img_url: '1920x1920' }}{% else %}false{% endif %}"};
+$color-contrast-background: mix($color-body-background, mix($color-body, $color-accent, 95%), 93%);
+
+// Accent style:
+$color-accent-text: $color-button-primary;
+
+// "Standard" style:
+$color-standard-text: $color-footer-accent;
+$color-standard-text-alt: $color-footer-accent-hover;
+$color-standard-background: $color-footer-background;
+
+// Section specific
+// ------------------------- */
+
+// Header
+$color-header-background: $color-body-background;
+$color-action-icons: $color-button-secondary-background;
+$color-action-icons-hover: morph($color-action-icons, true);
+$color-header-search: $color-form-select;
+$color-header-search-background: $color-form-select-background;
+
+$header-height: 110px;
+$header-height-small: 70px;
+
+// Navigation (header)
+$color-navigation-background: {{ settings.header-dropdown-color }};
+$color-navigation: {{ settings.header-link-color }};
+$color-navigation-hover: morph($color-navigation);
+$color-navigation-dropdown: $color-navigation;
+$color-navigation-dropdown-hover: morph($color-navigation-dropdown);
+$color-navigation-dropdown-background: darken($color-navigation-background, 3%);
+$color-navigation-dropdown-border: $color-navigation-dropdown-background;
+
+$color-header-link: {{ settings.header-link-color }};
+$color-header-dropdown: {{ settings.header-dropdown-color }};
+
+// Onboarding
+$color-onboarding: rgba($color-body, 0.35);
+$color-onboarding-border: rgba($color-body, 0.2);
+$color-onboarding-background: rgba($color-body, 0.1);
+
+$color-accent-onboarding: $color-accent-text;
+$color-accent-onboarding-border: $color-accent-text;
+$color-accent-onboarding-background: rgba($color-accent-text, 0.25);
+
+%font-smoothing {
+  -moz-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+%heading-font {
+  @extend %font-smoothing;
+  @include font($font-heading);
+}
+
+%heading-h1 {
+  margin-bottom: 20px;
+  font-size: rem(40px);
+
+  @if $font-heading-capitalize { font-size: rem(36px); }
+}
+
+%heading-h2 {
+  margin-bottom: 19px;
+  font-size: rem(32px);
+
+  @if $font-heading-capitalize { font-size: rem(28px); }
+}
+
+%heading-h3 {
+  margin-bottom: 18px;
+  font-size: rem(24px);
+
+  @if $font-heading-capitalize { font-size: rem(20px); }
+}
+
+%heading-h4 {
+  margin-bottom: 18px;
+  font-size: rem(20px);
+
+  @if $font-heading-capitalize { font-size: rem(16px); }
+}
+
+%heading-h5 {
+  margin-bottom: 10px;
+  font-size: rem(16px);
+
+  @if $font-heading-capitalize { font-size: rem(12px); }
+}
+
+%heading-h6 {
+  margin-bottom: 10px;
+  font-size: rem(16px);
+
+  @if $font-heading-capitalize { font-size: rem(12px); }
+}
+
+%main-content {
+  max-width: $max-width;
+  padding: $gutter-vertical-large $gutter 0;
+  margin: 0 auto $gutter-vertical-large;
+
+  @include breakpoint(s) { padding-top: $gutter-double; }
+}
+
+%clearfix {
+  &:before,
+  &:after {
+    display: table;
+    content: " ";
+  }
+
+  &:after { clear: both;}
+}
+
+%loader {
+  @include transition(right 0.2s $ease-out-quad);
+  @include animation(rotation 0.6s infinite linear);
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  margin-left: -15px;
+  border: 3px solid rgba($color-accent, 0.15);
+  border-top-color: rgba($color-accent, 0.8);
+  border-radius: 100%;
+
+  .loading & {
+    right: -45px;
+    margin-left: 0;
+  }
+}
+
+%input-label {
+  font-size: rem(16px);
+
+  .inline-input-wrapper & {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: rem(14px);
+    vertical-align: middle;
+  }
+}
+
+%home-feature-rows {
+  margin-top: $gutter-vertical-large * 2;
+  margin-bottom: $gutter-vertical-large * 2;
+
+  @include breakpoint(s) {
+    margin-top: $gutter-vertical-large;
+    margin-bottom: $gutter-vertical-large;
+  }
+
+  .borders & {
+    padding-top: $gutter-vertical-large;
+    margin-top: $gutter-vertical-large;
+    margin-bottom: $gutter-vertical-large;
+    border-top: 1px solid $color-border;
+  }
+
+  .contrast-style.borders & { border-color: $color-border; }
+
+  &:first-child {
+    padding-top: 0;
+    margin-top: 0;
+    border-top: 0;
+  }
+
+  .section-title + { margin-top: $gutter-vertical-large; }
+
+  .feature-title { margin: 0; }
+
+  .rte { margin-top: $gutter-vertical-small; }
+}
+
+
+.gift-card-template {
+  @include font($font-body);
+  margin: 0;
+
+  a {
+    text-decoration: none;
+  }
+
+  .btn {
+    @include font($font-button);
+    background-color: #58686f;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 1.5em;
+    font-size: 0.875em;
+    line-height: 1;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: baseline;
+    zoom: 1;
+    *display: inline;
+    *vertical-align: auto;
+  }
+
+  .btn:hover {
+    background-color: #414d53;
+  }
+
+  .wrap {
+    width: 95%;
+    max-width: 540px;
+    margin: 0 auto;
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+
+  header {
+    text-align: center;
+    padding: 3em 0;
+    animation:fadein 0.5s ease-in-out both 0.4s
+  }
+
+  .shop-title {
+    @include font($font-logo);
+    font-size: 2.25em;
+    color: #bfbfbf;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+
+    &:hover {
+      color: #999999;
+    }
+
+    img {
+      max-height: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  main {
+    padding-bottom: 3em;
+    animation: slideup 0.8s ease-in-out;
+  }
+
+  .gift-card-outer-container {
+    background-color: #34aadc;
+    border-radius: 4px;
+    box-shadow:0 0 0 1px rgba(0,0,0,0.1) inset;
+    padding: 1em;
+    animation: container-slide 0.8s ease-in-out;
+  }
+
+  .gift-card-inner-container {
+    background-color: #fff;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+    border-radius: 2px;
+    animation: cardslide 0.8s ease-in-out;
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+
+  .gift-card-header {
+    border-bottom: 1px solid #f2f2f2;
+    padding: 0.75em;
+    display: block;
+    overflow: hidden;
+    position: relative;
+
+    h2 {
+      float: left;
+      margin: 0.12em 0;
+    }
+
+    .tag {
+      float: right;
+    }
+  }
+
+  .tag {
+    background-color: #bfbfbf;
+    padding: 0.5em;
+    padding-bottom: 0.35em;
+    border-radius: 4px;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #fff;
+    line-height: 1;
+
+    &.light {
+      background: transparent;
+      color: #bfbfbf;
+      border: 1px solid #d9d9d9;
+    }
+  }
+
+  .gift-card-holder {
+    margin: 0.75em;
+    margin-bottom: 1.25em;
+    margin-top: 1.25em;
+    position: relative;
+
+    .corner {
+      display: block;
+      width: 47px;
+      height: 47px;
+      position: absolute;
+      z-index: 2;
+
+      &.top-left {
+        background: url("//cdn.shopify.com/s/assets/gift-card/corner-top-left-1585103bdd46bf1297b88f31bdfce999.png") 0 0 no-repeat;
+        top: -1px;
+        left: -1px;
+      }
+
+      &.bottom-right {
+        background: url("//cdn.shopify.com/s/assets/gift-card/corner-bottom-right-ba899b18631cb91859e186c2cc1c6970.png") 0 0 no-repeat;
+        bottom: -1px;
+        right: -1px;
+      }
+    }
+  }
+
+  .gift-card {
+    position: relative;
+    box-sizing: border-box;
+    position: relative;
+
+    &:before {
+      content:  '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      z-index: 1;
+      pointer-events: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      display: block;
+    }
+
+    img {
+      border-radius: 10px;
+      max-width: 100%;
+    }
+  }
+
+  .gift-card-code-outer {
+    position: absolute;
+    bottom: 1em;
+    text-align: center;
+    width: 100%;
+
+    &.medium {
+      font-size: 0.875em;
+    }
+
+    &.small {
+      font-size: 0.75em;
+    }
+  }
+
+  .gift-card-code-inner {
+    display: inline-block;
+    vertical-align: baseline;
+    zoom: 1;
+    *display: inline;
+    *vertical-align: auto;
+    background-color: #fff;
+    padding: 0.5em;
+    border-radius: 4px;
+    max-width: 450px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+
+    strong {
+      font-style: font-style($font-body);
+      font-weight: font-weight($font-body);
+      font-size: 1.875em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      border: 1px dashed #e5e5e5;
+      padding: 0.4em 0.5em;
+      display: inline-block;
+      vertical-align: baseline;
+      zoom: 1;
+      *display: inline;
+      *vertical-align: auto;
+      color: #777;
+      line-height: 1;
+    }
+  }
+
+  .small .gift-card-code-inner {
+    overflow: auto;
+  }
+
+  .disabled .gift-card-code-inner strong {
+    color: #999;
+    text-decoration: line-through;
+  }
+
+  .gift-card-code-inner span+span {
+    margin-left: 0.25em;
+  }
+
+  .gift-card-amount {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    font-size: 2.75em;
+    padding: 0.4em 0.5em;
+  }
+
+  .gift-card-amount.medium {
+    font-size: 2.25em;
+  }
+
+  .gift-card-amount strong {
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+    display: block;
+  }
+
+  .tooltip {
+    position: relative;
+
+    &:hover .tooltip-container {
+      display: block;
+    }
+  }
+
+  .tooltip-container {
+    display: block;
+    position: absolute;
+    top: -100%;
+    right: 50%;
+    z-index: 3;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    animation: popup 0.5s ease-in-out both 0.7s;
+    top: -50%;
+    margin-top: 0.25em;
+  }
+
+  .tooltip-triangle {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 5px solid #333;
+    border-top: 5px solid rgba(51,51,51,0.9);
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+    margin-left: -5px;
+    margin-bottom: -5px;
+  }
+
+  .tooltip-label {
+    display: block;
+    position: relative;
+    right: -50%;
+    border: none;
+    border-radius: 4px;
+    background: #333;
+    background: rgba(51,51,51,0.9);
+    color: #fff;
+    min-height: 14px;
+    font-style: font-style($font-body);
+    font-weight: font-weight($font-body);
+    font-size: 0.4em;
+    text-decoration: none;
+    line-height: 16px;
+    text-shadow: none;
+    padding: 0.5em 0.75em;
+    margin-left: 0.25em;
+  }
+
+  .gift-card-instructions {
+    font-size: 0.875em;
+    text-align: center;
+    color: #999;
+    margin: 0 0.75em 1.5em;
+  }
+
+  .gift-card-qr-code{
+    display: block;
+
+    img {
+      padding: 1.25em;
+      border: 1px solid #f2f2f2;
+      border-radius: 10px;
+      margin: 0 auto 1.25em;
+    }
+  }
+
+  .gift-card-actions {
+    border-top: 1px solid #f2f2f2;
+    padding: 1.25em 0.75em;
+    text-align: center;
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  .action-link {
+    font-size: 0.875em;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #bfbfbf;
+    margin-top: 1.75em;
+    position: absolute;
+    left: 1.25em;
+    top: 1.25em;
+
+    &:hover {
+      color: #999;
+
+      .ico-16 {
+        opacity: 0.4;
+      }
+    }
+  }
+
+  .ico-16 {
+    display: inline-block;
+    vertical-align: baseline;
+    zoom: 1;
+    *display: inline;
+    *vertical-align: auto;
+    width: 17px;
+    height: 17px;
+    vertical-align: bottom;
+    margin-bottom: -1px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    margin-right: 0.5em;
+    opacity: 0.25;
+    transition: opacity 0.3s ease-in-out;
+
+    &.print {
+      background-image: url("//cdn.shopify.com/s/assets/gift-card/icon-print-164daa1ae32d10d1f9b83ac21b6f2c70.png");
+    }
+  }
+
+  footer[role='contentinfo'] {
+    padding-bottom: 3em;
+    text-align: center;
+    animation: fadein 0.5s ease-in-out both 0.4s;
+  }
+
+  .gift-card-apple-wallet-badge {
+    display: inline-block;
+  }
+
+  .gift-card-apple-wallet-badge-image {
+    display: block;
+  }
+
+  @media screen and (max-width: 580px){
+    body {
+      font-size: 12px;
+    }
+
+    h2 {
+      font-size: 1.5em;
+    }
+
+    .gift-card-outer-container {
+      padding: 0.5em;
+    }
+
+    .tooltip-container {
+      top: -65%;
+    }
+
+    .gift-card-actions .btn {
+      width: 100%;
+      padding-left: 0
+      ;padding-right: 0;
+      font-size: 1.125em;
+    }
+
+    .action-link {
+      position: relative !important;
+      left: auto !important;
+      right: auto !important;
+      top: auto !important;
+      font-size: 1.125em;
+      display: none;
+    }
+
+    .action-link + .action-link {
+      margin-left: 1.5em;
+    }
+  }
+
+  @media screen and (max-width: 400px){
+    h2 {
+      font-size: 1.25em;
+    }
+
+    .gift-card {
+      font-size: 10px;
+    }
+
+    .gift-card-holder .corner {
+      display: none;
+
+      &.bottom-right {
+        background-position: bottom right !important;
+      }
+    }
+
+    .gift-card-amount strong {
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+    }
+
+    .tooltip-container {
+      top: -75%;
+    }
+  }
+
+  @media screen and (max-height: 800px){
+    .shop-title {
+      max-height: 100px;
+    }
+  }
+
+  @media screen and (max-height: 750px){
+    .shop-title {
+      max-height: 80px;
+    }
+
+    header {
+      padding: 2em 0;
+    }
+
+    footer[role='contentinfo'],
+    main {
+      padding-bottom: 2em;
+    }
+  }
+
+  @media print{
+    @page {
+      margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+      orphans: 3;
+      widows: 3;
+    }
+
+    h2,
+    h3 {
+      page-break-after: avoid;
+    }
+
+    body {
+      background-color: #fff;
+    }
+
+    .gift-card-actions,
+    .gift-card-holder .corner,
+    .tooltip-container,
+    .gift-card:before {
+      display: none;
+    }
+
+    .gift-card-code-inner strong {
+      color: #555;
+    }
+
+    .gift-card-amount .tooltip {
+      color: #fff !important;
+    }
+
+    .shop-title {
+      color: #58686f;
+    }
+
+    .gift-card-outer-container,
+    .gift-card-inner-container,
+    .gift-card-code-inner,
+    .gift-card:before {
+      box-shadow: none;
+    }
+  }
+}
+
+@keyframes slideup {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px) rotate(10deg);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px);
+  }
+
+  80% {
+    -webkit-transform: translateY(10px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes popup {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(-10px);
+  }
+
+  80% {
+    -webkit-transform: translateY(2px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+
+@keyframes container-slide {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100;
+  }
+}
+

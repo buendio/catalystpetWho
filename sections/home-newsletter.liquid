@@ -1,0 +1,56 @@
+<div class="cl-newsletter home">
+    <div class="cl-cateyes">
+        <p>{{ section.settings.description }}</p>
+        {% form 'customer' %}
+            {{ form.errors | default_errors }}
+
+            {% if form.posted_successfully? %}
+            <div class="newsletter-message">
+                <p>{{ 'general.mailing_list.message' | t }}</p>
+            </div>
+            {% else %}
+            {%- capture tags -%}
+                {%- unless template contains 'password' %}
+                newsletter
+                {%- else -%}
+                prospect, password page
+                {%- endunless -%}
+            {%- endcapture -%}
+
+            <input type="hidden" id="contact_tags" name="contact[tags]" value="{{ tags | strip }}">
+
+            <input type="email" name="contact[email]" value="" placeholder="Your e-mail">
+            <input type="submit" name="subscribe" value="{{ section.settings.button }}">
+            {% endif %}
+        {% endform %}
+         
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Inline Newsletter",
+  "class": "section-cl",
+  "settings": [
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default": "Join us as we overthrow the clay litter aisle."
+    },
+    {
+      "type": "text",
+      "id": "button",
+      "label": "Button text",
+      "default": "Count me in"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Promotional",
+      "name": "Inline Newsletter"
+    }
+  ]
+}
+
+{% endschema %}

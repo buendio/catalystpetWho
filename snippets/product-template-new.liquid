@@ -1,0 +1,155 @@
+<div class="product-wrap template-new" data-product-id="{{ product.id }}">
+    <div class="product-details desktop">
+      <h3>Soft Wood Cat Litter</h3>
+      {{ product_title }}
+
+      <div class="product-minprice-rating">
+        <div class="product-minprice">
+          {% assign available_variants = product.variants | where: "available", true %}
+          {% assign min_price = available_variants | map: "price" | sort | first %}
+
+          {% if min_price %}
+            from {{ min_price | money }}
+          {% endif %}
+
+        </div>
+        {% comment %}
+          {% render 'bv-summary' %}
+        {% endcomment %}
+      </div>
+    </div>
+    <div class="product-desc">{{ product.metafields.global.formula_subtitle.value }}</div>
+
+    <div class="product-form">
+      <div class="cat-counter">
+        <div class="cat-counter__title">Select number of cats</div>
+        <div class="cat-counter__input">
+          <button name="cat-counter__action" data-action="decrement" disabled>-</button>
+          <div id="cat-counter__controller">
+            <span class="cat-counter__count">1 Cat</span>
+          </div>
+          <button name="cat-counter__action" data-action="increment">+</button>
+        </div>
+      </div>
+
+      <div
+        class="product-selector__wrapper"
+        id="subscribe-and-save-form-block"
+        style="display: none">
+        <p class="product-selector__header">Select your free delivery option</p>
+        <p class="product-selector__subheader">
+          Fewer shipments = More savings. <strong>You're saving up to
+          <span id="percent-saving"></span></strong>
+          over a one-time purchase - pawesome!
+        </p>
+
+        <div class="product-selector">
+          <div class="product-selector__active-item"></div>
+          <div class="product-selector__items" id="subscribe-and-save-options"></div>
+        </div>
+      </div>
+
+      <div class="quantity__counter">
+        <div class="quantity__counter-title">One-time purchase</div>
+        <div class="quantity__counter-input">
+          <button
+            name="product-weight-counter"
+            data-action="decrement"
+            disabled>-</button>
+          <div id="product__weight-controller">
+            <span class="product__weight">10lbs</span>
+          </div>
+          <button name="product-weight-counter" data-action="increment">+</button>
+        </div>
+      </div>
+
+      <div class="product-form__actions">
+        <div class="subscription-switcher">
+          <input
+            name="purchase-type"
+            type="radio"
+            hidden />
+          <label></label>
+          <span>Subscribe & Save</span>
+        </div>
+        <button class="add-to-cart-button">
+          <span class="product__price">
+            {{ fifteen_dollars_variant.price | money }}
+          </span>
+          <span class="add-to-cart-text">Add to cart</span>
+        </button>
+      </div>
+
+      <div class="info-cancelation">
+        Make this a subscription and save <span class="subscriptionBenefit">24%</span> plus free shipping, skip or cancel anytime.
+      </div>
+    </div>
+
+    <div class="how-much-litter">
+      <div>How much litter do I need?</div>
+      <div class="how-much-litter__info">
+        <span>10 pounds</span>
+        <img src="{{ 'icon_pound.png' | asset_url }}" alt="Pound box">
+        <span>per cat</span>
+        <img src="{{ 'icon_cat.png' | asset_url }}" alt="Healthy Cat Litter">
+        <span>per month</span>
+      </div>
+    </div>
+
+    <div class="product-additional-features">
+      {% for block in section.blocks %}
+        {% if block.type == "feature" %}
+          <div class="product-additional-features__item">
+            <img src="{{ block.settings.image.src | image_url }}" alt="World's Best Cat Litter">
+            <div>{{ block.settings.title }}</div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="product-other-variants-wrapper">
+      <div class="product-other-variants-wrapper-title">Check out our other formulas</div>
+
+      <div class="product-other-variants">
+        {% assign product_variants = "cat-litter-healthy-cat-formula,cat-litter-multi-cat-formula,cat-litter-unscented-formula" | split: ',' %}
+
+        {% for variant in product_variants %}
+          {% if request.path contains variant %}
+            {% continue %}
+          {% endif %}
+
+          <a class="product-other-variant" href="/products/{{ variant }}">
+            <img src="{{all_products[variant].featured_image.src | img_url: 'small' }}" alt="Catalyst Soft Wood Cat Litter">
+            <div>
+              <div class="variant-title">{{ all_products[variant].title }}</div>
+              <div class="variant-desc">{{ all_products[variant].metafields.global.for_which_cats.value }}</div>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="sticky-cta">
+      <div class="product-info">
+        <img src="{{product.featured_image.src | img_url: 'small'}}" alt="Cat Litter Healthy Cat Formula">
+        <div class="product-title-type">
+          <div class="type">Soft Wood Cat Litter</div>
+          <div class="title">{{ product.title }}</div>
+        </div>
+      </div>
+      <div class="mini-form">
+        <div class="quantity__counter">
+          <button
+            name="product-weight-counter"
+            data-action="decrement"
+            disabled>-</button>
+          <div id="product__weight-controller">
+            <span class="product__weight">10lbs</span>
+          </div>
+          <button name="product-weight-counter" data-action="increment">+</button>
+        </div>
+        <a href="javascript:document.querySelector('.add-to-cart-button').click()" class="product-add">
+          ADD TO CART
+        </a>
+      </div>
+    </div>
+  </div>

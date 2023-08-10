@@ -1,0 +1,37 @@
+{% if section.settings.show_section %}
+<div class="cl-terms">
+    <div class="inner">
+        <h3>{{section.settings.title}}</h3>
+        <div class="cl-terms-content">{{section.settings.content}}</div>
+    </div>
+</div>
+{% endif %}
+
+
+{% schema %}
+{
+  "name": "Subscription Terms",
+  "class": "section-product",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_section",
+      "label": "Show section",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Subscription promo Terms & Conditions"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content",
+      "default": "<p>Offer ends July 30th, however the promo may be discontinued at the discretion of Catalyst Pet. Limited to one free bag per household. Cannot be combined with any other offer. Offer not redeemable for cash or credit. Customer must sign up for a monthly subscription by offer deadline to qualify for the free bag.</p>"
+    }
+  ]
+}
+
+{% endschema %}

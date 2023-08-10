@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "main": {
+      "type": "wholesale-recover",
+      "settings": {
+        "heading": "Reset your password",
+        "copy": "Please enter your email and we'll send you a link to reset your password.",
+        "article_image": "shopify:\/\/shop_images\/cat-wholesale.jpg",
+        "article_heading": "Catalyst Pet Dealer Direct Portal",
+        "article_copy": "Your gateway to order Catalyst products at dealer prices, sales information, valuable resources and more for Catalyst Pet Litter."
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

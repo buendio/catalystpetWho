@@ -1,0 +1,109 @@
+{% assign username = section.settings.username | replace: '@', '' | escape %}
+{% assign retweets = section.settings.retweets %}
+{% assign showImages = section.settings.images %}
+
+{% assign onboarding = false %}
+
+{% if username == blank %}
+  {% assign onboarding = true %}
+  {% assign username = 'onboarding.twitter.username' | t %}
+{% endif %}
+
+{%- capture follow_text -%}
+  {{ 'general.social.twitter_follow' | t: username: username }}
+{%- endcapture -%}
+{% assign follow_link = 'http://www.twitter.com/' | append: username %}
+
+<script
+  type="application/json"
+  data-section-id="{{ section.id }}"
+  data-section-type="dynamic-twitter"
+  {% if retweets %}data-show-retweets{% endif %}
+  {% if showImages %}data-show-images{% endif %}
+>
+</script>
+
+
+<section
+  class="module-container module-hidden {{ section.settings.style }}"
+>
+  <article
+    class="module-inner dynamic-twitter"
+    data-twitter-username="{{ username }}"
+    {% if retweets %}data-show-retweets{% endif %}>
+
+    {% if section.settings.title != blank %}
+      <h1 class="section-title">{{ section.settings.title | escape }}</h1>
+    {% endif %}
+
+    {% unless onboarding %}
+      <div class="dynamic-twitter-tweets" data-twitter-tweets></div>
+    {% else %}
+      <div class="dynamic-twitter-tweets onboarding">{{ 'onboarding.twitter.tweet' | t }}</div>
+    {% endunless %}
+
+    <div class="home-module-cta">
+      <a class="home-module-cta-link" href="{{ follow_link }}" target="_blank">
+        <span class="icon-tweet share-icon">{{ follow_text }}</span>
+      </a>
+    </div>
+
+  </article>
+</section>
+
+{% schema %}
+{
+  "name": "Twitter feed",
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "default-style",
+          "label": "Default"
+        },
+        {
+          "value": "accent-style",
+          "label": "Accent"
+        },
+        {
+          "value": "contrast-style",
+          "label": "Contrast"
+        }
+      ],
+      "default": "default-style"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Twitter feed"
+    },
+    {
+      "type": "text",
+      "id": "username",
+      "label": "Username"
+    },
+    {
+      "type": "checkbox",
+      "id": "images",
+      "label": "Show images",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "retweets",
+      "label": "Show retweets"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Social media",
+      "name": "Twitter feed"
+    }
+  ]
+}
+
+{% endschema %}

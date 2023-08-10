@@ -1,0 +1,148 @@
+{% style %}
+  .t-t-cat-header {
+    height: 506px;
+    display: flex;
+    background: #edf4f1;
+  }
+  .t-t-cat-header__content {
+    width: 700px;
+    padding: 30px;
+  }
+  .t-t-cat-header__content h1 {
+    font-weight: 700;
+    font-size: 49px;
+    line-height: 56px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    text-transform: capitalize;
+    color: #027747;
+  }
+  .t-t-cat-header__content img {
+    display: block;
+    margin: 20px auto;
+  }
+  .t-t-cat-header__content p {
+    font-size: 16px;
+    line-height: 28px;
+    text-align: center;
+    color: #1c1c1c;
+    font-family: 'FuturaMedium';
+    font-weight: 500;
+    margin: 0;
+    padding: 0 10px;
+  }
+  .t-t-cat-header__video {
+    width: calc(100% - 700px);
+    position: relative;
+  }
+  .t-t-cat-header__video iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  .iframe-play-button {
+    all: unset;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @media(max-width: 1550px) {
+    .t-t-cat-header__content {
+      width: 570px;
+      padding: 30px;
+    }
+    .t-t-cat-header__video {
+      width: calc(100% - 570px);
+    }
+  }
+
+  @media (max-width: 1150px) {
+    .t-t-cat-header__content {
+      width: 400px;
+    }
+    .t-t-cat-header__video {
+      width: calc(100% - 400px);
+    }
+  }
+
+  @media (max-width: 770px) {
+    .t-t-cat-header {
+      flex-direction: column;
+      height: auto;
+    }
+
+    .t-t-cat-header__content {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 30px;
+    }
+    .t-t-cat-header__video {
+      width: 100%;
+      height: 400px;
+    }
+    .t-t-cat-header__content h1 {
+      font-size: 42px;
+    }
+  }
+{% endstyle %}
+
+<div class="t-t-cat-header">
+  <div class="t-t-cat-header__content">
+    <h1>{{ section.settings.heading }}</h1>
+    <img src="{{'scoop-by-scoop.png' | asset_url}}" alt="">
+    <div>{{ section.settings.body }}</div>
+  </div>
+
+  <div class="t-t-cat-header__video">
+    {{ section.settings.iframe }}
+  </div>
+</div>
+
+<script>
+  var video = document.querySelector('iframe');
+
+  // Check if the browser supports autoplay
+  var canAutoplay = typeof video.play === 'function';
+
+  // Autoplay the video if possible
+  if (canAutoplay) {
+    video.play();
+  } else {
+    // Show a play button for the user to start the video manually
+    var playButton = document.createElement('button');
+    playButton.innerHTML = `<img src="data:image/png;base64,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"/>`;
+    playButton.classList.add('iframe-play-button');
+    playButton.addEventListener('click', function () {
+      video.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+      playButton.style.display = 'none';
+    });
+    video.parentNode.insertBefore(playButton, video);
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Transition Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "How to Transition Your Cat to Catalyst"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body"
+    },
+    {
+      "type": "html",
+      "id": "iframe",
+      "label": "Video To Embed"
+    }
+  ],
+  "blocks": []
+}
+{% endschema %}

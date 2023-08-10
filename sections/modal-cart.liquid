@@ -1,0 +1,72 @@
+<script>
+  const cartPlusIcon = "{{'cart-plus.svg' | asset_url}}";
+  const cartMinusIcon = "{{'cart-minus.svg' | asset_url}}";
+  const cartTrashIcon = "{{'cart_trash.svg' | asset_url}}";
+  const cartEditIcon = "{{'edit-icon.svg' | asset_url}}";
+</script>
+<script src="{{ 'modalCart.js' | asset_url }}" defer></script>
+
+<div class="ajax-cart__wrapper">
+  <div class="ajax-cart">
+    <div class="ajax-cart__header">
+      <div class="header__left">
+        <h4>Your Bag</h4>
+        <p id="number-of-items-of-the-cart"></p>
+      </div>
+      <div class="header__right">
+        <img onclick="modalCart.toggleCart()" src="{{'cart-close.svg' | asset_url}}" alt="" />
+      </div>
+    </div>
+
+    <div class="ajax-cart__products"></div>
+
+    <div class="ajax-cart__footer">
+      <div class="products__subtotal">
+        <div class="subtotal__text">
+          <h4>Subtotal</h4>
+          <p>Taxes and shipping calculated at checkout</p>
+        </div>
+        <div class="subtotal__price"></div>
+      </div>
+
+      {%- if settings.side_cart_product != blank -%}
+
+      {%- assign isUpsellInCart = false -%}    
+
+      {%- for cartItem in cart.items -%}
+          {%- if cartItem.product_id == settings.side_cart_product.id -%}
+            {%- assign isUpsellInCart = true -%} 
+          {%- endif -%}
+      {%- endfor -%}
+
+
+      {%- if settings.side_cart_enable and  isUpsellInCart == false -%}
+
+          <div class="upsellCart" id="upsellCart">
+              <div class="leftSide">
+                <img src="{{ settings.side_cart_product_image | img_url }}" loading="lazy" />
+              </div>
+
+              <div class="rightSide">
+                  <span class="upsellSubtitle">{{ settings.side_cart_title }}</span>
+                  <span class="upsellProductTitle">{{ settings.side_cart_product.title }}</span>
+                  <span class="upsellDescription">{{ settings.side_cart_description }}</span>
+                  <div class="add2Cart" id="upsellAdd" onclick="modalCart.addUpsell({{ settings.side_cart_product.first_available_variant.id}})">
+                    <span class="addprice">{{ settings.side_cart_product.price  | money  }}</span>
+                    <span class="addText">Add to cart</span>
+                  </div>
+              </div>
+          </div>
+      {%- endif -%}
+      {%- endif -%} 
+
+      <div class="footer__free-shipping-message"></div>
+
+      <p class="discount-notice">50% first susbcription order will be applied after billing information is entered on checkout.</p>
+
+
+      <a href="/checkout" class="footer__cta">Continue to checkout</a>
+      <p class="footer__info">Taxes and shipping calculated at checkout. Please note: We are not able to ship to PO Boxes or military bases at this time.</p>
+    </div>
+  </div>
+</div>

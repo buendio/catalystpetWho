@@ -1,0 +1,283 @@
+{% assign border_class = '' %}
+{% if settings.background-color == settings.footer-background-color %}
+  {% unless settings.body_background_image or settings.footer_background_image %}
+    {% assign border_class = 'default' %}
+  {% endunless %}
+{% endif %}
+
+<div class="footer-wrapper {{ border_class }}">
+  {% assign instagram_token = settings.instagram_token | escape %}
+
+  <section
+    class="module-container module-hidden {{ settings.instagram_style }}"
+    data-section-id="footer-instagram"
+    data-section-type="dynamic-instagram"
+  >
+    <div
+      class="module-inner dynamic-instagram"
+      data-instagram-token="{{ instagram_token }}">
+      <div class="instagram-icon">
+        <span class="svg-icon instagram-simple"></span>
+      </div>
+
+      {% if settings.instagram_user != blank %}
+        <h2 class="section-title"><p>Join the movement <span>@{{ settings.instagram_user | escape }}</span></p></h2>
+      {% endif %}
+      <div class="clearfix">
+        <div id="rap__med__instagram"></div>
+        <script async src="https://theraptormedia.com/instagram/embed.js" data-id="catalystpet.myshopify.com" defer="defer"></script>
+      </div>
+
+    </div>
+  </section>
+
+  {% assign menu_class = 0 %}
+
+  {% if menus[section.settings.menu_1].links.size > 0 %}
+    {% assign menu_class = menu_class | plus: 1 %}
+  {% endif %}
+
+  {% if menus[section.settings.menu_2].links.size > 0 %}
+    {% assign menu_class = menu_class | plus: 1 %}
+  {% endif %}
+
+  {% if
+    settings.social_facebook_url != blank or
+    settings.social_twitter_url != blank or
+    settings.social_instagram_url != blank or
+    settings.social_pinterest_url != blank or
+    settings.social_vimeo_url != blank or
+    settings.social_youtube_url != blank or
+    settings.social_rss_url != blank
+  %}
+    {% assign has_social = true %}
+    {% assign menu_class = menu_class | plus: 1 %}
+  {% endif %}
+
+  <footer class="main-footer showing-{{ menu_class }}-lists">
+    <div class="footer-columns">
+      <div class="footer-logo">
+        {% assign footerLogo = 'logo-footer.png' | asset_url %}
+        {% if section.settings.footer_logo %}
+            {% assign footerLogo = section.settings.footer_logo | img_url: '207x', scale: 2 %}
+        {% endif %}
+        <a href="{{shop.url}}"><img src="{{footerLogo}}" alt="" loading="lazy"></a>
+      </div>
+      {% for i in (1..2) %}
+        {% capture menu %}menu_{{ i }}{% endcapture %}
+        {% if menus[section.settings[menu]].links.size > 0 %}
+          {% capture menu %}{{ section.settings[menu] }}{% endcapture %}
+          <div class="footer-link-list {{ menus[menu].handle }}">
+            {% if section.settings.show_menu_heading %}
+              <h2 class="footer-title">{{ menus[menu].title }}</h2>
+            {% endif %}
+
+            <ul>
+              {% for link in menus[menu].links %}
+                <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+              {% endfor %}
+            </ul>
+
+            {%- if section.settings.show_locator_page  -%}
+              <a href="{{ section.settings.locator_page.url  }}" class="destini-link"><img src="{{ 'locator-icon.png' | asset_url  }}" loading="lazy" />Find a retailer</a>
+            {%- endif -%}
+
+            {{ section.settings.address | newline_to_br }}
+          </div>
+        {% endif %}
+      {% endfor %}
+
+      {% if section.settings.show_social_buttons%}
+        <div class="footer-link-list social-icons">
+          {% if section.settings.social_heading != blank %}
+            <h2 class="footer-title">{{ section.settings.social_heading }}</h2>
+          {% endif %}
+          {% if has_social %}
+              {% include 'social-icons' %}
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if section.settings.show_share_buttons %}
+        <div class="social-share-section">
+          {% if section.settings.sharing_heading != blank %}
+            <h2 class="footer-title">{{ section.settings.sharing_heading }}</h2>
+          {% endif %}
+
+          {% assign byline = section.settings.sharing_description %}
+          {% if byline != blank %}
+            <p>{{ byline }}</p>
+          {% endif %}
+
+
+          {% if section.settings.enable_instagram %}
+            <a 
+              class="svg-icon instagram" 
+              href="https://www.instagram.com/{{ settings.instagram_user }}" 
+              target="_blank"
+            ></a>
+          {% endif %}
+
+
+          {% if section.settings.enable_facebook %}
+            <a 
+              class="svg-icon facebook" 
+              href="//www.facebook.com/sharer.php?u={{ shop.url }}" 
+              target="_blank"
+            ></a>
+          {% endif %}
+
+          {% if section.settings.enable_twitter %}
+            <a 
+              class="svg-icon twitter" 
+              href="//twitter.com/share?url={{ shop.url }}" 
+              target="_blank"
+            ></a>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+
+
+    {% if shop.enabled_payment_types.size > 0 and section.settings.show_payment_icons %}
+      <div class="payment-types footer-module">
+        {% for type in shop.enabled_payment_types %}
+          <div class="payment-types-item">
+            {{ type | payment_type_svg_tag }}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+  </footer>
+
+  <div role="contentinfo" class="copyright footer-module">
+    {% capture year %}{{ "now" | date: "%Y" }}{% endcapture %}
+    <p>
+      {{ 'general.general.copyright_text_html' | t: year: year, shop_name: shop.name }}
+      <a style="text-decoration:underline" href="https://catalystpet.com/pages/privacy-policy">Privacy Policy</a>
+    </p>
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Footer",
+  "class": "footer-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Menus"
+    },
+    {
+      "type": "image_picker",
+      "id": "footer_logo",
+      "label": "Footer logo"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_menu_heading",
+      "label": "Show menu headings",
+      "default": true
+    },
+    {
+      "type": "link_list",
+      "id": "menu_1",
+      "label": "Menu 1",
+      "default": "footer",
+      "info": "This menu won't show dropdown items"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_locator_page",
+      "label": "Show find a retailer link?",
+      "default": true
+    },
+    {
+      "type": "page",
+      "id": "locator_page",
+      "label": "Store locator page"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_2",
+      "label": "Menu 2",
+      "info": "This menu won't show dropdown items"
+    },
+    {
+      "type": "header",
+      "content": "Social links",
+      "info": "To manage your social media links, go to the Social media section in the Theme settings tab."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social_buttons",
+      "label": "Show social links",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "social_heading",
+      "label": "Heading",
+      "default": "Social links"
+    },
+    {
+      "type": "richtext",
+      "id": "address",
+      "label": "Address",
+      "default": "<p>1075 E. South Boulder Rd, Ste #200\nLouisville, CO 80027\n<b>Call us <u>1-844-5-LITTER</u></b></p>"
+    },
+    {
+      "type": "header",
+      "content": "Share"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_share_buttons",
+      "label": "Show share section",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "sharing_heading",
+      "label": "Heading",
+      "default": "Help us spread the word!"
+    },
+    {
+      "type": "text",
+      "id": "sharing_description",
+      "label": "Description",
+      "default": "Please help us spread the news about our awesome products."
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_twitter",
+      "default": true,
+      "label": "Enable Twitter"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_facebook",
+      "default": true,
+      "label": "Enable Facebook"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_instagram",
+      "default": true,
+      "label": "Enable Instagram"
+    },
+    {
+      "type": "header",
+      "content": "Payment icons"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_icons",
+      "label": "Show payment icons"
+    }
+  ]
+}
+
+{% endschema %}

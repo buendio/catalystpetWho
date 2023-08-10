@@ -1,0 +1,87 @@
+<div class="cl-love-your-pet">
+    <div class="inner">
+        <h2>{{ section.settings.title }}</h2>
+        <div class="comparison">
+            <div class="catalyst">
+                <h3>{{ section.settings.catalyst_title }}</h3>
+                {% assign catalystImage = 'catalyst-litter.jpg' | asset_url %}
+                {% if section.settings.catalyst_image %}
+                    {% assign catalystImage = section.settings.catalyst_image | img_url: '450x', scale: 2 %}
+                {% endif %}
+                <div class="img-container lazyload" style="background-image: url({{ catalystImage }})"></div>
+                {% assign catalystFeatures = section.settings.catalyst_features | newline_to_br | strip_newlines | split: "<br />" %}
+                <ul>
+                    {% for feature in catalystFeatures %}
+                        <li>{{feature}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="other">
+                <h3>{{ section.settings.other_title }}</h3>
+                {% assign otherImage = 'other-litters.jpg' | asset_url %}
+                {% if section.settings.other_image %}
+                    {% assign otherImage = section.settings.other_image | img_url: '450x', scale: 2 %}
+                {% endif %}
+                <div class="img-container lazyload" style="background-image: url({{ otherImage }})"></div>
+                {% assign othersFeatures = section.settings.others_features | newline_to_br | strip_newlines | split: "<br />" %}
+                <ul>
+                    {% for feature in othersFeatures %}
+                        <li>{{feature}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Cat Litter Love Your Pet",
+  "class": "section-cl",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Why join the revolution"
+    },
+    {
+      "type": "text",
+      "id": "catalyst_title",
+      "label": "Catalyst Title",
+      "default": "Catalyst Soft Wood Litter"
+    },
+    {
+      "type": "image_picker",
+      "id": "catalyst_image",
+      "label": "Catalyst image"
+    },
+    {
+      "type": "textarea",
+      "id": "catalyst_features",
+      "label": "Catalyst Features",
+      "default": "Unrivaled cat acceptance\nSuperior, natural odor-blocking\nGentle, positive scent\nStrong clumping\nLightweight\nSustainable and renewable",
+      "info": "One on each line"
+    },
+    {
+      "type": "text",
+      "id": "other_title",
+      "label": "Others Title",
+      "default": "Other Litters"
+    },
+    {
+      "type": "image_picker",
+      "id": "other_image",
+      "label": "Others image"
+    },
+    {
+      "type": "textarea",
+      "id": "others_features",
+      "label": "Others Features",
+      "default": "Strip mining: not sustainable\nStrong synthetic perfumes\nHeavy weight\nNasty airborne dust plumes",
+      "info": "One on each line"
+    }
+  ]
+}
+
+{% endschema %}

@@ -1,0 +1,190 @@
+{% style %}
+    .reason-deailts-wrapper {
+        background: #F8F6ED;
+        padding: 0 40px;
+    }
+
+    .reason-deailts {
+        max-width: 999px;
+        width: 100%;
+        margin: auto;
+        padding: 50px 0 100px;
+        counter-reset: catcounter;
+    }
+
+    .reason-detail {
+        display: flex;
+        align-items: center;
+        gap: 92px;
+        margin-bottom: 44px;
+    }
+
+    .reason-detail:last-child {
+        margin: 0;
+    } 
+
+    .reason-detail:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    .reason-detail__image-wrapper {
+        max-width: 400px;
+        position: relative;
+    }
+
+    .reason-detail__image-wrapper img {
+        border-radius: 50%;
+        border: 11px solid #037847;
+    }
+
+    .reason-detail__image-wrapper::after {
+        counter-increment: catcounter;
+        content: counter(catcounter);
+        display: block;
+        
+        position: absolute;
+        right: 11px;
+        top: 11px;
+    
+        width: 100px;
+        height: 100px;
+        background: #DDAD26;
+        border-radius: 50%;
+
+        font-family: 'Domine';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 100px;
+        color: #1C1C1C;
+        text-align: center;
+    }
+
+    .reason-detail:nth-child(odd) .reason-detail__image-wrapper::after {
+        left: 11px;
+    }
+
+    .reason-detail__copy {
+        width: calc(100% - 400px - 92px);
+    }
+
+    .reason-detail__copy h4 {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 40px;
+        text-transform: uppercase;
+        color: #037847;
+        letter-spacing: normal;
+    }
+
+    .reason-detail__copy p {
+        font-family: 'FuturaMedium';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+        color: #5D5D5D;
+    }
+
+    @media(max-width: 1000px) {
+        .reason-detail {
+            gap: 10vw;
+        }
+
+        .reason-detail__copy {
+            width: calc(100% - 400px);
+        }
+    }
+
+    @media(max-width: 768px) {
+        .reason-detail {
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .reason-detail:nth-child(even) {
+            flex-direction: column;
+        }
+
+        .reason-detail__copy {
+            width: 100%;
+        }
+
+        .reason-detail__copy h4 {
+            margin-top: 0;
+        }
+
+        .reason-detail .reason-detail__image-wrapper::after {
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            left: 0 !important;
+            right: auto !important;
+            top: 0;
+            font-size: 34.361px;
+        }
+    }
+
+    @media(max-width: 550px) {
+        .reason-deailts-wrapper {
+            padding: 0 15px;
+        }
+        .reason-deailts {
+            padding: 40px 0;
+        }   
+
+        .reason-detail__image-wrapper {
+            padding: 0 8px;
+        }
+
+        .reason-detail .reason-detail__image-wrapper::after {
+            left: 8px !important;
+        }
+    }
+{% endstyle %}
+
+<div class="reason-deailts-wrapper">
+<div class="reason-deailts">
+    {% for block in section.blocks %}
+        <div class="reason-detail">
+            <div class="reason-detail__image-wrapper">
+                <img src="{{block.settings.image.src | img_url: '400x'}}" alt=""/>            
+            </div>
+
+            <div class="reason-detail__copy">
+                <h4>{{block.settings.title}}</h4>
+                <p>{{block.settings.description}}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+</div>
+
+{% schema %}
+    {
+        "name": "5 Reasons Details",
+        "settings": [],
+        "blocks": [
+            {
+                "name": "Reason",
+                "type": "reason",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Title"
+                    },
+                    {
+                        "type": "text",
+                        "id": "description",
+                        "label": "Description"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="{{ '5-reasons-details-updated.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="{{ '5-reasons-details-updated.css' | asset_url }}"></noscript>
+
+<div class="reason-deailts-wrapper">
+  <div class="reason-deailts">
+    {% for block in section.blocks %}
+      <div class="reason-detail">
+        <div class="reason-detail__image-wrapper">
+          <img src="{{block.settings.image.src | img_url: '400x'}}" loading="lazy" alt="" width="400" height="400">
+        </div>
+
+        <div class="reason-detail__copy">
+          <h4>{{ block.settings.title }}</h4>
+          <p>{{ block.settings.description }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "5 Reasons Details",
+  "settings": [],
+  "blocks": [
+    {
+      "name": "Reason",
+      "type": "reason",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

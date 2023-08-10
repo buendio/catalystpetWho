@@ -1,0 +1,56 @@
+<div class="love-your-pet template-old">
+  <h2>LOVE YOUR PET. CHANGE THE PLANET</h2>
+  <div class="description">
+    <p>We're on a mission to overthrow the litter aisle. We're tired of environmentally damaging products that also don't live up to the standards we should expect. Whether it be re-using an old door or experimenting with an upcycled ingredient, we're continuously living our commitment to create better products for our pets, our homes and the planet.</p>
+  </div>
+  {% comment %}
+  <div class="video">
+  <iframe width="720" height="405" src="https://www.youtube.com/embed/WEkSYw3o5is" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div> 
+  {% endcomment %}
+  <div class="video">
+    <video width="720" height="405" controls>
+      <source src="{{ 'catalyst-product-video.mp4' | asset_url }}" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<div class="cost-chart template-old" id="costPerUse">
+  <h2>4x more efficient = save more per use!</h2>
+  <div class="description">
+    <p>Not only is Catalyst litter 4 times more absorbent than other leading litter brands, it also controls odor better, is lighter to carry, and doesn't have the nasty clay airborne dust that is typical of other brands. Give it a try!</p>
+  </div>
+  <div class="img-container">
+    {% if product.handle contains 'multi-cat' %}
+    <img src="{{ 'cost-per-use__multicat.png' | asset_url }}" alt="">
+    {% elsif product.handle contains 'unscented' %}
+    <img src="{{ 'cost-per-use__unscented.png' | asset_url }}" alt="">
+    {% else %}
+    <img src="{{ 'cost-per-use__health-cat.png' | asset_url }}" alt="">
+    {% endif %}
+  </div>
+</div>
+
+<div class="cl-testimonials template-old">
+  <div class="testimonials"> 
+    <div class="yotpo yotpo-main-widget" data-product-id="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ shop.url }}{{ product.url }}" data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}" data-price="{{ variant.price | money_without_currency }}"
+      data-currency=“{{ shop.currency }}” data-description=“{{ product.description | escape }}“>
+      {%- assign yotpo_offload_content = shop.metafields.yotpo.yotpo_offload_content %}
+        {%- assign time_now = 'now' | date: '%s' %}
+        {%- assign yotpo_live_time = shop.metafields.yotpo.yotpo_live | date: '%s' %}
+        {%- assign diff_seconds_from_live = time_now | minus: yotpo_live_time %}
+        {%- assign yotpo_main_widget_last_updated = product.metafields.yotpo.main_widget_update_time | date: '%s' %}
+        {%- assign diff_seconds_from_last_main_widget_update = time_now | minus: yotpo_main_widget_last_updated %}
+        {%- if yotpo_live_time and diff_seconds_from_live < 86400 or yotpo_main_widget_last_updated and diff_seconds_from_last_main_widget_update < 86400 -%}
+          {%- assign yotpo_main_widget_obsolete = false %}
+        {%- else %}
+          {%- assign yotpo_main_widget_obsolete = true %}
+        {%- endif %}
+        {%- if yotpo_offload_content == 'yes' and yotpo_main_widget_obsolete != true -%}
+          {%- for field in product.metafields.yotpo_reviews -%}
+            {{ field | last }}
+          {%- endfor -%}
+        {%- endif %}
+      </div>
+  </div>
+</div>

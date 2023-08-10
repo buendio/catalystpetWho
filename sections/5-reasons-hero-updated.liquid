@@ -1,0 +1,308 @@
+{% style %}
+  .resons-hero {
+    display: flex;
+    gap: 50px;
+    padding: 70px 50px;
+    background: #ded9bc;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .reasons-hero__image-wrapper {
+    width: 480px;
+  }
+
+  .reasons-hero__copy {
+    width: calc(100% - 480px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 800px;
+  }
+
+  .copy__label-images {
+    display: flex;
+    gap: 10px;
+  }
+
+  .copy__label-images img {
+    width: 68px;
+  }
+
+  .reasons-hero__copy h3 {
+    font-family: 'Domine';
+    font-style: normal;
+    background: #ddad26;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 42px;
+    line-height: 48px;
+    color: #000000;
+    text-transform: capitalize;
+    margin-top: 0;
+    letter-spacing: normal;
+  }
+
+  .reasons-hero__copy h1 {
+    margin: 20px 0;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 56px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #027747;
+    letter-spacing: normal;
+    max-width: 800px;
+  }
+
+  .reasons-hero__copy p {
+    font-family: 'FuturaMedium';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #1c1c1c;
+    margin: 0 0 20px;
+    max-width: 800px;
+  }
+
+  .copy__cta {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .reasons-hero__cta {
+    padding: 14px 50px;
+    background: #ddad26;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 25px;
+    text-transform: capitalize;
+    color: #1c1c1c;
+    display: block;
+    width: fit-content;
+    margin-bottom: 15px;
+  }
+
+  .additional_text p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: center;
+    color: #1c1c1c;
+    max-width: 800px;
+  }
+
+  .additional_text--extra {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
+    color: #1c1c1c;
+  }
+
+  @media (min-width: 901px) {
+    .reasons-hero__cta-mobile {
+      display: none;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .reasons-hero__cta-desktop {
+      display: none;
+    }
+    .reasons-hero__cta-mobile {
+      font-size: 17px;
+      line-height: 22px;
+      text-align: center;
+      text-transform: capitalize;
+      color: #1c1c1c;
+    }
+    .reasons-hero__cta {
+      width: 100%;
+      text-align: center;
+      padding-left: 11px;
+      padding-right: 11px;
+    }
+    .additional_text {
+      display: none;
+    }
+    .additional_text--extra {
+      text-align: center;
+    }
+    .resons-hero {
+      flex-direction: column;
+      padding: 35px 25px;
+    }
+
+    .reasons-hero__copy {
+      width: 100%;
+    }
+
+    .reasons-hero__image-wrapper {
+      width: 100%;
+    }
+
+    .reasons-hero__image {
+      display: block;
+      margin: auto;
+    }
+
+    .reasons-hero__copy {
+      align-items: center;
+    }
+
+    .reasons-hero__copy h3,
+    .reasons-hero__copy h1,
+    .reasons-hero__copy p {
+      text-align: center;
+      letter-spacing: normal;
+    }
+  }
+
+  @media (max-width: 580px) {
+    .resons-hero {
+      padding: 30px 12px;
+      gap: 30px;
+    }
+
+    .reasons-hero__image {
+      width: 100%;
+    }
+
+    .reasons-hero__copy h1 {
+      font-size: 35px;
+      line-height: 47px;
+    }
+
+    .copy__cta {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+{% endstyle %}
+
+<div class="resons-hero">
+  <div class="reasons-hero__image-wrapper">
+    <img class="reasons-hero__image" src="{{section.settings.hero_image.src | img_url: '500x'}}" alt="">
+  </div>
+
+  <div class="reasons-hero__copy">
+    <h3>{{ section.settings.title }}</h3>
+
+    {%- if section.settings.heading != blank -%}
+      <h1>{{ section.settings.heading }}</h1>
+    {%- endif -%}
+
+    {%- if section.settings.paragraph != blank -%}
+      <p>{{ section.settings.paragraph }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.cta_url != blank -%}
+      <a class="reasons-hero__cta" href="{{section.settings.cta_url}}">
+        <span class="reasons-hero__cta-desktop">
+          {{ section.settings.cta_title }}
+        </span>
+        <span class="reasons-hero__cta-mobile">
+          {%- if section.settings.cta_title_mobile != blank -%}
+            {{ section.settings.cta_title_mobile }}
+          {%- else -%}
+            {{ section.settings.cta_title }}
+          {%- endif -%}
+        </span>
+      </a>
+    {%- endif -%}
+
+    {%- if section.settings.additional_text != blank -%}
+      <span class="additional_text">{{ section.settings.additional_text }}</span>
+    {%- endif -%}
+
+    {%- if section.settings.additional_text_extra != blank -%}
+      <span class="additional_text--extra">{{ section.settings.additional_text_extra }}</span>
+    {%- endif -%}
+
+    <div class="copy__cta">
+      <div class="copy__label-images">
+        {% for block in section.blocks %}
+          <img src="{{block.settings.label_image.src | img_url: '136x'}}" alt="">
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "5 Reasons Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Hero title",
+      "default": "5 reasons"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Hero Heading"
+    },
+    {
+      "type": "text",
+      "id": "paragraph",
+      "label": "Hero Paragraph"
+    },
+    {
+      "type": "text",
+      "id": "cta_title",
+      "label": "CTA Title",
+      "default": "Get Started"
+    },
+    {
+      "type": "text",
+      "id": "cta_title_mobile",
+      "label": "CTA Title mobile"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA URL"
+    },
+    {
+      "type": "richtext",
+      "id": "additional_text",
+      "label": "Additional text",
+      "info": "Appeared below CTA"
+    },
+    {
+      "type": "text",
+      "id": "additional_text_extra",
+      "label": "Additional information",
+      "info": "Appeared at the bottom of hero"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Label Image",
+      "type": "image_picker",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "label_image",
+          "label": "Hero Image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,9 @@
+development:
+  password: shptka_e74c8c273575d21019bdef8e431d1a60
+  theme_id: "134033375381"
+  store: catalystpet.myshopify.com
+  ignore_files:
+    # - config/settings_data.json
+    # - config/settings_schema.json
+
+    # 134073516279

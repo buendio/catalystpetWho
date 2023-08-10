@@ -1,0 +1,130 @@
+.ws-profile {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 25px;
+    padding: 25px;
+}
+
+.ws-profile__article {
+    flex: 1;
+    border-radius: 11px;
+    background: linear-gradient(180deg, #488267 48.03%, #366153 100%);
+    padding: var(--blockPadding);
+}
+
+.profile-article__heading {
+    margin: 0;
+    color: #FFF;
+    font-size: 58px;
+    font-family: "Route-66-NF";
+    font-weight: 400;
+    letter-spacing: normal;
+    line-height: 107%;
+    letter-spacing: 2.32px;
+}
+
+.profile-article__copy {
+    color: #FFF;
+    margin: 10px 0 70px;
+}
+
+.profile-article__media img {
+    width: 100%;
+    border-radius: 11px;
+}
+
+.ws-profile__actions {
+    width: 570px;
+}
+
+.profile-actions__heading {
+    color: #037847;
+    font-size: 42px;
+    font-family: "Route-66-NF";
+    line-height: 120%;
+    font-weight: 400;
+    letter-spacing: normal;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.profile-actions__copy {
+    color: #2E2E2E;
+    margin: 10px 0 20px;
+}
+
+.prodile-actions__menu-item {
+    border-radius: 5px;
+    background: linear-gradient(135deg, #DDAD26 0%, #CC9600 100%);
+
+    color: #000;
+    font-size: 22px;
+    font-family: "Route-66-NF";
+    line-height: 120%;
+    font-weight: 400;
+    letter-spacing: normal;
+    text-transform: uppercase;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    margin-bottom: 25px;
+}
+
+.prodile-actions__menu-item:hover {
+    color: #000;
+} 
+
+.prodile-actions__menu-item:last-of-type {
+    margin: 0;
+}
+
+.profile-actions__footer {
+    margin-top: 20px;
+}
+
+.profile-actions__footer span {
+    color: #2E2E2E;
+}
+
+.profile-actions__footer a {
+    color: #027747;
+    display: block;
+}
+
+@media(max-width: 1100px) {
+    .ws-profile__actions {
+        width: 450px;
+    }
+}
+
+@media(max-width: 768px) {
+    .ws-profile {
+        gap: 0;
+        padding: 0;
+    }
+
+    .ws-profile__article  {
+        width: 100%;
+        border-radius: 0;
+        flex: auto;
+    }
+    .ws-profile__actions {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .profile-article__heading {
+        font-size: 45px;
+    }
+    
+    .profile-article__copy {
+        margin-bottom: 0;
+    }
+
+    .profile-article__media {
+        display: none;
+    }
+}

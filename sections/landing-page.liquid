@@ -1,0 +1,790 @@
+<div class="landingInner">
+    {% if section.settings.desktop_header_image != blank %}
+      <img src="{{ section.settings.desktop_header_image.src | img_url: 'master', scale: 2 }}" class="headerImg desktop-only" />
+    {% endif %}
+
+    {% if section.settings.mobile_header_image != blank %}
+      <img src="{{ section.settings.mobile_header_image.src | img_url: 'master', scale: 2 }}" class="headerImg mobile-only" />
+    {% endif %}
+
+    {% if section.settings.desktop_main_banner_image != blank %}
+      <a href="#" class="ModalTrigger"><img src="{{ section.settings.desktop_main_banner_image.src | img_url: 'master', scale: 2 }}" class="mainBannerImg desktop-only" /></a>
+    {% endif %}
+
+    {% if section.settings.mobile_main_banner_image != blank %}
+      <a href="#" class="ModalTrigger"><img src="{{ section.settings.mobile_main_banner_image.src | img_url: 'master', scale: 2 }}" class="mainBannerImg mobile-only" /></a>
+    {% endif %}
+
+</div>
+
+<div class="sliderBlock">
+  <!--<a href="#" class="sliderLeftLink"><img src="{{"arrow-left.png" | asset_url }}" /></a>  
+  <a href="#" class="sliderRightLink"><img src="{{"arrow-right.png" | asset_url }}" /></a>--> 
+  <div class="landingSlider">
+  {% for block in section.blocks %}
+    {% if block.type == 'Slider' %}
+      <div class="landingSlideritem {% if forloop.first == true %} active {% endif %}">
+        <img src="{{ block.settings.slider_item.src | img_url: 'master', scale: 2 }}" class="feature-image" /> 
+      </div>
+    {% endif %}
+  {% endfor %}
+  </div>
+  <div class="landingSliderTextBlock">
+    <img src="{{ section.settings.slider_block_bg.src | img_url: 'master', scale: 2 }}" class="textImg" /> 
+    {% if section.settings.slider_block_title != blank %}
+      <span class="columnTitle">{{ section.settings.slider_block_title }}</span>
+    {% endif %}
+    {% if section.settings.slider_block_text != blank %}
+      <span class="columnText">{{ section.settings.slider_block_text }}</span>
+    {% endif %}    
+
+
+    <div class="textIconsHolder">
+      <img src="{{"text-ico-1.png" | asset_url }}" class="textIcon" />
+      <img src="{{"text-ico-2.png" | asset_url }}" class="textIcon" />
+      <img src="{{"text-ico-3.png" | asset_url }}" class="textIcon" />
+      <img src="{{"text-ico-4.png" | asset_url }}" class="textIcon" />
+    </div>
+
+  </div>
+</div>
+
+<div class="mainCTABlock">
+  <span class="mobile-only ctaTitle">how<br /> it works</span>
+  <div class="columnsInner">
+    <div class="one-third active">
+        {% if section.settings.cta_first_image != blank %}
+          <img src="{{ section.settings.cta_first_image.src | img_url: 'master', scale: 2 }}" />
+        {% endif %}
+        {% if section.settings.cta_first_title != blank %}
+          <span class="columnTitle">{{ section.settings.cta_first_title }}</span>
+        {% endif %}
+        {% if section.settings.cta_first_title != blank %}
+          <span class="columnText">{{ section.settings.cta_first_text }}</span>
+        {% endif %}
+    </div>
+    <div class="one-third">
+        {% if section.settings.cta_second_image != blank %}
+          <img src="{{ section.settings.cta_second_image.src | img_url: 'master', scale: 2 }}" />
+        {% endif %}
+        {% if section.settings.cta_second_title != blank %}
+          <span class="columnTitle">{{ section.settings.cta_second_title }}</span>
+        {% endif %}
+        {% if section.settings.cta_second_title != blank %}
+          <span class="columnText">{{ section.settings.cta_second_text }}</span>
+        {% endif %}
+        {% if section.settings.cta_block_button_text != blank %}
+          <a href="#" class="ssModalTrigger desktop-only">{{ section.settings.cta_block_button_text }}</a>
+        {% endif %}
+    </div>
+    <div class="one-third">
+        {% if section.settings.cta_third_image != blank %}
+          <img src="{{ section.settings.cta_third_image.src | img_url: 'master', scale: 2 }}" />
+        {% endif %}
+        {% if section.settings.cta_third_title != blank %}
+          <span class="columnTitle">{{ section.settings.cta_third_title }}</span>
+        {% endif %}
+        {% if section.settings.cta_third_title != blank %}
+          <span class="columnText">{{ section.settings.cta_third_text }}</span>
+        {% endif %}
+    </div>
+  </div> 
+
+    <button type="button" role="presentation" class="owl-prev mobile-only">
+      <span aria-label="Previous">‹</span>
+    </button>
+
+    <button type="button" role="presentation" class="owl-next mobile-only">
+       <span aria-label="Next">›</span>
+    </button>
+
+  <div class="mobileNavigationHolder mobile-only">
+    <a href="#" class="active"></a>
+    <a href="#" class=""></a>
+    <a href="#" class=""></a>
+  </div> 
+  {% if section.settings.cta_block_button_text != blank %}
+    <a href="#" class="ssModalTrigger mobile-only">{{ section.settings.cta_block_button_text }}</a>
+  {% endif %}
+</div>
+
+{% if section.settings.desktop_after_slider_image != blank %}
+  <img src="{{ section.settings.desktop_after_slider_image.src | img_url: 'master', scale: 2 }}" class="fullWIdthImg easyAccount desktop-only" />
+{% endif %}
+
+{% if section.settings.mobile_after_slider_image != blank %}
+  <img src="{{ section.settings.mobile_after_slider_image.src | img_url: 'master', scale: 2 }}" class="fullWIdthImg easyAccount mobile-only" />
+{% endif %}
+
+
+
+
+<div class="accountSteps">
+  
+  <div class="stepRow">
+    <div class="stepLeft textRow">
+      <div class="textInner">
+        <span class="stepNumber">step 1</span>
+        <span class="stepTitle">{{ section.settings.account_step1_title }}</span>
+        <span class="stepText">{{ section.settings.account_step1_text }}</span>
+      </div>
+    </div>
+    <div class="stepRight imageRow">
+      <img src="{{ section.settings.account_step1_image.src | img_url: '1150x', scale: 2 }}" class="stepImg" />
+    </div>
+  </div>
+
+  <div class="stepRow">
+    <div class="stepLeft imageRow">
+      <img src="{{ section.settings.account_step2_image.src | img_url: '1150x', scale: 2 }}" class="stepImg" />
+
+    </div>
+    <div class="stepRight textRow">
+      <div class="textInner">
+        <span class="stepNumber">step 2</span>
+        <span class="stepTitle">{{ section.settings.account_step2_title }}</span>
+        <span class="stepText">{{ section.settings.account_step2_text }}</span>   
+      </div>
+    </div>
+  </div>
+
+  <div class="stepRow">
+    <div class="stepLeft textRow">
+      <div class="textInner">
+        <span class="stepNumber">step 3</span>
+        <span class="stepTitle">{{ section.settings.account_step3_title }}</span>
+        <span class="stepText">{{ section.settings.account_step3_text }}</span>
+      </div>
+    </div>
+    <div class="stepRight imageRow">
+      <img src="{{ section.settings.account_step3_image.src | img_url: '1150x', scale: 2 }}" class="stepImg" />
+    </div>
+  </div>
+
+  <div class="stepRow">
+    <div class="stepLeft imageRow">
+      <img src="{{ section.settings.account_step4_image.src | img_url: '1150x', scale: 2 }}" class="stepImg" />
+    </div>
+    <div class="stepRight textRow">
+      <div class="textInner">
+        <span class="stepNumber">step 4</span>
+        <span class="stepTitle">{{ section.settings.account_step4_title }}</span>
+        <span class="stepText">{{ section.settings.account_step4_text }}</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% if section.settings.desktop_after_steps_image != blank %}
+  <img src="{{ section.settings.desktop_after_steps_image.src | img_url: 'master', scale: 2 }}" class="fullWIdthImg subscribeImage desktop-only" />
+{% endif %}
+
+{% if section.settings.mobile_after_steps_image != blank %}
+  <img src="{{ section.settings.mobile_after_steps_image.src | img_url: 'master', scale: 2 }}" class="fullWIdthImg subscribeImage mobile-only" />
+{% endif %}
+
+<div class="threeProductBlock" id="threeProductsBlock">
+  <div class="columnsInner">
+  <div class="one-third">
+    <img src="{{ section.settings.first_product_image.src | img_url: 'master', scale: 2 }}" />
+    <div class="subInner">
+      <span class="productSubTitle">{{ section.settings.first_product_subtitle }}</span>
+      <span class="productTitle">{{ section.settings.first_product_title }}</span>
+      <span class="productWeight">{{ section.settings.first_product_weight }}</span>
+      <a href="{{ all_products[section.settings.first_product].url }}" class="learnMoreBtn">Learn More</a>
+    </div>
+  </div>
+
+  <div class="one-third">
+    <img src="{{ section.settings.second_product_image.src | img_url: 'master', scale: 2 }}" />
+    <div class="subInner">
+      <span class="productSubTitle">{{ section.settings.second_product_subtitle }}</span>
+      <span class="productTitle">{{ section.settings.second_product_title }}</span>
+      <span class="productWeight">{{ section.settings.second_product_weight }}</span>
+      <a href="{{all_products[section.settings.second_product].url}}" class="learnMoreBtn">Learn More</a>
+    </div>
+  </div>
+
+  <div class="one-third">
+    <img src="{{ section.settings.third_product_image.src | img_url: 'master', scale: 2 }}" />
+    <div class="subInner">
+      <span class="productSubTitle">{{ section.settings.third_product_subtitle }}</span>
+      <span class="productTitle">{{ section.settings.third_product_title }}</span>
+      <span class="productWeight">{{ section.settings.third_product_weight }}</span>
+      <a href="{{all_products[section.settings.third_product].url}}" class="learnMoreBtn">Learn More</a>
+    </div>
+  </div>
+ </div>
+</div>
+<div class="cl-testimonials">
+  <div class="testimonials">
+    <div class="testimonial-carousel owl-carousel">
+        {% for block in section.blocks %}
+          {% if block.type == 'testimonials' %}
+            <div class="testiItem">
+                <p class="starsCounter">
+                  {% for i in (1..5) %}
+                    {% if i <= block.settings.star_count %}
+                      <img src="{{"testi-star.png" | asset_url }}" />
+                    {% endif %}
+                  {% endfor %}
+                </p>
+                <p class="content">{{ block.settings.content | newline_to_br | strip_newlines }}</p>
+                <p class="author">{{ block.settings.author }}</p>
+            </div>
+          {% endif %}
+        {% endfor %}     
+    </div>
+  </div>
+</div>
+
+<div class="fakeInst">
+  <a href="https://www.instagram.com/catalystpet" target="_blank"><img src="{{ section.settings.insta_section_desktop.src | img_url: 'master', scale: 2 }}" class="desktop-only" /><img src="{{ section.settings.insta_section_mobile.src | img_url: 'master', scale: 2 }}" class="mobile-only" /></a>
+</div>
+<!--<div id="rap__med__instagram"></div>-->
+
+<div class="FAQs">
+  <span>FAQs</span> <img src="{{"faq-plus.png" | asset_url }}" class="faq-plus" /><img src="{{"faq-minus.png" | asset_url }}" class="faq-minus" />
+</div>
+<div class="faqContent"></div>
+
+<div class="satisfGarant">
+  <div class="title">Cat-isfaction Guaranteed</div>
+  <div class="subTitle">We're pawsitive your cat will love our litter. If you feel it's not a purrfect fit for your pet, we'll issue a full refund. Fur real!</div>
+</div>
+
+<div class="policy-section">
+  <span class="blockTitle">{{ section.settings.policy_title }}</span>
+  <span class="policyText">{{ section.settings.policy_text }}</span>
+</div>
+
+
+<div class="newsletter-subscription">
+  {% form 'customer' %}
+    {{ form.errors | default_errors }}
+
+    {% if form.posted_successfully? %}
+      <div class="newsletter-message">
+          <p>{{ 'general.mailing_list.message' | t }}</p>
+      </div>
+    {% else %}
+      {%- capture tags -%}
+          {%- unless template contains 'password' %}
+          newsletter
+          {%- else -%}
+          prospect, password page
+          {%- endunless -%}
+      {%- endcapture -%}
+
+      <input type="hidden" id="contact_tags" name="contact[tags]" value="{{ tags | strip }}">
+
+      <input type="email" class="email" name="contact[email]" data-role="none" value="" placeholder="email@email.com">
+      <input type="submit" class="submit" name="subscribe" data-role="none" value="Count me in">
+    {% endif %}
+  {% endform %}
+</div>
+
+<div class="landingFooter">
+  <div class="footerItems desktop-only">
+      {% if section.settings.footer_link1_text != blank %}
+        <a class="footerItem" href="{{ section.settings.footer_link1_url }}">{{ section.settings.footer_link1_text }}</a>
+      {% endif %}
+
+      {% if section.settings.footer_link2_text != blank %}
+        <a class="footerItem" href="{{ section.settings.footer_link2_url }}">{{ section.settings.footer_link2_text }}</a>
+      {% endif %}
+
+      {% if section.settings.footer_logo != blank %}
+        <img src="{{ section.settings.footer_logo.src | img_url: 'master', scale: 2 }}" class="footerLogo" />
+      {% endif %}
+
+      {% if section.settings.footer_link3_text != blank %}
+        <a class="footerItem" href="{{ section.settings.footer_link3_url }}">{{ section.settings.footer_link3_text }}</a>
+      {% endif %}
+
+      {% if section.settings.footer_link4_text != blank %}
+        <a class="footerItem" href="{{ section.settings.footer_link4_url }}">{{ section.settings.footer_link4_text }}</a>
+      {% endif %}
+  </div>
+  <div class="footerItems mobile-only">
+    {% if section.settings.footer_logo != blank %}
+      <img src="{{ section.settings.footer_logo.src | img_url: 'master', scale: 2 }}" class="footerLogo" />
+    {% endif %}
+
+    <div class="leftFooterBlock">
+      {% if section.settings.footer_link1_text != blank %}
+        <a class="footerItem" href="{{ section.settings.footer_link1_url }}">{{ section.settings.footer_link1_text }}</a>
+      {% endif %}
+
+      {% if section.settings.footer_link2_text != blank %}
+        <a class="footerItem" href="{{ section.settings.footer_link2_url }}">{{ section.settings.footer_link2_text }}</a>
+      {% endif %}
+    </div>
+
+    <div class="rightFooterBlock">
+      {% if section.settings.footer_link3_text != blank %}
+        <a class="footerItem" href="{{ section.settings.footer_link3_url }}">{{ section.settings.footer_link3_text }}</a>
+      {% endif %}
+
+      {% if section.settings.footer_link4_text != blank %}
+        <a class="footerItem" href="{{ section.settings.footer_link4_url }}">{{ section.settings.footer_link4_text }}</a>
+      {% endif %}
+    </div>
+</div>
+
+{% assign product1 = all_products['cat-litter-healthy-cat-formula'] %}
+{% assign product2 = all_products['cat-litter-unscented-formula'] %}
+{% assign product3 = all_products['cat-litter-multi-cat-formula'] %}
+
+ <div class="ss-choose-product-popup">
+  <div class="popup-wrapper">
+    <span class="popup-close"><img src="{{"close-ico.png" | asset_url }}" class="popupClose" /></span>
+    <div id="step1" class="popupStep">
+      <img src="{{"popup-step1.png" | asset_url }}" class="popupStepCounter" />
+      <span class="stepCounter">Step 1 of 3</span>
+      <span class="stepTitle">How many cats <br />do you have?</span>
+      <div class="optionsHolder">
+        <a href="#" class="step1option1 stepOption selected">1</a>
+        <a href="#" class="step1option2 stepOption">2</a>
+        <a href="#" class="step1option3 stepOption">3</a> 
+        <a href="#" class="step1option4 stepOption">4</a>
+      </div>
+      <div class="moreCatsDiv">More then 4 cats? <br />
+        <a target="_blank" href="https://catalystpet.com/collections/frontpage">Buy in bulk</a></div>
+      <a href="#" class="popupSteps linkNext">Next</a>
+    </div>
+
+    <div id="step2" class="popupStep">
+      <img src="{{"popup-step2.png" | asset_url }}" class="popupStepCounter" />
+      <span class="stepCounter">Step 2 of 3</span>
+      <span class="stepTitle">Choose your<br /> scent profile</span>
+      <div class="optionsHolder">
+        <a href="#" data-p-id="31703589290036" data-price="{{ product1.variants[0].metafields.subscriptions.discount_variant_price }}" data-title="{{ product1.title }}" class="step2option1 stepOption selected"><img src="{{"step2-option1.jpg" | asset_url }}" class="popupOptionCounter" /></a>
+        <a href="#" data-p-id="31703589355572" data-price="{{ product2.variants[0].metafields.subscriptions.discount_variant_price }}" data-title="{{ product3.title }}" class="step2option3 stepOption"><img src="{{"step2-option3.jpg" | asset_url }}" class="popupOptionCounter" /></a>
+        <a href="#" data-p-id="37342501142677" data-price="{{ product3.variants[0].metafields.subscriptions.discount_variant_price }}" data-title="{{ product2.title }}" class="step2option2 stepOption"><img src="{{"step2-option2.jpg" | asset_url }}" class="popupOptionCounter" /></a>
+      </div>
+      <div class="popupnavigationHolder">
+        <a href="#" class="popupSteps linkBack">Back</a>
+        <a href="#" class="popupSteps linkNext">Next</a>
+      </div>
+    </div>
+
+    <div id="step3" class="popupStep">
+      <img src="{{"popup-step3.png" | asset_url }}" class="popupStepCounter" />
+      <span class="stepCounter">Step 3 of 3</span>
+      <span class="stepTitle">Choose your<br /> frequency</span>
+      <div class="optionsHolder">
+        <a href="#" class="step3option1 stepOption selected">Every month</a>
+        <a href="#" class="step3option2 stepOption">Every 2 months</a>
+      </div>
+      <div class="popupnavigationHolder">
+        <a href="#" class="popupSteps linkBack">Back</a>
+        <a href="#" class="popupSteps linkNext">Next</a>
+      </div>
+    </div>
+
+    <div id="step4" class="popupStep">
+      <img src="{{"popup-step4.png" | asset_url }}" class="popupStepCounter" />
+
+      <div class="resultsHolder">
+        <div class="leftInner">
+          <img src="{{ product1.featured_image | img_url: '550x', scale: 2  }}" class="p1IMG" />
+          <img src="{{ product2.featured_image | img_url: '550x', scale: 2 }}" class="p2IMG" />
+          <img src="{{ product3.featured_image | img_url: '550x', scale: 2 }}" class="p3IMG" />
+        </div>
+        <div class="rightInner">
+
+            <div class="resultTitle">We Recommend</div>
+
+            <div class="resultProduct pTitle">
+              <span class="subTitle">PRODUCT</span>
+              <span class="title">Unscented Formula</span>
+            </div>
+
+            <div class="resultProduct monthQTY">
+              <span class="subTitle">FREQUENCY</span>
+              <div class="infoHolder">$<span class="priceHolder"></span> <span class="title">Once per month</span></div>
+            </div>
+
+            <div class="resultQty">
+              <div class="qtyHolder">
+                <span class="subTitle">QUANTITY</span>
+                <span class="title"><span class="qtyCount">1</span> Bag<span class="multipleBags">s</span></span>
+              </div>
+              <div class="qtyControls">
+                <a href="#" class="minusQTY">-</a>
+                <a href="#" class="plusQTY">+</a> 
+              </div>
+            </div>
+
+            <a href="#" class="popupSteps addToCart">Subscribe</a>
+
+            <p class="resultPar firstPar">We recommend 1 bag per cat per month</p>
+
+            <p class="resultPar secondPar">*By clicking add to cart you acknowledge<br /> that this is a subscription service. <br />
+             <a href="https://catalystpet.com/apps/help-center">View our terms here</a> </p>
+
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+  </div>
+ </div>
+</div>
+{% schema %}
+{
+  "name": "Landing page settings",
+  "class": "section-cl",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "desktop_header_image",
+      "label": "Desktop header image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_header_image",
+      "label": "Mobile header image"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_main_banner_image",
+      "label": "Desktop main banner image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_main_banner_image",
+      "label": "Mobile main banner image"
+    },
+    {
+      "type": "image_picker",
+      "id": "slider_block_bg",
+      "label": "Background image for block near the slider"
+    },
+    {
+      "type": "richtext",
+      "id": "slider_block_title",
+      "label": "Title for block near the slider"
+    },
+    {
+      "type": "richtext",
+      "id": "slider_block_text",
+      "label": "Text for block near the slider"
+    },
+    {
+      "type": "image_picker",
+      "id": "cta_first_image",
+      "label": "CTA block first column image"
+    },
+    {
+      "type": "richtext",
+      "id": "cta_first_title",
+      "label": "CTA block first column title"
+    },
+    {
+      "type": "richtext",
+      "id": "cta_first_text",
+      "label": "CTA block first column text"
+    },
+    {
+      "type": "image_picker",
+      "id": "cta_second_image",
+      "label": "CTA block second column image"
+    },
+    {
+      "type": "richtext",
+      "id": "cta_second_title",
+      "label": "CTA block second column title"
+    },
+    {
+      "type": "richtext",
+      "id": "cta_second_text",
+      "label": "CTA block second column text"
+    },
+    {
+      "type": "image_picker",
+      "id": "cta_third_image",
+      "label": "CTA block third column image"
+    },
+    {
+      "type": "richtext",
+      "id": "cta_third_title",
+      "label": "CTA block third column title"
+    },
+    {
+      "type": "richtext",
+      "id": "cta_third_text",
+      "label": "CTA block third column text"
+    },
+    {
+      "type": "text",
+      "id": "cta_block_button_text",
+      "label": "CTA block button text"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_after_slider_image",
+      "label": "Full width image that come after slider block"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_after_slider_image",
+      "label": "Mobile image that come after slider block"
+    },
+    {
+      "type": "richtext",
+      "id": "account_step1_title",
+      "label": "Account step 1 title"
+    }, 
+    {
+      "type": "richtext",
+      "id": "account_step1_text",
+      "label": "Account step 1 text"
+    }, 
+    {
+      "type": "image_picker",
+      "id": "account_step1_image",
+      "label": "Account step 1 image"
+    }, 
+    {
+      "type": "richtext",
+      "id": "account_step2_title",
+      "label": "Account step 2 title"
+    }, 
+    {
+      "type": "richtext",
+      "id": "account_step2_text",
+      "label": "Account step 2 text"
+    }, 
+    {
+      "type": "image_picker",
+      "id": "account_step2_image",
+      "label": "Account step 2 image"
+    },  
+        {
+      "type": "richtext",
+      "id": "account_step3_title",
+      "label": "Account step 3 title"
+    }, 
+    {
+      "type": "richtext",
+      "id": "account_step3_text",
+      "label": "Account step 3 text"
+    }, 
+    {
+      "type": "image_picker",
+      "id": "account_step3_image",
+      "label": "Account step 3 image"
+    },  
+    {
+      "type": "richtext",
+      "id": "account_step4_title",
+      "label": "Account step 4 title"
+    }, 
+    {
+      "type": "richtext",
+      "id": "account_step4_text",
+      "label": "Account step 4 text"
+    }, 
+    {
+      "type": "image_picker",
+      "id": "account_step4_image",
+      "label": "Account step 4 image"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_after_steps_image",
+      "label": "Full width image that come after accounts steps  block"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_after_steps_image",
+      "label": "Mobile full width image that come after accounts steps  block"
+    },
+    {
+      "type": "product",
+      "id": "first_product",
+      "label": "First product"
+    },
+    {
+      "type": "image_picker",
+      "id": "first_product_image",
+      "label": "First product image"
+    },
+    {
+      "type": "richtext",
+      "id": "first_product_subtitle",
+      "label": "First product subtitle"
+    },
+    {
+      "type": "richtext",
+      "id": "first_product_title",
+      "label": "First product title"
+    },
+    {
+      "type": "text",
+      "id": "first_product_weight",
+      "label": "First product weight"
+    },
+    {
+      "type": "product",
+      "id": "second_product",
+      "label": "Second product"
+    },
+    {
+      "type": "image_picker",
+      "id": "second_product_image",
+      "label": "Second product image"
+    },
+    {
+      "type": "richtext",
+      "id": "second_product_subtitle",
+      "label": "Second product subtitle"
+    },
+    {
+      "type": "richtext",
+      "id": "second_product_title",
+      "label": "Second product title"
+    },
+    {
+      "type": "text",
+      "id": "second_product_weight",
+      "label": "Third product weight"
+    },
+    {
+      "type": "product",
+      "id": "third_product",
+      "label": "Third product"
+    },
+    {
+      "type": "image_picker",
+      "id": "third_product_image",
+      "label": "Third product image"
+    },
+    {
+      "type": "richtext",
+      "id": "third_product_subtitle",
+      "label": "Third product subtitle"
+    },
+    {
+      "type": "richtext",
+      "id": "third_product_title",
+      "label": "Third product title"
+    },
+    {
+      "type": "text",
+      "id": "third_product_weight",
+      "label": "Third product weight"
+    },
+    {
+      "type": "image_picker",
+      "id": "insta_section_desktop",
+      "label": "Instagram desktop BG image"
+    },
+    {
+      "type": "image_picker",
+      "id": "insta_section_mobile",
+      "label": "Instagram mobile BG image"
+    },
+    {
+      "type": "text",
+      "id": "policy_title",
+      "label": "Policy title"
+    },
+    {
+      "type": "richtext",
+      "id": "policy_text",
+      "label": "Policy text"
+    },
+    {
+      "type": "text",
+      "id": "footer_link1_text",
+      "label": "Footer first link title"
+    },
+    {
+      "type": "url",
+      "id": "footer_link1_url",
+      "label": "Footer first link url"
+    },
+    {
+      "type": "text",
+      "id": "footer_link2_text",
+      "label": "Footer second link title"
+    },
+    {
+      "type": "url",
+      "id": "footer_link2_url",
+      "label": "Footer second link url"
+    },
+    {
+      "type": "text",
+      "id": "footer_link3_text",
+      "label": "Footer third link title"
+    },
+    {
+      "type": "url",
+      "id": "footer_link3_url",
+      "label": "Footer third link url"
+    },
+    {
+      "type": "text",
+      "id": "footer_link4_text",
+      "label": "Footer forth link title"
+    },
+    {
+      "type": "url",
+      "id": "footer_link4_url",
+      "label": "Footer forth link url"
+    },
+    {
+      "type": "image_picker",
+      "id": "footer_logo",
+      "label": "Footer logo"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Slider",
+      "name": "Slider image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "slider_item",
+          "label": "Slider image"
+        }
+      ]
+    },
+    {
+      "type": "testimonials",
+      "name": "Testimonials",
+      "settings": [
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "range",
+          "id": "star_count",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "label": "Star count",
+          "default": 5
+        }      
+      ]
+    }
+  ]
+}
+
+{% endschema %}

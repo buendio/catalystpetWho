@@ -1,0 +1,462 @@
+{% style %}
+
+    .template-page-rebates .main-content {
+      max-width: 100%;
+      padding: 40px 0px 0;
+      background: #037847;
+    }
+
+    .template-page-rebates .header-promotion-bar {
+      display: none;
+    }
+
+    .resons-hero {
+        display: flex;
+        gap: 50px;
+        padding: 0px 50px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .reasons-hero__image-wrapper {
+        width: 480px;
+    }
+
+    .reasons-hero__copy {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .copy__label-images {
+        display: flex;
+        gap: 10px;
+    }
+
+    .copy__label-images img {
+        width: 68px;
+    }
+
+    .reasons-hero__copy h3 {
+        font-family: 'Domine';
+        font-style: normal;
+        background: #DDAD26;
+        padding: 10px;
+        font-weight: bold;
+        font-size: 42px;
+        line-height: 48px;
+        color: #000000;
+        text-transform: capitalize;
+        margin-top: 0;
+        letter-spacing: normal;
+        max-width: 525px;
+    }
+
+    .reasons-hero__copy h1 {
+        margin: 20px 0;
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 56px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        letter-spacing: normal;
+        max-width: 625px;
+    }
+
+    .reasons-hero__copy p {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: 0.03em;
+        color: #FFFFFF;
+        margin: 0 0 20px;
+        max-width: 501px;
+    }
+
+    .copy__cta {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .copy__cta a {
+        padding: 14px 50px;
+        background: #DDAD26;
+        border-radius: 8px;
+
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 25px;
+        text-transform: capitalize;
+        color: #1C1C1C;
+        display: block;
+        width: fit-content;
+    }
+    
+    .copy__cta a img {
+      margin-left: 10px;
+    }
+
+    .rebates-hero {
+      background-image: url('{{'rebates-hero-bg.png' | asset_img_url: '2200x'}}');
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: bottom;
+    }
+
+    .steps_hero__step-title {
+      font-family: 'Domine';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 38px;
+      line-height: 43px;
+      color: #037847;
+    }
+
+    .steps_hero__step-subtitle p {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 23px;
+      color: #2E2E2E;
+    }
+
+    .steps_hero__step-subtitle p a {
+      font-weight: bold;
+      text-decoration: underline;
+      color: #2E2E2E;
+    }
+
+    .steps_hero {
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      gap: 20px;
+      padding: 50px 0;
+    }
+
+    .steps_hero__step {
+      display: flex;
+      flex-direction: column;
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 30px 20px;
+      gap: 20px;
+      height: 165px;
+    }
+
+    .steps_hero__step-subtitle p {
+      margin: 0px;
+    }
+
+    .steps_hero__step.index--1,
+    .steps_hero__step.index--2,
+    .steps_hero__step.index--3 {
+      padding-right: 50px;
+    }
+
+    .steps_hero__step.final {
+      background: #DDAD26;
+      justify-content: center;
+    }
+
+    .steps_hero__step.final a {
+      display: flex;
+      flex-direction: column;
+      color: #1C1C1C;
+      font-family: 'Domine';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 27px;
+      line-height: 35px;
+      max-width: 205px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 15px;
+    }
+
+    .steps_hero__step.final a img {
+      width: 15px;
+    }
+    
+
+    @media(max-width: 1000px) {
+        .resons-hero {
+            flex-direction: column;
+            padding: 35px 25px;
+        }
+
+        .reasons-hero__copy {
+            width: 100%;
+        }
+
+        .reasons-hero__image-wrapper {
+            width: 100%;
+        }
+
+        .reasons-hero__image {
+            display: block;
+            margin: auto;
+        }
+
+        .reasons-hero__copy {
+            align-items: center;
+        }
+
+        .reasons-hero__copy h3,
+        .reasons-hero__copy h1,
+        .reasons-hero__copy p {
+            text-align: center;
+            letter-spacing: normal;
+        } 
+
+        .steps_hero {
+          flex-wrap: wrap;
+          padding-bottom: 30px;
+        }
+
+        .steps_hero__step.index--1, 
+        .steps_hero__step.index--2, 
+        .steps_hero__step.index--3 {
+          padding-right: 15px;
+        }
+
+        .steps_hero__step.index--3,
+        .steps_hero__step.index--4 {
+          height: 137px;
+          justify-content: space-between;
+        }  
+
+        .steps_hero__step {
+          height: 125px;
+          gap: 5px;
+          max-width: 175px;
+          padding: 15px;
+          width: 45%;
+        }
+
+        .steps_hero__step-title {
+          font-weight: 600;
+          font-size: 28px;
+          line-height: 32px;
+        }
+
+        .steps_hero__step-subtitle p {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 23px;
+        }
+
+        .copy__cta {
+          display: none;
+        }
+
+        .reasons-hero__image {
+          max-width: 232.87px;
+        }
+
+        .reasons-hero__copy h3 {
+          font-size: 28px;
+        }
+
+        .reasons-hero__copy h1 {
+          font-size: 35px;
+          line-height: 47px;
+          text-align: center;
+          letter-spacing: 0.03em;
+        }
+
+        .reasons-hero__copy p {
+          font-size: 18px;
+          line-height: 24px;
+        }
+
+        .steps_hero__step.final {
+          max-width: 100%;
+          width: 100%;
+          height: 53px;
+          align-items: center;
+          margin: 0 15px;
+        }
+
+        .steps_hero__step.final a {
+          font-size: 22px;
+          line-height: 25px;
+          flex-direction: row;
+          max-width: 300px;
+        }
+
+        .resons-hero {
+          padding: 15px;
+        }
+
+        .rebates-hero {
+          background-size: cover;
+        }
+    }
+
+    @media(max-width: 370px) {
+
+      .steps_hero__step-subtitle p {
+        font-size: 13px; 
+      }
+
+    }
+
+    @media(min-width: 750px) and  (max-width: 1400px)  {
+      .steps_hero {
+          flex-wrap: wrap;
+          padding-bottom: 30px;
+        }
+
+        .steps_hero__step.index--1, 
+        .steps_hero__step.index--2, 
+        .steps_hero__step.index--3 {
+          padding-right: 15px;
+        }
+
+        .steps_hero__step.index--3,
+        .steps_hero__step.index--4 {
+          justify-content: space-between;
+        }  
+
+        .steps_hero__step {
+          height: 125px;
+          gap: 5px;
+          max-width: 175px;
+          padding: 15px;
+          width: 45%;
+        }
+
+        .steps_hero__step-title {
+          font-weight: 600;
+          font-size: 28px;
+          line-height: 32px;
+        }
+
+        .steps_hero__step-subtitle p {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 23px;
+        }
+
+        .steps_hero__step.final a {
+          font-size: 22px;
+          line-height: 25px;
+          flex-direction: row;
+          max-width: 300px;
+        }
+    }
+
+{% endstyle %}
+
+<div class="resons-hero">
+    <div class="reasons-hero__image-wrapper">
+        <img class="reasons-hero__image" src="{{section.settings.hero_image.src | img_url: '500x'}}" alt="" />
+    </div>    
+    
+    <div class="reasons-hero__copy">
+        <h3>{{ section.settings.page_title }}</h3>
+        <h1>{{section.settings.heading}}</h1>
+        <p>{{section.settings.paragraph}}</p>
+        <div class="copy__cta">
+            <a href="{{section.settings.cta_url}}" target="_blank" >{{section.settings.cta_title}} <img src="{{'rebates-next.png' | asset_img_url: '15x' }}" /> </a>
+        </div>
+    </div>
+
+</div>
+
+<div class="steps_hero">
+
+  {%- for block in section.blocks -%}
+
+    <div class="steps_hero__step index--{{forloop.index}}">
+      <div class="steps_hero__step-title">
+        {{block.settings.title}}
+      </div> 
+
+      <div class="steps_hero__step-subtitle">
+        {{block.settings.subtitle}}
+      </div> 
+    </div>  
+    
+  {%- endfor -%}
+
+   <div class="steps_hero__step final">
+      <a href="{{section.settings.cta_url}}" target="_blank">
+        {{ section.settings.finat_step_title }} <img src="{{'rebates-next.png' | asset_img_url: '15x' }}" />
+      </a>
+   </div>
+
+</div> 
+
+{% schema %}
+    {
+        "name": "Rebates Hero",
+        "class": "rebates-hero",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "hero_image",
+                "label": "Hero Image"
+            },
+            {
+              "type": "text",
+              "id": "page_title",
+              "label": "Page title"
+            },
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Hero Heading"
+            },
+            {
+                "type": "text",
+                "id": "paragraph",
+                "label": "Hero Paragraph"
+            },
+            {
+                "type": "text",
+                "id": "cta_title",
+                "label": "CTA Title",
+                "default": "Get Started"
+            },
+            {
+                "type": "url",
+                "id": "cta_url",
+                "label": "CTA URL"
+            },
+            {
+              "type": "text",
+              "id": "finat_step_title",
+              "label": "Final step title",
+              "default": "Submit Your Claim Now"
+            }
+        ],
+        "blocks": [
+            {
+                "name": "Steps",
+                "type": "steps",
+                "settings": [
+                  {
+                      "type": "text",
+                      "id": "title",
+                      "label": "Step title"
+                  },
+                  {
+                      "type": "richtext",
+                      "id": "subtitle",
+                      "label": "Step subtitle"
+                  }
+                ]
+            }
+        ]
+    }
+{% endschema %}

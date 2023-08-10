@@ -1,0 +1,303 @@
+{% assign selected_variant = product.selected_or_first_available_variant | default: product %}
+
+{% assign single_column_product = false %}
+{% if section.settings.single_column_product and product.variants.size == 1 %}
+  {% assign single_column_product = true %}
+{% endif %}
+
+{% assign is_slideshow = false %}
+{% if template contains 'slideshow' %}
+  {% assign is_slideshow = true %}
+{% endif %}
+
+{%- capture product_classes -%}
+  clearfix
+
+  {% if section.settings.center_product_details %}product-title-centered{% endif %}
+  {%- if single_column_product -%}
+    product-details-centered
+  {%- else -%}
+    product-details-inline
+  {%- endif -%}
+{%- endcapture -%}
+
+<div
+  class="{{ product_classes | strip }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="dynamic-product"
+>
+  {%- capture product_title -%}
+    <h1 class="page-title product-title">{{ product.title }}</h1>
+  {%- endcapture -%}
+
+  {% if is_slideshow == false and single_column_product == true %}
+    {% include 'product-images' %}
+  {% endif %}
+
+  {% if is_slideshow == false and single_column_product == false %}
+    {% include 'product-images' %}
+  {% endif %}
+
+  <div class="product-wrap" data-product-id="{{ product.id }}">
+    {%
+      include
+      'product-details',
+      product_title: product_title,
+      title_in_details: true
+    %}
+    {% if product.description.size > 0 %}
+      <div class="product-description rte">
+        {{ product.description }}
+      </div>
+    {% else %}
+      {% include 'product-additional-information' %}
+    {% endif %}
+
+    {% comment %} <div class="formula">
+      <p>Formula: {% if product.handle =="cat-litter-healthy-cat-formula" %}Healthy Cat{%elsif product.handle == 'cat-litter-multi-cat-formula'%}Multi-Cat{%else%}Unscented{%endif%}</p>
+      <ul>
+          <li><a href="https://catalystpet.com/products/cat-litter-healthy-cat-formula" class="selected" data-product="green"><span></span></a></li>
+          <li><a href="https://catalystpet.com/products/cat-litter-multi-cat-formula" class="selected" data-product="orange"><span></span></a></li>
+          <li><a href="https://catalystpet.com/products/cat-litter-unscented-formula" class="selected" data-product="blue"><span></span></a></li>
+      </ul>
+    </div> {% endcomment %}
+
+    {% comment %} <a href="#" class="open-cat-litter-popup">Which formula is right for you?</a> {% endcomment %}
+
+    {% include 'product-form' %}
+
+    {% if section.settings.show_share_buttons %}
+      {% include 'share-buttons' %}
+    {% endif %}
+
+  </div>
+</div>
+
+<div class="miawed">
+  <h4>Miawed by cats around the world</h4>
+  <h2>The highest performing, sustainable cat litter available.</h2>
+  <div class="icons">
+    <img src="{{ 'icon-clumping.png' | asset_url }}" alt="" class="lazy">
+    <img src="{{ 'icon-light.png' | asset_url }}" alt="" class="lazy">
+    <img src="{{ 'icon-absorption.png' | asset_url }}" alt="" class="lazy">
+    <img src="{{ 'icon-acceptance.png' | asset_url }}" alt="" class="lazy">
+  </div>
+</div>
+
+<div class="love-your-pet">
+  <h2>LOVE YOUR PET. CHANGE THE PLANET</h2>
+  <div class="description">
+    <p>We're on a mission to overthrow the litter aisle. We're tired of environmentally damaging products that also don't live up to the standards we should expect. Whether it be re-using an old door or experimenting with an upcycled ingredient, we're continuously living our commitment to create better products for our pets, our homes and the planet.</p>
+  </div>
+  {% comment %}
+  <div class="video">
+  <iframe width="720" height="405" src="https://www.youtube.com/embed/WEkSYw3o5is" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div> 
+  {% endcomment %}
+  <div class="video">
+    <video width="720" height="405" controls>
+      <source src="{{ 'catalyst-product-video.mp4' | asset_url }}" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<div class="cost-chart" id="costPerUse">
+  <h2>4x more efficient = save more per use!</h2>
+  <div class="description">
+    <p>Not only is Catalyst litter 4 times more absorbent than other leading litter brands, it also controls odor better, is lighter to carry, and doesn't have the nasty clay airborne dust that is typical of other brands. Give it a try!</p>
+  </div>
+  <div class="img-container">
+    {% if product.handle contains 'multi-cat' %}
+    <img src="{{ 'cost-per-use__multicat.png' | asset_url }}" alt="">
+    {% elsif product.handle contains 'unscented' %}
+    <img src="{{ 'cost-per-use__unscented.png' | asset_url }}" alt="">
+    {% else %}
+    <img src="{{ 'cost-per-use__health-cat.png' | asset_url }}" alt="">
+    {% endif %}
+  </div>
+</div>
+
+<div class="cl-testimonials">
+  <div class="testimonials"> 
+    {% comment %} /snippets/bv-ratings-reviews.liquid Bazaarvoice Ratings & Reviews
+	{% endcomment %}
+	{% render 'bv-ratings-reviews' %}
+	{% comment %}
+	End Bazaarvoice Ratings & Reviews
+	{% endcomment %}
+    
+    {% comment %}
+    <div class="yotpo yotpo-main-widget" data-product-id="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ shop.url }}{{ product.url }}" data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}" data-price="{{ variant.price | money_without_currency }}"
+      data-currency=“{{ shop.currency }}” data-description=“{{ product.description | escape }}“>
+      {%- assign yotpo_offload_content = shop.metafields.yotpo.yotpo_offload_content %}
+        {%- assign time_now = 'now' | date: '%s' %}
+        {%- assign yotpo_live_time = shop.metafields.yotpo.yotpo_live | date: '%s' %}
+        {%- assign diff_seconds_from_live = time_now | minus: yotpo_live_time %}
+        {%- assign yotpo_main_widget_last_updated = product.metafields.yotpo.main_widget_update_time | date: '%s' %}
+        {%- assign diff_seconds_from_last_main_widget_update = time_now | minus: yotpo_main_widget_last_updated %}
+        {%- if yotpo_live_time and diff_seconds_from_live < 86400 or yotpo_main_widget_last_updated and diff_seconds_from_last_main_widget_update < 86400 -%}
+          {%- assign yotpo_main_widget_obsolete = false %}
+        {%- else %}
+          {%- assign yotpo_main_widget_obsolete = true %}
+        {%- endif %}
+        {%- if yotpo_offload_content == 'yes' and yotpo_main_widget_obsolete != true -%}
+          {%- for field in product.metafields.yotpo_reviews -%}
+            {{ field | last }}
+          {%- endfor -%}
+        {%- endif %}
+      </div>
+    {% endcomment %}
+  </div>
+</div>
+
+
+{% assign add_to_cart_text = 'products.product.add_to_cart' | t %}
+
+{%
+  include 'product-json',
+  id: product.id,
+  add_to_cart_text: add_to_cart_text,
+  enable_history: true
+%}
+
+{% schema %}
+{
+  "name": "Product pages",
+  "class": "section-product",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_spb",
+      "label": "Show dynamic checkout button",
+      "info": "Each customer will see their preferred payment method from those available on your store, such as PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "product_cart_redirect",
+      "label": "Enable cart redirection",
+      "info": "Automatically sends users to the Cart page after adding a product.",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "center_product_details",
+      "label": "Center product title and price over content",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_zoom",
+      "label": "Enable image zoom",
+      "info": "The image zoom does not apply to the Product slideshow template",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "product_show_vendor",
+      "label": "Show names of vendors",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "linked_options",
+      "label": "Disable sold out variants",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "variants_style",
+      "label": "Variants style",
+      "options": [
+        {
+          "value": "select",
+          "label": "Dropdowns"
+        },
+        {
+          "value": "radio",
+          "label": "Buttons"
+        }
+      ],
+      "default": "select"
+    },
+    {
+      "type": "checkbox",
+      "id": "single_column_product",
+      "label": "Use single column layout if no variants",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_share_buttons",
+      "label": "Show share buttons",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "additional_info",
+      "name": "Additional info",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "[Additional info](https://s3.amazonaws.com/cdn.pixelunion.net/startup/additional-info-screenshot.png) appear wherever a customer can view product information. They’re perfect for linking to size charts, refund policies, or ordering details. Pick from six unique icons."
+        },
+        {
+          "type": "text",
+          "id": "info_text",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "info_url",
+          "label": "Link URL"
+        },
+        {
+          "type": "select",
+          "id": "info_icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "info",
+              "label": "Information (i)"
+            },
+            {
+              "value": "question-mark",
+              "label": "Question mark"
+            },
+            {
+              "value": "ruler",
+              "label": "Ruler"
+            },
+            {
+              "value": "envelope",
+              "label": "Envelope"
+            },
+            {
+              "value": "pencil",
+              "label": "Pencil"
+            },
+            {
+              "value": "shirt",
+              "label": "Shirt"
+            }
+          ],
+          "default": "info"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "additional_info",
+        "settings": {
+          "info_text": "Additional info"
+        }
+      }
+    ]
+  }
+}
+
+{% endschema %}

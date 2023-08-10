@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="{{ '5-reasons-how-it-works-updated.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="{{ '5-reasons-how-it-works-updated.css' | asset_url }}"></noscript>
+
+<div class="reasons-how-it-works">
+    <h4>how it works</h4>
+    
+    <div class="reasons-how-it-works__elements">
+        {% for block in section.blocks %}
+            <div class="reasons-how-it-works__item">
+                <img src="{{block.settings.image.src | img_url: '160x'}}" alt="" loading="lazy" />
+                <h5>{{block.settings.title}}</h5>
+                {{block.settings.paragraph}}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "5 Reasons How",
+        "settings": [
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Title"                
+            }
+        ],
+        "blocks": [
+            {
+                "name": "Item",
+                "type": "item",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Title"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "paragraph",
+                        "label": "Paragraph"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

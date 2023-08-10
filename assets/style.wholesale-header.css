@@ -1,0 +1,52 @@
+.ws-header {
+    padding: 70px 50px;
+    background: linear-gradient(180deg, #488267 48.03%, #366153 100%);
+}
+
+.ws-header__title {
+    max-width: 1040px;
+    color: #FFF;
+    font-size: 58px;
+    font-family: 'Route-66-NF';
+    line-height: 107%;
+    font-weight: 400;
+    letter-spacing: 2.32px;
+    margin: 0;
+}
+
+.ws-header__copy {
+    max-width: 580px;
+    margin: 10px 0;
+
+    color: #FFF;
+}
+
+.ws-header__ctas {
+    max-width: 660px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.ws-header__ctas a {
+    flex: 1;
+    min-width: 230px;
+    max-width: 320px;
+}
+
+@media(max-width: 768px) {
+    .ws-header {
+        padding: 30px 15px;
+    }
+
+    .ws-header__title {
+        font-size: 45px;
+        letter-spacing: 1.8px;
+    }
+
+    .ws-header__ctas a {
+        width: 100%;
+        min-width: 270px;
+    }
+
+}

@@ -1,0 +1,155 @@
+<section
+  class="module-container {{ section.settings.style }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="dynamic-inline-feature"
+>
+  <div class="module-inner module-inline-items home-inline-features">
+
+    {% if section.settings.title != blank %}
+      <h3 class="section-title">{{ section.settings.title | escape }}</h3>
+    {% endif %}
+
+    {% for block in section.blocks %}
+      {% capture current %}{% cycle 1, 2, 3 %}{% endcapture %}
+      {% assign feature_image = block.settings.image %}
+
+      <div class="module-inline-item home-inline-feature" {{ block.shopify_attributes }}>
+        {% if feature_image -%}
+          {% capture image_style %}max-width: {{ section.settings.max_image_width }}%;{% endcapture %}
+          {%
+            include 'rimg',
+            img: feature_image,
+            size: '660x275',
+            class: 'home-inline-image',
+            style: image_style,
+            lazy: true,
+          %}
+        {% else %}
+          <div
+            class="home-inline-image-placeholder-container"
+            style="width: {{- section.settings.max_image_width -}}%;
+            padding-bottom: {{- section.settings.max_image_width -}}%;">
+            {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg home-inline-image' }}
+          </div>
+        {% endif %}
+
+        <article class="home-inline-text">
+          {% if block.settings.title != blank %}
+            <h1 class="feature-title">{{ block.settings.title | escape }}</h1>
+          {% endif %}
+
+          {% if block.settings.caption != blank%}
+            <div class="rte">
+              <p>{{ block.settings.caption }}</p>
+            </div>
+          {% endif %}
+
+          {% if block.settings.button_link != blank and block.settings.button_text != blank %}
+            <p class="home-inline-cta">
+              <a href="{{ block.settings.button_link }}">{{ block.settings.button_text | escape }}</a>
+            </p>
+          {% endif %}
+        </article>
+      </div>
+    {% endfor %}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Text columns with images",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "default-style",
+          "label": "Default"
+        },
+        {
+          "value": "accent-style",
+          "label": "Accent"
+        },
+        {
+          "value": "contrast-style",
+          "label": "Contrast"
+        }
+      ],
+      "default": "default-style"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Text columns with images"
+    },
+    {
+      "type": "range",
+      "id": "max_image_width",
+      "min": 25,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Image width",
+      "default": 100
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_column",
+      "name": "Column",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Feature title"
+        },
+        {
+          "type": "richtext",
+          "id": "caption",
+          "label": "Text",
+          "default": "<p>Display up to six features with an option to toggle images on or off, and add unique calls to action.</p>"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Link URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Text",
+      "name": "Text columns with images",
+      "blocks": [
+        {
+          "type": "text_column"
+        },
+        {
+          "type": "text_column"
+        },
+        {
+          "type": "text_column"
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}

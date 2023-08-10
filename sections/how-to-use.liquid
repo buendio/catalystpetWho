@@ -1,0 +1,217 @@
+<style> 
+    .how-to-use__hero {
+        width: 100%;
+        height: calc(100vh - 90px);
+
+        background-image: url({{"bottom-trees-landing-page.png" | asset_url}});
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-color: #027747;
+        background-size: contain;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 100px;
+    }
+
+    .hero__content {
+        text-align: center;
+    }
+
+    .content__logo {
+        width: 300px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .content__header {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 64px;
+        line-height: 33px;
+        color: #ffffff;
+        letter-spacing: 1.46154px;
+    }
+
+    .content__subheader {
+        font-family: 'Domine';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 49px;
+        color: #DDAD26;
+    }
+
+    .content__cta {
+        width: 355px;
+        height: 54px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+
+        background: #D7AC40;
+        border: 1px solid #000000;
+        border-radius: 4px;
+
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 27px;
+        color: #000000;
+    }
+
+    .how-to-use__content {
+        background: #F2EEDD;
+        padding: 120px 80px;
+    }
+
+    .content__block {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        margin-bottom: 50px;
+    }
+
+    .content__block.reversed {
+        flex-direction: row-reverse;
+    }
+
+    .content__block:last-of-type {
+        margin-bottom: 0;
+    }
+
+    .block__richtext,
+    .block__image {
+        width: calc(100% / 2);
+    }
+
+    .block__richtext strong {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 46px;
+        line-height: 56px;
+        letter-spacing: normal;
+        color: #5D5D5D;
+    }
+
+    .block__richtext p {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 27.36px;
+        color: #5D5D5D;
+    }
+
+    .block__richtext a {
+        color: #5D5D5D;
+        text-decoration: underline;
+    }
+
+    @media(max-width: 1024px) {
+        .how-to-use__content {
+            background: #F2EEDD;
+            padding: 60px 40px;
+        }
+
+        .content__block {
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .block__richtext strong {
+            font-size: 32px;
+            line-height: 40px;
+        }
+
+        .block__richtext p {
+            font-size: 18px;
+            line-height: 20px;
+        }
+
+    }
+
+    @media(max-width: 768px) {
+        .content__header {
+            font-size: 35px;
+            line-height: 42px;
+        }
+
+        .content__subheader {
+            font-size: 20px;
+            line-height: 22px;
+            padding: 0 40px;
+        }
+
+        .content__cta {
+            width: 266px;
+        }
+
+        .content__block {
+            gap: 20px;
+            flex-direction: column-reverse !important;
+        }
+
+
+        .block__richtext,
+        .block__image {
+            width: 100%;
+        }
+    }
+</style>
+
+<div class="how-to-use__hero">
+    <div class="hero__content">
+        <img class="content__logo" src="{{'catalyst-logo-sharp.png' | asset_url}}" alt="" />
+        <h1 class="content__header">HOW IT WORKS</h1>
+        <p class="content__subheader">Use Our Account Portal To Manage Your Subscription</p>
+        <a href="https://catalystpet.com/account/login" class="content__cta">Log In</a>
+    </div>
+</div>
+
+<div class="how-to-use__content">
+    {% for block in section.blocks %}
+        <div class="content__block {%if block.settings.reversed%}reversed{%endif%}">
+            <div class="block__richtext">
+                {{block.settings.richtext}}
+            </div>
+
+            <div class="block__image">
+                <img src="{{block.settings.image.src | img_url: '1200x'}}" alt="{{block.settings.image.alt}}" />
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+
+{% schema %}
+    {
+        "name": "How To Use List",
+        "settings": [],
+        "blocks": [
+            {
+                "name": "How To Use Block",
+                "type": "card",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "richtext",
+                        "label": "Content"
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "reversed",
+                        "label": "Reverse",
+                        "default": false
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

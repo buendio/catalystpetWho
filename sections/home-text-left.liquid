@@ -1,0 +1,56 @@
+{% assign sectionImage = 'product-pattern-green.png' | asset_url %}
+{% if section.settings.image_left %}
+    {% assign sectionImage = section.settings.image_left | img_url: 'x560', scale: 2 %}
+{% endif %}
+
+<div class="cl-text-left" style="background-image: url({{sectionImage}});" data-product-image1="{{sectionImage}}" data-product-image2="{{ 'product-pattern-orange.png' | asset_url }}"  data-product-image3="{{ 'product-pattern-blue.png' | asset_url }}">
+    <div class="wrapper">
+        <h3>{{ section.settings.title }}</h3>
+        <div class="description">{{ section.settings.description }}</div>
+        <a href="{{ section.settings.button_url }}" class="try-catalyst">{{ section.settings.button_text }}</a>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image left, text right",
+  "class": "section-cl",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_left",
+      "label": "Image left"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "The highest performing, sustainable cat litter available."
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Catalyst is the only cat litter engineered from upcycled soft wood fiber to offer performance and peace of mind. It leads in  Superior Odor Control, Unrivaled Cat Acceptance, Great Clumping, Low Dust  and Light Weight</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Know more"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Text",
+      "name": "Image left, text right"
+    }
+  ]
+}
+
+{% endschema %}

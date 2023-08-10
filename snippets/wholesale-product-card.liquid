@@ -1,0 +1,50 @@
+<div class="product-card">
+    <div class="product-card__image-wrapper">
+        <img src="{{ product.featured_image | img_url: '400x280' }}" alt="" />
+    </div>
+
+    <div class="product-card__details">
+        <div class="product-card__type">Soft Wood Cat Litter</div>
+        <div class="product-card__title">{{ product.title }}</div>
+        
+        <form id="productForm" action="/cart/add" method="post" onsubmit="return handleSubmit(event, this)">
+            <div class="product-card__qty-wrapper">
+                <div class="qty__label">{{ product.metafields.custom.wholesale_pack }}</div>
+                <div class="qty__counter">
+                    <span class="qty__counter--minus" onclick="decrementQty('{{ product.id }}')">
+                        {% render "icon-ant-minus" %}
+                    </span>
+
+                    <input type="number" min="1" id="qty-{{ product.id }}" name="quantity" value="1" class="qty__counter--value" disabled>
+
+                    <span class="qty__counter--plus" onclick="incrementQty('{{ product.id }}')">
+                        {% render "icon-ant-plus" %}
+                    </span>
+                </div>
+            </div>
+            <div class="product-card__frequency">
+                <style>
+                    select { 
+                        background: url("{{'icon-select-arrow.svg' | asset_url}}") no-repeat right center;
+                        display: none !important;
+                    }
+                </style>
+                <select name="selling_plan">
+                    {% for selling_plan in product.selling_plan_groups[0].selling_plans %}
+                        <option value="{{ selling_plan.id }}:{{selling_plan.options[0].value}}">Frequency: {{ selling_plan.name | replace: "Delivery", "" | capitalize }}</option>
+                    {% endfor %}
+                </select>
+
+                <p class="ws-paragraph">Delivered every month.</p>
+                <p class="ws-paragraph">No commitment, cancel anytime!</p>
+            </div>
+
+            <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+
+            <button class="product-card__cta" type="submit">
+                <span>Add to cart</span> 
+                <span id="product-price-{{ product.id }}" data-price={{product.price}}>{{ product.price | money }}</span>
+            </button>
+        </form>
+    </div>
+</div>

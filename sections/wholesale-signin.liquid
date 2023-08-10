@@ -1,0 +1,70 @@
+{{ "style.wholesale-global.css" | asset_url | stylesheet_tag }}
+{{ "style.wholesale-signin.css" | asset_url | stylesheet_tag }}
+
+<div class="ws-signin container">
+    <div class="ws-signin__article">
+        <h1 class="signin-article__heading">{{ section.settings.article_heading }}</h1>
+        <p class="signin-article__copy ws-paragraph">{{ section.settings.article_copy }}</p>
+        <div class="signin-article__media">
+            <img src="{{ section.settings.article_image.src | img_url: '726x378' }}" alt="" />
+        </div>
+    </div>
+
+    <div class="ws-signin__form">
+        <h2 class="signin-form__heading">{{ section.settings.heading }}</h2> 
+        <p class="signin-form__copy ws-paragraph">
+            {{ section.settings.copy }}
+        </p>
+
+        {% form 'customer_login' %}
+            <fieldset>
+                <label class="visually-hidden" for="email">Email</label>
+                <input type="text" id="email" placeholder="Email" class="w-6" name="customer[email]" />
+                <label class="visually-hidden" for="password">Password</label>
+                <input type="password" id="password" placeholder="Password" class="w-6" name="customer[password]" />
+            </fieldset>
+            
+            <button type="submit" class='btn--submit'>Login</button>
+        {% endform %}
+
+        <div class="signin-form__footer ws-paragraph">
+            <span class="form-footer__msg">Don't have an account?</span>
+            <a href="/pages/wholesale-login" class="form-footer__singup">Sign up</a>
+            <a href="/pages/wholesale-recover" class="form-footer__forgot-pass">Forgot password</a>
+        </div>
+
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Wholesale Signin",
+        "settings": [
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading"
+            },
+            {
+                "type": "text",
+                "id": "copy",
+                "label": "Copy"
+            },
+            {
+                "type": "image_picker",
+                "id": "article_image",
+                "label": "Article Image"
+            },
+            {
+                "type": "text",
+                "id": "article_heading",
+                "label": "Article Heading"
+            },
+            {
+                "type": "text",
+                "id": "article_copy",
+                "label": "Article Copy"
+            }
+        ]
+    }
+{% endschema %}

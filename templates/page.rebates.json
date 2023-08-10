@@ -1,0 +1,287 @@
+{
+  "sections": {
+    "main": {
+      "type": "rebates-hero",
+      "blocks": {
+        "422bc405-2f7d-4030-bf1a-9ab5d202f371": {
+          "type": "steps",
+          "settings": {
+            "title": "Step 1",
+            "subtitle": "<p>Submit your <\/p><p>rebate <a href=\"https:\/\/catalystpet.grabmyrebate.com\" target=\"_blank\" title=\"https:\/\/catalystpet.grabmyrebate.com\">here<\/a><\/p>"
+          }
+        },
+        "6d502c89-bc5f-4d26-b79f-43480014135f": {
+          "type": "steps",
+          "settings": {
+            "title": "Step 2",
+            "subtitle": "<p>Enter the requested<\/p><p>information<\/p>"
+          }
+        },
+        "ddd63e65-9ae9-498b-b0be-7f7029ee85a8": {
+          "type": "steps",
+          "settings": {
+            "title": "Step 3",
+            "subtitle": "<p>Upload a photo of<\/p><p>your receipt<\/p>"
+          }
+        },
+        "397f9ce9-5d22-4cdf-bee0-cbb431d7719d": {
+          "type": "steps",
+          "settings": {
+            "title": "Step 4",
+            "subtitle": "<p>Enter your personal<\/p><p>information, review and submit!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "422bc405-2f7d-4030-bf1a-9ab5d202f371",
+        "6d502c89-bc5f-4d26-b79f-43480014135f",
+        "ddd63e65-9ae9-498b-b0be-7f7029ee85a8",
+        "397f9ce9-5d22-4cdf-bee0-cbb431d7719d"
+      ],
+      "settings": {
+        "hero_image": "shopify:\/\/shop_images\/rebates-hero.png",
+        "page_title": "Save Even More Money, Save The Planet!",
+        "heading": "CLAIM YOUR CATALYST CAT LITTER REBATE!",
+        "paragraph": "Get a $3.00 rebate on one bag of Catalyst Cat Litter purchased at participating Costco stores.",
+        "cta_title": "Submit Your Claim!",
+        "cta_url": "https:\/\/catalystpet.grabmyrebate.com",
+        "finat_step_title": "Submit Your Claim Now"
+      }
+    },
+    "locator": {
+      "type": "rebates-locator",
+      "blocks": {
+        "4dbe29df-4d0c-48ab-b8a8-43fa0be30a57": {
+          "type": "store",
+          "settings": {
+            "title": "VAN NUYS",
+            "state": "CA",
+            "address": "6100 SEPULVEDA BLVD",
+            "zip": "91411-2503"
+          }
+        },
+        "1a9904a4-7517-44fa-9c4e-a838fd43263a": {
+          "type": "store",
+          "settings": {
+            "title": "SIMI VALLEY",
+            "state": "CA",
+            "address": "2660 PARK CENTER DR",
+            "zip": "93065-6207"
+          }
+        },
+        "773da0c0-a786-4902-ab86-eec4cb43f679": {
+          "type": "store",
+          "settings": {
+            "title": "LOS FELIZ",
+            "state": "CA",
+            "address": "2901 LOS FELIZ BLVD",
+            "zip": "90039-1502"
+          }
+        },
+        "99b1b9ad-e74b-43cb-9f25-dbeafd727dd5": {
+          "type": "store",
+          "settings": {
+            "title": "FOUNTAIN VALLEY",
+            "state": "CA",
+            "address": "17900 NEWHOPE ST",
+            "zip": "92708-5404"
+          }
+        },
+        "098d9631-eef6-43e4-96f2-2fad19a4bd55": {
+          "type": "store",
+          "settings": {
+            "title": "OXNARD",
+            "state": "CA",
+            "address": "2001 E VENTURA BLVD",
+            "zip": "93036-1813"
+          }
+        },
+        "d974a299-5d86-4213-813e-59ea530ca208": {
+          "type": "store",
+          "settings": {
+            "title": "ALHAMBRA",
+            "state": "CA",
+            "address": "2207 W COMMONWEALTH AVE",
+            "zip": "91803-1302"
+          }
+        },
+        "27a37c75-7e20-48e5-97bd-c9bc6b9e338a": {
+          "type": "store",
+          "settings": {
+            "title": "CORONA",
+            "state": "CA",
+            "address": "480 N MCKINLEY ST",
+            "zip": "92879-1291"
+          }
+        },
+        "b3cfec94-fdd2-4789-a78e-69976f2a2166": {
+          "type": "store",
+          "settings": {
+            "title": "MORENO VALLEY",
+            "state": "CA",
+            "address": "12700 DAY ST",
+            "zip": "92553-7531"
+          }
+        },
+        "10aa33a7-aee4-4759-8a2f-c07db04d8e48": {
+          "type": "store",
+          "settings": {
+            "title": "SAN BERNARDINO",
+            "state": "CA",
+            "address": "1099 E HOSPITALITY LN",
+            "zip": "92408-2836"
+          }
+        },
+        "0a7f0bb2-d914-4bdb-ad97-7b1616565722": {
+          "type": "store",
+          "settings": {
+            "title": "CULVER CITY",
+            "state": "CA",
+            "address": "13463 WASHINGTON BLVD",
+            "zip": "90292-5658"
+          }
+        },
+        "1cee9089-94db-4386-8e9b-185a3c512bfa": {
+          "type": "store",
+          "settings": {
+            "title": "HAWTHORNE",
+            "state": "CA",
+            "address": "14501 HINDRY AV.",
+            "zip": "90250"
+          }
+        },
+        "664cc250-5633-4f70-9fe7-3cba8995e5bb": {
+          "type": "store",
+          "settings": {
+            "title": "BURBANK",
+            "state": "CA",
+            "address": "1051 W BURBANK BLVD",
+            "zip": "91506-1421"
+          }
+        },
+        "9e849f7c-eb7e-4b2c-9809-7c1c83cd0d67": {
+          "type": "store",
+          "settings": {
+            "title": "BAKERSFIELD",
+            "state": "CA",
+            "address": "3800 ROSEDALE HWY",
+            "zip": "93308-6235"
+          }
+        },
+        "9d9fd22b-4efc-4ca0-af2c-a93b59dec8d4": {
+          "type": "store",
+          "settings": {
+            "title": "SAN LUIS OBISPO",
+            "state": "CA",
+            "address": "1540 FROOM RANCH WAY",
+            "zip": "93405"
+          }
+        },
+        "8a3d5dca-20b0-497f-8788-12fb8da12ab9": {
+          "type": "store",
+          "settings": {
+            "title": "LANCASTER",
+            "state": "CA",
+            "address": "1141 W AVENUE L",
+            "zip": "93534-7077"
+          }
+        },
+        "6c8f16f6-1f1d-4cfe-834a-1bcb9d4db688": {
+          "type": "store",
+          "settings": {
+            "title": "VICTORVILLE",
+            "state": "CA",
+            "address": "14555 VALLEY CENTER DR",
+            "zip": "92395-4216"
+          }
+        },
+        "ee9ffc08-f796-4d8d-bcc2-0ea065142554": {
+          "type": "store",
+          "settings": {
+            "title": "SAN DIMAS",
+            "state": "CA",
+            "address": "520 N LONE HILL AVE",
+            "zip": "91773-1725"
+          }
+        },
+        "3e84967b-8e1b-4803-8b74-8c58b867d8b6": {
+          "type": "store",
+          "settings": {
+            "title": "LAKEWOOD",
+            "state": "CA",
+            "address": "340 LAKEWOOD CENTER MALL",
+            "zip": "90712-2409"
+          }
+        },
+        "791538f2-cdac-4037-b438-cbfb7d95fe59": {
+          "type": "store",
+          "settings": {
+            "title": "TORRANCE",
+            "state": "CA",
+            "address": "2640 LOMITA BLVD",
+            "zip": "90505"
+          }
+        },
+        "fc02dda4-b3ca-4372-9fdc-2c059ffb6427": {
+          "type": "store",
+          "settings": {
+            "title": "SANTA MARIA",
+            "state": "CA",
+            "address": "1700 S BRADLEY RD",
+            "zip": "93454"
+          }
+        },
+        "3236e8e8-48b9-407f-8c8c-133094af0e80": {
+          "type": "store",
+          "settings": {
+            "title": "MONTEREY PARK",
+            "state": "CA",
+            "address": "2000 MARKET PLACE DR",
+            "zip": "91755"
+          }
+        }
+      },
+      "block_order": [
+        "4dbe29df-4d0c-48ab-b8a8-43fa0be30a57",
+        "1a9904a4-7517-44fa-9c4e-a838fd43263a",
+        "773da0c0-a786-4902-ab86-eec4cb43f679",
+        "99b1b9ad-e74b-43cb-9f25-dbeafd727dd5",
+        "098d9631-eef6-43e4-96f2-2fad19a4bd55",
+        "d974a299-5d86-4213-813e-59ea530ca208",
+        "27a37c75-7e20-48e5-97bd-c9bc6b9e338a",
+        "b3cfec94-fdd2-4789-a78e-69976f2a2166",
+        "10aa33a7-aee4-4759-8a2f-c07db04d8e48",
+        "0a7f0bb2-d914-4bdb-ad97-7b1616565722",
+        "1cee9089-94db-4386-8e9b-185a3c512bfa",
+        "664cc250-5633-4f70-9fe7-3cba8995e5bb",
+        "9e849f7c-eb7e-4b2c-9809-7c1c83cd0d67",
+        "9d9fd22b-4efc-4ca0-af2c-a93b59dec8d4",
+        "8a3d5dca-20b0-497f-8788-12fb8da12ab9",
+        "6c8f16f6-1f1d-4cfe-834a-1bcb9d4db688",
+        "ee9ffc08-f796-4d8d-bcc2-0ea065142554",
+        "3e84967b-8e1b-4803-8b74-8c58b867d8b6",
+        "791538f2-cdac-4037-b438-cbfb7d95fe59",
+        "fc02dda4-b3ca-4372-9fdc-2c059ffb6427",
+        "3236e8e8-48b9-407f-8c8c-133094af0e80"
+      ],
+      "settings": {
+        "locator_title": "FIND A PARTICIPATING COSTCO NEAR YOU"
+      }
+    },
+    "terms": {
+      "type": "rebates-terms",
+      "settings": {
+        "terms_title": "Terms and Conditions",
+        "terms_subtitle": "Get $3 back.",
+        "terms": "<p>* Must buy ONE (1) 30lb. bag of Catalyst Cat Litter in-store from Costco Wholesale.<\/p><p><\/p><p>This rebate offer is valid for residents of the United States who are 18 years of age or older. Offer is valid for ONE (1) 30lb. bag of Catalyst Cat Litter purchased from Costco Wholesale. Maximum rebate value not to exceed $3.00. The offer is only valid for purchases made between April 1, 2023 and May 31, 2023, and is limited to one rebate per person. This rebate offer cannot be combined with any other offer or promotion. Rebates will be given in the form of virtual credit or a digital payment directly to the recipient’s active PayPal or Venmo account. The recipient must provide a valid email address to receive the rebate. The rebate can be redeemed only online through www.catalystpet.com, and must include an image of the original receipt and a completed rebate form. The offer is valid only while supplies last, and may be discontinued or modified at any time without prior notice. The rebate is subject to all applicable federal, state, and local laws and regulations, and is void where prohibited or restricted by law. By submitting a rebate claim, the recipient agrees to be bound by these terms and conditions. The rebate issuer reserves the right to deny any rebate claim that does not comply with these terms and conditions. Any disputes arising from this rebate offer will be resolved under the laws of the State of Colorado, and the exclusive jurisdiction and venue for any such disputes shall be in the state or federal courts located in Boulder County, Colorado.<\/p>",
+        "cta_title": "Submit Your Claim!",
+        "cta_url": "https:\/\/catalystpet.grabmyrebate.com"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "locator",
+    "terms"
+  ]
+}

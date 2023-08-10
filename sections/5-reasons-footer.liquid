@@ -1,0 +1,141 @@
+{% style %}
+    .reasons-footer {
+        position: relative;
+        background: #037847;
+        padding: 36px 0;
+        overflow: hidden;
+    }    
+
+    .bottom-trees {
+        width: 100%;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    .reasons-footer h4 {
+        max-width: 1200px;
+        margin: auto;
+        font-family: 'Domine';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 60px;
+        text-align: center;
+        letter-spacing: -0.02em;
+        color: #FFFFFF;
+        padding: 0 20px;
+        text-transform: none;
+    }
+
+    .reasons-footer__person {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .reasons-footer__person p {
+        margin: 0;
+        font-family: 'Futura';
+        font-style: normal;
+    }
+
+    .reasons-footer__person .person__name {
+        font-family: 'FuturaMedium';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 33px;
+        text-align: center;
+        color: #FFFFFF;
+
+        margin-top: 10px;
+    }
+
+    .reasons-footer__person .person__position {
+        font-family: 'FuturaMedium';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+    @media(max-width: 700px) {
+        .reasons-footer {
+            padding: 34px 0;
+        }    
+
+        .reasons-footer h4 {
+            font-size: 30px;
+            line-height: 38px;
+        }
+    }
+
+    @media(max-width: 550px) {
+        .bottom-trees {
+            max-width: 1440px;
+            min-width: 1440px;
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+{% endstyle %}
+
+<div class="reasons-footer">
+    <h4>{{section.settings.heading}}</h4>
+    <img class="bottom-trees" src="{{'5-reasons-footer.png' | asset_url}}" alt="" />
+
+    <div class="reasons-footer__person">
+        <p class="person__name">{{section.settings.person_name}}</p>
+        <p class="person__position">{{section.settings.person_position}}</p>
+    </div>
+</div>
+
+
+{% schema %}
+    {
+        "name": "5 Reasons Hero",
+        "settings": [
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Banner Heading"
+            },
+            {
+                "type": "image_picker",
+                "id": "person_avatar",
+                "label": "Avatar"
+            },
+            {
+                "type": "text",
+                "id": "person_name",
+                "label": "Person Name"
+            },
+            {
+                "type": "text",
+                "id": "person_position",
+                "label": "Person Position"
+            }
+        ],
+        "blocks": [
+            {
+                "name": "Label Image",
+                "type": "image_picker",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "label_image",
+                        "label": "Hero Image"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

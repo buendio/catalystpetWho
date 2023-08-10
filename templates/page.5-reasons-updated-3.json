@@ -1,0 +1,209 @@
+{
+  "sections": {
+    "main": {
+      "type": "5-reasons-hero-updated-2",
+      "settings": {
+        "hero_image": "shopify:\/\/shop_images\/image_38.png",
+        "title": "5 reasons",
+        "heading": "Why Cat Owners Are Ditching Their Clay Litter For This Wood Based Litter.",
+        "paragraph": "",
+        "cta_title": "Click here to shop now",
+        "cta_title_mobile": "Shop Now",
+        "cta_url": "shopify:\/\/products\/cat-litter-healthy-cat-formula",
+        "additional_text": "<p>Be sure to use code \"<strong>REVOLUTION50<\/strong>\" at checkout for 50% off! <\/p>",
+        "additional_text_mobile": "<p>Use Code \"<strong>REVOLUTION50<\/strong>\" for 50% off!<\/p>",
+        "additional_text_extra": "Thousands of cat owners everywhere are making the switch from clay to wood for a cheaper, more sustainable, and better odor controlling litter."
+      }
+    },
+    "main-reasons": {
+      "type": "5-reasons-details-updated",
+      "blocks": {
+        "c68ebafd-fd9f-43bc-b367-1a41b2b3d923": {
+          "type": "reason",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cat-image1.png",
+            "title": "HEALTHIER FOR YOUR CAT - AND FOR YOU, TOO!",
+            "description": "<p>Clay litters, particularly those made from bentonite, can release silica dust when used and disposed of, which can be harmful to both cats and humans. Inhaling silica dust can cause respiratory issues, such as lung inflammation and silicosis. Additionally, ingesting clay litter, which happens when cats lick their paws after using a litter box, can lead to gastrointestinal problems. <\/p><p>Natural litters like Catalyst do not release silica dust and can be safely ingested. As a result, they can be better for you and your cat's health! For more information about how clay is harmful to cat and human health, read about it <a href=\"https:\/\/www.shoppetplanet.com\/education\/litter-safety-making-an-enducated-choice\/#:~:text=Some%20low%2Dquality%20clay%20litters,breath%20and%20reduced%20lung%20capacity\" target=\"_blank\" title=\"https:\/\/www.shoppetplanet.com\/education\/litter-safety-making-an-enducated-choice\/#:~:text=Some%20low%2Dquality%20clay%20litters,breath%20and%20reduced%20lung%20capacity\">here<\/a>, and for a recent scientific paper on the dangers of clay litter, read more <a href=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/36232221\/\" target=\"_blank\" title=\"https:\/\/pubmed.ncbi.nlm.nih.gov\/36232221\/\">here<\/a>.<\/p>"
+          }
+        },
+        "e274b911-8ea3-403d-ba42-1d97b65ef2be": {
+          "type": "reason",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cat-image6.png",
+            "title": "Better For The Environment",
+            "description": "<p>Did you know that every year, five BILLION pounds of clay are stripmined in the United States alone for use in cat litter? Not only do these harmful mining practices damage and pollute ecosystems, but clay litter is not biodegradable and ends up in landfills. Catalyst Litter, however, is made from upcycled wood waste and is fully biodegradable, making it a more sustainable choice from start to finish. By switching to Catalyst Litter, cat owners can feel good about their choice - not only for their cats - but also for the environment.<\/p>"
+          }
+        },
+        "1e378b89-a712-4bcb-a3f2-1a5eae70c690": {
+          "type": "reason",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cat-image3.png",
+            "title": "4x More Effective Than Clay Litter",
+            "description": "<p>Catalyst Litter is 4x more absorbent than clay, and also outperforms clay when it comes to our superior clumping.  With Catalyst, you’ll have less wasted litter, better odor control, and better clumping than clay litter.<\/p>"
+          }
+        },
+        "d7dc3773-ad2c-43b1-94c1-992e28dfc948": {
+          "type": "reason",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cat-imate1.png",
+            "title": "Better Performance for Less Money",
+            "description": "<p>While our litter seems pricy at first, with 4x the absorption, Catalyst will actually end up saving you money each month! Because you end up using much less litter, <strong>on average, Catalyst is 37% cheaper per use than the leading clumping clay litters on the market.<\/strong> Switch today and start saving!<\/p>"
+          }
+        },
+        "47f1a8b6-afb4-4715-86d3-70816a73da10": {
+          "type": "reason",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cat-image5.png",
+            "title": "Never Worry About Smell Again",
+            "description": "<p>Catalyst’s odor control means you’ll never have to worry about a smelly litterbox again. Choose from 3 formulas that best fit your needs. Healthy Cat has a soft pine scent, Multi-Cat is great for households with more than one cat, and Unscented is purr-fect for a smell-free litter!<\/p>"
+          }
+        },
+        "e14cb8a2-0947-4fe3-b794-bc1bd8b6ff11": {
+          "type": "reason",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cat-image4.png",
+            "title": "Hundreds Of 5 Star Reviews",
+            "description": "<p>Thousands of cat lovers across the country have already made the switch to Catalyst, and are seeing for themselves how much better it is than clay. From better clumping and odor protection to unrivaled cat acceptance, <strong>see why we have a 4.8 star rating from thousands of customers!<\/strong><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "c68ebafd-fd9f-43bc-b367-1a41b2b3d923",
+        "e274b911-8ea3-403d-ba42-1d97b65ef2be",
+        "1e378b89-a712-4bcb-a3f2-1a5eae70c690",
+        "d7dc3773-ad2c-43b1-94c1-992e28dfc948",
+        "47f1a8b6-afb4-4715-86d3-70816a73da10",
+        "e14cb8a2-0947-4fe3-b794-bc1bd8b6ff11"
+      ],
+      "settings": {}
+    },
+    "main-banner": {
+      "type": "5-reasons-banner-updated-2",
+      "blocks": {
+        "8b76f609-430a-4130-8f1a-6326895b829e": {
+          "type": "image_picker",
+          "settings": {
+            "label_image": "shopify:\/\/shop_images\/EarthFriendly_1.png"
+          }
+        },
+        "e2420a70-d436-4326-b301-f79e21bf275a": {
+          "type": "image_picker",
+          "settings": {
+            "label_image": "shopify:\/\/shop_images\/4x_Healthy_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "8b76f609-430a-4130-8f1a-6326895b829e",
+        "e2420a70-d436-4326-b301-f79e21bf275a"
+      ],
+      "settings": {
+        "banner_image": "shopify:\/\/shop_images\/catalyst-5r-promoimg1.png",
+        "banner_image_mobile": "shopify:\/\/shop_images\/product-pattern_x560_2x_1_768x_eb697980-690b-44c4-9f6e-fc93dbf84fdb.webp",
+        "heading": "Get 50% Off Your First Month",
+        "paragraph": "Join the revolution today, use code \"REVOLUTION50\" at checkout and get 50% off your first purchase when you subscribe! You can cancel anytime and we'll remind you before upcoming orders, so subscribe worry free!",
+        "cta_title": "Get Started",
+        "cta_url": "shopify:\/\/products\/cat-litter-healthy-cat-formula"
+      }
+    },
+    "main-how-it-works": {
+      "type": "5-reasons-how-it-works-updated-2",
+      "blocks": {
+        "cffe564c-bfe6-46da-a88a-56319fa56e7c": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1_17c71fba-0654-4972-a424-a77f26836307.png",
+            "title": "SUBSCRIBE & ACTIVATE",
+            "paragraph": "<p>When you first subscribe to Catalyst you’ll be prompted by email to activate your account. This will give you access to your account portal through our website where you can manage your subscription.<\/p>"
+          }
+        },
+        "a6fec678-6a8a-4a50-87de-13e8671dd4a1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2_9c249748-a592-4c61-8768-5b04efa4305b.png",
+            "title": "MANAGE YOUR SUBSCRIPTION",
+            "paragraph": "<p>Once you’ve activated your account, you can log in via our website to manage your subscription settings.After logging in, click on the “Manage Subscription” button from your account portal and you’ll be brought to this screen. Here you can manage all aspects of your plan including payment method, switching your formula or updating your billing\/shipping address.<\/p>"
+          }
+        },
+        "446a5f59-0b23-4931-92f8-9f693168e8a7": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3_8bc6d6ec-f223-4a31-8d91-445687b4fe54.png",
+            "title": "PAUSE OR SKIP DELIVERIES AS NEEDED",
+            "paragraph": "<p>Inside your <a href=\"https:\/\/catalystpet.com\/account\" target=\"_blank\" title=\"https:\/\/catalystpet.com\/account\">account portal<\/a>, click on “Delivery Schedule” to see all your future deliveries. From here, you can decide to “skip” if you have litter still remaining from your first month or it’s taking a little longer for your furry friend to adapt.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "cffe564c-bfe6-46da-a88a-56319fa56e7c",
+        "a6fec678-6a8a-4a50-87de-13e8671dd4a1",
+        "446a5f59-0b23-4931-92f8-9f693168e8a7"
+      ],
+      "settings": {
+        "title": "How it works",
+        "cta_title": "Get Started",
+        "cta_url": "shopify:\/\/products\/cat-litter-healthy-cat-formula"
+      }
+    },
+    "main-footer": {
+      "type": "5-reasons-footer-updated",
+      "blocks": {
+        "2e9aed13-0e08-4f78-99c1-de911d0423e0": {
+          "type": "reviews",
+          "settings": {
+            "heading": "\"This is the best cat litter ever conceived. All natural, no messy dust or tracks from paws and the packaging is very cool!\"",
+            "person_name": "Shanna P.",
+            "person_position": ""
+          }
+        },
+        "2aaa17b7-effd-4006-98c8-2166ff6e1952": {
+          "type": "reviews",
+          "settings": {
+            "heading": "\"Like this much better than our clay based litter. Smells kind of like woodchips. Cats are happy.\"",
+            "person_name": "Carla G.",
+            "person_position": ""
+          }
+        },
+        "0c4cc9ed-88ba-4623-a42b-647cd9a6e9dd": {
+          "type": "reviews",
+          "settings": {
+            "heading": "\"Awesome product, can't believe it took so long for someone to come up with such a planet friendly solution. My cat loves it, its clean, no odor, easy to clean up. I love it.\"",
+            "person_name": "Doug H.",
+            "person_position": ""
+          }
+        },
+        "cd600cc3-6d7a-489a-aa25-9948e1baf7d0": {
+          "type": "reviews",
+          "settings": {
+            "heading": "\"It actually saves me money -- this stuff works. The absorption is incredible. It works so well I have to set a reminder to clean the boxes because I can no longer smell cat box in my house. Excellent product!\"",
+            "person_name": "John",
+            "person_position": ""
+          }
+        },
+        "9713f9d6-17f7-4717-8cb3-fb923eac5664": {
+          "type": "reviews",
+          "settings": {
+            "heading": "\"I am really pleased to have found this product. It is clean smelling, completely covers odors, and long lasting. I have switched for good!\"",
+            "person_name": "Lois",
+            "person_position": ""
+          }
+        }
+      },
+      "block_order": [
+        "2e9aed13-0e08-4f78-99c1-de911d0423e0",
+        "2aaa17b7-effd-4006-98c8-2166ff6e1952",
+        "0c4cc9ed-88ba-4623-a42b-647cd9a6e9dd",
+        "cd600cc3-6d7a-489a-aa25-9948e1baf7d0",
+        "9713f9d6-17f7-4717-8cb3-fb923eac5664"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "main-reasons",
+    "main-banner",
+    "main-how-it-works",
+    "main-footer"
+  ]
+}

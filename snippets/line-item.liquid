@@ -1,0 +1,111 @@
+{% if interactive == blank %}
+  {% assign interactive = true %}
+{% endif %}
+
+<div class="line-item" data-line-item="{{ line_item.key }}">
+  <figure class="line-item-figure">
+    <a
+      class="line-item-anchor"
+      href="{{ line_item.url }}"
+    >
+      {%
+        include 'rimg',
+        class: 'line-item-image',
+        img: line_item.image,
+        alt: line_item.product.title,
+        size: '100x'
+      %}
+    </a>
+  </figure>
+
+  <div class="line-item-info">
+    <div class="line-item-titling-remove">
+      <div class="line-item-titling">
+        {% assign line_item_title = line_item.product.title %}
+        {% if line_item_title == blank %}
+          {% assign line_item_title = line_item.title %}
+        {% endif %}
+        {% assign line_item_options = '' %}
+        {% unless line_item.product.has_only_default_variant %}
+          {% if line_item.variant.option1 != blank %}
+            {% assign line_item_options = line_item.variant.option1 %}
+          {% endif %}
+          {% if line_item.variant.option2 != blank %}
+            {% assign line_item_options = line_item_options | append: ', ' | append: line_item.variant.option2 %}
+          {% endif %}
+          {% if line_item.variant.option3 != blank %}
+            {% assign line_item_options = line_item_options | append: ', ' | append: line_item.variant.option3 %}
+          {% endif %}
+        {% endunless %}
+
+        <span class="line-item-title">{{ line_item_title }}</span>
+        {% if line_item_options != blank %}
+          <span class="line-item-options">{{ line_item_options }}</span>
+        {% endif %}
+      </div>
+
+      {% if interactive %}
+        <button class="line-item-remove" data-line-item-remove>{{ 'cart.item.remove' | t }}</button>
+      {% endif %}
+    </div>
+
+    <div class="line-item-prices-discounts">
+      <div class="line-item-prices">
+        {% if line_item.original_price != line_item.final_price %}
+          <span class="line-item-original-price money">{{ line_item.original_price | money }}</span>
+        {% endif %}
+        <span class="line-item-final-price money">{{ line_item.final_price | money }}</span>
+      </div>
+
+      {% if line_item.line_level_discount_allocations.size > 0 %}
+        <div class="line-item-discounts">
+          {% for discount_allocation in line_item.line_level_discount_allocations %}
+            <span class="line-item-discount">
+              {%- include 'icon-discount-tag' -%}
+              {{ discount_allocation.discount_application.title }} (-<span class="money">{{ discount_allocation.amount | money }}</span>)
+            </span>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="line-item-quantity">
+      {% if interactive %}
+        <input
+          type="number"
+          name="updates[]"
+          class="line-item-quantity-input"
+          value="{{ line_item.quantity }}" size="1"
+          aria-label="{{ 'cart.item.quantity' | t }}"
+          data-line-item-quantity-input
+        >
+        {% comment %}
+        <button
+          class="line-item-quantity-decrement icon"
+          aria-label="{{ 'cart.item.decrement' | t }}"
+          data-line-item-quantity-decrement
+        >
+          &#57364;
+        </button>
+        <button
+          class="line-item-quantity-increment icon"
+          aria-label="{{ 'cart.item.increment' | t }}"
+          data-line-item-quantity-increment
+        >
+          &#57365;
+        </button>
+        {% endcomment %}
+      {% else %}
+        <span class="line-item-quantity-span-w-label">{{ 'cart.item.quantity' | t }}: {{ line_item.quantity }}</span>
+        <span class="line-item-quantity-span">{{ line_item.quantity }}</span>
+      {% endif %}
+    </div>
+
+    <div class="line-item-line-prices">
+      {% if line_item.original_line_price != line_item.final_line_price %}
+        <span class="line-item-original-line-price money">{{ line_item.original_line_price | money }}</span>
+      {% endif %}
+      <span class="line-item-final-line-price money">{{ line_item.final_line_price | money }}</span>
+    </div>
+  </div>
+</div>

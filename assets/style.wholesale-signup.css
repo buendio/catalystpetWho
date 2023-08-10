@@ -1,0 +1,125 @@
+.ws-signup-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 25px;
+    padding: var(--sectionPadding);
+}
+
+.ws-signup-form__media {
+    flex: 1;
+}
+
+.ws-signup-form__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 800px;
+    object-fit: cover;
+    border-radius: 11px;
+}
+
+.ws-signup-form__form {
+    width: 570px;
+}
+
+.signup-form__title {
+    color: #037847;
+    font-size: 42px;
+    font-family: "Route-66-NF";
+    line-height: 120%;
+    font-weight: 400;
+    letter-spacing: normal;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.ws-steps {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap: 25px;
+    padding: var(--sectionPadding);
+    background: #EDF4F1;
+}
+
+.ws-steps__article {
+    width: 575px;
+}
+
+.ws-steps__article svg {
+    display: block;
+    margin: 10px auto;
+}
+
+.steps-artice__item {
+    background-color: #FFF;
+    border-radius: 11px;
+    padding: 15px;
+    text-align: center;
+}
+
+.steps-artice__item h3 {
+    color: #027747;
+    font-size: 28px;
+    font-family: "Route-66-NF";
+    line-height: 130%;
+    font-weight: 400;
+    letter-spacing: normal;
+    letter-spacing: 1.12px;
+    margin: 0;
+}
+
+.steps-artice__item p {
+    color: #2A2A2A;
+    font-size: 16px;
+    font-family: Futura;
+    font-weight: 500;
+    line-height: 28px;
+    margin: 10px 0 0;
+}
+
+.ws-steps__media {
+    flex: 1;
+}
+
+.ws-steps__media img {
+    width: 100%;
+    height: 100%;
+    border-radius: 11px;
+    object-fit: cover;
+}
+
+input[name="confirm_crpp"] + span .underline,
+input[name="confirm_cmp"] + span .underline {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media(max-width: 1100px) {
+    .ws-signup-form__form {
+        width: 450px;
+    }
+
+    .ws-steps__article {
+        width: 450px;
+    }
+}
+
+@media(max-width: 768px) {
+    .ws-signup-form__media {
+        width: 100%;
+        height: 373px;
+        flex: auto;
+    }
+
+    .ws-steps__media {
+        width: 100%;
+        height: 373px;
+        flex: auto;
+    }
+    
+    .ws-signup-form__form,
+    .ws-steps__article {
+        width: 100%;
+    }
+}

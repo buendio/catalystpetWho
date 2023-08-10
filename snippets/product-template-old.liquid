@@ -1,0 +1,148 @@
+<script>
+  const newTemplateProductWrap = document.querySelector(".product-wrap.template-new");
+  if (getComputedStyle(newTemplateProductWrap).display == "none") {
+    const productPageWrapper = document.querySelector(".product-page-wrapper");
+    productPageWrapper.classList.add("old-template");
+  }
+</script>
+
+<div class="product-wrap template-old" data-product-id="{{ product.id }}">
+    <div class="product-details">
+      <h3>Soft Wood Cat Litter</h3>
+      {{ product_title }}
+      {% comment %}  {% render 'bv-summary' %}  {% endcomment %}
+
+      <!-- YOTPO PRODUCT PAGE STAR RATING | location: snippets > product-template-old.liquid -->
+      {% comment %} {% render 'yotpo-reviews', yotpo_widget: 'pdp_star_rating', product: product, item: item %} {% endcomment %}
+      <!-- END | YOTPO STAR RATING (CATEGORY PAGE) -->
+    </div>
+    <div class="form__block">
+      <p class="block__header"><span></span> Select a formula </p>
+      <ul class="block__options">
+          {% assign product_variants = "cat-litter-healthy-cat-formula,cat-litter-multi-cat-formula,cat-litter-unscented-formula" | split: ',' %}
+
+          {% for variant in product_variants %}
+            <li class="options__item {% if product.handle == variant %} active {% endif %}">
+              <a href="/products/{{ variant }}">{% cycle "Healthy cat", "Multi-cat", "Unscented" %}</a>
+            </li>
+          {% endfor %}
+      </ul>
+      <p class="block__subtitle">{{ product.metafields.global.formula_subtitle }}</p>
+    </div>
+
+    <div class="form__block">
+      <p class="block__header"><span></span> Select your purchase type </p>
+      {%- if section.settings.second_step_promo -%}
+        <p class="block__extra_promo">{{ section.settings.second_step_promo_text }}</p>
+      {%- endif -%}
+      <ul class="block__options">
+        <li class="options__item">
+          <input name="purchase-type" id="subscribe-and-save" type="radio" hidden checked />
+          <label class="label--checkbox" for="subscribe-and-save">
+            Subscribe & Save
+          </label>
+        </li>
+        <li class="options__item">
+          <input name="purchase-type" id="one-time-purchase" type="radio" hidden />
+          <label class="label--checkbox" for="one-time-purchase">
+            One-time purchase
+          </label>
+        </li>
+      </ul>
+      <p class="block__subtitle">{{ product.metafields.global.subscription_note }}</p>
+    </div>
+
+    <div class="form__block">
+      <p class="block__header"><span></span> How many cats do you have?</p>
+      <ul class="block__options only-row">
+        {% for num in (1..3) %}
+          <li class="options__item">
+            <input name="number-of-cats" data-value="{{num}}" id="checkbox-cat-{{num}}" type="radio" hidden {% if forloop.index == 1 %} checked {% endif %}/>
+            <label class="label--simple" for="checkbox-cat-{{ num }}">{{num}}</label>
+          </li>
+        {% endfor %}
+          <li class="options__item no-shrink" style="border: none">
+            <div id="number-of-cats-manual-counter-wrapper" class="quantity__counter">
+              <button name="number-of-cats-manual-counter" data-action="decrement" disabled>-</button>
+              <span id="number-of-cats-manual-value">4</span>
+              <button name="number-of-cats-manual-counter" data-action="increment">+</button>
+            </div>
+          </li>
+      </ul>
+    </div>
+
+    <div class="form__block" id="subscribe-and-save-form-block" style="display: block">
+      <p class="block__header"><span></span> Select your delivery option</p>
+      <ul id="subscribe-and-save-options" class="block__options"></ul>
+
+      <p class="savings_dollars">You are saving <span id="dollars_saving">$19</span> over individual bag purchases</p>
+      
+      <p class="savings_percantage">Fewer shipments = More savings.</p>
+      <p class="savings_percantage">You are saving <span id="percantage_saving">18%</span> over a one-time purchase - pawesome!</p>
+  
+      <button id="subscribe-and-save-add-to-cart" class="add-to-cart-button">
+        <span class="add-to-cart-text">Add to cart</span>
+      </button>
+      <p class="block__subtitle">{{ product.metafields.global.purchase_type_subtitle }}</p>
+    
+    </div>
+
+    <div class="form__block" id="one-time-purchase-form-block" style="display: none">
+      <p class="block__header"><span></span> Select your delivery option</p>
+      
+      <a href="javascript:document.querySelector('#subscribe-and-save').click()">
+        <p class="savings_percantage savings_percantage--onetime">Save <span id="percantage_saving_onetime">18%</span> <span style="text-decoration:underline">by subscribing instead!<span></p>
+      </a>
+      <div class="block__actions">
+        <div class="quantity__counter">
+          <button name="product-weight-counter" data-action="decrement" disabled>-</button>
+          <span id="product__weight-controller">
+            <div id="one-time-purchase-product-weight-value" class="product__weight">10lb</div>
+            <div class="product__interval">for 1 month</div>
+          </span>
+          <button name="product-weight-counter" data-action="increment">+</button>
+        </div>
+
+
+        <button id="one-time-purchase-add-to-cart" class="add-to-cart-button">
+          <span id="one-time-purchase-product-price" class="product__price">
+            {{ product.selected_or_first_available_variant.price | money }}
+            <span style="font-size: 14px">+$3.00 Shipping</span></span>
+          </span>
+          <span class="add-to-cart-text">Add to cart</span>
+        </button>
+      </div>
+
+      <p class="block__subtitle">{{ product.metafields.global.purchase_type_subtitle }}</p>
+      <p style="display: none" id="free-sheeping-block" class="free-sheeping">YOU'RE QUALIFIED FOR FREE SHIPPING</p>
+    </div>
+
+    <div class="product__description">
+      {% if product.description.size > 0 %}
+        <div class="product-description rte">
+          {{ product.description }}
+          <div class="product__description-logos">
+            {% for block in section.blocks %}
+              {%- if block.type == 'additional_logo' -%}
+                <div class="product__description-logos_logo">
+                  <img src="{{ block.settings.block_image | img_url: 'medium' }}" alt="Cat Litter Multi-Cat Formula"/>
+                </div>
+              {%- endif -%}
+            {% endfor %}
+          </div>
+        </div>
+      {% else %}
+        {% include 'product-additional-information' %}
+      {% endif %}
+    </div>
+
+    {% comment %} {% include 'product-form' %} {% endcomment %}
+
+    {% comment %} <a href="#" class="open-cat-litter-popup">Which formula is right for you?</a> {% endcomment %}
+
+    {% comment %} {% include 'product-form' %} {% endcomment %}
+
+    {% comment %} {% if section.settings.show_share_buttons %}
+      {% include 'share-buttons' %}
+    {% endif %} {% endcomment %}
+  </div>

@@ -1,0 +1,65 @@
+{% assign product = all_products[section.settings.product] %}
+<div class="cl-hero">
+    <div class="hero-inner">
+        <div class="hero-left">
+        {{ section.settings.main_hero_text }}
+        </div>
+        <div class="hero-center">
+            {% assign heroImage = 'hero-image.png' | asset_url %}
+            {% if section.settings.hero_image %}
+                {% assign heroImage = section.settings.hero_image | img_url: '430x', scale: 2 %}
+            {% endif %}
+            <img src="{{ heroImage }}" alt="" >
+        </div>
+        <div class="hero-right">
+            {{ section.settings.hero_description }}
+            <a href="{{ product.url }}" class="try-catalyst">{{ section.settings.button_text }} | <span>{{ section.settings.button_price }}</span></a>
+        </div>
+    </div>
+</div>
+<div class="cl-sub-hero">
+</div>
+
+{% schema %}
+{
+  "name": "Cat Litter Hero",
+  "class": "section-cl",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "text",
+      "id": "main_hero_text",
+      "label": "Main hero text",
+      "default": "THE HIGHEST PERFORMING, SUSTAINABLE CAT LITTER AVAILABLE"
+    },
+    {
+      "type": "richtext",
+      "id": "hero_description",
+      "label": "Hero description",
+      "default": "<p>Join the revolution!<br/>Make the right choice</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "TRY CATALYST"
+    },
+    {
+      "type": "text",
+      "id": "button_price",
+      "label": "Button price",
+      "default": "$22.99"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image"
+    }
+  ]
+}
+
+{% endschema %}

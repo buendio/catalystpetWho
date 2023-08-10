@@ -1,0 +1,52 @@
+{
+  "sections": {
+    "header": {
+      "type": "wholesale-header",
+      "settings": {
+        "heading": "Catalyst Pet Dealer Direct Portal",
+        "copy": "<p>Your gateway to order Catalyst products at dealer prices, sales information, valuable resources and more for Catalyst Pet Litter.<\/p>",
+        "cta_1_title": "",
+        "cta_1_url": "",
+        "cta_2_title": "",
+        "cta_2_url": ""
+      }
+    },
+    "main": {
+      "type": "wholesale-signup",
+      "blocks": {
+        "961ce6cf-d4b9-4072-9dde-b65cf3bc9894": {
+          "type": "wholesale_form",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/wholesale-cat-image.jpg"
+          }
+        },
+        "7ef132ff-35f1-4119-bb39-136d318c58ec": {
+          "type": "wholesale_steps",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/wholesale-cat-2.jpg",
+            "step_1": "<p>Apply through this site<\/p>",
+            "step_2": "<p>Catalyst confirms eligibility and approves your application (within 7 business days)<\/p>",
+            "step_3": "<p>Return to this portal and shop!<\/p>"
+          }
+        },
+        "78c20bbf-28bf-4dc0-bed9-b7ae815048b3": {
+          "type": "wholesale-terms",
+          "settings": {
+            "article_crpp": "wholesale-terms\/exclusive-catalyst-cat-litter-retailer-policy",
+            "article_cmp": "wholesale-terms\/minimum-advertised-price-policy-map-policy"
+          }
+        }
+      },
+      "block_order": [
+        "961ce6cf-d4b9-4072-9dde-b65cf3bc9894",
+        "7ef132ff-35f1-4119-bb39-136d318c58ec",
+        "78c20bbf-28bf-4dc0-bed9-b7ae815048b3"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "header",
+    "main"
+  ]
+}
